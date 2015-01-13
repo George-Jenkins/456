@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+
+#settings-div{
+	max-width:600px;
+	position:relative;
+}
+
+#delete-table{
+	margin:5px 0 0 0;
+	right:0;
+	position:absolute;
+}
+#td1{
+	width:150px;
+	max-width:150px;
+}

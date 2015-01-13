@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+#notifications-div{
+	margin:10px 0 0 0;
+}
+
+.notification-div{
+	padding:5px 0;
+	width:100%;
+	max-width:600px;
+}
+.notification-decision{
+	height:20px;
+}
+.approve-button{
+	width:78px;
+	text-align:center;
+}
+#loader1{
+	width:30px;
+	height:auto;
+}

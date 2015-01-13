@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background-image:url(../../../pics/nightclub10.jpg);
+	background-size:cover;
+}
+
+#search-area{
+	background-color:#fff;
+	max-width:500px;
+	margin:0 auto;
+	padding:10px 0;
+}
+
+#loader1{
+	height:30px;
+	margin:-10px 0 0 0;
+}
+
+#loader1 img{
+	width:auto;
+	height:30px;
+	
+}
+#search-results-div{
+	margin:-4px 0 0 0;
+}
+#results-div{
+	
+}
+.results-div{/*These are individual results*/
+	margin:5px 0;
+	max-width:304px;
+	border:thin solid #0CF;
+}
+.results-title{
+	font-size:1.3em;
+	margin:0 0 5px 0;
+	font-family:'PTSansBold';
+}
+.created-by-div{
+	margin:0 0 5px 0;
+}
+.results-profile-pics{
+	width:300px;
+	height:200px;
+	background-size:cover;
+	background-position:center;
+}
+#show-more{
+	font-size:1.5em;
+	border:thin solid #CCC;
+	-webkit-border:thin solid #CCC;
+	-moz-border:thin solid #CCC;
+}
+#loader2{
+	margin:5px 0 0 0;
+	width:30px;
+	height:auto;
+}

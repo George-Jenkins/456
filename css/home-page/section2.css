@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+#section2{
+	padding:20px 3px;
+}
+#section2-container{
+	width:100%;
+	max-width:1000px;
+	margin:0 auto;
+	color:#333;
+	padding:0 0 0 0;
+}
+#section2-title{
+	font-size:2.5em;
+	font-family:'PTSansRegular';
+}
+	@media screen and (max-width:400px){
+	#section2-title{
+	font-size:2em;
+	}
+	}
+.section2-text{
+	font-size:1.2em;
+	font-family:'PTSansRegular';
+	line-height:40px;
+	text-align:left;
+}

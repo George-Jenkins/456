@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template2.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title></title>
+<!-- InstanceEndEditable -->
+<meta name="description" content="FriendPlan helps you and your friends access the fun and exclusive activities you've always wanted to do without you having to spend too much money."/>
+<meta name="viewport" content="device-width=width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+
+<link rel="icon" type="image/png" href="../../pics/favicon.png"/>
+<link rel="apple-touch-icon" href="../../pics/favicon.png"/>
+
+<!------css------->
+<link href="../../css/general/all-pages.css" type="text/css" rel="stylesheet"/>
+<link href="../../css/body/body.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/menu/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/templates/template2/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../js/jquery-ui-1.11.2.custom/jquery-ui.css" rel="stylesheet" type='text/css'/>
+
+<link href="../../css/templates/container.css" rel="stylesheet" type="text/css"/>
+<link href="../../fonts/ptsans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/general/forms.css" rel="stylesheet" type="text/css"/>
+<!-- InstanceBeginEditable name="head" -->
+<link href="../../css/login/group/group.css" rel="stylesheet" type="text/css"/>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div id='menu'>
+	<a href='../../index.html' class='inline1'>
+	<img src='../../pics/ritzkey-logo5.png' id='logo'/>
+	</a>
+    <a href='' class='inline1' id='menu-dropdown-icon'>
+    <img src='../../pics/menu-dropdown.png'/>
+    </a>
+	<table id='menu-links' class='inline1'>
+	<tr>
+    <td class='menu-link'><a href='../profile/profile.html'>Profile</a></td>
+	<td class='menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></td> 
+    <td class='menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></td> 
+    <td class='menu-link'><a href='../search-groups/search-groups.html'>Entourage search</a></td> 
+    <td class='menu-link'>
+    	<a href='' id='more-td'>More</a>
+     <div id='more-dropdown-container'>
+        	<div id='more-dropdown'>
+           <a href='../events/view-events.html'><div class='more-dropdown-item'>Activities</div></a>
+           <a href='../account/settings.html'><div class='more-dropdown-item'>Settings</div></a>
+   			<a href='../contact/contact-form.html'><div>Contact</div></a>
+            </div><!---more-dropdown---->
+        </div><!---dropdown1-container---->
+    </td>
+	</tr>
+	</table>
+
+	<table id='logout-table' class='inline1'>
+	<tr>
+	<td class='menu-input'><a href='../../member-login.html'>Log Out</a></td>
+	</tr>
+	</table>
+	<div id='mobile-menu'>
+    	<div id='initial-dropdown'>
+    	<div class='mobile-menu-link'><a href='../../member-login.html'>Log Out</a></div>
+        <div class='mobile-menu-link'><a href='../profile/profile.html'>Profile</a></div> 
+        <div class='mobile-menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></div>
+        <div class='mobile-menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></div>
+        <div class='mobile-menu-link' id='more-menu'>More <b>></b></div>
+        </div><!---------->
+        <div id='hidden-items' class='hide'>
+        <div class='mobile-menu-link'><a href='../events/view-events.html'>Activities</a></div>
+        <div class='mobile-menu-link'><a href='../search-groups/search-groups.html'>Entourage search</a></div>
+        <div class='mobile-menu-link'><a href='../account/settings.html'>Settings</a></div>
+    	<div class='mobile-menu-link'><a href='../contact/contact-form.html'>Contact</a></div>
+        <div class='mobile-menu-link' id='back-menu'><b><</b> Back</div>
+        </div>
+        
+    </div>
+	
+</div><!-----menu-------->
+<div id='container'>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+
+<center>
+
+<div id='view-group-members' class='view-section-button hide'>View Entourage Members <img src='../../pics/right-icon.png' class='view-section-arrow'/></div><!------view-group-members------>
+<div id='view-chat-wall' class='view-section-button hide'>View Chat Wall <img src='../../pics/right-icon.png' class='view-section-arrow'/></div><!------view-chat-wall------>
+<div id='view-group-info' class='view-section-button hide'>View Group Info <img src='../../pics/right-icon.png' class='view-section-arrow'/></div><!------view-group-info------>
+
+<div id='group-info-div' class='group-inline'>
+<div id='group-image-padding'>
+	<div id='group-image-div'>
+    <div id='group-name' class='text-bold'></div><!---group-name--->
+    <img src="../../pics/ajax-loader4.gif" id='ajax-loader' class='hide'/>
+    </div>    
+</div><!---group-image-padding---->
+ 
+<div id='leave-group-div'>
+    
+    <div id='leave-group-button'>Quit this entourage</div>
+   
+    <table id='leave-group-options' class='hide text'>
+    <td class='text-bold center'>You sure?</td>
+    <td><div style='width:5px'></div><td id='no-leave' class='functionLink'>No</td>
+    <td><div style='width:15px'></div></td><td id='yes-leave' class='functionLink'>Yes</td>
+    </table>
+</div><!-----leave-group-div------>   
+    <p>
+    <div id='group-info-sub-div' class='text'>
+    
+    <div id='created-by' class='text created-by'></div>
+    
+    <p>
+    
+    <div id='group-activities-div'>
+    	<span id='group-activities-span' class='functionLink buttonLink'>Entourage activities</span>
+    	<span id='hide-activities-span' class='functionLink buttonLink hide'>Hide activities</span>
+        <span id='number-of-events'></span>
+    </div><!---group-activities-div---->
+
+   <p>
+   
+   <div id='list-events-div' class='hide'></div><!-----list-events-div------>
+   
+   <span id='group-info-span'>
+ 
+        <div id='group-mission-div'>
+            
+        	<div id='group-mission-title' class='text-bold'>Entourage mission</div><!---group-mission-title--->
+            <div id='group-mission'></div>
+            
+            <div id='mission-text-area-div' class='hide'>
+            	<textarea id='mission-text-area' cols='30' rows='6' ></textarea><br />
+            	<span class='general-submit'><input type='submit' id='submit-mission' value='Done'/> <img src='../../pics/ajax-loader2.gif' id='load-icon2' class='small-processing-img hide'/></span>
+            </div><!---mission-text-area div--->
+            
+        </div><!-----group-mission-div----->
+        
+        </span><!----group-info-span----->
+        
+    </div><!----group-info-sub-div----->
+    
+    
+    
+</div><!----group-info-div---->
+
+
+
+
+<div id='chat-box-container' class='group-inline'>
+
+<div id='text-box' class='hide'><!---the hide class gets removed in view-specific-replies.js-------->
+	<form id='chat-form'>
+    <textarea id='message' class='message-textarea'>What do you want to get into?</textarea>
+    <div id='button-div'>
+    	<span class='general-submit'><input type='submit' id='chat-send' value='Send'/></span> <img src='../../pics/ajax-loader2.gif' class='small-processing-img hide' id='submit-loader'/>
+    </div><!---button-div----->
+    </form>
+</div><!----text-box---->
+<table class='text-bold' style='margin:5px 0 0 0'>
+<tr>
+<td>View</td>
+<td><div style='width:2px;'></div></td>
+<td id='all-posts' class='underline functionLink buttonLink'>All conversations</td>
+<td></td>
+<td id='my-posts' class='functionLink buttonLink'> My conversations </td>
+</tr>
+</table>
+
+<div id='chat-wall'>
+<img src='../../pics/ajax-loader2.gif' id='wall-loading-img' style='height:40px;width:auto'/>
+</div><!----chat wall----->
+
+</div><!----chat box container---->
+
+
+ <div id='member-list'  class='group-inline'>
+	<div class='subtitle'>Current Members</div>
+    
+    <div id='invite-members-div'>
+    
+    <div id='invite-members-title'>Invite Friends</div><!------invite-members-title----->
+    <div id='invite-members-cancel' class='hide'>Hide</div><!------invite-members-cancel----->
+    
+        <div id='invite-members-instructions' class='hide'>
+        
+        <div id='invite-instructions-div'>
+        <div class='text'>Simply copy this link and send it to friends</div>
+        <div class='general-input'><input type='text' id='invite-code'/></div>
+        </div><!----text-instructions-div------->
+        
+        
+        </div><!---invite-members-instructions----->
+        
+    </div><!---invite-members-div----->
+    
+    <div id='members'></div><!---members---->
+    
+</div><!---member-list--->
+
+</center>
+
+<!-- InstanceEndEditable -->
+</div><!-----container------->
+
+
+
+
+
+
+
+</body>
+<script src='../../js/jquery/jquery.js'></script>
+<script src='../../js/jquery-ui-1.11.2.custom/jquery-ui.js'></script>
+<script src='../../js/functions.js'></script>
+<script src='../../js/menu/menu.js'></script>
+<script src='../../js/general/lightbox.js'></script>
+<script src='../../js/home-page/register.js'></script>
+<script src='../../js/home-page/login.js'></script>
+<script src='../../sjcl-master/sjcl.js'></script>
+<script src='../../js/login/handle.js'></script>
+<script src='../../js/login/pulse.js'></script>
+<!-- InstanceBeginEditable name="EditRegion4" -->
+<script src='../../js/login/group/load-group-member.js'></script>
+<script src='../../js/login/group/view-specific-replies.js'></script>
+<script src='../../ckeditor/ckeditor.js'></script>
+<script src='../../ckeditor/plugins/enterkey/plugin.js'></script>
+<script>
+var clicked = false
+
+$('#message').click(function(){
+	
+	if(clicked == false) $('#message').val('')
+
+	clicked = true
+})//click
+
+function showMoreLink(x){
+	$('#message-span'+x).css('max-height','none').show()
+	$('#etc-div'+x).addClass('clicked').hide()
+}
+
+</script>
+<script src='../../js/login/group/chat-wall-pulse.js'></script>
+<script src='../../js/login/group/delete-post.js'></script>
+<script src='../../js/login/group/chat-wall-reply.js'></script>
+<script src='../../js/login/group/chat-wall-load.js'></script>
+<script src='../../js/login/group/chat-wall.js'></script>
+<script src='../../js/login/group/edit-group/change-group-pic.js'></script>
+<script src='../../js/login/group/edit-group/background-image.js'></script>
+<script src='../../js/login/group/edit-group/edit-mission.js'></script>
+<script src='../../js/login/group/invite-friends.js'></script>
+<script src='../../js/login/group/ask-to-join.js'></script>
+<script src='../../js/login/group/leave-group.js'></script>
+<script src='../../js/login/group/view-events.js'></script>
+<script src='../../js/login/group/group-navigation.js'></script>
+<!-- InstanceEndEditable -->
+<!-- InstanceEnd --></html>

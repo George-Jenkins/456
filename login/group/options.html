@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template2.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Group Options</title>
+<!-- InstanceEndEditable -->
+<meta name="description" content="FriendPlan helps you and your friends access the fun and exclusive activities you've always wanted to do without you having to spend too much money."/>
+<meta name="viewport" content="device-width=width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+
+<link rel="icon" type="image/png" href="../../pics/favicon.png"/>
+<link rel="apple-touch-icon" href="../../pics/favicon.png"/>
+
+<!------css------->
+<link href="../../css/general/all-pages.css" type="text/css" rel="stylesheet"/>
+<link href="../../css/body/body.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/menu/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/templates/template2/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../js/jquery-ui-1.11.2.custom/jquery-ui.css" rel="stylesheet" type='text/css'/>
+
+<link href="../../css/templates/container.css" rel="stylesheet" type="text/css"/>
+<link href="../../fonts/ptsans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/general/forms.css" rel="stylesheet" type="text/css"/>
+<!-- InstanceBeginEditable name="head" -->
+<link href="../../css/login/group/options.css" rel="stylesheet" type="text/css"/>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div id='menu'>
+	<a href='../../index.html' class='inline1'>
+	<img src='../../pics/ritzkey-logo5.png' id='logo'/>
+	</a>
+    <a href='' class='inline1' id='menu-dropdown-icon'>
+    <img src='../../pics/menu-dropdown.png'/>
+    </a>
+	<table id='menu-links' class='inline1'>
+	<tr>
+    <td class='menu-link'><a href='../profile/profile.html'>Profile</a></td>
+	<td class='menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></td> 
+    <td class='menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></td> 
+    <td class='menu-link'><a href='../search-groups/search-groups.html'>Entourage search</a></td> 
+    <td class='menu-link'>
+    	<a href='' id='more-td'>More</a>
+     <div id='more-dropdown-container'>
+        	<div id='more-dropdown'>
+           <a href='../events/view-events.html'><div class='more-dropdown-item'>Activities</div></a>
+           <a href='../account/settings.html'><div class='more-dropdown-item'>Settings</div></a>
+   			<a href='../contact/contact-form.html'><div>Contact</div></a>
+            </div><!---more-dropdown---->
+        </div><!---dropdown1-container---->
+    </td>
+	</tr>
+	</table>
+
+	<table id='logout-table' class='inline1'>
+	<tr>
+	<td class='menu-input'><a href='../../member-login.html'>Log Out</a></td>
+	</tr>
+	</table>
+	<div id='mobile-menu'>
+    	<div id='initial-dropdown'>
+    	<div class='mobile-menu-link'><a href='../../member-login.html'>Log Out</a></div>
+        <div class='mobile-menu-link'><a href='../profile/profile.html'>Profile</a></div> 
+        <div class='mobile-menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></div>
+        <div class='mobile-menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></div>
+        <div class='mobile-menu-link' id='more-menu'>More <b>></b></div>
+        </div><!---------->
+        <div id='hidden-items' class='hide'>
+        <div class='mobile-menu-link'><a href='../events/view-events.html'>Activities</a></div>
+        <div class='mobile-menu-link'><a href='../search-groups/search-groups.html'>Entourage search</a></div>
+        <div class='mobile-menu-link'><a href='../account/settings.html'>Settings</a></div>
+    	<div class='mobile-menu-link'><a href='../contact/contact-form.html'>Contact</a></div>
+        <div class='mobile-menu-link' id='back-menu'><b><</b> Back</div>
+        </div>
+        
+    </div>
+	
+</div><!-----menu-------->
+<div id='container'>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<p>
+<center>
+
+<div class='title'>Options</div>
+
+<div id='options-div'>
+
+<div id='return-div'><a id='return-link' href=''><div id='return-to-group' class='option-title'><img src='../../pics/left-icon.png' id='return-group-icon'/>Return to entourage</div></a></div>
+
+<div id='remove-member-div' class='option-div'>
+
+	<div id='remove-entourage-link' class='option-title'>Remove entourage member</div>
+    
+    <div id='cancel-remove-entourage-link' class='option-title hide'>Cancel</div>
+    
+    <div id='load-group-div' class='hide'></div><!---load-group-div not being used---->
+    
+     <div id='load-group-members-div'></div><!---load-group-div---->
+    
+</div><!---remove-member-div---->
+
+<!-----delete group------->
+<div class='option-div'>
+<div class='option-title' onclick='deleteOption()'>Delete entourage</div>
+
+<div id='delete-options-div' class='hide'>
+<div id='delete-warning' class='text-bold'>You sure? This can't be undone.</div>
+<table id='delete-table'>
+<td class='functionLink' onclick='noDelete()'>No</td>
+<td><div style='width:15px'></div></td>
+<td class='functionLink' onclick='yesDelete()'>Yes</td>
+</table>
+
+<table id='deleted-table' class='hide'>
+<td id='delete-msg' class='text-bold'><img src='../../pics/ajax-loader2.gif' id='loader1'/></td>
+</table>
+
+</div><!----delete-options-div------->
+</div>
+<!-----end delete group------->
+
+
+
+</div><!-----options-div------>
+
+</center>
+<!-- InstanceEndEditable -->
+</div><!-----container------->
+
+
+
+
+
+
+
+</body>
+<script src='../../js/jquery/jquery.js'></script>
+<script src='../../js/jquery-ui-1.11.2.custom/jquery-ui.js'></script>
+<script src='../../js/functions.js'></script>
+<script src='../../js/menu/menu.js'></script>
+<script src='../../js/general/lightbox.js'></script>
+<script src='../../js/home-page/register.js'></script>
+<script src='../../js/home-page/login.js'></script>
+<script src='../../sjcl-master/sjcl.js'></script>
+<script src='../../js/login/handle.js'></script>
+<script src='../../js/login/pulse.js'></script>
+<!-- InstanceBeginEditable name="EditRegion4" -->
+<script src="../../js/login/group/options/options.js"></script>
+<!-- InstanceEndEditable -->
+<!-- InstanceEnd --></html>

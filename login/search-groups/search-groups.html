@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template2.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Search Entourages</title>
+<!-- InstanceEndEditable -->
+<meta name="description" content="FriendPlan helps you and your friends access the fun and exclusive activities you've always wanted to do without you having to spend too much money."/>
+<meta name="viewport" content="device-width=width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+
+<link rel="icon" type="image/png" href="../../pics/favicon.png"/>
+<link rel="apple-touch-icon" href="../../pics/favicon.png"/>
+
+<!------css------->
+<link href="../../css/general/all-pages.css" type="text/css" rel="stylesheet"/>
+<link href="../../css/body/body.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/menu/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/templates/template2/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../js/jquery-ui-1.11.2.custom/jquery-ui.css" rel="stylesheet" type='text/css'/>
+
+<link href="../../css/templates/container.css" rel="stylesheet" type="text/css"/>
+<link href="../../fonts/ptsans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/general/forms.css" rel="stylesheet" type="text/css"/>
+<!-- InstanceBeginEditable name="head" -->
+<link href="../../css/login/search-groups/search-groups.css" rel="stylesheet" type="text/css"/>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div id='menu'>
+	<a href='../../index.html' class='inline1'>
+	<img src='../../pics/ritzkey-logo5.png' id='logo'/>
+	</a>
+    <a href='' class='inline1' id='menu-dropdown-icon'>
+    <img src='../../pics/menu-dropdown.png'/>
+    </a>
+	<table id='menu-links' class='inline1'>
+	<tr>
+    <td class='menu-link'><a href='../profile/profile.html'>Profile</a></td>
+	<td class='menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></td> 
+    <td class='menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></td> 
+    <td class='menu-link'><a href='search-groups.html'>Entourage search</a></td> 
+    <td class='menu-link'>
+    	<a href='' id='more-td'>More</a>
+     <div id='more-dropdown-container'>
+        	<div id='more-dropdown'>
+           <a href='../events/view-events.html'><div class='more-dropdown-item'>Activities</div></a>
+           <a href='../account/settings.html'><div class='more-dropdown-item'>Settings</div></a>
+   			<a href='../contact/contact-form.html'><div>Contact</div></a>
+            </div><!---more-dropdown---->
+        </div><!---dropdown1-container---->
+    </td>
+	</tr>
+	</table>
+
+	<table id='logout-table' class='inline1'>
+	<tr>
+	<td class='menu-input'><a href='../../member-login.html'>Log Out</a></td>
+	</tr>
+	</table>
+	<div id='mobile-menu'>
+    	<div id='initial-dropdown'>
+    	<div class='mobile-menu-link'><a href='../../member-login.html'>Log Out</a></div>
+        <div class='mobile-menu-link'><a href='../profile/profile.html'>Profile</a></div> 
+        <div class='mobile-menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></div>
+        <div class='mobile-menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></div>
+        <div class='mobile-menu-link' id='more-menu'>More <b>></b></div>
+        </div><!---------->
+        <div id='hidden-items' class='hide'>
+        <div class='mobile-menu-link'><a href='../events/view-events.html'>Activities</a></div>
+        <div class='mobile-menu-link'><a href='search-groups.html'>Entourage search</a></div>
+        <div class='mobile-menu-link'><a href='../account/settings.html'>Settings</a></div>
+    	<div class='mobile-menu-link'><a href='../contact/contact-form.html'>Contact</a></div>
+        <div class='mobile-menu-link' id='back-menu'><b><</b> Back</div>
+        </div>
+        
+    </div>
+	
+</div><!-----menu-------->
+<div id='container'>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+
+<div id='search-area'>
+
+<p>
+<center>
+
+<div class='title'>Search Entourages</div>
+
+<p>
+
+<span class='general-input'><input type='text' id='search-groups' name='search-groups' placeholder='Search'/></span>
+
+<div id='loader1'>
+<img src='../../pics/ajax-loader2.gif' class='hide'/>
+
+</div><!----loader1------>
+
+<div id='search-results-div' class='text'>
+	<div id='results-div'></div>
+</div><!----search-results-div---->
+
+<div id='show-more' class='functionLink hide'>Show more</div>
+
+</center>
+
+</div><!----search-area---->
+
+<!-- InstanceEndEditable -->
+</div><!-----container------->
+
+
+
+
+
+
+
+</body>
+<script src='../../js/jquery/jquery.js'></script>
+<script src='../../js/jquery-ui-1.11.2.custom/jquery-ui.js'></script>
+<script src='../../js/functions.js'></script>
+<script src='../../js/menu/menu.js'></script>
+<script src='../../js/general/lightbox.js'></script>
+<script src='../../js/home-page/register.js'></script>
+<script src='../../js/home-page/login.js'></script>
+<script src='../../sjcl-master/sjcl.js'></script>
+<script src='../../js/login/handle.js'></script>
+<script src='../../js/login/pulse.js'></script>
+<!-- InstanceBeginEditable name="EditRegion4" -->
+<script src='../../js/login/search-groups/search-groups.js'></script>
+<!-- InstanceEndEditable -->
+<!-- InstanceEnd --></html>

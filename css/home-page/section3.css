@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+#section3{
+	height:700px;
+	background-image:url(../../pics/nightclub5.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+	background-color:;
+	background-attachment:fixed;
+	display:table;
+	width:100%;
+	position:relative;
+	margin:0 0 0 0;
+	padding:0;
+}
+	
+#section3-container{
+	background-color:rgba(225,225,225, 0.9);
+	text-align:center;
+	margin:200px 0 0 0;
+	width:100%;
+	max-width:540px;
+	border-radius:30px;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+	padding:20px;
+	box-sizing:border-box;
+}
+	@media screen and (max-width:732px){
+	#section3-container{
+	max-width:500px;
+	margin:100px auto 0 auto;
+	}	
+	}
+	@media screen and (max-width:736px){/*make thinner*/
+	#section3-container{
+	
+	}
+	}
+	@media screen and (max-width:500px){/*make thinner*/
+	#section3-container{
+	
+	}
+	}
+#section3-description-title{
+	font-family:'PTSansRegular';
+	font-size:2.5em;
+}
+	@media screen and (max-width:400px){
+	#section3-description-title{
+	font-family:'PTSansRegular';
+	font-size:2em;
+	}
+	}
+#section3-text{
+	font-family:'PTSansRegular';
+	font-size:1.2em;
+	line-height:40px;
+}
+#section3-text a:link, #section3-text a:hover, #section3-text a:visited, #section3-text a:active{
+	color:#00C;
+}

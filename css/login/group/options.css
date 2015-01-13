@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#options-div{
+	margin:10px 0 0 0;
+	max-width:800px;
+}
+#select-group{
+	margin:5px 0;
+}
+.group-div{
+	margin:5px 0;
+}
+.group-div-list{
+	height:231px;
+	max-width:320px;
+	margin:0 5px;	
+}
+.profile-pic-list{
+	background-size:cover;
+	background-position:center;
+	width:200px;
+	height:150px;
+}
+.member-name{
+	margin:0 0 5px 0;
+}
+.member-inline{
+	display:inline-block;
+	vertical-align:top;
+}
+#return-to-group{
+	margin:0 0 15px 0;
+}
+#return-group-icon{
+	margin:0 3px 0 0;
+	width:20px;
+	height:auto;
+	position:absolute;
+	margin:3px 0 0 -25px;
+}
+.option-div{
+	margin:0 0 15px 0;
+	max-width:800px;
+}
+#delete-options-div{
+	padding:5px 0;
+}
+.no-link{
+	text-align:center;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	width:33px;
+}
+.blue-background{
+	background-color:#0FF;	
+}
+.option-title{
+	margin:0 0 5px 0;
+	cursor:pointer;
+	background-color:#6FF;
+	font-family:'PTSansBold';
+	color:#000;
+	font-size:1.2em;
+	max-width:250px;
+	padding:10px 5px;
+	border-radius:9px;
+	-webkit-border-radius:9px;
+	-moz-border-radius:9px;
+}
+
+.option-title:hover{
+	background-color:#0FC;
+}
+#loader1{
+	width:30px;
+	height:auto;
+}
+#return-div{
+	max-width:257px;
+}

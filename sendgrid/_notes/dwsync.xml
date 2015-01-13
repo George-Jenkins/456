@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name=".gitignore" server="67.20.123.61//public_html/" local="130112882390000000" remote="130142636400000000" />
+<file name=".travis.yml" server="67.20.123.61//public_html/" local="130112882390000000" remote="130142636400000000" />
+<file name="composer.json" server="67.20.123.61//public_html/" local="130112882390000000" remote="130142636400000000" />
+<file name="composer.lock" server="67.20.123.61//public_html/" local="130112882390000000" remote="130142636400000000" />
+<file name="Makefile" server="67.20.123.61//public_html/" local="130112882390000000" remote="130142636400000000" />
+<file name="MIT.LICENSE" server="67.20.123.61//public_html/" local="130112882390000000" remote="130142636400000000" />
+<file name="README.md" server="67.20.123.61//public_html/" local="130112882390000000" remote="130142636400000000" />
+<file name="SendGrid.php" server="67.20.123.61//public_html/" local="130112882390000000" remote="130142636400000000" />
+<file name="SendGrid_loader.php" server="67.20.123.61//public_html/" local="130112882390000000" remote="130332070200000000" />
+<file name="fonts.php" server="67.20.123.61/public_html/ritzkey/" local="130653386410000000" remote="130653314400000000" />
+<file name="SendGrid_loader.php" server="67.20.123.61/public_html/ritzkey/" local="130112882390000000" remote="130653247800000000" />
+<file name="sendEmail.php" server="67.20.123.61/public_html/ritzkey/" local="130656127688344390" remote="130656055200000000" />
+<file name=".gitignore" server="67.20.123.61/public_html/ritzkey/" local="130112882390000000" remote="130653247800000000" />
+<file name=".travis.yml" server="67.20.123.61/public_html/ritzkey/" local="130112882390000000" remote="130653247800000000" />
+<file name="composer.json" server="67.20.123.61/public_html/ritzkey/" local="130112882390000000" remote="130653247800000000" />
+<file name="composer.lock" server="67.20.123.61/public_html/ritzkey/" local="130112882390000000" remote="130653247800000000" />
+<file name="Makefile" server="67.20.123.61/public_html/ritzkey/" local="130112882390000000" remote="130653247800000000" />
+<file name="MIT.LICENSE" server="67.20.123.61/public_html/ritzkey/" local="130112882390000000" remote="130653247800000000" />
+<file name="README.md" server="67.20.123.61/public_html/ritzkey/" local="130112882390000000" remote="130653247800000000" />
+<file name="SendGrid.php" server="67.20.123.61/public_html/ritzkey/" local="130112882390000000" remote="130653247800000000" />
+<file name="admin-email.php" server="67.20.123.61/public_html/ritzkey/" local="130655086189251508" remote="130655014200000000" />
+<file name="sendGrid_loader.php" server="67.20.123.61/public_html/ritzkey/" local="130112882390000000" remote="130655608800000000" />
+</dwsync>

@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template2.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Your Activity</title>
+<!-- InstanceEndEditable -->
+<meta name="description" content="FriendPlan helps you and your friends access the fun and exclusive activities you've always wanted to do without you having to spend too much money."/>
+<meta name="viewport" content="device-width=width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+
+<link rel="icon" type="image/png" href="../../pics/favicon.png"/>
+<link rel="apple-touch-icon" href="../../pics/favicon.png"/>
+
+<!------css------->
+<link href="../../css/general/all-pages.css" type="text/css" rel="stylesheet"/>
+<link href="../../css/body/body.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/menu/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/templates/template2/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../js/jquery-ui-1.11.2.custom/jquery-ui.css" rel="stylesheet" type='text/css'/>
+
+<link href="../../css/templates/container.css" rel="stylesheet" type="text/css"/>
+<link href="../../fonts/ptsans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/general/forms.css" rel="stylesheet" type="text/css"/>
+<!-- InstanceBeginEditable name="head" -->
+<link href="../../css/login/events/event.css" rel="stylesheet" type="text/css"/>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div id='menu'>
+	<a href='../../index.html' class='inline1'>
+	<img src='../../pics/ritzkey-logo5.png' id='logo'/>
+	</a>
+    <a href='' class='inline1' id='menu-dropdown-icon'>
+    <img src='../../pics/menu-dropdown.png'/>
+    </a>
+	<table id='menu-links' class='inline1'>
+	<tr>
+    <td class='menu-link'><a href='../profile/profile.html'>Profile</a></td>
+	<td class='menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></td> 
+    <td class='menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></td> 
+    <td class='menu-link'><a href='../search-groups/search-groups.html'>Entourage search</a></td> 
+    <td class='menu-link'>
+    	<a href='' id='more-td'>More</a>
+     <div id='more-dropdown-container'>
+        	<div id='more-dropdown'>
+           <a href='view-events.html'><div class='more-dropdown-item'>Activities</div></a>
+           <a href='../account/settings.html'><div class='more-dropdown-item'>Settings</div></a>
+   			<a href='../contact/contact-form.html'><div>Contact</div></a>
+            </div><!---more-dropdown---->
+        </div><!---dropdown1-container---->
+    </td>
+	</tr>
+	</table>
+
+	<table id='logout-table' class='inline1'>
+	<tr>
+	<td class='menu-input'><a href='../../member-login.html'>Log Out</a></td>
+	</tr>
+	</table>
+	<div id='mobile-menu'>
+    	<div id='initial-dropdown'>
+    	<div class='mobile-menu-link'><a href='../../member-login.html'>Log Out</a></div>
+        <div class='mobile-menu-link'><a href='../profile/profile.html'>Profile</a></div> 
+        <div class='mobile-menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></div>
+        <div class='mobile-menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></div>
+        <div class='mobile-menu-link' id='more-menu'>More <b>></b></div>
+        </div><!---------->
+        <div id='hidden-items' class='hide'>
+        <div class='mobile-menu-link'><a href='view-events.html'>Activities</a></div>
+        <div class='mobile-menu-link'><a href='../search-groups/search-groups.html'>Entourage search</a></div>
+        <div class='mobile-menu-link'><a href='../account/settings.html'>Settings</a></div>
+    	<div class='mobile-menu-link'><a href='../contact/contact-form.html'>Contact</a></div>
+        <div class='mobile-menu-link' id='back-menu'><b><</b> Back</div>
+        </div>
+        
+    </div>
+	
+</div><!-----menu-------->
+<div id='container'>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+
+<center>
+
+<div id='view-attendees' class='view-section-button hide'>View Attendees <img src='../../pics/right-icon.png' class='view-section-arrow'/></div>
+<div id='view-event' class='view-section-button hide'>View Event <img src='../../pics/right-icon.png' class='view-section-arrow'/></div>
+
+<div id='dark-background-for-event' class='hide'>
+<div id='select-groups-container'  class='hide'>
+<div id='select-group-for-event-container'></div>
+ <div id='select-group-instructions' class='text'>
+ <div class='title'>Invite Entourages</div>
+ Please select or deselect entourages then click done.
+ </div><!---select-group-instructions--->
+	<div id='done-adding-groups-button' class='text'>Done <img src='../../pics/ajax-loader2.gif' class='small-processing-img hide' id='loader6'/></div> 
+    <div id='group-display-list' class='text'></div>
+</div><!----select-groups-container------>
+</div><!-----dark-background-for-event------>
+
+<div id='event-container'>
+
+<div id='event-info-container' class='inline'>
+
+<div id='event-name' class='title'></div>
+
+<div id='publish-instructions' class='text'></div>
+
+<p>
+
+<span id='invite-entourage-span' class='functionLink buttonLink hide'>Invite entourages</span>
+
+<div id='organizer-div'></div><!----organizer-div------>    
+
+<hr style='max-width:550px;margin:15px 0;'>
+
+
+<div id='image-div' class='inline'>
+<div id='event-image-padding'>
+	<div id='event-image'>
+        <img src='../../pics/ajax-loader4.gif' id='change-image-loader' class='hide'/>
+	</div><!---event-image--->
+</div><!---image-div-padding-----> 
+    <form name='change-image-form' id='change-image-form' action='queries/change-image.php' method='POST' enctype='multipart/form-data' target='change-image-iframe'>
+    <div id='change-image' class='align-left'>
+    	<span class='upload-button'>
+        	<span>Change</span>
+            <input type='file' id='change-image' name='change-image' class='upload' style='width:71px'/>
+            <input type='hidden' id='eventZ' name='z'/>
+             <input type='hidden' id='imageEventID' name='eventID'/> 
+        </span><!---upload-button-----> <span id='error-msg1' class='text red hide'></span>
+    </div><!----change-image---->
+    </form>
+    <iframe name='change-image-iframe' style='width:0px;height:0px'></iframe>   
+</div><!---image-div---->
+
+
+<div id='event-price-info-div' class='inline'>
+
+<div id='publish-event-div' class='text bottom-padding'>
+	<span id='publish-event-span' class='inline general-submit'><input type='submit' id='publish-event-button' value='Publish Event'/></span> 
+    <span id='cancel-event-span' class='inline general-submit'><input type='submit' id='cancel-event-button' value='Cancel Event'/></span>
+    <table id='cancel-event-table' class='inline hide'>
+    	<tr>
+        	<td>Really?</td><td><div style='width:5px;'></div></td>
+            <td id='no-cancel-event' class='functionLink buttonLink'>No</td>
+            <td><div style='width:15px;'></div></td>
+            <td id='yes-cancel-event' class='functionLink buttonLink'>Yes</td>
+            <td>&nbsp;<span id='loader5' class='small-processing hide'></span></td>
+        </tr>
+    </table>
+    &nbsp;<span id='loader4' class='small-processing hide'></span>
+</div><!----publish-event-div------>
+
+<div id='event-date-div' class='text bottom-padding'>
+	<span class='text-bold'>Start</span> <span id='event-start-span'></span>
+</div><!----event-date-div------>
+
+<div id='event-end-div' class='text bottom-padding'>
+    <span class='text-bold'>End</span> <span id='event-end-span'></span>
+</div><!----event-date-div------>
+
+<div id='price-div' class='text bottom-padding hide'>
+	<span class='text-bold'>Activity price</span> <span id='price-span'></span>
+</div><!----price-div------>
+
+<div id='amount-contributed-div' class='text bottom-padding hide'>
+	<span class='text-bold'>Amount contributed so far</span> <span id='amount-contributed-span'></span>
+</div><!----amount-contributed-div------>
+
+<div id='min-contribution-div' class='text bottom-padding hide'>
+	<span class='text-bold'>Minimum contribution</span> <span id='min-contribution-span'></span>
+</div><!----min-contribution-div------>
+
+<div id='contribution-by-user-div' class='text bottom-padding hide'>
+	<span class='text-bold'>Amount you've contributed</span> <span id='contribution-by-user-span'></span>
+</div><!----contribution-by-user-div------>
+
+<div id='attend-event-div' class='bottom-padding hide'>
+	<span id='attend-event-buttons-span' class='general-submit'>
+    	<input type='submit' value='Attend Event' id='attend-button'/>&nbsp;<span id='loader8' class='small-processing hide'></span><input type='submit' value='Submit' id='submit-contribution' class='hide'/> 
+   		<span id='contribute-money-span' class='general-input hide'> &nbsp;$ <input type='text' id='contribute-money' placeholder='Contribution'/> 
+        	<span id='cancel-contribute-price' class='functionLink buttonLink'>Cancel</span> &nbsp;<span id='loader3' class='small-processing hide'></span>
+        </span><!---contribute-money-span---->
+        
+    <span id='leave-event-button-span' class='general-submit hide'>
+    	<input type='submit' value='Leave Event' id='leave-button'/> &nbsp;<span id='loader7' class='small-processing hide'></span>
+    </span><!-----leave-event-button-span------>
+    
+    </span>
+</div><!---attend-event-div---->
+
+</div><!---event-price-info-div----->
+
+
+<hr style='max-width:550px;'>
+
+
+<div id='description-div' class='align-left text'>
+
+<div class='align-left'>
+<div class='subtitle align-left'>Description</div>
+<table>
+	<td id='edit-description-td' class='functionLink buttonLink'>Edit description</td>
+    <td id='save-description-td' class='general-submit hide'><input type='submit' id='save-description' value='Save'/></td>
+    <td><img src='../../pics/ajax-loader2.gif' class='small-processing-img hide' id='loader2'/><div style='width:35px'></div></td>
+    <td id='cancel-description-td' class='hide'><span id='cancel-description-span' class='functionLink buttonLink'>Cancel</span></td>
+</table>
+</div>
+
+<div id='edit-description-div' class='align-left text hide'><textarea id='edit-description-textarea'></textarea></div>
+
+<div id='event-description' class='align-left text'></div><!---event-description----->
+
+
+</div><!----description-div------->
+
+
+
+<hr id='collection-method-hr' class='hide' style='max-width:550px;margin-top:15px;'>
+
+<div id='collection-method-div' class='hide'>
+
+	<div class='subtitle align-left'>How Money Will Be Collected</div>
+    
+    <div id='collection-method' class='align-left text'></div>
+</div><!-----collection-method-div------>
+
+
+</div><!-----event-info-container------->
+
+
+<div id='list-attendees-div' class='inline'>
+
+    <div class='subtitle'>People Attending</div>
+        	
+    <div id='list-attendees' class='text'></div>
+        
+</div><!-----list-attendees-div----->
+
+
+</div><!-----event-container----->
+
+</center>
+
+<!-- InstanceEndEditable -->
+</div><!-----container------->
+
+
+
+
+
+
+
+</body>
+<script src='../../js/jquery/jquery.js'></script>
+<script src='../../js/jquery-ui-1.11.2.custom/jquery-ui.js'></script>
+<script src='../../js/functions.js'></script>
+<script src='../../js/menu/menu.js'></script>
+<script src='../../js/general/lightbox.js'></script>
+<script src='../../js/home-page/register.js'></script>
+<script src='../../js/home-page/login.js'></script>
+<script src='../../sjcl-master/sjcl.js'></script>
+<script src='../../js/login/handle.js'></script>
+<script src='../../js/login/pulse.js'></script>
+<!-- InstanceBeginEditable name="EditRegion4" -->
+<script src='../../js/login/events/load-event.js'></script>
+<script src='../../js/login/events/change-image.js'></script>
+<script src='../../js/login/events/edit-description.js'></script>
+<script src='../../js/login/events/attend-event.js'></script>
+<script src='../../js/login/events/leave-event.js'></script>
+<script src='../../js/login/events/publish-event.js'></script>
+<script src='../../js/login/events/get-current-contribution.js'></script>
+<script src='../../js/login/events/invite-groups.js'></script>
+<script src='../../js/login/events/load-groups-for-invite.js'></script>
+<script src='../../js/login/events/events-navigation.js'></script>
+<!-- InstanceEndEditable -->
+<!-- InstanceEnd --></html>

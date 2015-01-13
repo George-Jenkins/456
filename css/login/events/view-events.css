@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+#create-new-div{
+	margin:10px 0 20px 0;
+}
+
+.event-image-div{
+	width:150px;
+	height:95px;
+	background-size:cover;
+}
+.event-inline{
+	display:inline-block;
+	margin:0 5px 10px 5px;
+}
+.event-name{
+	margin:0 0 5px 0;
+}
+#load-events-div{
+	max-width:650px;
+}

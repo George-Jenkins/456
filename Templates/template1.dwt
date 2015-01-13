@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>RitzKey | Raise money with friends to have more fun!</title>
+<!-- TemplateEndEditable -->
+<meta name="description" content="FriendPlan helps you and your friends access the fun and exclusive activities you've always wanted to do without you having to spend too much money."/>
+<meta name="viewport" content="device-width=width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+
+<link rel="icon" type="image/png" href="../pics/favicon.png"/>
+<link rel="apple-touch-icon" href="../pics/favicon.png"/>
+
+<!------css------->
+<link href="../css/general/all-pages.css" type="text/css" rel="stylesheet"/>
+<link href="../css/body/body.css" rel="stylesheet" type="text/css"/>
+<link href="../css/menu/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../css/templates/container.css" rel="stylesheet" type="text/css"/>
+<link href="../fonts/ptsans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="../css/general/forms.css" rel="stylesheet" type="text/css"/>
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+</head>
+
+<body>
+<div id='menu'>
+
+	<a href='../index.html'  class='inline1'>
+	<img src='../pics/ritzkey-logo5.png' id='logo'/>
+	</a>
+    <a href='' class='inline1' id='menu-dropdown-icon'>
+    <img src='../pics/menu-dropdown.png'/>
+    </a>
+	<table id='menu-links' class='inline1'>
+	<tr>
+	<td class='menu-link'><a href='../member-login.html'>Login</a></td> 
+	</tr>
+	</table>
+
+	<table id='login-table' class='inline1'>
+	<tr>
+    <form id='login-form' method='POST'>
+	<td class='menu-input'><span id='email-span'>Email</span><br /><input type='text' id='login-email' name='login-email'/></td>
+	<td class='menu-input'><span id='password-span'>Password <a href='retrieve-login.html'>(Forgot?)</a></span><br /><input type='password' id='login-password' name='login-password'/></td>
+    <td id='login-link'><br /><a href=''>Login</a></td>
+    <td style='display:none'><input type='submit'/></td>
+    </form>
+	</tr>
+	</table>
+	<div id='mobile-menu'>
+    	<div class='mobile-menu-link'><a href='../member-login.html'>Login</a></div>
+    </div>
+	
+
+</div><!-----menu-------->
+<div id='container'>
+<!-- TemplateBeginEditable name="EditRegion3" -->
+
+
+<!-- TemplateEndEditable -->
+</div><!-----container------->
+
+
+
+
+
+
+
+</body>
+<script src='../js/jquery/jquery.js'></script>
+<script src='../js/jquery-ui/jquery-ui.js'></script>
+<script src='../js/menu/menu.js'></script>
+<script src='../js/general/lightbox.js'></script>
+<script src='../js/home-page/register.js'></script>
+<script src='../js/home-page/login.js'></script>
+<script src='../sjcl-master/sjcl.js'></script>
+<!-- TemplateBeginEditable name="EditRegion4" -->
+
+<!-- TemplateEndEditable -->
+</html>

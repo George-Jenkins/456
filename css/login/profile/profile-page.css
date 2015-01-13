@@ -1,0 +1,285 @@
+@charset "utf-8";
+/* CSS Document */
+
+#profile-page-container{
+	max-width:1190px;
+}
+
+#profile-container{
+	background-color:rgba(255,255,255,1);
+	width:100%;
+	margin:0 0 0 0;
+	max-width:796px;
+	padding:20px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+	@media screen and (max-width:400px){
+	#profile-container{
+	background-color:rgba(255,255,255,1);
+	width:100%;
+	margin:0 0 0 0;
+	max-width:500px;
+	padding:0;
+	}
+	}
+#profile-div{
+	text-align:center;
+	margin:0 auto;
+	max-width:800px;
+}
+#profile-info-table{
+	margin:0 10px 0 0;
+}
+	@media screen and (max-width:400px){
+	#profile-info-table{
+	margin:0 auto;
+	
+	}	
+	}
+/*cover photo*/
+#cover-photo-name{
+	color:#fff;
+	text-align:center;
+	margin:20px auto 0 auto;
+	position:relative;
+	width:100%;
+	max-width:1150px;
+	font-size:4em;
+	font-family:'PTSansBold';
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	text-shadow: 0px 0px 8px #000;
+	-webkit-text-stroke: 2px #000;/*not supported by all browsers*/
+}
+	@media screen and (max-width:925px){
+	#cover-photo-name{
+	font-size:3em;
+	margin:10px auto 0 auto;
+	}
+	}
+#cover-photo-div{
+	margin:0 0 0 0;
+	height:190px;
+	width:100%;
+	max-width:1150px;
+	background-image:url(../../../pics/nightclub2-1.jpg);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:100%;
+	border:3px solid #999;
+	-webkit-border:3px solid #999;
+	-moz-border:3px solid #999;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+
+/*profile pic*/
+#profile-pic-div img{
+	width:100%;
+	height:auto;
+	max-width:350px;
+	max-height:350px;
+}
+#profile-pic-padding{
+	padding:3px;
+	border:solid thin #CCC;
+	-webkit-border:solid thin #CCC;
+	-moz-border:solid thin #CCC;
+}
+#profile-pic-div{
+	width:295px;
+	height:250px;
+	text-align:center;
+	position:relative;
+	background-size:cover;
+}
+
+#profile-info, #profile-info-view{
+	width:100%;
+	height:auto;
+	max-width:350px;
+	padding:5px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; 
+	-webkit-box-sizing:border-box; 
+ 	-ms-box-sizing:border-box;
+	line-height:24px;
+	text-align:left;
+	border:thin solid #CCC;
+	-webkit-border:thin solid #CCC;
+	-moz-border:thin solid #CCC;
+	margin:31px 0 0 0;
+}
+#profile-info-view{/*this applies to just profile-view.html*/
+	margin:0 0 0 0;
+}
+#entourages-div{
+	width:100%;
+	max-width:350px;
+	background-color:#EBEBE0;
+	border-radius:0 0 10px 10px;
+	-webkit-border-radius:0 0 10px 10px;
+	-moz-border-radius:0 0 10px 10px;
+}
+	@media screen and (max-width:1206px){
+	#entourages-div{
+		/*this will be hidden by js*/
+		max-width:800px;
+		border-radius:0;
+		-webkit-border-radius:0;
+		-moz-border-radius:0;
+	}
+	}
+#entourages-title{
+	margin:15px 0;
+	font-size:2em;
+}
+#entourages-title-view{
+	margin:15px 0 0 0;
+	font-size:2em;
+}
+#profile-pic-form-container{
+	text-align:left;
+}
+img#image-loading{
+	position:absolute;
+	top:50%;
+	right:50%;
+	margin:-50px -50px 0 0;
+	width:100px;
+	height:auto;
+}
+#profile-submit-feedback{
+	position:absolute;
+	margin:-12px 0 0 124px;
+}
+#image-icon-td{
+	position:relative;
+	color:#00F;
+}
+#image-icon{
+	width:30px;
+	height:auto;
+	position:absolute;
+	left:50%;
+	top:0;
+	margin:-1.55px 0 0 72px;
+}
+#change-background{
+	margin:0 0 3px 0;
+}
+input#background-uploader{
+	padding: 0;
+	position:absolute;
+	top:0;
+	right:0;
+	left:0;
+	bottom:0;
+	cursor:pointer;
+	background-color:#F00;
+	height:25px;
+	width:265px;
+	opacity:0;
+	margin:0 0 0 -94px;
+}
+input#cover-photo-file{
+	padding: 0;
+	position:absolute;
+	top:0;
+	right:0;
+	left:0;
+	bottom:0;
+	cursor:pointer;
+	background-color:#F00;
+	height:30px;
+	width:210px;
+	opacity:0;
+	margin:0 0 0 -94px;
+}
+#load-icon1{
+	width:25px;
+	height:auto;
+	position:absolute;
+	top:2px;
+	left:175px;
+	margin:0 0 0 2px;
+}
+#cover-photo-table{
+	position:relative;
+}
+#load-icon2{
+	width:25px;
+	height:auto;
+	position:absolute;
+	top:2px;
+	left:224px;
+	display:none;
+}
+#background-message{
+	padding:0 0 0 40px;
+}
+#city-suggestion-box{
+	position:relative;
+	border:thin solid #ccc;
+	-moz-border:thin solid #ccc;
+	-webkit-border:thin solid #ccc;
+	background-color:#fff;
+	width:250px;
+	height:100px;
+	overflow-y:scroll;
+	padding:0 4px;
+}
+
+.city-div:hover{
+	background-color:#0FC;
+	cursor:pointer;
+}
+.city-div-select{
+	background-color:#0FC;
+}
+#home-town-div{
+	margin:7px 3px;
+}
+#hometown-input input[type=text]{
+	width:200px;
+}
+#going-out-div{
+	margin:0 3px;
+}
+.profile-background{
+	background-attachment:fixed;
+	background-size:cover;
+}
+.profile-inline2, .profile-inline{
+	display:inline-block;
+	vertical-align:top;
+}
+#profile-page-container a{
+	font-family:'PTSansBold';
+}
+/*handle entourage list*/
+#entourages-list{
+	padding:15px 0 15px 0;
+}
+.entourage-list{
+	width:150px;
+	display:inline-block;
+	margin:0 5px 10px 5px;
+}
+.group-name{
+	margin:3px 0;
+}
+.entourage-list-img{
+	width:140px;
+	height:95px;
+	margin:10px 0 0 0;
+	background-size:cover;
+	background-position:center;
+}
+.ent-alert img{
+	margin:0 0 0 -16px;
+}

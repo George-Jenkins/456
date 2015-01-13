@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+
+#logout-table{
+	text-align:center;
+	color:#fff;
+	font-family:"PTSansRegular";
+	font-size:1em;
+	height:35px;
+	margin:0 0 0 20%;
+}
+
+
+	@media screen and (max-width:990px){
+	#logout-table{
+	display:none;
+	}
+	}
+
+#more-dropdown-container{
+	padding:10px 0 0 0;
+	margin:0 0 0 0;
+	display:none;
+	position:absolute;
+}
+#more-dropdown-container a{
+	color:#000;
+}
+#more-dropdown{
+	border-radius:5px;
+	background-color:#ccc;
+	padding:10px;
+}
+#more-dropdown .more-dropdown-item{
+	border-bottom:thin solid #666;
+	-webkit-border-bottom:thin solid #666;
+	-moz-border-bottom:thin solid #666;
+}
+#more-dropdown div{
+	padding:5px 0;
+}
+#more-menu, #back-menu{
+	cursor:pointer;
+}

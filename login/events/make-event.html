@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template2.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Plan Activity</title>
+<!-- InstanceEndEditable -->
+<meta name="description" content="FriendPlan helps you and your friends access the fun and exclusive activities you've always wanted to do without you having to spend too much money."/>
+<meta name="viewport" content="device-width=width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+
+<link rel="icon" type="image/png" href="../../pics/favicon.png"/>
+<link rel="apple-touch-icon" href="../../pics/favicon.png"/>
+
+<!------css------->
+<link href="../../css/general/all-pages.css" type="text/css" rel="stylesheet"/>
+<link href="../../css/body/body.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/menu/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/templates/template2/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../js/jquery-ui-1.11.2.custom/jquery-ui.css" rel="stylesheet" type='text/css'/>
+
+<link href="../../css/templates/container.css" rel="stylesheet" type="text/css"/>
+<link href="../../fonts/ptsans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/general/forms.css" rel="stylesheet" type="text/css"/>
+<!-- InstanceBeginEditable name="head" -->
+<link href="../../css/login/events/make-event.css" rel="stylesheet" type="text/css"/>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div id='menu'>
+	<a href='../../index.html' class='inline1'>
+	<img src='../../pics/ritzkey-logo5.png' id='logo'/>
+	</a>
+    <a href='' class='inline1' id='menu-dropdown-icon'>
+    <img src='../../pics/menu-dropdown.png'/>
+    </a>
+	<table id='menu-links' class='inline1'>
+	<tr>
+    <td class='menu-link'><a href='../profile/profile.html'>Profile</a></td>
+	<td class='menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></td> 
+    <td class='menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></td> 
+    <td class='menu-link'><a href='../search-groups/search-groups.html'>Entourage search</a></td> 
+    <td class='menu-link'>
+    	<a href='' id='more-td'>More</a>
+     <div id='more-dropdown-container'>
+        	<div id='more-dropdown'>
+           <a href='view-events.html'><div class='more-dropdown-item'>Activities</div></a>
+           <a href='../account/settings.html'><div class='more-dropdown-item'>Settings</div></a>
+   			<a href='../contact/contact-form.html'><div>Contact</div></a>
+            </div><!---more-dropdown---->
+        </div><!---dropdown1-container---->
+    </td>
+	</tr>
+	</table>
+
+	<table id='logout-table' class='inline1'>
+	<tr>
+	<td class='menu-input'><a href='../../member-login.html'>Log Out</a></td>
+	</tr>
+	</table>
+	<div id='mobile-menu'>
+    	<div id='initial-dropdown'>
+    	<div class='mobile-menu-link'><a href='../../member-login.html'>Log Out</a></div>
+        <div class='mobile-menu-link'><a href='../profile/profile.html'>Profile</a></div> 
+        <div class='mobile-menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></div>
+        <div class='mobile-menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></div>
+        <div class='mobile-menu-link' id='more-menu'>More <b>></b></div>
+        </div><!---------->
+        <div id='hidden-items' class='hide'>
+        <div class='mobile-menu-link'><a href='view-events.html'>Activities</a></div>
+        <div class='mobile-menu-link'><a href='../search-groups/search-groups.html'>Entourage search</a></div>
+        <div class='mobile-menu-link'><a href='../account/settings.html'>Settings</a></div>
+    	<div class='mobile-menu-link'><a href='../contact/contact-form.html'>Contact</a></div>
+        <div class='mobile-menu-link' id='back-menu'><b><</b> Back</div>
+        </div>
+        
+    </div>
+	
+</div><!-----menu-------->
+<div id='container'>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<p>
+
+<center>
+
+<div class='event-container'>
+
+<div class='form-container'>
+
+	<div class='form-elements'>
+    
+    <div class='form-title text align-left'>Plan An Activity</div>
+    
+    <div id='form-description' class='text align-left'>Here you can start planning an activity that you and your friends can do.<p></div>
+    
+    <form id='form'>
+    <table>
+    <tr>
+    <td class='general-input-long'><span id='event-name-span' class='form-span'>Name of activity</span><p><input type='text' id='event-name' name='event-name'/></td>
+    </tr>
+    </table>
+    
+    <div class='align-left'>
+    <table>
+    <tr>
+   	<td class='general-input datePickerField'><span id='start-date-span' class='form-span'>Start date</span><p><input type='text' id='start-date' name='start-date'/></td>
+   	<td class='general-input general-select'><span id='start-time-span' class='form-span'>Time</span><p><select id='start-hour' name='start-hour'/></select>
+    <select id='start-minute' name='start-minute'/></select>
+    <select id='start-am-pm' name='start-am-pm'/></select></td>
+    </tr>
+    
+    <tr>
+   	<td class='general-input datePickerField'><span id='end-date-span' class='form-span'>End date</span><p><input type='text' id='end-date' name='end-date'/></td>
+   	<td class='general-input general-select'><span id='end-time-span' class='form-span'>Time</span><p><select id='end-hour' name='end-hour'/></select>
+    <select id='end-minute' name='end-minute'/></select>
+    <select id='end-am-pm' name='end-am-pm'/></select></td>
+    </tr>
+    </table>
+    </div>
+    
+    <table>
+    <tr>
+    <td class='general-textarea'><span id='description-span' class='form-span'>Description</span><p><textarea id='event-description' name='event-description'></textarea></td>
+    </tr>
+    
+    <tr>
+    <td class='general-radio text'><span id='combine-money-span' class='form-span'>Do you need your friends to combine money to fund the activity?</span><p>
+    <center>
+    <input type='radio' id='yes-raise-money' name='raise-money'/>
+    	<label for='yes-raise-money'>Yes</label>
+         
+    <input type='radio' id='no-raise-money' name='raise-money'/>
+    	<label for='no-raise-money'>No</label>
+     </center>
+    </td>
+    </tr>
+    
+    <tr id='price-of-event' class='hide'>
+    <td class='general-input'><span id='event-price-span' class='form-span'>Price of activity</span><p>$ <input type='text' id='event-price' name='event-price' style='width:260px'/></td>
+    </tr>
+    
+    <tr id='is-there-min' class='hide'>
+    <td class='general-radio text'><span id='min-amount-span' class='form-span'>Is there a minimum amount friends have to contribute?</span> <p>
+    <center>
+    <input type='radio' id='yes-min' name='need-min'/>
+    	<label for='yes-min'>Yes</label>
+         
+    <input type='radio' id='no-min' name='need-min'/>
+    	<label for='no-min'>No</label>
+     </center>
+    </td>
+    </tr>
+    
+    <tr id='min-amount-td' class='hide'>
+    <td class='general-input'><span id='min-contr-span' class='form-span'>Minimum contribution</span><p>$ <input type='text' id='min-amount' name='min-amount' style='width:260px'/></td>
+    </tr>
+    
+    <tr id='collection-method-tr' class='hide'>
+    <td class='general-textarea'><span id='collection-method-span' class='form-span'>Please explain how you plan on collecting the money?</span><p>
+    <textarea id='collection-method' name='collection-method'></textarea></td>
+    </tr>
+    </table>
+    
+    <table>
+    <tr class='text'>
+    <td class='general-radio'><span id='who-can-invite-span' class='form-span'>Do you want to be the only one who can invite people to join the activity or can your friends also invite people?</span><p>
+    <center>
+    <input type='radio' id='only-creator-invite' name='who-can-invite' value='false'/><label for='only-creator-invite'>Just me</label>
+    <input type='radio' id='friend-can-invite' name='who-can-invite' value='true'/><label for='friend-can-invite'>Friends too</label>
+    </center>
+    </td>
+    </tr>
+   
+    <input type='hidden' id='z' name='z'/>
+    <tr>
+    <td class='general-submit'><p><input type='submit' id='submit' name='submit' value='Continue'/>
+    <span id='error-msg' class='hide red text'></span>
+    <span class='small-processing hide' id='loader'></span></td>
+    </tr>
+    </table>
+    </form>
+    </div><!------form-elements------>
+
+</div><!----form-container------->
+
+</div><!-----event-container----->
+
+</center>
+
+<!-- InstanceEndEditable -->
+</div><!-----container------->
+
+
+
+
+
+
+
+</body>
+<script src='../../js/jquery/jquery.js'></script>
+<script src='../../js/jquery-ui-1.11.2.custom/jquery-ui.js'></script>
+<script src='../../js/functions.js'></script>
+<script src='../../js/menu/menu.js'></script>
+<script src='../../js/general/lightbox.js'></script>
+<script src='../../js/home-page/register.js'></script>
+<script src='../../js/home-page/login.js'></script>
+<script src='../../sjcl-master/sjcl.js'></script>
+<script src='../../js/login/handle.js'></script>
+<script src='../../js/login/pulse.js'></script>
+<!-- InstanceBeginEditable name="EditRegion4" -->
+<script src='../../js/login/events/make-event.js'></script>
+
+<script src='../../js/login/events/make-event-form-actions.js'></script>
+<!-- InstanceEndEditable -->
+<!-- InstanceEnd --></html>

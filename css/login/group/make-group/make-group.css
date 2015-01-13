@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+#form-container{
+	width:100%;
+	max-width:600px;
+	padding:20px 0px;
+}
+#form-container input[type=text], #form-container textarea{
+	width:300px;
+}
+#feedback{
+	position:relative;
+}

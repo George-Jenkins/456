@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+#form-box{
+	background-color:#EBEBE0;
+	width:100%;
+	max-width:300px;
+	min-width:;
+	margin:40px auto 0 auto;
+	padding:3%;
+}
+#inner-box{
+	width:100%;
+	max-width:450px;
+	margin:0 auto;
+	
+}
+#get-info{
+	font-family:'PTSansRegular';
+	font-size:1.5em;
+}
+
+#instructions{
+	font-family:'PTSansRegular';
+	font-size:1em;
+}

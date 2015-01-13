@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template2.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Your Profile</title>
+<!-- InstanceEndEditable -->
+<meta name="description" content="FriendPlan helps you and your friends access the fun and exclusive activities you've always wanted to do without you having to spend too much money."/>
+<meta name="viewport" content="device-width=width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+
+<link rel="icon" type="image/png" href="../../pics/favicon.png"/>
+<link rel="apple-touch-icon" href="../../pics/favicon.png"/>
+
+<!------css------->
+<link href="../../css/general/all-pages.css" type="text/css" rel="stylesheet"/>
+<link href="../../css/body/body.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/menu/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/templates/template2/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../js/jquery-ui-1.11.2.custom/jquery-ui.css" rel="stylesheet" type='text/css'/>
+
+<link href="../../css/templates/container.css" rel="stylesheet" type="text/css"/>
+<link href="../../fonts/ptsans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/general/forms.css" rel="stylesheet" type="text/css"/>
+<!-- InstanceBeginEditable name="head" -->
+<link href='../../css/login/profile/profile-page.css' rel='stylesheet' type='text/css'/>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div id='menu'>
+	<a href='../../index.html' class='inline1'>
+	<img src='../../pics/ritzkey-logo5.png' id='logo'/>
+	</a>
+    <a href='' class='inline1' id='menu-dropdown-icon'>
+    <img src='../../pics/menu-dropdown.png'/>
+    </a>
+	<table id='menu-links' class='inline1'>
+	<tr>
+    <td class='menu-link'><a href='profile.html'>Profile</a></td>
+	<td class='menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></td> 
+    <td class='menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></td> 
+    <td class='menu-link'><a href='../search-groups/search-groups.html'>Entourage search</a></td> 
+    <td class='menu-link'>
+    	<a href='' id='more-td'>More</a>
+     <div id='more-dropdown-container'>
+        	<div id='more-dropdown'>
+           <a href='../events/view-events.html'><div class='more-dropdown-item'>Activities</div></a>
+           <a href='../account/settings.html'><div class='more-dropdown-item'>Settings</div></a>
+   			<a href='../contact/contact-form.html'><div>Contact</div></a>
+            </div><!---more-dropdown---->
+        </div><!---dropdown1-container---->
+    </td>
+	</tr>
+	</table>
+
+	<table id='logout-table' class='inline1'>
+	<tr>
+	<td class='menu-input'><a href='../../member-login.html'>Log Out</a></td>
+	</tr>
+	</table>
+	<div id='mobile-menu'>
+    	<div id='initial-dropdown'>
+    	<div class='mobile-menu-link'><a href='../../member-login.html'>Log Out</a></div>
+        <div class='mobile-menu-link'><a href='profile.html'>Profile</a></div> 
+        <div class='mobile-menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></div>
+        <div class='mobile-menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></div>
+        <div class='mobile-menu-link' id='more-menu'>More <b>></b></div>
+        </div><!---------->
+        <div id='hidden-items' class='hide'>
+        <div class='mobile-menu-link'><a href='../events/view-events.html'>Activities</a></div>
+        <div class='mobile-menu-link'><a href='../search-groups/search-groups.html'>Entourage search</a></div>
+        <div class='mobile-menu-link'><a href='../account/settings.html'>Settings</a></div>
+    	<div class='mobile-menu-link'><a href='../contact/contact-form.html'>Contact</a></div>
+        <div class='mobile-menu-link' id='back-menu'><b><</b> Back</div>
+        </div>
+        
+    </div>
+	
+</div><!-----menu-------->
+<div id='container'>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<center>
+
+<div id='profile-page-container'>
+
+<div id='cover-photo-div' class='hide'>
+<div id='cover-photo-name'></div>
+</div><!-----cover-photo-div----->
+
+<div id='view-groups' class='view-section-button hide'>View Entourages <img src='../../pics/right-icon.png' class='view-section-arrow'/></div><!------view-groups------>
+<div id='view-profile' class='view-section-button hide'>View Profile <img src='../../pics/right-icon.png' class='view-section-arrow'/></div><!------view-groups------>
+
+	<div id='profile-container' class='profile-inline'>
+
+<div id='profile-title' class='title'></div>
+<p>
+
+<div id='profile-div'>
+<table id='profile-info-table' class='profile-inline2'>
+<tr>
+<td id='profile-pic-form-container'>
+<span id='profile-submit-feedback' class='text'></span>
+<form id='profile-pic-form' name='profile-pic-form' method='POST' enctype='multipart/form-data' action='queries/upload-profile-picture.php' target='profile-pic-iframe'>
+<span class='upload-button'>
+<span>Change Image</span>
+<input type='file' id='profile-pic-upload' name='profile-pic-upload' class='upload'/> 
+<input type='hidden' name='z' id='profile-pic-z'/>
+</span>
+</form>
+
+</td>
+<iframe name='profile-pic-iframe' style='height:0px;width:0px;'></iframe>
+</tr>
+<tr>
+<td><div id='profile-pic-padding'><div id='profile-pic-div'><img src='../../pics/ajax-loader4.gif' id='image-loading' class='hide'/></div></div></td>
+</tr>
+
+</table><!----profile-info-table--->
+
+<!------personal info------>
+<div id='profile-info' class='text profile-inline2'>
+
+<div id='change-background'>
+
+<table id='change-background-table'>
+<tr>
+<td id='image-icon-td'><span class='functionLink buttonLink'>Change background</span> <img src='../../pics/image-icon.png' id='image-icon' class='inline'/><img src='../../pics/ajax-loader2.gif' id='load-icon1' class='hide'/>
+
+<form name='background-img-form' id='background-img-form' target='background-img-iframe' method='POST' action='queries/upload-background-img.php' enctype='multipart/form-data'>
+<input type='file' name='background-uploader' id='background-uploader'/>
+<input type='hidden' name='z' id='background-img-z'/>
+</form>
+<iframe name='background-img-iframe' style='height:0px;width:0px;'></iframe>
+</td><td id='background-message'></td>
+</tr>
+</table><!---change-background-table--->
+
+</div><!-----change-background----->
+
+<!-----handle cover photo------>
+<table id='cover-photo-table'>
+<tr>
+<td>
+<span id='add-cover-span'>
+<span id='add-cover-link' class='functionLink buttonLink'>Add cover photo
+ <span id='what-is-cover' class='buttonLink' style='border:none;'> (What's this?)</span><span id='hide-example-cover' class='buttonLink hide' style='border:none;'> (Hide example)</span></span><span id='add-cover-feedback'></span>
+           
+<img src='../../pics/ajax-loader2.gif' id='load-icon2'/>
+            
+<form name='cover-photo-form' id='cover-photo-form' target='cover-photo-iframe' method='POST' action='queries/upload-cover-img.php' enctype='multipart/form-data'>
+<input type='file' name='cover-photo-file' id='cover-photo-file'/>
+<input type='hidden' name='z' id='cover-img-z'/>
+</form>
+</span>
+            
+<span id='delete-cover-span' class='hide'><span class='functionLink buttonLink'>Remove cover photo</span></span>
+<iframe name='cover-photo-iframe' style='width:0;height:0'></iframe>
+           
+</td>
+</tr>
+</table>        
+     <!-----end handle cover photo------>
+
+<div id='home-town-div' >
+<span id='edit-hometown'>
+	<span id='hometown-link' class='functionLink buttonLink'>Edit</span>
+    <span id='hometown-cancel' class='hide functionLink buttonLink'>Cancel</span>
+</span>
+
+<div id='home-town' class='text-bold'>Hometown</div><!----home-town---->
+
+<div id='home-town-info'></div>
+
+	<div id='select-state-div' class='hide general-select'>
+		<select id='select-states'>
+        
+        <option value=''>Select State</option>
+        
+        </select>
+	</div><!---select-state-div---->
+    
+    <div id='select-city-div' class='hide'>
+    
+    City<br />
+    
+	<span id='hometown-input' class='general-input'><input type='text' id='type-city'></span> 
+    <span class='general-submit'><input type='submit' id='submit-hometown' value='Done'/></span>
+  
+    	<div id='city-suggestion-box' class='hide'>
+   
+    	</div><!---city-suggestion-box---->
+	</div><!---select-state-div---->
+</div><!----home-town-div---->
+
+	<div id='going-out-div'> 
+    	<span id='edit-going-out'>
+        <span id='edit-going-out-link' class='functionLink buttonLink'>Edit</span>
+        <span id='edit-going-out-cancel' class='hide functionLink buttonLink'>Cancel</span>
+        </span>
+    	<div class='text-bold'>What I like to do when I go out</div>  
+        <div id='going-out-answer'></div>
+        
+      <div id='going-out-text-area-div' class='hide'>
+      <textarea id='going-out-textarea' cols=30 rows=6 maxlength=2000></textarea><br />
+      <span class='general-submit'><input type='submit' id='submit-going-out' value='Done'/></span>
+      </div><!--going-out-text-area-div--->
+      
+    </div><!----going-out-div------>
+
+</div><!--profile-info----->
+
+<!----------end personal info-------------->
+
+
+</div><!-----profile-div----->
+
+</div><!-----profile container------>
+   
+<div id='entourages-div' class='profile-inline text hide'>
+    
+
+<div id='entourages-title'>Entourages</div>
+
+<a href='../group/make-group/make-group.html' class='buttonLink'>Create new</a>
+
+
+<div id='entourages-list'></div><!---entourages-list--->
+
+</div><!----entourages-div---->
+
+
+
+</div><!----profile-page-container------>
+
+<p>
+</center>
+<!-- InstanceEndEditable -->
+</div><!-----container------->
+
+
+
+
+
+
+
+</body>
+<script src='../../js/jquery/jquery.js'></script>
+<script src='../../js/jquery-ui-1.11.2.custom/jquery-ui.js'></script>
+<script src='../../js/functions.js'></script>
+<script src='../../js/menu/menu.js'></script>
+<script src='../../js/general/lightbox.js'></script>
+<script src='../../js/home-page/register.js'></script>
+<script src='../../js/home-page/login.js'></script>
+<script src='../../sjcl-master/sjcl.js'></script>
+<script src='../../js/login/handle.js'></script>
+<script src='../../js/login/pulse.js'></script>
+<!-- InstanceBeginEditable name="EditRegion4" -->
+<script src='../../js/login/profile/profile-picture.js'></script>
+<script src='../../js/login/profile/background-image.js'></script>
+<script src='../../js/login/profile/edit-hometown.js'></script>
+<script src='../../js/login/profile/submit-hometown.js'></script>
+<script src='../../js/login/profile/edit-going-out-info.js'></script>
+<script src='../../js/login/profile/load-profile-info.js'></script>
+<script src='../../js/login/profile/cover-photo.js'></script> 
+<script src='../../js/login/profile/check-for-unchecked-posts.js'></script>
+<script src='../../js/login/profile/profile-navigation.js'></script>
+<!-- InstanceEndEditable -->
+<!-- InstanceEnd --></html>

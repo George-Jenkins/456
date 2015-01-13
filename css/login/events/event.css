@@ -1,0 +1,254 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-image:url(../../../pics/cityscape2.png);
+	background-size:cover;
+}
+
+#event-info-container{
+	padding:5px 10px 10px 10px;
+	width:100%;
+	max-width:750px;
+	background-color:#fff;
+	border:thin solid #CCC;
+	-moz-border:thin solid #CCC;
+	-webkit-border:thin solid #CCC;
+	box-sizing:border-box;  /** add this **/
+ 	-moz-box-sizing:border-box; /** add this **/
+	-webkit-box-sizing:border-box; /** add this **/
+ 	-ms-box-sizing:border-box; /** add this **/
+}
+	@media screen and (max-width:666px){
+	#event-info-container{
+	padding:5px 0;
+	}
+	}
+	
+#image-div{
+	width:100%;
+	max-width:308px;
+	float:;
+	margin:0 0 5px 0;
+}
+	@media screen and (max-width:666px){
+	#image-div{
+	float:none;
+	}	
+	}
+	
+#event-image{
+	width:300px;
+	height:250px;
+	text-align:center;
+	position:relative;
+	background-size:cover;
+}
+#event-image-padding{
+	padding:3px;
+	border:thin solid #CCC;
+	-moz-border:thin solid #CCC;
+	-webkit-border:thin solid #CCC;
+}
+img#change-image-loader{
+	width:100px;
+	height:100px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-50px 0 0 -50px;
+}
+#publish-instructions{
+	text-align:left;
+	max-width:600px;
+	line-height:24px;
+	margin:5px 0 0 0;
+}
+#publish-event-div{
+	height:40px;
+	width:292px;
+}
+#event-price-info-div{
+	text-align:left;
+	padding:0 20px;
+}
+	@media screen and (max-width:666px){
+	#event-price-info-div{
+	text-align:center;
+	padding:0;
+	}
+	}
+#price-div{
+	margin:0 0 0 0;
+}
+#event-description, #collection-method{
+	line-height:24px;
+}
+#save-description-span{
+	
+}
+#description-div, #collection-method-div{
+	width:100%;
+	max-width:600px;
+	padding:0 10px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+}
+#edit-description-div textarea{
+	width:100%;
+	max-width:600px;
+	height:300px;
+	line-height:24px;
+}
+
+#loader1{
+	margin: 0 0 0 3px;
+}
+#loader2{
+	margin: -15px 0 0 0;
+	position:absolute;
+}
+#error-msg1{
+	margin:0 0 0 3px;
+}
+.bottom-padding{
+	padding:0 0 10px 0;
+}
+#contribute-money-span{
+	
+}
+#contribute-money{
+	max-width:100px;
+	margin:0 0 -3px 0;
+}
+#dark-background-for-event{
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.7);
+	position:absolute;
+	margin:-17px 0 0 0;
+	z-index:10;
+}
+
+#select-groups-container{
+	background-color:#FFFFFF;
+	width:100%;
+	max-width:800px;
+	border:thin solid #000;
+	margin:10px 0 0 0;	
+}
+	@media screen and (max-width:800px){
+	#select-groups-container{
+	left:0;
+	margin:10px 0 0 0;	
+	}	
+	}
+#done-adding-groups-button{
+	background-color:#0FF;
+	max-width:100px;
+	padding:5px;
+	z-index:12;
+	left:50%;
+	margin:12px 0 0 -15px;	
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+#done-adding-groups-button:hover{
+	background-color:#0FC;
+	cursor:pointer;
+}
+#select-group-instructions{
+	margin:10px 0;	
+}
+#group-display-list{
+	margin:0 0 10px 0;
+}
+.group-list-title{
+	margin:5px 0;
+}
+.group-img-div{
+	width:300px;
+	height:200px;
+	background-size:cover;
+	cursor:pointer;
+}
+.group-inline{
+	max-width:300px;
+	display:inline-block;
+	vertical-align:top;
+}
+.check-group{
+	width:25px;
+	height:auto;
+	margin:0 0 -7px 0;
+}
+#loader6{
+	margin:-5px 0 0 40px;
+}
+#list-attendees-div{
+	width:100%;
+	max-width:350px;
+	min-width:320px;
+	background-color:#EBEBE0;
+	margin:0 0 0 0;
+	padding:0 0 10px 0;
+	border-radius:0 0 10px 10px;
+	-webkit-border-radius:0 0 10px 10px;
+	-moz-border-radius:0 0 10px 10px;
+}
+	@media screen and (max-width:1120px){
+	#list-attendees-div{
+	max-width:750px;
+	display:none;
+	border-radius:0;
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	}	
+	}
+	
+.attendee-name{
+	margin:5px 0;
+}
+.attendee-img{
+	width:150px;
+	height:95px;
+	background-size:cover;
+}
+.attendee-inline{
+	display:inline-block;
+	vertical-align:top;
+}
+#show-attendee-span{
+	display:none;
+}
+	@media screen and (max-width:666px){
+	#show-attendee-span{
+	display:block;
+	}	
+	}
+.creator-image-border{
+	width:100px;
+	height:60px;
+	border:thin solid #CCC;
+	-moz-border:thin solid #CCC;
+	-webkit-border:thin solid #CCC;
+}
+.creator-image{
+	width:100px;
+	height:60px;
+	background-size:cover;
+	
+}
+#change-image-form{
+	margin:4px 0 0 0;
+}
+
+#cancel-event-table{
+
+}
+#cancel-event-span{
+	
+}

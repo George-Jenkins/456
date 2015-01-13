@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+#replies-container{
+	width:100%;
+	max-width:600px;
+	margin:0 auto;
+}
+#title{
+	margin:15px 0 10px 0;
+}
+.reply-div{
+	margin:10px 0;
+	padding:0 0 0 0;
+	line-height:24px;
+}
+
+
+.post{
+	background-color:#EBEBE0;
+	padding:10px 10px;
+	box-sizing:border-box;
+	margin:5px 0 0 0;
+	max-height:50px;
+	overflow-y:hidden;
+}
+#show-earlier-div{
+	font-size:1.5em;
+	border:thin solid #CCC;
+	cursor:pointer;
+	max-width:600px;
+}
+#replies-container a{
+	font-family:'PTSansBold';
+}
+.show-more{
+	margin:3px 0 0 0;
+	width:85px;
+}
+#loader1{
+	width:30px;
+	height:auto;
+}

@@ -1,0 +1,186 @@
+@charset "utf-8";
+/* CSS Document */
+
+#section1{
+	/*some css is handled in the js file*/
+	height:700px;
+	width:100%;
+	display:table;
+	margin:-3px 0 0 0;
+	padding:0;
+	background-image:url(../../pics/cityscape3.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:;
+	background-attachment:fixed;
+}
+	@media screen and (max-width:811px){/*change height*/
+	#section1{
+	height:600px;
+	}	
+	}
+#fadeInPoint{/*this is needed so the container knows when to fade in. It follows the container*/
+	margin-top:;
+	position:absolute;
+	top:371px;
+	width:100%;
+}
+	@media screen and (max-width:732px){
+	#fadeInPoint{/*this is needed so the container knows when to fade in. It follows the container*/
+	margin-top:;
+	position:absolute;
+	top:500px;
+	width:100%;
+	}	
+	}
+#section1-container{
+	background-color:rgba(0,0,0, 0.9);
+	text-align:center;
+	margin:150px auto 0 auto;
+	width:100%;
+	max-width:800px;
+	border-radius:30px;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+}
+
+	@media screen and (max-width:811px){/*change container size*/
+	#section1-container{
+	
+	}
+	#fadeInPoint{/*this is needed so the container knows when to fade in. It follows the container*/
+	
+	}
+	@media screen and (max-width:732px){
+	#section1-container{
+	max-width:500px;
+	margin:100px auto 0 auto;
+	}	
+	}
+	}
+	@media screen and (max-width:400px){/*change container size*/
+	#section1-container{
+	margin:50px auto 0 auto;
+	}
+	#fadeInPoint{/*this is needed so the container knows when to fade in. It follows the container*/
+	
+	}
+	}
+.section1-content{
+	font-family:'PTSansRegular';
+	color:#FFF;
+}
+#section1-description-title{
+	font-size:2.5em;
+}
+	@media screen and (max-width:400px){
+	#section1-description-title{
+	font-size:2em;
+	}
+	}
+#section1-description{
+	font-size:1.2em;
+	max-width:250px;
+	padding: 10px 0 0 0;
+	line-height:30px;
+	text-align:left;
+	font-family:'PTSansRegular';
+	
+}
+	@media screen and (max-width:732px){/**/
+	#section1-description{
+	text-align:center;
+	margin:0 auto;	
+	}
+	}
+#register-table{
+	font-size:1.2em;
+	margin:0 auto;
+	text-align:left;
+	font-family:'PTSansRegular';
+}
+.inline2{
+	display:inline-block;
+	vertical-align:middle;
+}
+#register-table-wrapper{
+	color:#fff;
+	padding:10px;
+	background-color:;
+	margin:0 0 0 40px;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+}
+	@media screen and (max-width:732px){/**/
+	#register-table-wrapper{
+	padding:0;	
+	margin:0;
+	}
+	}
+/*signup form*/
+.signup-form input, textarea{
+	height:21px;
+	background-color:#333;
+	padding:4px;
+	color:#fff;
+	font-size:16px;
+	border:thin solid #666;
+	-webkit-border:thin solid #666;
+	-moz-border:thin solid #666;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+}
+.red input, textarea, input[type=radio]{
+	background-color:#FF0000;
+}
+.signup-form input:focus, textarea:focus{
+	height:21px;
+	background-color:#666;
+	padding:4px;
+	color:#fff;
+	font-size:16px;
+	border:thin solid #fff;
+	-webkit-border:thin solid #fff;
+	-moz-border:thin solid #fff;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+}
+
+/*handles radio buttons*/
+.signup-form-radio input[type=radio] {
+    display:none; 
+    margin:10px;
+}
+.signup-form-radio input[type=radio] + label {
+    display:inline-block;
+    margin:;
+    padding: 2px 12px;
+    background-color: #666;
+    border-color: #ddd;
+	cursor:pointer;
+}
+.signup-form-radio input[type=radio]:checked + label { 
+   background-image: none;
+   background-color:#333;
+}
+/*end handles radio buttons*/
+
+.signup-form-submit input[type=submit]{
+	background-color:#CCC;
+	color:#000;
+	padding:5px 10px;
+	font-family:'PTSansBold';
+	font-size:1em;
+	border:none;
+	-moz-border:none;
+	-webkit-border:none;
+}
+.signup-form-submit input[type=submit]:hover{
+	background-color:#999;
+}
+.red-x{
+	display:none;
+}
