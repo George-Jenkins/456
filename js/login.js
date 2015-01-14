@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	
+	alert()
+	
 	//this is path to post for apps
 	if(pathForPost) postPath = 'http://ritzkey.com/';
 	else postPath = '';
