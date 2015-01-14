@@ -1,5 +1,12 @@
 $(document).ready(function(){
 	
+//this is path to post for apps
+if(pathForPost){ 
+postPath = 'http://ritzkey.com/login/events/';
+var action = $('#change-image-form').attr('action')
+$('#change-image-form').attr('action',postPath+action)
+}//if
+
 $('#change-image').change(function(){
 	
 	$('#error-msg1').html('').hide()

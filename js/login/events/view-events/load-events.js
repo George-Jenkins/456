@@ -1,8 +1,12 @@
 $(document).ready(function(){
 	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';	
+	
 	var z = getZ()
 	
-	$.post('queries/view-events/load-events.php',{z:z},function(data){
+	$.post(postPath+'queries/view-events/load-events.php',{z:z},function(data){
 		
 		$('#loader1').hide()
 		

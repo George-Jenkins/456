@@ -1,5 +1,9 @@
 $(document).ready(function(){
 	
+	//this is path to post for apps
+	if(pathForPost) postPath = 'http://ritzkey.com/';
+	else postPath = '';
+	
 	$('#login-link').click(function(e){
 	
 	e.preventDefault()
@@ -14,7 +18,7 @@ $(document).ready(function(){
 	$('#lightbox').removeClass().addClass('processing').show();
 	$('.close').hide()
 	
-	$.post('queries/login.php',{email:email, password:password}, function(data){
+	$.post(postPath+'queries/login.php',{email:email, password:password}, function(data){
 		
 		if(data.error=='email'){
 			$('#email-span').html("<span style='color:#f00'>Wrong email</span>")
@@ -71,7 +75,7 @@ $(document).ready(function(){
 	$('#lightbox').removeClass().addClass('processing').show();
 	$('.close').hide()
 	
-	$.post('queries/login.php',{email:email, password:password}, function(data){
+	$.post(postPath+'queries/login.php',{email:email, password:password}, function(data){
 		
 		if(data.error=='email'){
 			$('#email-span').html("<span style='color:#f00'>Wrong email</span>")

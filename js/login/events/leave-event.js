@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';	
 	
 	$('#leave-button').click(function(){
 		
@@ -7,7 +11,7 @@ $(document).ready(function(){
 	
 		$('#loader7').show()
 		
-		$.post('queries/leave-event.php',{z:z, eventID:eventID},function(data){
+		$.post(postPath+'queries/leave-event.php',{z:z, eventID:eventID},function(data){
 			
 			$('#loader7').hide()
 			

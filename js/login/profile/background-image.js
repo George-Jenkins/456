@@ -1,4 +1,11 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost){ 
+postPath = 'http://ritzkey.com/login/profile/';
+var action = $('#background-img-form').attr('action')
+$('#background-img-form').attr('action',postPath+action)
+}//if
 	
 	$('#background-uploader').change(function(){
 		

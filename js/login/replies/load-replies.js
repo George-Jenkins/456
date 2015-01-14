@@ -22,10 +22,14 @@ showHidden(loop)
 	
 function getReplies(){
 	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/replies/';
+else postPath = '';		
+	
 	var deferred = $.Deferred()
 	
 	//get replies
-	$.post('queries/load-replies.php',{z:z, loop:loop},function(data){
+	$.post(postPath+'queries/load-replies.php',{z:z, loop:loop},function(data){
 	
 	//hide loader right away if there are no replies.
 	if(data.replies=='Currently no replies') $('#loader1').hide()	 

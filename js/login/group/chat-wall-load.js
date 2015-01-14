@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 	
 		//get group from url
 		var url = window.location.href;
@@ -46,7 +50,7 @@ function loadWall(loop){
 
 var z = getZ();
 var group = getGroupID()
-$.post('queries/chat-wall-load.php',{group:group, z:z, loop:loop},function(data){
+$.post(postPath+'queries/chat-wall-load.php',{group:group, z:z, loop:loop},function(data){
 
 $.when(
 

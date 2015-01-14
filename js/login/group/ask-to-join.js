@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 	
 	$('#ask-to-join-button').click(function(){
 		
@@ -10,7 +14,7 @@ $(document).ready(function(){
 		var group = getGroupID()
 		var z = getZ()
 		
-		$.post('queries/ask-to-join.php',{z:z, group:group},function(data){
+		$.post(postPath+'queries/ask-to-join.php',{z:z, group:group},function(data){
 			
 			if(data.error=='wrong z') window.location = "/member-login.html";
 			

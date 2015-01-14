@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
+//this is path to post for apps
+if(pathForPost){ 
+postPath = 'http://ritzkey.com/login/profile/';
+var action = $('#profile-pic-form').attr('action')
+$('#profile-pic-form').attr('action',postPath+action)
+}//if
+
 	$('#profile-pic-upload').change(function(){
 	
 	//redirect if no z/i

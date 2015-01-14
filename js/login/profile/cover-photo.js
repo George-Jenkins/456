@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
+//this is path to post for apps
+if(pathForPost){ 
+postPath = 'http://ritzkey.com/login/profile/';
+var action = $('#cover-photo-form').attr('action')
+$('#cover-photo-form').attr('action',postPath+action)
+}//if
+
 //show where cover photo is on hover
 $('#what-is-cover').click(function(){
 	

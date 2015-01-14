@@ -1,10 +1,14 @@
 $(document).ready(function(){
 	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
+else postPath = '';		
+	
 	setInterval(function(){
 	
 	var z = getZ()
 	
-	$.post('queries/check-for-unchecked-posts.php',{z:z},function(data){
+	$.post(postPath+'queries/check-for-unchecked-posts.php',{z:z},function(data){
 		
 		for(x=0;x<=data.numberOfLoops;x++){
 			//get group id

@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';	
 	
 	$('#attend-button').click(function(){
 		
@@ -20,7 +24,7 @@ $(document).ready(function(){
 			var z = getZ()
 			var eventID = getEventID()
 		
-			$.post('queries/attend-event.php',{z:z, eventID:eventID},function(data){
+			$.post(postPath+'queries/attend-event.php',{z:z, eventID:eventID},function(data){
 				
 			$('#loader8').hide()
 			$('#attend-button').attr('value','Attending!')
@@ -50,7 +54,7 @@ $(document).ready(function(){
 		var z = getZ()
 		var eventID = getEventID()
 		
-		$.post('queries/attend-event.php',{z:z, eventID:eventID, contribution:contribution},function(data){
+		$.post(postPath+'queries/attend-event.php',{z:z, eventID:eventID, contribution:contribution},function(data){
 			
 			$('#loader3').hide()
 			

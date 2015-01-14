@@ -1,4 +1,8 @@
 function submitReply(id,time){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 	
 	//redirect if no z/i
 	if(!localStorage.getItem('i')) window.location = "../../member-login.html";
@@ -24,7 +28,7 @@ function submitReply(id,time){
 	x=0;
 	while(x<=8){
 	
-	$.post('queries/chat-wall-reply.php',{reply:reply,id:id,time:time,z:z,group:group},function(data){
+	$.post(postPath+'queries/chat-wall-reply.php',{reply:reply,id:id,time:time,z:z,group:group},function(data){
 		
 		//redirect if wrong z
 			if(data.error=='wrong z'){

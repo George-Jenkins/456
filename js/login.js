@@ -1,5 +1,9 @@
 $(document).ready(function(){
 	
+	//this is path to post for apps
+	if(pathForPost) postPath = 'http://ritzkey.com/';
+	else postPath = '';
+	
 	var url = document.location.href
 	var urlArray = url.split('?')
 	var inviteCode = urlArray[1]
@@ -20,7 +24,7 @@ $(document).ready(function(){
 	
 	$('#message').html("<div class='small-processing' style='margin-top:0'></div>").show()
 	
-	$.post('queries/login.php',{email:email, password:password, inviteCode:inviteCode}, function(data){
+	$.post(postPath+'queries/login.php',{email:email, password:password, inviteCode:inviteCode}, function(data){
 		
 		if(data.error=='email'){
 			$('#message').addClass('red').html("Wrong email address").show()

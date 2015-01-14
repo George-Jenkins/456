@@ -1,5 +1,9 @@
 $(document).ready(function(){
 	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';		
+	
 	$('#save-description').click(function(){
 	
 	$('#loader2').show()
@@ -8,7 +12,7 @@ $(document).ready(function(){
 	var description = $('#edit-description-textarea').val()
 	var eventID = getEventID()
 	
-	$.post('queries/submit-description.php',{z:z, eventID:eventID, description:description},function(data){
+	$.post(postPath+'queries/submit-description.php',{z:z, eventID:eventID, description:description},function(data){
 		$('#loader2').hide()
 		
 		$('#event-description').html(data.description)

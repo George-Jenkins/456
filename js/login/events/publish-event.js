@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';	
 	
 	//publish event
 	$('#publish-event-button').click(function(){
@@ -8,7 +12,7 @@ $(document).ready(function(){
 		var z = getZ()
 		var eventID = getEventID()
 		
-		$.post('queries/publish-event.php',{z:z, eventID:eventID},function(data){
+		$.post(postPath+'queries/publish-event.php',{z:z, eventID:eventID},function(data){
 			
 			$('#loader4').hide()
 			
@@ -47,7 +51,7 @@ $(document).ready(function(){
 		var z = getZ()
 		var eventID = getEventID()
 		
-		$.post('queries/cancel-event.php',{z:z, eventID:eventID},function(data){
+		$.post(postPath+'queries/cancel-event.php',{z:z, eventID:eventID},function(data){
 			
 			$('#loader5').hide()
 			

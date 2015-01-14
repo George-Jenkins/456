@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 	
 function loadWallFromSpecificReply(){
 	
@@ -84,7 +88,7 @@ x=0;
 
 while(x<=8){
 		
-	$.post('queries/chat-wall.php', {message:message, z:z, group:group}, function(data){
+	$.post(postPath+'queries/chat-wall.php', {message:message, z:z, group:group}, function(data){
 		
 		//redirect if wrong z
 		if(data.error=='wrong z'){

@@ -1,9 +1,13 @@
 $(document).ready(function(){
 	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
+else postPath = '';		
+	
 	var z = getZ();
 
 	//profile pic
-	$.post('queries/load-profile/load-profile.php',{z:z},function(data){
+	$.post(postPath+'queries/load-profile/load-profile.php',{z:z},function(data){
 		
 		if(data){
 		

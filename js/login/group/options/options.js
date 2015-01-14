@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 	
 	//handle clicks that show things
 	$('#remove-entourage-link').click(function(){
@@ -25,7 +29,7 @@ $(document).ready(function(){
 	if(!group) window.location = "../profile/profile.html";
 	
 	//load group members in 
-	$.post('queries/options/load-options.php',{z:z, group:group},function(data){
+	$.post(postPath+'queries/options/load-options.php',{z:z, group:group},function(data){
 		
 		if(data.error=='wrong group') window.location = "../profile/profile.html";
 		
@@ -47,9 +51,14 @@ function noRemove(y){
 	$('#member-div'+y).removeClass('blue-background')
 }
 function yesRemove(y,id){
+	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
+	
 	var z = getZ()
 	var group = getGroupID()
-	$.post('queries/options/remove-member.php',{z:z,group:group,id:id},function(data){
+	$.post(postPath+'queries/options/remove-member.php',{z:z,group:group,id:id},function(data){
 		
 	})//post
 	$('#member-div'+y).fadeOut()

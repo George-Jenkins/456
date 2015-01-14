@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';	
 	
 	$('#invite-entourage-span').click(function(){
 		$('#dark-background-for-event').show()
@@ -23,7 +27,7 @@ $(document).ready(function(){
 		var z = getZ()
 		var eventID = getEventID()
 		
-		$.post('queries/invite-groups.php',{z:z, eventID:eventID, groupString:groupString},function(data){
+		$.post(postPath+'queries/invite-groups.php',{z:z, eventID:eventID, groupString:groupString},function(data){
 			
 			doneInviting()
 			

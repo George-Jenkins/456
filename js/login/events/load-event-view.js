@@ -1,9 +1,13 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';	
 	
 	var z = getZ()
 	var eventID = getEventID()
 	
-	$.post('queries/load-event.php',{z:z, eventID:eventID},function(data){
+	$.post(postPath+'queries/load-event.php',{z:z, eventID:eventID},function(data){
 		
 		if(data.error == 'wrong z') window.location = "/member-login.html";
 		
@@ -13,6 +17,16 @@ $(document).ready(function(){
 		window.location = "event.html?"+eventID;//if this is creator send user to event.html
 		return;
 		}
+		
+		if(data.active=='true'){
+			$('#attend-event-div').show()
+			$('#publish-event-span').hide()
+			$('#cancel-event-span').show()
+		}//if
+		else{
+			window.location = '../profile/profile.html';
+			return
+		}//else
 		
 		if(data.done){
 			
@@ -24,7 +38,10 @@ $(document).ready(function(){
 		$('#event-end-span').html(data.eventEnd)
 		if(data.attendees) $('#list-attendees').html(data.attendees)
 		
-		if(data.invite==true) $('#invite-entourage-span').show()
+		if(data.invite==true){ 
+		$('#publish-instructions').html('<center>If you like you can invite your own entourages</center>').show()
+		$('#invite-entourage-span').show()
+		}//if
 		
 		if(data.eventPrice!='$0'){
 			$('#price-span').html(data.eventPrice)
@@ -36,16 +53,6 @@ $(document).ready(function(){
 			//show the divs that partain to price
 			$('#description-div, #collection-method-hr, #collection-method-div, #price-div, #amount-contributed-div, #min-contribution-div, #contribution-by-user-div').show()
 		}//if
-		
-		if(data.active=='true'){
-			$('#attend-event-div').show()
-			$('#publish-event-span').hide()
-			$('#cancel-event-span').show()
-			$('#publish-instructions').html('')
-		}//if
-		else{
-			$('#publish-instructions').html("Click \"Invite entourages\" to invite your friends. When you're ready, click publish event to make your activity live.")
-		}//else
 		
 		if(data.attending){
 			$('#attend-button').attr('value','Attending!')

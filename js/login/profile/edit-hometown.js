@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
+else postPath = '';	
 	
 	$('#hometown-link').click(function(){
 		
@@ -61,7 +65,7 @@ $(document).ready(function(){
 		var original = input;
 		
 		var state = $('#select-states').find('option:selected').val()
-		$.post('queries/get-cities.php',{input:input,state:state},function(data){
+		$.post(postPath+'queries/get-cities.php',{input:input,state:state},function(data){
 			
 			var current_input = $('#type-city').val()
 			

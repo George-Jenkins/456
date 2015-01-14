@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
+
 	//setting title blank it it is empty. Otherwise it will show default value for a second (Not sure if this works that well though)
 	var title = $('title').html()//if title is blank it's because user is on group-view.html or group-member.html
 	if(!title) $('title').html('')
@@ -17,7 +21,7 @@ $(document).ready(function(){
 	
 	$('#group-options-link').attr('href','options.html?'+group);
 	
-	$.post('queries/load-group.php',{z:z, group:group},function(data){
+	$.post(postPath+'queries/load-group.php',{z:z, group:group},function(data){
 		
 		if(data.userType=='creator'){
 		window.location = "group.html?"+group;

@@ -1,5 +1,9 @@
 $(document).ready(function(){
 	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';	
+	
 	$('#form').submit(function(e){
 		
 		e.preventDefault()
@@ -100,7 +104,7 @@ $(document).ready(function(){
 			
 			$.ajax({
 				
-			url:'queries/add-event.php',
+			url:postPath+'queries/add-event.php',
 			type:'POST',
 			dataType:'json',
 			data:formData,	

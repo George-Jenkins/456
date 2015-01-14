@@ -1,4 +1,8 @@
 function yes_delete(id,time){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 	
 	//to stop wall from updating while deleting
 	$('#chat-wall').addClass('deleting')
@@ -10,7 +14,7 @@ function yes_delete(id,time){
 	
 	$('.post-div-delete'+id).addClass('deleted').slideUp()/*the class deleted tells the slide down function no to slide it down again*/
 	
-	$.post('queries/delete-post.php',{z:z,id:id,time:time},function(data){
+	$.post(postPath+'queries/delete-post.php',{z:z,id:id,time:time},function(data){
 		
 		//redirect if wrong z
 			if(data.error=='wrong z'){
@@ -40,6 +44,3 @@ function show_delete(id){
 	
 }//show_delete
 
-$(document).ready(function(){
-
-})

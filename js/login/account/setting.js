@@ -1,5 +1,9 @@
 $(document).ready(function(){
 	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/account/';
+else postPath = '';
+	
 	$('#settings-form').submit(function(e){
 		
 		e.preventDefault()
@@ -16,7 +20,7 @@ $(document).ready(function(){
 		$.ajax({
 			
 			type:'POST',
-			url:'queries/settings.php',
+			url:postPath+'queries/settings.php',
 			data:formData,
 			dataType:'json',
 			success: function(data){
@@ -46,7 +50,7 @@ $(document).ready(function(){
 		
 		var z = getZ()
 		
-		$.post('queries/delete-account.php',{z:z},function(data){
+		$.post(postPath+'queries/delete-account.php',{z:z},function(data){
 			window.location = "/index.html";
 		},'json')//post
 	})//click

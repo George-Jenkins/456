@@ -1,4 +1,8 @@
 function viewSpecificPost(){
+	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 			
 	url = document.location.href
 	urlArray = url.split('&')
@@ -12,7 +16,7 @@ function viewSpecificPost(){
 		
 	var z = getZ()
 	//set checked to true
-	$.post('queries/update-checked.php',{id:id, z:z},function(data){
+	$.post(postPath+'queries/update-checked.php',{id:id, z:z},function(data){
 		
 		if(data.done){
 			

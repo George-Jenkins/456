@@ -1,5 +1,9 @@
 $(document).ready(function(){
 	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
+else postPath = '';		
+	
 	$('#edit-going-out-link').click(function(){		
 		
 		//redirect if no z/i
@@ -31,7 +35,7 @@ $(document).ready(function(){
 		var k = localStorage.getItem('k');
 		var z = sjcl.decrypt(k,i);
 		
-		$.post('queries/submit-going-out-info.php',{input:input,z:z},function(data){
+		$.post(postPath+'queries/submit-going-out-info.php',{input:input,z:z},function(data){
 			
 		if(data.error=="wrong z"){
 		window.location = "../../member-login.html";

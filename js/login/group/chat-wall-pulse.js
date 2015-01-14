@@ -1,5 +1,9 @@
 function startPulse(firstID,lastID){/*I need the firstID and lastID when posts load so that I know how many times to loop to see what's been deleted*/
 
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
+
 	//put lastID in a session so it can be changed later
 	sessionStorage.setItem('lastID',lastID);
 	
@@ -24,7 +28,7 @@ function startPulse(firstID,lastID){/*I need the firstID and lastID when posts l
 		
 		var z = getZ();
 		
-		$.post('queries/chat-wall-pulse.php',{z:z, group:group}, function(data){	
+		$.post(postPath+'queries/chat-wall-pulse.php',{z:z, group:group}, function(data){	
 			
 			stopPostPulse = false;
 			
@@ -121,7 +125,7 @@ setInterval(function(){
 	var k = localStorage.getItem('k');
 	var z = sjcl.decrypt(k,i);
 	
-		$.post('queries/chat-wall-replies-pulse.php',{z:z, group:group}, function(data){
+		$.post(postPath+'queries/chat-wall-replies-pulse.php',{z:z, group:group}, function(data){
 			
 			stopReplyPulse = false;
 			
@@ -235,7 +239,7 @@ setInterval(function(){
 	var z = getZ()
 	var lastID = sessionStorage.getItem('lastID')
 	
-	$.post('queries/check-for-deleted.php',{z:z, group:group, firstID:firstID, lastID:lastID},function(data){
+	$.post(postPath+'queries/check-for-deleted.php',{z:z, group:group, firstID:firstID, lastID:lastID},function(data){
 		
 		stopDeletePulse = false
 		

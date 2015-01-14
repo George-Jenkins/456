@@ -1,7 +1,8 @@
 $(document).ready(function(){
 	
-	//disable auto complete
-	//document.getElementById('rep-email').setAttribute( "autocomplete", "off" ); 
+	//this is path to post for apps
+	if(pathForPost) postPath = 'http://ritzkey.com/';
+	else postPath = '';
 	
 	//remove any red once someone types in the field
 	$('#register-name').keyup(function(){
@@ -99,7 +100,7 @@ $(document).ready(function(){
 	$.ajax({
 		
 		type:'POST',
-		url:'queries/register.php',
+		url:postPath+'queries/register.php',
 		data:formData,
 		dataType:'json',
 		success:function(data){

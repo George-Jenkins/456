@@ -1,5 +1,8 @@
 $(document).ready(function(){
-	
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/contact/';
+else postPath = '';	
 	
 	$('#form').submit(function(e){
 		
@@ -14,7 +17,7 @@ $(document).ready(function(){
 	
 	$('#loader2').show()
 	
-	$.post('queries/contact.php',{z:z, message:message},function(data){
+	$.post(postPath+'queries/contact.php',{z:z, message:message},function(data){
 	
 	var path = pathToRoot()
 	

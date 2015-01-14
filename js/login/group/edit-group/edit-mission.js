@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 	
 	//show and cancel edit box
 	$('#group-mission-edit-link').click(function(){
@@ -39,7 +43,7 @@ $(document).ready(function(){
 	//grap group id from form
 	var group = $('#group-background-id').val()
 	
-		$.post('queries/submit-mission.php',{mission:mission, group:group, z:z},function(data){
+		$.post(postPath+'queries/submit-mission.php',{mission:mission, group:group, z:z},function(data){
 			
 			if(data.error=='wrong z'){
 				

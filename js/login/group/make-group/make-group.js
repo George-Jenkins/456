@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
+
 	$('#create-group-mission').submit(function(e){
 	
 	e.preventDefault()
@@ -16,7 +20,7 @@ $(document).ready(function(){
 
 	if(!group_name) return;
 
-		$.post('queries/submit-group.php',{z:z, group_name:group_name, group_mission:group_mission},function(data){
+		$.post(postPath+'queries/submit-group.php',{z:z, group_name:group_name, group_mission:group_mission},function(data){
 			
 			if(data.error=="wrong z"){
 				window.location = "../../../member-login.html";

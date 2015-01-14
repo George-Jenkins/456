@@ -1,9 +1,13 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';	
 	
 	var z = getZ()
 	var eventID = getEventID()
 	
-	$.post('queries/load-event.php',{z:z, eventID:eventID},function(data){
+	$.post(postPath+'queries/load-event.php',{z:z, eventID:eventID},function(data){
 		
 		if(data.error == 'wrong z') window.location = "/member-login.html";
 		

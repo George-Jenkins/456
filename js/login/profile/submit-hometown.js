@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
+else postPath = '';	
 	
 	$('#submit-hometown').click(function(){
 		
@@ -15,7 +19,7 @@ $(document).ready(function(){
 		if(!state) return;
 		
 		
-		$.post('queries/submit-hometown.php',{state:state,city:city,z:z},function(data){
+		$.post(postPath+'queries/submit-hometown.php',{state:state,city:city,z:z},function(data){
 			
 		if(data.error=="wrong z"){
 			window.location = "../../member-login.html";

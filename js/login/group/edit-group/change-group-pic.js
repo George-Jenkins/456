@@ -1,4 +1,11 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost){ 
+postPath = 'http://ritzkey.com/login/group/';
+var action = $('#upload-group-pic').attr('action')
+$('#upload-group-pic').attr('action',postPath+action)
+}//if	
 	
 	$('#group-pic').change(function(){
 		

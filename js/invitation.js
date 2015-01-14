@@ -1,5 +1,9 @@
 $(document).ready(function(){
 	
+	//this is path to post for apps
+	if(pathForPost) postPath = 'http://ritzkey.com/';
+	else postPath = '';
+	
 	$('#form').submit(function(e){
 	
 	e.preventDefault()
@@ -85,7 +89,7 @@ $(document).ready(function(){
 		
 		$.ajax({
 			
-			url:'queries/register-from-invitation.php',
+			url:postPath+'queries/register-from-invitation.php',
 			type:'POST',
 			data:formData,
 			dataType:'json',

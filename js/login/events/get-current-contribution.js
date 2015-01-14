@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';	
 	
 	var z = getZ()
 	var eventID = getEventID()
@@ -9,7 +13,7 @@ $(document).ready(function(){
 	
 	var getContr = false
 	
-	$.post('queries/get-current-contribution.php',{z:z, eventID:eventID},function(data){
+	$.post(postPath+'queries/get-current-contribution.php',{z:z, eventID:eventID},function(data){
 		
 		getContr = true;
 		

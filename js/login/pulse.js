@@ -10,6 +10,10 @@ var url = window.location.href
 		
 		path +="../"; 
 	}//while	
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/';
+else postPath = path;	
 	
 var z = getZ();
 
@@ -30,7 +34,7 @@ checkForReplies()
 //creat functions
 function checkForNotifications(){
 	
-	$.post(path+'login/check-for-notifications.php',{z:z},function(data){
+	$.post(postPath+'login/check-for-notifications.php',{z:z},function(data){
 		
 		if(data.notifications==true) $('.notifications-alert').html('<img src="'+path+'/pics/new-message-icon.png">')
 		else $('.notifications-alert').html('')
@@ -40,7 +44,7 @@ function checkForNotifications(){
 	
 function checkForReplies(){
 	
-	$.post(path+'login/check-for-replies.php',{z:z},function(data){
+	$.post(postPath+'login/check-for-replies.php',{z:z},function(data){
 		
 		if(data.replies==true) $('.replies-alert').html('<img src="'+path+'/pics/new-message-icon.png">')
 		else $('.replies-alert').html('')

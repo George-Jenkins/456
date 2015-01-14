@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 	
 	$('#leave-group-button').click(function(){
 		
@@ -17,7 +21,7 @@ $(document).ready(function(){
 		var z = getZ()
 		var group = getGroupID()
 		
-		$.post('queries/leave-group/leave-group.php',{z:z, group:group},function(data){
+		$.post(postPath+'queries/leave-group/leave-group.php',{z:z, group:group},function(data){
 			
 			if(data.error == 'wrong z') window.location = "/index.html";
 			

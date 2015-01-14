@@ -1,10 +1,14 @@
 $(document).ready(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 	
 	var group = getGroupID()
 	var z = getZ()
 	
 	//create invite code
-	$.post('queries/create-invite.php',{z:z,group:group},function(data){
+	$.post(postPath+'queries/create-invite.php',{z:z,group:group},function(data){
 		
 		//load link in text form
 	$('#invite-code').val('RitzKey.com/invitation.php?ic='+data.code)
