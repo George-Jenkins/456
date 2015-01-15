@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 //this is path to post for apps
 if(pathForPost){ 
 postPath = 'http://ritzkey.com/login/profile/';
@@ -67,8 +65,6 @@ $('#delete-cover-span').click(function(){
 		}//if
 	})//post
 })//click
-
-})//ready
 
 
 function coverPhoto(feedback){

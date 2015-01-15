@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 $('#view-group-members').click(function(){
 	
 	$('#view-group-members').hide()//button
@@ -131,5 +129,3 @@ function hideSections(){
 	}//if
 	
 }//function
-
-})//ready

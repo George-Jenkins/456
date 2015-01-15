@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
 else postPath = '';		
@@ -28,4 +26,3 @@ else postPath = '';
 	
 	},1000)//setInterval
 	
-})//ready

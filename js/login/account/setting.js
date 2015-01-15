@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/account/';
 else postPath = '';
@@ -64,4 +62,3 @@ else postPath = '';
 		
 		$('#delete-table').hide()
 	})//click
-})

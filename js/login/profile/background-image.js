@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 //this is path to post for apps
 if(pathForPost){ 
 postPath = 'http://ritzkey.com/login/profile/';
@@ -21,8 +19,7 @@ $('#background-img-form').attr('action',postPath+action)
 	$('#background-message').removeClass('red').html('').hide()
 	$('#background-img-z').val('')
 	})//change
-	
-})
+
 
 
 function uploadBackground(feedback){

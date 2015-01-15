@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 var z = getZ();
 	
 var loop = 'first';
@@ -15,8 +13,6 @@ getReplies().done(function(){
 showHidden(loop)	
 
 })
-
-
 	
 })//get replies
 	
@@ -45,7 +41,6 @@ else postPath = '';
 	
 }//function
 
-})//ready
 
 showNextStart = 10//this is the limit for the showHidden loop
 function showHidden(loop){

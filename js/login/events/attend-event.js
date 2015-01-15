@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
 else postPath = '';	
@@ -110,5 +108,3 @@ else postPath = '';
 			
 			
 	})//click cancel-contribute-price
-	
-})

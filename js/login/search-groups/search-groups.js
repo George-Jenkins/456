@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 $('#search-groups').keyup(function(){
 		
 	var input = $('#search-groups').val()
@@ -85,6 +83,3 @@ function showMore(loop){
 	showNextNum = ((showNextNum*1)+20);//increase limit
 		
 }//function 		
-		
-	
-})

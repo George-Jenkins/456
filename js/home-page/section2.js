@@ -1,8 +1,5 @@
-$(document).ready(function(){
-	
-	//on scroll
+//on scroll
 $(window).scroll(function(){
 
 })//function
 	
-})

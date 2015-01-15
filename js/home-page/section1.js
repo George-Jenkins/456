@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 //on scroll
 $(window).scroll(function(){
 	
@@ -13,5 +11,3 @@ $(window).scroll(function(){
 		}
 })//function
 
-
-})//ready

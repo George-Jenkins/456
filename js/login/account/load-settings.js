@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/account/';
 else postPath = '';
@@ -18,9 +16,6 @@ else postPath = '';
 		else $('#reply-email-no').attr('checked',true)
 			
 		})//show
-		
-		
-		
-	},'json')//post
 	
-})
+},'json')//post
+	

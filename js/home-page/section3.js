@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 $('#sign-up-scroll').click(function(a){
 	
 	a.preventDefault()
@@ -28,5 +26,3 @@ $(window).scroll(function(){
 		$('#section3-container').hide()
 		}
 })//function
-
-})//ready

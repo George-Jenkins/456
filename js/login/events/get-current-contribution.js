@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
 else postPath = '';	
@@ -26,5 +24,4 @@ else postPath = '';
 	},'json')//post
 	
 	},1000)
-})
 

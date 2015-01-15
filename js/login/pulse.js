@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 var url = window.location.href
 	var removeTLD = url.split('.com')[1]
 	var numberOfSlashes = removeTLD.match(/\//g).length
@@ -53,5 +51,3 @@ function checkForReplies(){
 	
 }//function		
 
-
-})

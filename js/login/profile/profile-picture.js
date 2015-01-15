@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 //this is path to post for apps
 if(pathForPost){ 
 postPath = 'http://ritzkey.com/login/profile/';
@@ -23,9 +21,8 @@ $('#profile-pic-form').attr('action',postPath+action)
 	$('#profile-pic-z').val('')
 	
 	})
-})//ready
-	
-	
+
+
 function finishProfileImage(feedback){
 
 	if(feedback=='wrong z'){

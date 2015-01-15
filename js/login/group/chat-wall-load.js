@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
 else postPath = '';	
@@ -42,8 +40,6 @@ else//
 	})//when then
 }//else
 
-
-})//ready
 
 //this function starts loading the wall
 function loadWall(loop){

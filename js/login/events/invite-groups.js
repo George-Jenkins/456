@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
 else postPath = '';	
@@ -40,8 +38,7 @@ function doneInviting(){
 	$('#dark-background-for-event').hide()
 	$('#select-groups-container').hide()
 }
-	
-})//document ready
+
 
 function selectGroup(x){
 	if(!$('#check-mark'+x).hasClass('shown')) $('#check-mark'+x).addClass('shown').show()

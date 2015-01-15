@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 $('html').append("<div id='dim-background'><div id='lightbox'></div><div class='close'></div></div>")
 $('#dim-background').hide()
 
@@ -22,6 +20,3 @@ $('#dim-background').hide()
 	$('#dim-background').hide()
 			
 })//click dim background
-
-
-})

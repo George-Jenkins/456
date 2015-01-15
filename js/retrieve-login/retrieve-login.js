@@ -1,8 +1,10 @@
-$(document).ready(function(){
-	
-	$('form').submit(function(e){
+$('form').submit(function(e){
 	
 	e.preventDefault()
+	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/';
+else postPath = '';	
 	
 	var email = $('#email').val()
 	
@@ -10,7 +12,7 @@ $(document).ready(function(){
 	
 	$('#message').html('<div class="small-processing" style="position:absolute"></div>').show()
 	
-	$.post('queries/retrieve-login/retrieve-login.php',{email:email},function(data){
+	$.post(postPath+'queries/retrieve-login/retrieve-login.php',{email:email},function(data){
 		
 	if(data.error===false){
 		$('#dim-background').removeClass().show()
@@ -27,5 +29,6 @@ $(document).ready(function(){
 		}//if
 		
 	},'json')//post
-	})//submit
-})
+	
+})//submit
+

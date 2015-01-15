@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 //this is path to post for apps
 if(pathForPost){ 
 postPath = 'http://ritzkey.com/login/group/';
@@ -23,7 +21,6 @@ $('#upload-background-form').attr('action',postPath+action)
 		$('#background-pic-z').val('')
 		
 	})//change
-})//ready
 
 
 function sendFeedbackBackground(feedback){

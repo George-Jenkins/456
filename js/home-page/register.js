@@ -1,6 +1,4 @@
-$(document).ready(function(){
-	
-	//this is path to post for apps
+//this is path to post for apps
 	if(pathForPost) postPath = 'http://ritzkey.com/';
 	else postPath = '';
 	
@@ -131,4 +129,3 @@ $(document).ready(function(){
 	}//if errors = false
 	
 	})
-})

@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 $('#view-groups').click(function(){
 		
 	$('#view-groups').hide()//button
@@ -64,5 +62,3 @@ function hideSections(){
 	
 	if(screenWidth<=1206) hide = false  //this is so device knows it has already hidden elements
 }//function
-	
-})

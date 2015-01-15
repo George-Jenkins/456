@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
 else postPath = '';	
@@ -106,9 +104,6 @@ while(x<=8){
 		
 		}//while
 	})//submit	
-	
-})
-
 
 
 

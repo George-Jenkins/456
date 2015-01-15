@@ -1,8 +1,10 @@
-$(document).ready(function(){
-	
-	$('#form').submit(function(e){
+$('#form').submit(function(e){
 		
 		e.preventDefault()
+		
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/';
+else postPath = '';	
 		
 		var password = $('#password').val()
 		var code = $('#code').val()
@@ -22,7 +24,7 @@ $(document).ready(function(){
 		
 		$('#message').removeClass('red').html('<div class="small-processing" style="position:absolute"></div>').show()
 		
-		$.post('queries/retrieve-login/reset-password.php',{password:password, code:code, email:email}, function(data){
+		$.post(postPath+'queries/retrieve-login/reset-password.php',{password:password, code:code, email:email}, function(data){
 			
 			if(data.error===true){
 				
@@ -37,5 +39,3 @@ $(document).ready(function(){
 		},'json')//post
 			
 	})//submit
-	
-})//document ready

@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 $('#view-attendees').click(function(){
 	
 	$('#view-attendees').addClass('focus').hide()//button
@@ -55,5 +53,3 @@ function hideElements(){
 	}
 	if(screenWidth<=1120) hide = false //this is so device knows it has already hidden elements
 }//function
-	
-})

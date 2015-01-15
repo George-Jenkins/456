@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
 else postPath = '';	
@@ -194,9 +192,6 @@ $('body').keyup(function(e){
 			}//if
 		}//if
 })//keyup
-
-})//ready
-
 	
 //select city
 function getCity(city,x){

@@ -1,6 +1,4 @@
-$(document).ready(function(){
-	
-	//handle date picker
+//handle date picker
 	$('#start-date').datepicker({minDate:0})
 	$('#end-date').datepicker({minDate:0})
 	
@@ -81,4 +79,3 @@ $(document).ready(function(){
 	}//for
 	$('#end-minute').html(endMinute);
 	$('#end-am-pm').html("<option value='am'>am</option><option value='pm'>pm</option>")
-})

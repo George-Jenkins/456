@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/notifications/';
 else postPath = '';		
@@ -11,8 +9,7 @@ else postPath = '';
 			$('#notifications-div').html(data.message)
 		
 	},'json')//post
-	
-})
+
 
 function seenNotice(id){
 	

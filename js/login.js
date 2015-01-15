@@ -1,6 +1,4 @@
-$(document).ready(function(){
-	
-	//this is path to post for apps
+//this is path to post for apps
 	if(pathForPost) postPath = 'http://ritzkey.com/';
 	else postPath = '';
 	
@@ -44,9 +42,10 @@ $(document).ready(function(){
 			localStorage.setItem('k',data.k);
 			var k = localStorage.getItem('k')
 			
-			var i = sjcl.encrypt(k,data.i);
+			var i  = sjcl.encrypt(k,data.i);
 			localStorage.setItem('i',i);	
-
+			var z = getZ()
+			
 			window.location = "login/profile/profile.html";
 		}//if
 			
@@ -54,4 +53,3 @@ $(document).ready(function(){
 	
 	})//submit
 	
-})

@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 //this is path to post for apps
 if(pathForPost){ 
 postPath = 'http://ritzkey.com/login/events/';
@@ -23,7 +21,6 @@ $('#change-image').change(function(){
 	
 })//change	
 	
-})
 
 function sendFeedback(feedback){
 	

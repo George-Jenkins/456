@@ -1,5 +1,3 @@
-$(document).ready(function(){
-	
 $('#menu-dropdown-icon').click(function(e){
 		e.preventDefault()
 		
@@ -69,7 +67,7 @@ $('#back-menu').click(function(){
 	
 
 //iphone is having an issue where when user focuses on inout field fixed elements are ruined.
-$('textarea, input, password').focus(function(){
+$('textarea, input[type=password], input[type=text]').focus(function(){
 	
 	system = navigator.platform;
 	
@@ -77,23 +75,19 @@ $('textarea, input, password').focus(function(){
 		
 		$('#menu').css('position','absolute').css('top',0);
 		
-	}//if
-	
+	}//if	
 })	
-$('textarea, input, password').blur(function(){
+$('textarea, input[type=password], input[type=text]').blur(function(){
 	
 	system = navigator.platform;
 	
 	if(system === 'iPad' || system === 'iPhone' || system === 'iPod'){
 		
-		$('#menu').css('position','fixed').css('top',0);
+	$('#menu').css('position','fixed').css('top',0);
+	//scroll page alittle just to set it back. (Had to be done with iphone)
+	var offSet = $(window).scrollTop()
+	$('body').animate({scrollTop:offSet+1},1)
 		
 	}//if
-	
 })		
-	
-})//ready
-
-
-
 

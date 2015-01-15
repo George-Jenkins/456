@@ -1,6 +1,4 @@
-$(document).ready(function(){
-	
-	$('#group-activities-span').click(function(){
+$('#group-activities-span').click(function(){
 		
 		$('#group-activities-span').hide()
 		$('#hide-activities-span').show()
@@ -19,5 +17,3 @@ $(document).ready(function(){
 		$('#group-info-span').slideDown()
 		
 	})//click
-	
-})

@@ -1,6 +1,4 @@
-$(document).ready(function(){
-		
-	if(!getI()) window.location = '/member-login.html';
+if(!getI()) window.location = '/member-login.html';
 		
 	var k = getK();
 	var z = getZ()
@@ -16,7 +14,3 @@ $(document).ready(function(){
 		if(data.error=='wrong z') window.location = '/member-login.html';
 			
 	},'json')//post
-	
-
-	
-})//ready
