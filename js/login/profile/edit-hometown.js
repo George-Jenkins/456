@@ -1,8 +1,4 @@
-//this is path to post for apps
-if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
-else postPath = '';	
-	
-	$('#hometown-link').click(function(){
+$('#hometown-link').click(function(){
 		
 		$('#select-state-div').show()
 		$('#hometown-link').hide()
@@ -46,6 +42,10 @@ else postPath = '';
 	$('#type-city').keyup(function(e){
 		
 		if(e.keyCode == 40 || e.keyCode == 38) return;
+		
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
+else postPath = '';			
 		
 		//reset downNumber (this is need for later)
 		localStorage.setItem('downNumber',0);

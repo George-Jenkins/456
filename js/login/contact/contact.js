@@ -1,8 +1,8 @@
+$('#form').submit(function(e){
+
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/contact/';
 else postPath = '';	
-	
-	$('#form').submit(function(e){
 		
 	e.preventDefault()	
 	

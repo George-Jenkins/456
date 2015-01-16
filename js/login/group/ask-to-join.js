@@ -1,8 +1,8 @@
+$('#ask-to-join-button').click(function(){
+
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
 else postPath = '';	
-	
-	$('#ask-to-join-button').click(function(){
 		
 		if(!getZ()) window.location = "/member-login.html";
 		

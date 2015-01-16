@@ -26,6 +26,10 @@ else postPath = '';
 	
 	//submit group mission
 	$('#submit-mission').click(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 		
 		//redirect to login if not logged in
 		if(!localStorage.getItem('i')) window.location = "../profile/profile";

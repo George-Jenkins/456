@@ -1,11 +1,11 @@
-//this is path to post for apps
-if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
-else postPath = '';	
-	
-	var z = getZ()
-	var eventID = getEventID()
+var z = getZ()
+var eventID = getEventID()
 	
 	setInterval(function(){
+	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';		
 	
 	if(getContr==false) return;
 	

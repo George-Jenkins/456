@@ -1,8 +1,4 @@
-//this is path to post for apps
-if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
-else postPath = '';		
-	
-	$('#edit-going-out-link').click(function(){		
+$('#edit-going-out-link').click(function(){		
 		
 		//redirect if no z/i
 	if(!localStorage.getItem('i')) window.location = "../../member-login.html";
@@ -26,6 +22,10 @@ else postPath = '';
 	})//click
 	
 	$('#submit-going-out').click(function(){
+	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
+else postPath = '';			
 				
 		var input = $('#going-out-textarea').val()
 		

@@ -1,10 +1,10 @@
-//this is path to post for apps
-if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
-else postPath = '';	
-
 	$('#create-group-mission').submit(function(e){
 	
 	e.preventDefault()
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 	
 	//redirect if no z/i
 	if(!localStorage.getItem('i')) window.location = "../../../member-login.html";

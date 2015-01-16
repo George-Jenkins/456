@@ -1,3 +1,5 @@
+$('#change-image').change(function(){
+
 //this is path to post for apps
 if(pathForPost){ 
 postPath = 'http://ritzkey.com/login/events/';
@@ -8,8 +10,6 @@ else
 {
 postPath = '';
 }
-
-$('#change-image').change(function(){
 	
 	$('#error-msg1').html('').hide()
 	
@@ -27,6 +27,16 @@ $('#change-image').change(function(){
 	
 
 function sendFeedback(feedback){
+
+//this is path to post for apps
+if(pathForPost){ 
+postPath = 'http://ritzkey.com/login/events/';
+}//if
+else
+{
+postPath = '';
+}
+
 	
 	$('#change-image-loader').hide()
 	

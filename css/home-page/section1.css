@@ -19,10 +19,15 @@
 	height:600px;
 	}	
 	}
+	@media screen and (max-width:570px){
+	#section1{
+	height:385px;	
+	}	
+	}
 #fadeInPoint{/*this is needed so the container knows when to fade in. It follows the container*/
 	margin-top:;
 	position:absolute;
-	top:371px;
+	top:300px;
 	width:100%;
 }
 	@media screen and (max-width:732px){
@@ -44,10 +49,6 @@
 	-moz-border-radius:30px;
 }
 
-	@media screen and (max-width:811px){/*change container size*/
-	#section1-container{
-	
-	}
 	#fadeInPoint{/*this is needed so the container knows when to fade in. It follows the container*/
 	
 	}
@@ -57,15 +58,15 @@
 	margin:100px auto 0 auto;
 	}	
 	}
-	}
-	@media screen and (max-width:400px){/*change container size*/
+	@media screen and (max-width:570px){
 	#section1-container{
-	margin:50px auto 0 auto;
+	margin:0 auto 0 auto;
+	border-radius:0;
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	}	
 	}
-	#fadeInPoint{/*this is needed so the container knows when to fade in. It follows the container*/
 	
-	}
-	}
 .section1-content{
 	font-family:'PTSansRegular';
 	color:#FFF;

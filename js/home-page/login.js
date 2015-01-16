@@ -1,10 +1,10 @@
-//this is path to post for apps
-	if(pathForPost) postPath = 'http://ritzkey.com/';
-	else postPath = '';
-	
 	$('#login-link').click(function(e){
 	
 	e.preventDefault()
+	
+	//this is path to post for apps
+	if(pathForPost) postPath = 'http://ritzkey.com/';
+	else postPath = '';
 	
 	var email = $('#login-email').val()	
 	var password = $('#login-password').val()

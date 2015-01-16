@@ -5,7 +5,11 @@ else postPath = '';
 	var z = getZ()
 	
 	$.post(postPath+'queries/load-settings.php',{z:z},function(data){
-		
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/account/';
+else postPath = '';		
+
 		$('#loader2').hide()
 		
 		$('#settings-div').show(function(){

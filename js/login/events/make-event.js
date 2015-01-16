@@ -1,10 +1,10 @@
+$('#form').submit(function(e){
+		
+		e.preventDefault()
+		
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
 else postPath = '';	
-	
-	$('#form').submit(function(e){
-		
-		e.preventDefault()
 		
 		$('#error-msg').html('').hide()
 		$('.form-span').removeClass('red')

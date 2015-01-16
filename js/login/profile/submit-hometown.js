@@ -1,8 +1,8 @@
+$('#submit-hometown').click(function(){
+
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
 else postPath = '';	
-	
-	$('#submit-hometown').click(function(){
 		
 		//redirect if no z/i
 	if(!localStorage.getItem('i')) window.location = "../../member-login.html";

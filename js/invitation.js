@@ -1,10 +1,10 @@
-//this is path to post for apps
-	if(pathForPost) postPath = 'http://ritzkey.com/';
-	else postPath = '';
-	
-	$('#form').submit(function(e){
+$('#form').submit(function(e){
 	
 	e.preventDefault()
+	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/';
+else postPath = '';	
 	
 	var name = $('#name').val()
 	var email = $('#email').val()

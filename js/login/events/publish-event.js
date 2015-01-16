@@ -1,9 +1,10 @@
-//this is path to post for apps
-if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
-else postPath = '';	
-	
+
 	//publish event
 	$('#publish-event-button').click(function(){
+		
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';		
 		
 		$('#loader4').show()
 		
@@ -43,6 +44,10 @@ else postPath = '';
 	})//click
 	
 	$('#yes-cancel-event').click(function(){
+		
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';			
 		
 	$('#loader5').show()
 		

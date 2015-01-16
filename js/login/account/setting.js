@@ -1,10 +1,10 @@
+$('#settings-form').submit(function(e){
+		
+		e.preventDefault()
+
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/account/';
 else postPath = '';
-	
-	$('#settings-form').submit(function(e){
-		
-		e.preventDefault()
 		
 		var z = getZ()
 		

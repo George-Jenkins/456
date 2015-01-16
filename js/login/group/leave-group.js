@@ -1,8 +1,4 @@
-//this is path to post for apps
-if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
-else postPath = '';	
-	
-	$('#leave-group-button').click(function(){
+$('#leave-group-button').click(function(){
 		
 		$('#leave-group-options').show()
 		$('#leave-group-button').hide()
@@ -15,6 +11,10 @@ else postPath = '';
 	})//click
 	
 	$('#yes-leave').click(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 		
 		var z = getZ()
 		var group = getGroupID()

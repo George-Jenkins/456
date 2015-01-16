@@ -15,7 +15,11 @@
 	margin:0 0 0 0;
 	padding:0;
 }
-	
+	@media screen and (max-width:570px){
+	#section3{
+	height:0;	
+	}	
+	}
 #section3-container{
 	background-color:rgba(225,225,225, 0.9);
 	text-align:center;
@@ -39,10 +43,13 @@
 	
 	}
 	}
-	@media screen and (max-width:500px){/*make thinner*/
+	@media screen and (max-width:570px){
 	#section3-container{
-	
-	}
+	margin:0 auto 0 auto;
+	border-radius:0;
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	}	
 	}
 #section3-description-title{
 	font-family:'PTSansRegular';

@@ -1,13 +1,13 @@
-//this is path to post for apps
-if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
-else postPath = '';	
-	
-	$('#invite-entourage-span').click(function(){
+$('#invite-entourage-span').click(function(){
 		$('#dark-background-for-event').show()
 		$('#select-groups-container').slideDown()
 	})//click
 	
-	$('#done-adding-groups-button').click(function(){
+$('#done-adding-groups-button').click(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';	
 		
 		var groupString = '';
 		//this goes through all the checkmarks to see which were selected

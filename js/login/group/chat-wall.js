@@ -59,6 +59,10 @@ $('#chat-form').submit(function(e){
 	
 e.preventDefault()
 
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
+
 if(!clickedTextBox) return			
 
 x=0;

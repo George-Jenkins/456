@@ -10,6 +10,10 @@ else postPath = '';
 	var stopPostPulse;
 	
 	setInterval(function(){
+	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';		
 		
 	//stop if posts hasn't finished
 	if(stopPostPulse==true) return;
@@ -106,6 +110,10 @@ var stopReplyPulse;
 //handle replies
 setInterval(function(){
 	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
+
 	//stop if posts hasn't finished
 	if(stopReplyPulse==true) return;
 	stopReplyPulse = true;//this gets set to false only when post is done	
@@ -230,6 +238,10 @@ setInterval(function(){
 var stopDeletePulse;
 //check for deleted posts
 setInterval(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 	
 	//stop if posts hasn't finished
 	if(stopDeletePulse==true) return;

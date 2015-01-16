@@ -1,7 +1,3 @@
-//this is path to post for apps
-	if(pathForPost) postPath = 'http://ritzkey.com/';
-	else postPath = '';
-	
 	//remove any red once someone types in the field
 	$('#register-name').keyup(function(){
 		$('#td-name').removeClass('red').val('')
@@ -26,6 +22,10 @@
 	
 	//submit form
 	$('#registration-form').submit(function(e){
+	
+	//this is path to post for apps
+	if(pathForPost) postPath = 'http://ritzkey.com/';
+	else postPath = '';
 	
 	//clear error messages
 	$('.error-message').html('').hide()

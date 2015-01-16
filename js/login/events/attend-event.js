@@ -1,8 +1,8 @@
+$('#attend-button').click(function(){
+
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
 else postPath = '';	
-	
-	$('#attend-button').click(function(){
 		
 		if($('#attend-button').attr('value')=='Attending!') $('#leave-event-button-span').hide()
 		
@@ -34,6 +34,10 @@ else postPath = '';
 	})//click attend button
 	
 	$('#submit-contribution').click(function(){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';	
 		
 		var contribution = $('#contribute-money').val()
 		
@@ -56,7 +60,9 @@ else postPath = '';
 			
 			$('#loader3').hide()
 			
-			if(data.error == 'wrong z') window.location = "/member-login.html";
+			var path = pathToRoot();
+			
+			if(data.error == 'wrong z') window.location = path+"member-login.html";
 			
 			if(data.error == 'wrong event') window.location = "../profile/profile.html";
 			

@@ -49,11 +49,11 @@ else postPath = '';
 		
 		if(data.active=='true'){
 			$('#attend-event-div').show()
-			$('#publish-event-span').hide()
 			$('#cancel-event-span').show()
 			$('#publish-instructions').html('')
 		}//if
 		else{
+			$('#publish-event-span').show()
 			$('#publish-instructions').html("Click \"Invite entourages\" to invite your friends. When you're ready, click publish event to make your activity live.")
 		}//else
 		

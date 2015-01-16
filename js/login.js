@@ -1,7 +1,3 @@
-//this is path to post for apps
-	if(pathForPost) postPath = 'http://ritzkey.com/';
-	else postPath = '';
-	
 	var url = document.location.href
 	var urlArray = url.split('?')
 	var inviteCode = urlArray[1]
@@ -13,6 +9,10 @@
 	$('#form').submit(function(e){
 	
 	e.preventDefault()
+	
+	//this is path to post for apps
+	if(pathForPost) postPath = 'http://ritzkey.com/';
+	else postPath = '';
 	
 	var email = $('#email').val()	
 	var password = $('#password').val()

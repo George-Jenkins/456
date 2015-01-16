@@ -23,11 +23,14 @@ url = document.location.href
 urlArray = url.split('&')
 id = urlArray[1];
 
-
 if(id){
 	var loop = id;
+	$.when(
 	loadWall(loop)
+	).then(function(){
 	$('#all-posts').removeClass('underline')
+	$('#wall-loading-img').hide()
+	})
 }//if id
 else//
 {
@@ -46,6 +49,11 @@ function loadWall(loop){
 
 var z = getZ();
 var group = getGroupID()
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
+
 $.post(postPath+'queries/chat-wall-load.php',{group:group, z:z, loop:loop, postPath:postPath},function(data){
 
 $.when(

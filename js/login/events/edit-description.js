@@ -1,8 +1,8 @@
+$('#save-description').click(function(){
+
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
 else postPath = '';		
-	
-	$('#save-description').click(function(){
 	
 	$('#loader2').show()
 	
