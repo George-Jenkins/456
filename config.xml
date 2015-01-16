@@ -1,6 +1,3 @@
 <!----whitelist domains---->
 <access origin="http://ritzkey.com" />
 
-<!-------icons------->
-<icon src="pics/favicon.png" />
-
