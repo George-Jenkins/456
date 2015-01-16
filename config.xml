@@ -4,6 +4,3 @@
 <!-------icons------->
 <icon src="pics/favicon.png" />
 
-<platform name="ios">
-<splash src="pics/splashscreen.jpg" width="960" height="600"/>
-</platform>
