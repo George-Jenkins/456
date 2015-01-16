@@ -1,14 +1,4 @@
-var url = window.location.href
-	var removeTLD = url.split('.com')[1]
-	var numberOfSlashes = removeTLD.match(/\//g).length
-	var loops = numberOfSlashes-1;
-	//create path
-	var path = '';
-	for(x=1;x<=loops;x++){
-		
-		path +="../"; 
-	}//while	
-
+var path = pathToRoot()
 
 var z = getZ();
 
