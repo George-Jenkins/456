@@ -1,6 +1,9 @@
-
+<!----whitelist domains---->
 <access origin="http://ritzkey.com" />
 
-
+<!-------icons------->
 <icon src="pics/favicon.png" />
-<splash src="pics/splashscreen.jpg"/> 
+
+<platform name="ios">
+<splash src="pics/splashscreen.jpg" width="960" height="600"/>
+</platform>
