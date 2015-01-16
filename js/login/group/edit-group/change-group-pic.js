@@ -25,6 +25,9 @@ $('#upload-group-pic').attr('action',postPath+action)
 
 function sendFeedback(feedback){
 	
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';	
+else postPath = '';	
+	
 	//clear z
 	$('#group-pic-z').val('')
 	
@@ -46,7 +49,7 @@ function sendFeedback(feedback){
 		window.location = "../../profile/profile";
 		return;
 	}
-		$('#group-image-div').css('background-image','url('+feedback+')')
+		$('#group-image-div').css('background-image','url('+postPath+feedback+')')
 		$('#ajax-loader').hide()
 		$('#upload-pic-feedback').hide()	
 

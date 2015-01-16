@@ -46,7 +46,7 @@ function loadWall(loop){
 
 var z = getZ();
 var group = getGroupID()
-$.post(postPath+'queries/chat-wall-load.php',{group:group, z:z, loop:loop},function(data){
+$.post(postPath+'queries/chat-wall-load.php',{group:group, z:z, loop:loop, postPath:postPath},function(data){
 
 $.when(
 

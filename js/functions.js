@@ -19,19 +19,23 @@ function getZ(){
 }
 
 function pathToRoot(){
-
-	var url = window.location.href
-	var removeTLD = url.split('.com')[1]
-	var numberOfSlashes = removeTLD.match(/\//g).length
-	var loops = numberOfSlashes-1;
-	//create path
-	var path = '';
-	for(x=1;x<=loops;x++){
-		
-		path +="../"; 
-	}//while
-	return path	
-}
+	
+	path = document.location.href
+	//if in login folder
+	if(path.indexOf('/login')>0){
+		path = path.split('/login')[1]
+		path = path.split('?')[0]//clean it
+		position = path.match(/\//g).length;
+		x=1;
+		truePosition = '';
+		while(x<=position){
+			truePosition += '../';
+			x++
+		}//while
+		return truePosition
+	}//if
+	
+}//function
 
 function getGroupID(){
 	

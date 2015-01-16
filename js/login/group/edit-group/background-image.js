@@ -24,6 +24,9 @@ $('#upload-background-form').attr('action',postPath+action)
 
 
 function sendFeedbackBackground(feedback){
+
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';	
+else postPath = '';	
 	
 	//clear z
 	$('#background-pic-z').val('')
@@ -49,7 +52,7 @@ function sendFeedbackBackground(feedback){
 	}
 	
 	
-		$('body').addClass('group-background').css('background-image','url('+feedback+')')
+		$('body').addClass('group-background').css('background-image','url('+postPath+feedback+')')
 		$('#ajax-loader1').hide()
 		$('#background-img-feedback').removeClass().html('').hide()
 	

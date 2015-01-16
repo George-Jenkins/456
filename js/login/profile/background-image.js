@@ -24,6 +24,10 @@ $('#background-img-form').attr('action',postPath+action)
 
 function uploadBackground(feedback){
 	
+//this is needed so app can access image
+if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
+else postPath = '';
+	
 	if(feedback=="wrong z"){
 		
 		window.location = "../../../member-login.html";
@@ -36,7 +40,7 @@ function uploadBackground(feedback){
 		return;
 	}//if
 	
-	$('body').addClass('profile-background').css('background-image','url('+feedback+')')
+	$('body').addClass('profile-background').css('background-image','url('+postPath+feedback+')')
 	
 	$('#load-icon1').hide()
 	

@@ -4,6 +4,10 @@ postPath = 'http://ritzkey.com/login/events/';
 var action = $('#change-image-form').attr('action')
 $('#change-image-form').attr('action',postPath+action)
 }//if
+else
+{
+postPath = '';
+}
 
 $('#change-image').change(function(){
 	
@@ -40,6 +44,6 @@ function sendFeedback(feedback){
 		return;
 	}//if
 	
-	$('#event-image').css('background-image','url('+feedback+')')
+	$('#event-image').css('background-image','url('+postPath+feedback+')')
 	
 }//function

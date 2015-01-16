@@ -20,6 +20,10 @@ else postPath = '';
 	$('#group-options-link').attr('href','options.html?'+group);
 	
 	$.post(postPath+'queries/load-group.php',{z:z, group:group},function(data){
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 		
 		if(data.userType=='member'){
 		window.location = "group-member.html?"+group;
@@ -30,11 +34,11 @@ else postPath = '';
 		return	
 		}
 		
-		$('#group-image-div').css('background-image','url('+data.img1+')').show()
+		$('#group-image-div').css('background-image','url('+postPath+data.img1+')').show()
 		
 		$('#created-by').html('Created by '+data.creatorName)
 		
-		$('body').addClass('group-background').css('background-image','url('+data.img2+')')
+		$('body').addClass('group-background').css('background-image','url('+postPath+data.img2+')')
 		
 		$('#group-name').html(data.groupName)
 		
@@ -44,12 +48,8 @@ else postPath = '';
 		
 		$('#group-mission').html(data.mission)
 		
-		$.when(
-			$('#members').html(data.members)
-		).then(function(){
-			//var membersHeight = $('#members')[0].scrollHeight
-			//if(membersHeight>240) $('#members').css('overflow-y','scroll')
-		})//when then
+		if(postPath) data.members = data.members.replace(/background-image:url\(/g,'background-image:url('+postPath)
+		$('#members').html(data.members)
 		
 		//this handles events
 		$('#list-events-div').html(data.events)

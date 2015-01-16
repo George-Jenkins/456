@@ -76,7 +76,7 @@ $query = mysql_query("SELECT * FROM profile_cover_photo WHERE email='$email'");
 $get = mysql_fetch_assoc($query);
 $image = $get['img'];
 
-if($image) $return['path'] = "pics/".$folder."/".$image;
+if($image) $return['cover_path'] = "pics/".$folder."/".$image;
 
 //background//
 //get image directory

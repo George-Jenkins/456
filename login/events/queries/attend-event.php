@@ -46,7 +46,7 @@ $invited = false;
 while($get_array = mysql_fetch_array($query)){
 	
 	$invitedGroup = $get_array['group_id'];
-	$query2 = mysql_query("SELECT * FROM group_members WHERE group_id='$invitedGroup' AND email='$email' AND approved='yes'");
+	$query2 = mysql_query("SELECT * FROM group_members WHERE group_id='$invitedGroup' AND email='$email' AND approved!='no'");
 	$numrows2 = mysql_num_rows($query2);
 	if($numrows2!=0) $invited = true;
 }//while

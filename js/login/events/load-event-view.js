@@ -7,6 +7,11 @@ else postPath = '';
 	
 	$.post(postPath+'queries/load-event.php',{z:z, eventID:eventID},function(data){
 		
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
+else postPath = '';			
+		
+		
 		if(data.error == 'wrong z') window.location = "/member-login.html";
 		
 		if(data.error == 'not event') window.location = "../profile/profile.html";
@@ -29,11 +34,16 @@ else postPath = '';
 		if(data.done){
 			
 		$('#event-name').html(data.eventName)
+		
+		if(postPath) data.creatorInfo = data.creatorInfo.replace(/background-image:url\(/g,'background-image:url('+postPath);
 		$('#organizer-div').html(data.creatorInfo)
-		$('#event-image').css('background-image','url('+data.eventImg+')')
+		
+		$('#event-image').css('background-image','url('+postPath+data.eventImg+')')
 		$('#event-description').html(data.description)
 		$('#event-start-span').html(data.eventStart)
 		$('#event-end-span').html(data.eventEnd)
+		
+		if(postPath && data.attendees) data.attendees = data.attendees.replace(/background-image:url\(/g,'background-image:url('+postPath);
 		if(data.attendees) $('#list-attendees').html(data.attendees)
 		
 		if(data.invite==true){ 

@@ -4,6 +4,7 @@ include('../../../connect/db-connect.php');
 $group = cleanInput($_POST['group']);
 $loginID = cleanInput($_POST['z']);
 $loop = $_POST['loop'];//this will equal an id, 'first' or 'second'. 'first' loads the first 23 and 'second' loads the rest. if it's an id it loads just that post
+$postPath = $_POST['postPath'];//this is posted when postPath is provided
 
 include('../../../connect/members.php');
 
@@ -124,7 +125,7 @@ while($get_array = mysql_fetch_array($query)){
 	<div class='poster-name'><a href='".$profile_link."'>".$posters_name."</a></div>
 	
 	<a href='".$profile_link."'>
-		<div class='profile-pic' style='background-image:url(../profile/pics/".$profile_img_path.")'></div>
+		<div class='profile-pic' style='background-image:url(".$postPath."../profile/pics/".$profile_img_path.")'></div>
 	</a>
 	
 	<span id='message-span".$id."' class='message-span getPostScrollHeight".$x."'>".$post."</span>

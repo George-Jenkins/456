@@ -116,7 +116,7 @@ while($get_array2 = mysql_fetch_array($query3)){
 	<div class='poster-name'><a href='".$profile_link."'>".$posters_name.$possessive."</a> ".$reply_to."</div>
 	
 	<a href='".$profile_link."'>
-		<div class='profile-pic' style='background-image:url(../profile/pics/".$profile_img_path.")'></div>
+		<div class='profile-pic' style='background-image:url(".$postPath."../profile/pics/".$profile_img_path.")'></div>
 	</a>
 	
 	<span id='message-span".$id."' class='message-span getReplyScrollHeight".$y."'>".$post."</span>

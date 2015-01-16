@@ -131,8 +131,8 @@ while($get_array = mysql_fetch_assoc($query)){
 	if($attendee == $email) $profileLink = "../profile/profile.html";
 	else $profileLink = "../profile/profile-view.html?".$memberID;
 	//determine if name must be abbreviated
-	$fullName = $attendeeName." ".$contribution;
-	$presentableName = $attendeeName." ".$contribution;
+	$fullName = $attendeeName." ($".$contribution.')';
+	$presentableName = $attendeeName." ($".$contribution.')';
 	$chars = strlen($fullName);
 	if($chars>=19){
 		$presentableName = substr($fullName,0,16).'...';

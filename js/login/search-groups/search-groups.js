@@ -42,8 +42,11 @@ else postPath = '';
 	if(data.results!='No results') var loadingImg = "<img src='../../pics/ajax-loader2.gif' id='loader2'/>";
 	else var loadingImg = "";
 	
+	if(pathForPost && data.results) data.results = data.results.replace(/background-image:url\(/g,'background-image:url('+postPath);
+	
 	if(loop=='first') $('#results-div').html(data.results+loadingImg)
 	if(loop=='second'){
+		
 		 $('#results-div').append(data.results)	
 		 $('#loader2').hide()
 	}//if

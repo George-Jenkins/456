@@ -3,7 +3,8 @@ $(window).scroll(function(){
 	
 	var windowHeight = $(window).scrollTop()
 	var actionPoint = $('#fadeInPoint').offset().top ;
-	if(windowHeight>=actionPoint){
+	var screenWidth = window.innerWidth
+	if(windowHeight>=actionPoint && screenWidth>570){
 		$('#section1-container').hide()
 		}//if
 	else{

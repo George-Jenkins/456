@@ -4,7 +4,7 @@ include('../../../connect/db-connect.php');
 $name = cleanInput($_POST['name']);
 $loginID = cleanInput($_POST['z']);
 $group = cleanInput($_POST['group']);
-
+$postPath = $_POST['postPath'];//this is if postPath is given
 
 include('../../../connect/members.php');
 
@@ -153,7 +153,7 @@ while($get_array = mysql_fetch_array($query)){
 		<div class='poster-name'><a href='".$profile_link."'>".$posters_name.$possessive."</a> ".$reply_to."</div>
 	
 	<a href='".$profile_link."'>
-		<div class='profile-pic' style='background-image:url(../profile/pics/".$profile_img_path.")'></div>
+		<div class='profile-pic' style='background-image:url(".$postPath."../profile/pics/".$profile_img_path.")'></div>
 	</a>
 	
 	<span id='message-span".$id."' class='message-span'>".$post."</span>

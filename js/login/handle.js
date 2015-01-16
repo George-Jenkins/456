@@ -1,16 +1,20 @@
-if(!getI()) window.location = '/member-login.html';
-		
-	var k = getK();
-	var z = getZ()
+var k = getK();
+var z = getZ()
 	
-	var path = pathToRoot()
+var path = pathToRoot()
 		
-	//this is path to post for apps
-	if(pathForPost) postPath = 'http://ritzkey.com/';
-	else postPath = path;	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/';
+else postPath = path;
 		
-	$.post(postPath+'connect/handle.php', {z:z,k:k}, function(data){
+	
+if(!getI()) window.location = postPath+'member-login.html';
+	
+$.post(postPath+'connect/handle.php', {z:z,k:k}, function(data){
+	
+if(pathForPost) postPath = 'http://ritzkey.com/';
+else postPath = path;	
 		
-		if(data.error=='wrong z') window.location = '/member-login.html';
+if(data.error=='wrong z') window.location = postPath+'member-login.html';
 			
-	},'json')//post
+},'json')//post

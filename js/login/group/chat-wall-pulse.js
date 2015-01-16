@@ -28,7 +28,7 @@ else postPath = '';
 		
 		var z = getZ();
 		
-		$.post(postPath+'queries/chat-wall-pulse.php',{z:z, group:group}, function(data){	
+		$.post(postPath+'queries/chat-wall-pulse.php',{z:z, group:group, postPath:postPath}, function(data){	
 			
 			stopPostPulse = false;
 			
@@ -125,7 +125,7 @@ setInterval(function(){
 	var k = localStorage.getItem('k');
 	var z = sjcl.decrypt(k,i);
 	
-		$.post(postPath+'queries/chat-wall-replies-pulse.php',{z:z, group:group}, function(data){
+		$.post(postPath+'queries/chat-wall-replies-pulse.php',{z:z, group:group, postPath:postPath}, function(data){
 			
 			stopReplyPulse = false;
 			

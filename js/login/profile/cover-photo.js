@@ -68,6 +68,10 @@ $('#delete-cover-span').click(function(){
 
 
 function coverPhoto(feedback){
+
+//this is needed so app can access image
+if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
+else postPath = '';
 	
 	if(feedback=="wrong z"){
 		
@@ -81,7 +85,7 @@ function coverPhoto(feedback){
 		 return;
 	}//if
 	
-	$('#cover-photo-div').css('background-image','url('+feedback+')').show()
+	$('#cover-photo-div').css('background-image','url('+postPath+feedback+')').show()
 	
 	//hide the what's this stuff
 	$('#add-cover-span').hide()

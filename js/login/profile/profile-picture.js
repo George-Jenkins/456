@@ -24,6 +24,9 @@ $('#profile-pic-form').attr('action',postPath+action)
 
 
 function finishProfileImage(feedback){
+//this is needed so app can access image
+if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
+else postPath = '';
 
 	if(feedback=='wrong z'){
 		window.location = "../../../member-login.html";
@@ -36,7 +39,7 @@ function finishProfileImage(feedback){
 		 return;
 	}//if
 	
-	$('#profile-pic-div').css('background-image','url('+feedback+')');
+	$('#profile-pic-div').css('background-image','url('+postPath+feedback+')');
 	$('#image-loading').hide()
 	 $('#profile-submit-feedback').removeClass('red').html('')
 	 
