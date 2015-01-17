@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<widget id="com.ritzkey.ritzkey" version="0.0.1">
+<widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id="com.ritzkey.ritzkey" 
+		version="0.0.1">
 
 <name>RitzKey Social</name>
 
@@ -17,8 +20,8 @@ Make plans with your friends.
 <preference name="SplashScreen" value="screen"/>
 <preference name="SplashScreenDelay" value="10000"/>
 
-<platform name="ios">
-	<splash src="pics/splash.png"/>
-</platform>
+<gap:splash src="pics/splash.png" gap:platform="ios" width="320" height="480" />
+<gap:splash src="pics/splash.png" gap:platform="ios" width="640" height="960" />
+
 
 </widget>
