@@ -9,10 +9,11 @@ Make plans with your friends.
 <!-- whitelist domains -->
 <access origin="http://ritzkey.com" />
 
+<preference name="SplashScreen" value="screen"/>
+<preference name="SplashScreenDelay" value="10000"/>
+
 <!-- icons -->
 <icon src="pics/favicon.png" />
-
-<preference name="SplashScreen" value="screen"/>
 
 <platform name="ios">
 <splash src="pics/splashscreen.jpg" width="320" height="480"/>
