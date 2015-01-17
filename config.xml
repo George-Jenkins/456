@@ -14,8 +14,9 @@ Make plans with your friends.
 
 <preference name="SplashScreen" value="screen"/>
 
+<platform name="ios">
 <splash src="pics/splashscreen.jpg" width="320" height="480"/>
 <splash src="pics/splashscreen.jpg" width="640" height="960"/>
-
+</platform>
 	   
 </widget>
