@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <platform name="android">
     <!-- you can use any density that exists in the Android project -->
     <splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi"/>
