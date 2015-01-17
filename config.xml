@@ -1,7 +1,7 @@
-<!----whitelist domains---->
+<!-- whitelist domains -->
 <access origin="http://ritzkey.com" />
 
-<!-------icons------->
+<!-- icons -->
 <icon src="../pics/favicon.png" />
 
 <platform name="ios">
