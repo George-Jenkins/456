@@ -11,7 +11,7 @@ Make plans with your friends.
 
 <!-- icons -->
 <icon src="pics/favicon.png" />
-
+<gap:splash src="splash.png" />
 <platform name="ios">
 <splash src="pics/splashscreen.jpg" width="320" height="480"/>
 <splash src="pics/splashscreen.jpg" width="640" height="960"/>
