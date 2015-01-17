@@ -7,17 +7,19 @@
 <description>
 Make plans with your friends.
 </description>
+  
+<!-- whitelist domains -->
+<access origin="http://ritzkey.com"/>
 
 <preference name="SplashScreen" value="screen"/>
 <preference name="SplashScreenDelay" value="10000"/>
 
 <!-- icons -->
 <icon src="pics/favicon.png"/>
-<splash src="pics/splash.png"/>
 
 <platform name="ios">
-	<splash src="pics/splash.png" width="320" height="480"/>
-	<splash src="pics/splash.png" width="640" height="960"/>
+	<splash src="pics/Default~iphone.png" width="320" height="480"/>
+	<splash src="pics/Default~iphone.png" width="640" height="960"/>
 </platform>
 
 </widget>
