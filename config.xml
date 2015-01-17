@@ -1,4 +1,4 @@
-<widget id="com.example.hello" version="0.0.1">
+<widget id="com.ritzkey.ritzkey" version="0.0.1">
 
 <name>RitzKey Social</name>
 
@@ -13,7 +13,8 @@ Make plans with your friends.
 <icon src="pics/favicon.png" />
 
 <platform name="ios">
-<splash src="pics/splashscreen.jpg" width="960" height="600"/>
+<splash src="pics/splashscreen.jpg" width="320" height="480"/>
+<splash src="pics/splashscreen.jpg" width="640" height="960"/>
 </platform>
 	   
 </widget>
