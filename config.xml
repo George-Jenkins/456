@@ -11,15 +11,23 @@ Make plans with your friends.
 <!-- whitelist domains -->
 <access origin="http://ritzkey.com"/>
 
-<preference name="SplashScreen" value="screen"/>
-<preference name="SplashScreenDelay" value="10000"/>
-
 <!-- icons -->
 <icon src="pics/favicon.png"/>
 
+<preference name="SplashScreen" value="screen"/>
+<preference name="SplashScreenDelay" value="10000"/>
+
 <platform name="ios">
-	<splash src="pics/Default~iphone.png" width="320" height="480"/>
-	<splash src="pics/Default~iphone.png" width="640" height="960"/>
+	<splash src="pics/splash.png" width="320" height="480"/>
+    <splash src="pics/splash.png" width="640" height="960"/>
+    <splash src="pics/splash.png" width="768" height="1024"/>
+    <splash src="pics/splash.png" width="1536" height="2048"/>
+    <splash src="pics/splash.png" width="1024" height="768"/>
+    <splash src="pics/splash.png" width="2048" height="1536"/>
+    <splash src="pics/splash.png" width="640" height="1136"/>
+    <splash src="pics/splash.png" width="750" height="1334"/>
+    <splash src="pics/splash.png" width="1242" height="2208"/>
+    <splash src="pics/splash.png" width="2208" height="1242"/>
 </platform>
 
 </widget>
