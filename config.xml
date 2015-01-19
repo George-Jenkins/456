@@ -17,7 +17,8 @@ Make plans with your friends.
 <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
 
 <!-- icons -->
-<icon src="pics/favicon.png"/>
+<icon src="pics/app-icon.png"/>
+
 
 <preference name="SplashScreen" value="screen"/>
 <preference name="SplashScreenDelay" value="10000"/>
