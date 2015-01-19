@@ -1,11 +1,8 @@
 var pushNotification;
 
-var test = 	navigator.platform
-alert(test)	
-document.addEventListener('deviceready', deviceNotifications, false);
+document.addEventListener('deviceready', deviceNotifications, true);
 
 function deviceNotifications(){
-
 
 var test = 	navigator.platform
 	
@@ -15,7 +12,9 @@ pushNotification = window.plugins.pushNotification;
   
 alert(test)  
 
-if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
+var platform = 	navigator.platform
+
+if ( platform == 'android' || platform == 'Android' || platform == "amazon-fireos" ){
     pushNotification.register(
     successHandler,
     errorHandler,
@@ -23,7 +22,7 @@ if ( device.platform == 'android' || device.platform == 'Android' || device.plat
         "senderID":"replace_with_sender_id",
         "ecb":"onNotification"
     });
-} else if ( device.platform == 'blackberry10'){
+} else if (platform == 'blackberry10' || platform == 'BlackBerry'){
     pushNotification.register(
     successHandler,
     errorHandler,
