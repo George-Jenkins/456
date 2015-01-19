@@ -152,5 +152,18 @@
 <script src='js/home-page/register.js'></script>
 <script src='js/home-page/login.js'></script>
 <script src='js/PushNotification.js'></script>
-<script src='js/test-notification.js'></script>
+
+<script>
+var pushNotification;
+
+document.addEventListener("deviceready", function(){
+	
+      alert("123");
+	  
+	  test = navigator.platform
+	  
+	  if(test) alert(test)
+	  
+},true);
+</script>
 </html>
