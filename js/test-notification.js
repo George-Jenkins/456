@@ -1,3 +1,5 @@
+test()
+
 var pushNotification;
 
 document.addEventListener("deviceready", function(){
