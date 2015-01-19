@@ -1,6 +1,8 @@
 var pushNotification;
 
-document.addEventListener("deviceready", function(){
+document.addEventListener('deviceready', onDeviceReady, false);
+
+function deviceNotifications(){
 
 var test = 	navigator.platorm
 	
@@ -44,4 +46,4 @@ if ( device.platform == 'android' || device.platform == 'Android' || device.plat
 }   
    
    
-});
+}//function 
