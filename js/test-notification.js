@@ -2,12 +2,13 @@ var pushNotification;
 
 document.addEventListener("deviceready", function(){
 
-var test = 	device.platform
-
-alert(test)
+var test = 	navigator.platorm
+	
+alert(test)	
 	
 pushNotification = window.plugins.pushNotification;
-   
+  
+alert(test)  
 
 if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
     pushNotification.register(
