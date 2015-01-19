@@ -1,5 +1,7 @@
 var pushNotification;
 
+var test = 	navigator.platform
+
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function deviceNotifications(){
