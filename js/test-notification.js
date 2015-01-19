@@ -4,8 +4,8 @@ document.addEventListener("deviceready", function(){
 	
       alert("123");
 	  
-	  test = navigator.platform
+	  test = device.platform
 	  
-	  if(test) alert(test)
+	  alert(test)
 	  
 },true);
