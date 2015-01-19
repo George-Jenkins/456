@@ -12,7 +12,7 @@ document.addEventListener("deviceready", function(){
     successHandler,
     errorHandler,
     {
-        "senderID":"replace_with_sender_id",
+        "senderID":"21900408987",
         "ecb":"onNotification"
     });
 } else if (platform == 'blackberry10' || platform == 'BlackBerry'){
@@ -134,5 +134,25 @@ function onNotification(e) {
     break;
   }
 }
+
+// BlackBerry10
+function pushNotificationHandler(pushpayload) {
+    var contentType = pushpayload.headers["Content-Type"],
+        id = pushpayload.id,
+        data = pushpayload.data;//blob
+
+    // If an acknowledgement of the push is required (that is, the push was sent as a confirmed push
+    // - which is equivalent terminology to the push being sent with application level reliability),
+    // then you must either accept the push or reject the push
+    if (pushpayload.isAcknowledgeRequired) {
+        // In our sample, we always accept the push, but situations might arise where an application
+        // might want to reject the push (for example, after looking at the headers that came with the push
+        // or the data of the push, we might decide that the push received did not match what we expected
+        // and so we might want to reject it)
+        pushpayload.acknowledge(true);
+    }
+};
+
+pushNotification.setApplicationIconBadgeNumber(1);
 	  
 },true);//document.addEventListener
