@@ -1,7 +1,3 @@
-function test(){
-	alert()
-}
-
 var PushNotification = function() {
 };
 

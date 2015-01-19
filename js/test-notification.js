@@ -1,12 +1,9 @@
-test()
-
 var pushNotification;
 
 document.addEventListener("deviceready", function(){
 	
 pushNotification = window.plugins.pushNotification;
    
-alert(device.platform)
 if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
     pushNotification.register(
     successHandler,
@@ -29,6 +26,7 @@ if ( device.platform == 'android' || device.platform == 'Android' || device.plat
         launchApplicationOnPush: true
     });
 } else {
+	alert('yes')
     pushNotification.register(
     tokenHandler,
     errorHandler,
