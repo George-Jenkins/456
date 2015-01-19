@@ -3,8 +3,10 @@ var pushNotification;
 document.addEventListener("deviceready", function(){
 	
 pushNotification = window.plugins.pushNotification;
+  
+platform = navigator.platform;  
    
-if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
+if (platform == 'android' || platform == 'Android' || platform == "amazon-fireos" ){
     pushNotification.register(
     successHandler,
     errorHandler,
@@ -12,7 +14,7 @@ if ( device.platform == 'android' || device.platform == 'Android' || device.plat
         "senderID":"replace_with_sender_id",
         "ecb":"onNotification"
     });
-} else if ( device.platform == 'blackberry10'){
+} else if ( platform == 'blackberry10'){
     pushNotification.register(
     successHandler,
     errorHandler,
