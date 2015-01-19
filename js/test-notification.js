@@ -4,7 +4,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function deviceNotifications(){
 
-var test = 	navigator.platorm
+var test = 	navigator.platform
 	
 alert(test)	
 	
