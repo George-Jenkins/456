@@ -15,6 +15,7 @@ Make plans with your friends.
 <access origin="http://ritzkey.com"/>
 
 <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
+<gap:plugin name="org.apache.cordova.device" version="0.2.13" />
 
 <!-- icons -->
 <icon src="pics/favicon.png"/>

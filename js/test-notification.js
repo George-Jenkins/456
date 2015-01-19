@@ -1,12 +1,15 @@
 var pushNotification;
 
 document.addEventListener("deviceready", function(){
+
+var test = 	device.platform
+
+alert(test)
 	
 pushNotification = window.plugins.pushNotification;
-  
-platform = navigator.platform;  
    
-if (platform == 'android' || platform == 'Android' || platform == "amazon-fireos" ){
+
+if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
     pushNotification.register(
     successHandler,
     errorHandler,
@@ -14,7 +17,7 @@ if (platform == 'android' || platform == 'Android' || platform == "amazon-fireos
         "senderID":"replace_with_sender_id",
         "ecb":"onNotification"
     });
-} else if ( platform == 'blackberry10'){
+} else if ( device.platform == 'blackberry10'){
     pushNotification.register(
     successHandler,
     errorHandler,
@@ -28,7 +31,6 @@ if (platform == 'android' || platform == 'Android' || platform == "amazon-fireos
         launchApplicationOnPush: true
     });
 } else {
-	alert('yes')
     pushNotification.register(
     tokenHandler,
     errorHandler,
