@@ -15,6 +15,7 @@ Make plans with your friends.
 <access origin="http://ritzkey.com"/>
 
 <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
+<gap:plugin name="de.appplant.cordova.plugin.badge" version="0.6.1" /><!--this is for badges-->
 
 <!-- icons -->
 <icon src="pics/app-icon.png"/>
