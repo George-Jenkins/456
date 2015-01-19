@@ -153,6 +153,8 @@ function pushNotificationHandler(pushpayload) {
     }
 };
 
-pushNotification.setApplicationIconBadgeNumber(1);
-	  
+$(body).click(function(){
+	alert()
+pushNotification.setApplicationIconBadgeNumber(successCallback, errorCallback, 1);
+	  })
 },true);//document.addEventListener
