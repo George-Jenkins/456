@@ -1,7 +1,11 @@
 var pushNotification;
 
-document.addEventListener("deviceready", handleNotifications, false);
-
-function handleNotifications(){
-	alert()
-}//function
+document.addEventListener("deviceready", function(){
+	
+      alert("123");
+	  
+	  test = navigator.platform
+	  
+	  if(test) alert(test)
+	  
+},true);
