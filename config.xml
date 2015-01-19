@@ -14,14 +14,25 @@ Make plans with your friends.
 <!-- whitelist domains -->
 <access origin="http://ritzkey.com"/>
 
+<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
+
 <!-- icons -->
 <icon src="pics/favicon.png"/>
 
 <preference name="SplashScreen" value="screen"/>
 <preference name="SplashScreenDelay" value="10000"/>
 
+<!-- splash screens -->
 <gap:splash src="pics/splash.png" gap:platform="ios" width="320" height="480" />
 <gap:splash src="pics/splash.png" gap:platform="ios" width="640" height="960" />
-
+<gap:splash src="pics/splash.png" gap:platform="ios" width="640" height="1136" />
+<gap:splash src="pics/splash.png" gap:platform="ios" width="768" height="1024" />
+<gap:splash src="pics/splash.png" gap:platform="ios" width="1024" height="768" />
+<gap:splash src="pics/splash.png" gap:platform="android" gap:qualifier="port-ldpi" />
+<gap:splash src="pics/splash.png" gap:platform="android" gap:qualifier="port-mdpi" />
+<gap:splash src="pics/splash.png" gap:platform="android" gap:qualifier="port-hdpi" />
+<gap:splash src="pics/splash.png" gap:platform="android" gap:qualifier="port-xhdpi" />
+<gap:splash src="pics/splash.png" gap:platform="winphone" />
+<gap:splash src="pics/splash.png" gap:platform="blackberry" />
 
 </widget>
