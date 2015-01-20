@@ -139,12 +139,14 @@ function loadReplies(){
 ///handle show more button (expan the post)
 var starting_show_next = 40;
 
+var start = 0;
+
 //load more posts
 function show_more(){
 	
 	var limit = sessionStorage.getItem('numberOfPosts');
 	
-	for(x=0; x<=starting_show_next; x++){
+	for(x=start; x<=starting_show_next; x++){
 		
 		$('.post-div'+x).removeClass('hide')
 		
@@ -164,5 +166,5 @@ function show_more(){
 	
 	//increase the limit
 		starting_show_next = ((starting_show_next)*1)+20;
-	
+		start = ((start)*1)+20;
 }//function

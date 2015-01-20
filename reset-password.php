@@ -45,6 +45,7 @@
     <form id='login-form' method='POST'>
 	<td class='menu-input'><span id='email-span'>Email</span><br /><input type='text' id='login-email' name='login-email'/></td>
 	<td class='menu-input'><span id='password-span'>Password <a href='retrieve-login.html'>(Forgot?)</a></span><br /><input type='password' id='login-password' name='login-password'/></td>
+    <input type='hidden' id='inviteCodeMenu'/>
     <td id='login-link'><br /><a href=''>Login</a></td>
     <td style='display:none'><input type='submit'/></td>
     </form>
@@ -100,6 +101,7 @@ $code = $_GET['code'];
 <script src='js/home-page/register.js'></script>
 <script src='js/home-page/login.js'></script>
 <script src='sjcl-master/sjcl.js'></script>
+<script src='js/root-folder-pulse.js'></script><!--This is really just for apps--->
 <!-- InstanceBeginEditable name="EditRegion4" -->
 <script src="js/retrieve-login/reset-password.js"></script>
 <!-- InstanceEndEditable -->

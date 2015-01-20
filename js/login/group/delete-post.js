@@ -12,7 +12,10 @@ else postPath = '';
 	
 		var z = getZ();
 	
-	$('.post-div-delete'+id).addClass('deleted').slideUp()/*the class deleted tells the slide down function no to slide it down again*/
+	$('#post'+id).slideUp(function(){
+	$('#post'+id).remove()	
+	})/*the class deleted tells the slide down function no to slide it down again*/
+	
 	
 	$.post(postPath+'queries/delete-post.php',{z:z,id:id,time:time},function(data){
 		

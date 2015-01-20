@@ -3,7 +3,7 @@
 	e.preventDefault()
 
 //this is path to post for apps
-if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/make-group/';
 else postPath = '';	
 	
 	//redirect if no z/i

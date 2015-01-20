@@ -6,15 +6,14 @@ else postPath = '';
 	
 	$.post(postPath+'queries/load-settings.php',{z:z},function(data){
 
-//this is path to post for apps
-if(pathForPost) postPath = 'http://ritzkey.com/login/account/';
-else postPath = '';		
-
 		$('#loader2').hide()
 		
 		$('#settings-div').show(function(){
 			
 		$('#change-email').val(data.userEmail)
+		
+		if(data.posts_email_setting=='true') $('#posts-email-yes').attr('checked',true)
+		else $('#posts-email-no').attr('checked',true)
 		
 		if(data.reply_email_setting=='true') $('#reply-email-yes').attr('checked',true)
 		else $('#reply-email-no').attr('checked',true)

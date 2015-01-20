@@ -49,6 +49,7 @@
     <form id='login-form' method='POST'>
 	<td class='menu-input'><span id='email-span'>Email</span><br /><input type='text' id='login-email' name='login-email'/></td>
 	<td class='menu-input'><span id='password-span'>Password <a href='retrieve-login.html'>(Forgot?)</a></span><br /><input type='password' id='login-password' name='login-password'/></td>
+    <input type='hidden' id='inviteCodeMenu'/>
     <td id='login-link'><br /><a href=''>Login</a></td>
     <td style='display:none'><input type='submit'/></td>
     </form>
@@ -116,7 +117,7 @@ Sorry. There was an error. Please follow the link in your email again and if tha
 		mysql_query("DELETE FROM pre_members WHERE email='$email'");
 		
 		//account setting
-		mysql_query("INSERT INTO account_settings VALUES ('','$email','true')");
+		mysql_query("INSERT INTO account_settings VALUES ('','$email','true','true')");
 		
 		//add login id
 		while(true){
@@ -186,6 +187,7 @@ Sorry. There was an error. Please follow the link in your email again and if tha
 <script src='js/home-page/register.js'></script>
 <script src='js/home-page/login.js'></script>
 <script src='sjcl-master/sjcl.js'></script>
+<script src='js/root-folder-pulse.js'></script><!--This is really just for apps--->
 <!-- InstanceBeginEditable name="EditRegion4" -->
 
 <!-- InstanceEndEditable -->

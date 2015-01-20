@@ -12,7 +12,10 @@ $('#search-groups').keyup(function(){
 		
 	setTimeout(function(){
 		
-	var input = $('#search-groups').val()
+	var inputFinal = $('#search-groups').val()
+	
+	if(inputFinal!=input) return
+		
 	var z = getZ()
 		
 	var loop = 'first'
@@ -34,13 +37,13 @@ if(pathForPost) postPath = 'http://ritzkey.com/login/search-groups/';
 else postPath = '';	
 	
 	$.post(postPath+'queries/get-groups.php',{input:input, z:z, loop:loop},function(data){
-			
-	var finalInput = $('#search-groups').val()
-			
-	if(input!=finalInput) return;
 	
 	if(data.results!='No results') var loadingImg = "<img src='../../pics/ajax-loader2.gif' id='loader2'/>";
 	else var loadingImg = "";
+	
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/search-groups/';
+else postPath = '';		
 	
 	if(pathForPost && data.results) data.results = data.results.replace(/background-image:url\(/g,'background-image:url('+postPath);
 	

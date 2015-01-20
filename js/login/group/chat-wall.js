@@ -1,3 +1,19 @@
+var messageBox = $('#message')
+
+var clicked = false
+
+$(messageBox).click(function(){
+	
+	if(clicked == false) $(messageBox).val('')
+
+	clicked = true
+})//click
+
+function showMoreLink(x){
+	$('#message-span'+x).css('max-height','none').show()
+	$('#etc-div'+x).addClass('clicked').hide()
+}
+
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
 else postPath = '';	

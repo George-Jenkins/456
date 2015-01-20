@@ -103,7 +103,7 @@ else postPath = '';
 	
 			},'json')//post
 	
-	},1000)
+	},1500)
 
 var stopReplyPulse;
 
@@ -232,7 +232,7 @@ else postPath = '';
 			}//if data
 	
 		},'json')//post
-		},1000)	
+		},1500)	
 	
 	
 var stopDeletePulse;
@@ -259,7 +259,9 @@ else postPath = '';
 			var deleteLoop = 'deletedPost'+x;
 			var deletedID = data[deleteLoop];
 			
-			if(deletedID == 'deleted') $('#post'+x).addClass('deleted').slideUp(1000)/*the class deleted tells the slide down function no to slide it down again*/
+			if(deletedID == 'deleted') $('#post'+x).addClass('deleted').slideUp(1000, function(){
+			$('#post'+x).remove()	
+			})/*the class deleted tells the slide down function no to slide it down again*/
 			
 		}//for
 		

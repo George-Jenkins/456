@@ -5,6 +5,8 @@ $('#settings-form').submit(function(e){
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/account/';
 else postPath = '';
+
+var path = pathToRoot()
 		
 		var z = getZ()
 		
@@ -27,13 +29,18 @@ else postPath = '';
 				
 				if(data.error=='wrong z'){
 					
-					window.location = '/index.html';
+					window.location = path+'member-login.html';
 				}//if
 				
 				if(data.done=='done'){
 					
 					$('#loader1').hide()
 					$('#done-msg').html('Saved')
+					
+					//set email localStorage
+					var email = $('#change-email').val()
+					localStorage.setItem('userEmail',email);
+					
 				}//if
 			},
 			error:function(XMLHttpRequest, textStatus, errorThrown){

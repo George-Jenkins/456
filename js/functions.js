@@ -34,7 +34,7 @@ function pathToRoot(){
 		}//while
 		return truePosition
 	}//if
-	
+	else return '';
 }//function
 
 function getGroupID(){

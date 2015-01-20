@@ -43,18 +43,18 @@ document.addEventListener("deviceready", function(){
 
 // result contains any message sent from the plugin call
 function successHandler (result) {
-    alert('result = ' + result);
+   // alert('result = ' + result);
 }
 
 function tokenHandler (result) {
     // Your iOS push server needs to know the token before it can push to this device
     // here is where you might want to send it the token for later use.
-    alert('device token = ' + result);
+    //alert('device token = ' + result);
 }
 
 // result contains any error description text returned from the plugin call
 function errorHandler (error) {
-    alert('error = ' + error);
+  //  alert('error = ' + error);
 }
 
 // iOS
@@ -153,8 +153,12 @@ function pushNotificationHandler(pushpayload) {
     }
 };
 
-$(body).click(function(){
-	alert()
-pushNotification.setApplicationIconBadgeNumber(successCallback, errorCallback, 1);
-	  })
+/*
+setInterval(function(){
+pushNotification = window.plugins.pushNotification;
+pushNotification.setApplicationIconBadgeNumber(2);
+	
+},1000)
+*/
+
 },true);//document.addEventListener

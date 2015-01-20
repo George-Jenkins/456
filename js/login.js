@@ -6,6 +6,9 @@
 	}//if
 	$('#inviteCode').val(inviteCode)
 	
+	var priorEmail = localStorage.getItem('userEmail')
+	if(priorEmail) $('#email').val(priorEmail)
+	
 	$('#form').submit(function(e){
 	
 	e.preventDefault()
@@ -36,6 +39,9 @@
 		
 		if(data.error=='login'){
 			
+			//set email localStorage
+			localStorage.setItem('userEmail',email);
+			
 			localStorage.setItem('loginName',data.name)
 			
 			//start sessions
@@ -46,7 +52,13 @@
 			localStorage.setItem('i',i);	
 			var z = getZ()
 			
-			window.location = "login/profile/profile.html";
+			var lastPage = sessionStorage.getItem('toLastPage')//get last page user was on before logout
+			sessionStorage.removeItem('toLastPage')
+			
+			if(lastPage){
+				window.location = lastPage;
+			}//if
+			else window.location = "login/profile/profile.html";
 		}//if
 			
 	},'json')

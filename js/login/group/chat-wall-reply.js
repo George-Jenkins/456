@@ -60,11 +60,11 @@ function replyBox(id,time){
 		
 	$('#cancel-reply'+id).show()
 	$('#reply'+id).hide()
-	$('#text-box'+id).show()
 	
-	setTimeout(function(){
-	$('body, html').animate({scrollTop:$('#text-box'+id).offset().top-110},300)
-	},200)
+	$('#text-box'+id).show(function(){
+		$('body, html').animate({scrollTop:$('#text-box'+id).offset().top-110},300)
+	})
+
 	
 	//hide the last reply divs
 	$('#cancel-reply'+lastMessageID).hide()

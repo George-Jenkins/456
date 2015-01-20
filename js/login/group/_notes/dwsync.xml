@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="ask-to-join.js" server="67.20.123.61/public_html/ritzkey/" local="130658820707140764" remote="130658757600000000" />
-<file name="chat-wall-load.js" server="67.20.123.61/public_html/ritzkey/" local="130658833848622413" remote="130658761800000000" />
-<file name="chat-wall-pulse.js" server="67.20.123.61/public_html/ritzkey/" local="130658822266419949" remote="130658757600000000" />
-<file name="chat-wall-reply.js" server="67.20.123.61/public_html/ritzkey/" local="130657441244088194" remote="130658757600000000" />
-<file name="chat-wall.js" server="67.20.123.61/public_html/ritzkey/" local="130658821240451267" remote="130658757600000000" />
-<file name="delete-post.js" server="67.20.123.61/public_html/ritzkey/" local="130657441666156053" remote="130658757600000000" />
+<file name="chat-wall-load.js" server="67.20.123.61/public_html/ritzkey/" local="130661951275726981" remote="130661888400000000" />
+<file name="chat-wall-pulse.js" server="67.20.123.61/public_html/ritzkey/" local="130661970578021009" remote="130661898000000000" />
+<file name="chat-wall-reply.js" server="67.20.123.61/public_html/ritzkey/" local="130661940543563136" remote="130661868000000000" />
+<file name="chat-wall.js" server="67.20.123.61/public_html/ritzkey/" local="130662627862987710" remote="130662555600000000" />
+<file name="delete-post.js" server="67.20.123.61/public_html/ritzkey/" local="130661946737627417" remote="130661874600000000" />
 <file name="group-navigation.js" server="67.20.123.61/public_html/ritzkey/" local="130657763996479764" remote="130658758200000000" />
 <file name="invite-friends.js" server="67.20.123.61/public_html/ritzkey/" local="130657764171529776" remote="130658758200000000" />
 <file name="leave-group.js" server="67.20.123.61/public_html/ritzkey/" local="130658823395844549" remote="130658758200000000" />
