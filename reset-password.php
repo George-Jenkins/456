@@ -101,6 +101,7 @@ $code = $_GET['code'];
 <script src='js/home-page/register.js'></script>
 <script src='js/home-page/login.js'></script>
 <script src='sjcl-master/sjcl.js'></script>
+<script src="phonegap.js"></script>
 <script src='js/root-folder-pulse.js'></script><!--This is really just for apps--->
 <!-- InstanceBeginEditable name="EditRegion4" -->
 <script src="js/retrieve-login/reset-password.js"></script>
