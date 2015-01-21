@@ -20,6 +20,7 @@ checkForNotifications()
 checkForReplies()
 
 if(navigator.notification){//this is true if this is an app
+cordova.plugins.backgroundMode.enable();//enable js running in background
 //handle badge number
 previousNumber = badgeNumber//this number is badge number before it is updated
 badgeNumber = (numberOfNotifications*1) + (numberOfReplies*1) + (unreadPosts*1)//this is where badge number will be determined
@@ -36,6 +37,8 @@ checkLoggedIn()
 function checkForNotifications(){
 
 var path = pathToRoot()
+
+var email = localStorage.getItem('userEmail')//I'll use email instead of z just so the app can get notifications if user not logged in
 	
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/';
@@ -45,7 +48,7 @@ else postPath = path;
 if(goNotifications == false) return
 goNotifications = false
 	
-	$.post(postPath+'login/check-for-notifications.php',{z:z},function(data){
+	$.post(postPath+'login/check-for-notifications.php',{email:email},function(data){
 		
 		if(data.notifications==true) $('.notifications-alert').html('<img src="'+path+'/pics/new-message-icon.png">')
 		else $('.notifications-alert').html('')
@@ -62,6 +65,8 @@ function checkForReplies(){
 
 var path = pathToRoot()
 
+var email = localStorage.getItem('userEmail')//I'll use email instead of z just so the app can get replies if user not logged in
+
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/';
 else postPath = path;	
@@ -70,7 +75,7 @@ else postPath = path;
 if(goCheckReplies == false) return
 goCheckReplies = false
 	
-	$.post(postPath+'login/check-for-replies.php',{z:z},function(data){
+	$.post(postPath+'login/check-for-replies.php',{email:email},function(data){
 		
 		if(data.replies==true) $('.replies-alert').html('<img src="'+path+'/pics/new-message-icon.png">')
 		else $('.replies-alert').html('')

@@ -1,3 +1,5 @@
+//This document isn't doing anything as for as I know
+/*
 var pushNotification;
 
 document.addEventListener("deviceready", function(){
@@ -153,12 +155,13 @@ function pushNotificationHandler(pushpayload) {
     }
 };
 
-/*
+
 setInterval(function(){
 pushNotification = window.plugins.pushNotification;
 pushNotification.setApplicationIconBadgeNumber(2);
 	
 },1000)
-*/
+
 
 },true);//document.addEventListener
+*/

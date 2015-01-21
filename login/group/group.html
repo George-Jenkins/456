@@ -257,22 +257,6 @@
 <script src='../../js/login/group/view-specific-replies.js'></script>
 <script src='../../ckeditor/ckeditor.js'></script>
 <script src='../../ckeditor/plugins/enterkey/plugin.js'></script>
-<script>
-var clicked = false
-
-$('#message').click(function(){
-	
-	if(clicked == false) $('#message').val('')
-
-	clicked = true
-})//click
-
-function showMoreLink(x){
-	$('#message-span'+x).css('max-height','none').show()
-	$('#etc-div'+x).addClass('clicked').hide()
-}
-
-</script>
 <script src='../../js/login/group/chat-wall-pulse.js'></script>
 <script src='../../js/login/group/delete-post.js'></script>
 <script src='../../js/login/group/chat-wall-reply.js'></script>

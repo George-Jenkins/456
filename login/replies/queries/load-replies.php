@@ -37,7 +37,7 @@ while($get_array = mysql_fetch_array($query)){
 	if($numrows2!=0){
 		
 	//indicate that replies have been found
-	$haveReplies = true;	
+	if($loop=='first') $haveReplies = true;	
 		
 	$email_list = '';
 	$replierName='';

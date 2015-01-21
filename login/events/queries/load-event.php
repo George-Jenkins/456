@@ -134,8 +134,8 @@ while($get_array = mysql_fetch_assoc($query)){
 	$fullName = $attendeeName." ($".$contribution.')';
 	$presentableName = $attendeeName." ($".$contribution.')';
 	$chars = strlen($fullName);
-	if($chars>=19){
-		$presentableName = substr($fullName,0,16).'...';
+	if($chars>=16){
+		$presentableName = substr($fullName,0,13).'...';
 	}//if
 	
 	$return['attendees'] .= "

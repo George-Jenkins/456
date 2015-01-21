@@ -93,8 +93,8 @@ while($get_array = mysql_fetch_array($query)){
 	//determine if I need to abbreviate name
 	$presentableName = $name;
 	$chars = strlen($name);
-	if($chars>=19){
-		$presentableName = substr($name,0,16).'...';
+	if($chars>=16){
+		$presentableName = substr($name,0,13).'...';
 	}//if
 	
 	$members .= "<div class='members-list'>
@@ -134,7 +134,7 @@ while($get_array = mysql_fetch_array($query)){
 	if($eventImage) $path = "../profile/pics/".$folder."/".$eventImage;
 	else $path = "../../pics/nightclub7.jpg";
 	
-	//determine the link to the group
+	//determine the link to the event
 	if($creator==$email) $link = "../events/event.html?".$event_id;
 	else $link = "../events/event-view.html?".$event_id; 
 	
@@ -142,7 +142,7 @@ while($get_array = mysql_fetch_array($query)){
 	$presentableName = $eventName;
 	$chars = strlen($eventName);
 	if($chars>=16){
-		$presentableName = substr($presentableName,0,16).'...';
+		$presentableName = substr($presentableName,0,13).'...';
 	}//if
 	
 	if($dayAfter>=$today){

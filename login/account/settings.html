@@ -97,17 +97,27 @@
 </tr>
 
 <tr>
-<td style='width:150px' class='text'>Receive email notifications when somone replies to you</td>
+<td style='width:150px' class='text'>Receive email notifications for unread posts on a chat wall</td>
+<td></td>
+<td class='general-radio text'>
+<input name='posts-email' id='posts-email-yes' value='true' type='radio'/><label for='posts-email-yes'>Yes</label>
+<input name='posts-email' id='posts-email-no' value='false' type='radio'/><label for='posts-email-no'>No</label>
+</td>
+</tr>
+
+<tr><td><p></td></tr>
+
+<tr>
+<td style='width:150px' class='text'>Receive email notifications for unchecked replies</td>
 <td></td>
 <td class='general-radio text'>
 <input name='reply-email' id='reply-email-yes' value='true' type='radio'/><label for='reply-email-yes'>Yes</label>
 <input name='reply-email' id='reply-email-no' value='false' type='radio'/><label for='reply-email-no'>No</label>
-<input type='hidden' id='hiddenZ' name='z'/>
 </td>
 </tr>
-
 </table>
 
+<input type='hidden' id='hiddenZ' name='z'/>
 <p>
 
 <div class='general-submit align-left' style='max-width:350px;'><input id'submit-settings' value='Save' type='submit'/>&nbsp;<span id='done-msg' class='text-bold'></span> <span id='loader1' class='small-processing hide'></span></div>

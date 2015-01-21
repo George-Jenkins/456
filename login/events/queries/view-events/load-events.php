@@ -34,8 +34,8 @@ while($get_array = mysql_fetch_array($query)){
 	
 	$chars = strlen($eventName);//count chars in name
 	
-	if($chars>=19){//abbreviate if it's too long
-		$eventName = substr($eventName,0,16).'...';
+	if($chars>=16){//abbreviate if it's too long
+		$eventName = substr($eventName,0,13).'...';
 	}//if
 	
 	$return['Events'] .= "

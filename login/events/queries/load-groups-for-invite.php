@@ -49,19 +49,37 @@ while($get_array = mysql_fetch_array($query)){
 	$query2 = mysql_query("SELECT * FROM events WHERE event_id='$eventID'");
 	$get2 = mysql_fetch_assoc($query2);
 	$creatorEmail = $get2['email'];
+	
+	$titleName = $groupName;
+	
 	if($creatorEmail!=$email && $numrows2!=0 && $invitorEmail!=$email){//if this user did not create this event and someone invited this group already don't let them invite/uninvite group
-		$groupListTitle = "".$groupName." (Already invited)";
+
+	//determine if I need to shorten name (for already invited)
+	$chars = strlen($groupName);
+	if($chars>19){
+	$groupName = substr($groupName,0,16).'...';
+	}//if
+	
+		$groupListTitle = $groupName." (Already invited)";
 		$onClick = "";
 	}//elseif
 	else{
+		
+	//determine if I need to shorten name
+	$chars = strlen($groupName);
+	if($chars>34){
+	$groupName = substr($groupName,0,31).'...';
+	}//if
+		
 		$groupListTitle = "<img src='../../pics/checkmark1.png' id='check-mark".$groupID."' class='".$class."'> ".$groupName;
 		$onClick = "selectGroup(".$groupID.")";
 	}//else
+
 	
 	$return['groupInfo'] .= "
 	<div class='group-inline'>
-	<div class='group-list-title'>".$groupListTitle."</div>
-	<div class='group-img-div' style='background-image:url(".$path.");' onClick='".$onClick."'></div>
+	<div class='group-list-title' title='".$titleName."'>".$groupListTitle."</div>
+	<div class='group-img-div' title='".$titleName."' style='background-image:url(".$path.");' onClick='".$onClick."'></div>
 	</div>
 	";
 	

@@ -16,12 +16,17 @@ $get = mysql_fetch_assoc($query);
 $email = $get['email'];
 $name = $get['name'];
 
-//get emails for replies settings
 $query = mysql_query("SELECT * FROM account_settings WHERE email='$email'");
 $get = mysql_fetch_assoc($query);
+
+//get emails for posts settings
+$postsEmailSetting = $get['email_posts'];
+
+//get emails for replies settings
 $replyEmailSetting = $get['email_replies'];
 
 $return['userEmail'] = $email;
+$return['posts_email_setting'] = $postsEmailSetting;
 $return['reply_email_setting'] = $replyEmailSetting;
 echo json_encode($return);	
 

@@ -2,18 +2,14 @@
 include('../connect/db-connect.php');
 
 $loginID = cleanInput($_POST['z']);
+$email = cleanInput($_POST['email']);
 
 include('../connect/members.php');
 
-$query = mysql_query("SELECT * FROM login_id WHERE login_id='$loginID'");
-$numrows = mysql_num_rows($query);
-if($numrows==0) return;
-
-//get email
-$get = mysql_fetch_assoc($query);
-$email = $get['email'];
 
 $notification;
+
+$numberOfNotifications=0;//this is used for mobile notifications
 
 //check for pending group members
 $query = mysql_query("SELECT * FROM groups WHERE created_by='$email'");
@@ -25,16 +21,22 @@ while($get_array = mysql_fetch_array($query)){
 	
 	$numrows2 = mysql_num_rows($query2);
 	
-	if($numrows2!=0) $notification = true;
-	
+	if($numrows2!=0){
+		$notification = true;
+		$numberOfNotifications+=$numrows2;
+	}//if
 }//while
 
 //check for general notifications
 $query = mysql_query("SELECT * FROM notifications WHERE email='$email'");
 $numrows = mysql_num_rows($query);
+
 if($numrows!=0) $notification = true; 
+$numberOfNotifications+=$numrows;
+
 
 $return['notifications'] = $notification;
+$return['numberOfNotifications'] = $numberOfNotifications;
 
 echo json_encode($return);
 

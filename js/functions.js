@@ -11,11 +11,14 @@ function getK(){
 }
 
 function getZ(){
-	
+	if(localStorage.getItem('i')){
 	var i = localStorage.getItem('i')
 	var k = localStorage.getItem('k');
 	var z = sjcl.decrypt(k,i);
 	return z;
+	}//if
+	else return '';//I still want to return something if user isn't logged in so that when I check for app notifications the script doesn't stop on the pulse pages 
+					
 }
 
 function pathToRoot(){

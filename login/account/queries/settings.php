@@ -3,6 +3,7 @@ include('../../../connect/db-connect.php');
 
 $loginID = cleanInput($_POST['z']);
 $newEmail = cleanInput($_POST['change-email']);
+$emailPost = cleanInput($_POST['posts-email']);
 $emailReply = cleanInput($_POST['reply-email']);
 
 include('../../../connect/members.php');
@@ -21,6 +22,9 @@ if($numrows==0){
 $get = mysql_fetch_assoc($query);
 $email = $get['email'];
 $name = $get['name'];
+
+//update email_posts
+mysql_query("UPDATE account_settings SET email_posts='$emailPost' WHERE email='$email'");
 
 //update email_reply
 mysql_query("UPDATE account_settings SET email_replies='$emailReply' WHERE email='$email'");

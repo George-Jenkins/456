@@ -170,11 +170,11 @@ while($get_array = mysql_fetch_array($query)){
 	//determine whether or not I need to abbreviate group name
 	$group_name = $full_group_name;
 	$chars = strlen($group_name);
-	if($chars>=19 && !$pending){
-		$group_name = substr($group_name,0,16).'...';
+	if($chars>=16 && !$pending){
+		$group_name = substr($group_name,0,13).'...';
 	}//if
-	if($chars>=11 && $pending){
-		$group_name = substr($group_name,0,16).'...';
+	if($chars>=8 && $pending){
+		$group_name = substr($group_name,0,13).'...';
 		$pending = '';
 	}//if
 	
