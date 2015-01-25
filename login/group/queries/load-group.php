@@ -21,6 +21,12 @@ if($numrows==0){
 $get = mysql_fetch_assoc($query);
 $email = $get['email'];
 
+//set time zone
+$query = mysql_query("SELECT * FROM account_settings WHERE email='$email'");
+$get = mysql_fetch_assoc($query);
+$timezone = $get['timezone'];
+date_default_timezone_set($timezone);
+
 //get image folder name and creators name
 $query = mysql_query("SELECT * FROM groups WHERE group_id='$group'");
 $get = mysql_fetch_assoc($query);

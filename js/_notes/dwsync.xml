@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="functions.js" server="67.20.123.61/public_html/ritzkey/" local="130663008974765693" remote="130662937200000000" />
-<file name="invitation.js" server="67.20.123.61/public_html/ritzkey/" local="130658815080258924" remote="130662627000000000" />
-<file name="login.js" server="67.20.123.61/public_html/ritzkey/" local="130662009434534316" remote="130661937000000000" />
-<file name="logout.js" server="67.20.123.61/public_html/ritzkey/" local="130657757106515681" remote="130658758200000000" />
+<file name="functions.js" server="67.20.123.61/public_html/ritzkey/" local="130666495580143135" remote="130666423200000000" />
+<file name="invitation.js" server="67.20.123.61/public_html/ritzkey/" local="130663557982461137" remote="130665279000000000" />
+<file name="login.js" server="67.20.123.61/public_html/ritzkey/" local="130665662125290509" remote="130665590400000000" />
+<file name="logout.js" server="67.20.123.61/public_html/ritzkey/" local="130657757106515681" remote="130665279000000000" />
 <file name="test.js" server="67.20.123.61/public_html/ritzkey/" local="130655008516578916" remote="130655643000000000" />
-<file name="register-notifications.js" server="67.20.123.61/public_html/ritzkey/" local="130662835810000000" remote="130662763800000000" />
-<file name="set-badge.js" server="67.20.123.61/public_html/ritzkey/" local="130662674509135717" remote="130662609000000000" />
-<file name="root-folder-pulse.js" server="67.20.123.61/public_html/ritzkey/" local="130663017479491237" remote="130662945000000000" />
+<file name="register-notifications.js" server="67.20.123.61/public_html/ritzkey/" local="130662835810000000" remote="130665279000000000" />
+<file name="set-badge.js" server="67.20.123.61/public_html/ritzkey/" local="130662674509135717" remote="130665279000000000" />
+<file name="root-folder-pulse.js" server="67.20.123.61/public_html/ritzkey/" local="130663017479491237" remote="130665279000000000" />
+<file name="jstz-timezone.js" server="67.20.123.61/public_html/ritzkey/" local="130546249580353147" remote="130665279000000000" />
+<file name="PushNotification.js" server="67.20.123.61/public_html/ritzkey/" local="130660985943758716" remote="130665279000000000" />
 </dwsync>

@@ -100,6 +100,7 @@ Sorry. There was an error. Please follow the link in your email again and if tha
 		$code = rand(1,1000);
 		$salt = $get['s'];
 		$inviteCode = $get['invite_code'];
+		$timezone = $get['timezone'];
 		$date = date('Y-m-d');
 		$time = time();
 		
@@ -117,7 +118,7 @@ Sorry. There was an error. Please follow the link in your email again and if tha
 		mysql_query("DELETE FROM pre_members WHERE email='$email'");
 		
 		//account setting
-		mysql_query("INSERT INTO account_settings VALUES ('','$email','true','true')");
+		mysql_query("INSERT INTO account_settings VALUES ('','$email','true','true','$timezone')");
 		
 		//add login id
 		while(true){
@@ -159,6 +160,8 @@ Sorry. There was an error. Please follow the link in your email again and if tha
 	var i = sjcl.encrypt(k,'".$rand1."');
 	localStorage.setItem('i',i);
 	
+	localStorage.setItem('userEmail','".$email."');
+	
 	window.location='login/profile/profile.html'
 	
 	</script>";
@@ -172,21 +175,26 @@ Sorry. There was an error. Please follow the link in your email again and if tha
 </div><!-----container------->
 
 
+<div id='bottom-menu' class='hide'>
+	<img src='pics/left-icon.png' id='back-button'/>
+    <img src='pics/right-icon.png' id='forward-button'/>
+</div><!--bottom-menu-->
 
-
-
-
+<!-- getclicky -->
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100810496); }catch(e){}</script>
 
 </body>
 <script src='js/jquery/jquery.js'></script>
 <script src='js/jquery/jquery-animate-enhanced.js'></script>
 <script src='js/jquery-ui/jquery-ui.js'></script>
+<script src='js/plugins/fastclick.js'></script>
+<script src='sjcl-master/sjcl.js'></script>
+<script src='js/functions.js'></script>
 <script src='js/menu/menu.js'></script>
 <script src='js/general/lightbox.js'></script>
-<script src='js/functions.js'></script>
 <script src='js/home-page/register.js'></script>
 <script src='js/home-page/login.js'></script>
-<script src='sjcl-master/sjcl.js'></script>
 <script src="phonegap.js"></script>
 <script src='js/root-folder-pulse.js'></script><!--This is really just for apps--->
 <!-- InstanceBeginEditable name="EditRegion4" -->

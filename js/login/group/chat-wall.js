@@ -48,10 +48,10 @@ $('#all-posts').click(function(){
 		
 	$('#all-posts').addClass('underline')
 	$('#my-posts').removeClass('underline')
-	$('#notInvolvedStyle').remove()//notInvolvedStyle is the name if the style tag that hides the notInvolved class. It's set below
 	$('.post-div').removeClass('slide')//I'll remove class "slide" in case some posts were loaded when "my conver.." was selected 
 	$('.reply-div').removeClass('slide')//I'll remove class "slide" in case some posts were loaded when "my conver.." was selected
-	
+	$('#notInvolvedStyle').remove()//notInvolvedStyle is the name if the style tag that hides the notInvolved class. It's set below
+	$('.notInvolved').show()
 	})//when then
 	
 })//click
@@ -63,8 +63,17 @@ $('#my-posts').click(function(){
 	$('#all-posts').removeClass('underline')
 	$('#my-posts').addClass('underline')
 	$('html').prepend("<style id='notInvolvedStyle'>.notInvolved{display:none}</style>")
+	$('.notInvolved').hide()//I added this because if a post slides down hiding it with css won't work
 	
 })//click
+
+function showReples(x){
+	
+	$('.replyID'+x).show()
+	$('.replyID'+x).removeClass('hide')//I'll also remove class hide so the wall knows it can slide down other comments with replyIDx class
+	$('#show-replies'+x).hide()
+	
+}//function
 
 //this allows user to submit post and is set after user clicks textbox
 $('#message').click(function(){

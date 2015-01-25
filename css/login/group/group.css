@@ -100,6 +100,11 @@ table tr td{
 		position:relative;	
 	}
 	}
+	@media screen and (max-width:965px){/*at this width I'll have group-navigation.js determine when to show this div*/
+	#group-info-div{
+		display:none;
+	}
+	}
 #group-image-padding{
 	padding:3px;
 	border:solid thin #CCC;
@@ -180,7 +185,7 @@ img#ajax-loader{
 	height:auto;
 	position:absolute;
 	top:0;
-	margin:0 0 0 41px;
+	left:183px;
 }
 /* end edit group background */
 
@@ -338,7 +343,15 @@ img#ajax-loader{
 	text-align:left;
 	position:relative;
 }
-
+.show-replies{
+	text-align:center;
+	padding:5px 0px;
+	margin:5px 0 0 0;
+	background-color:#CFC;
+	border-top:thin solid #0CC;
+	-webkit-border-top:thin solid #0CC;
+	-moz-border-top:thin solid #0CC;
+}
 .slide{/*this is hidden at first so that it can slide down*/
 	display:none;
 }
@@ -364,6 +377,7 @@ img#ajax-loader{
 	font-size:1.5em;
 	font-family:'PTSansRegular';
 	cursor:pointer;
+	padding:5px 0;
 }
 .post-time{
 	position:absolute;
@@ -377,7 +391,7 @@ img#ajax-loader{
 	background-attachment:fixed;
 }
 .poster-name{
-	margin:-3px 0 0 0;
+	margin:-2px 0 0 0;
 }
 .profile-pic{
 	width:100px;

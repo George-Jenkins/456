@@ -41,7 +41,6 @@ else postPath = '';
 	//if error
 	if(feedback=='error'){
 		 $('#background-img-feedback').addClass('red').html('Not an image file').show()
-		 $('#ajax-loader1').hide()
 		 return;
 	}
 	

@@ -5,6 +5,7 @@ $group = cleanInput($_POST['group']);
 $loginID = cleanInput($_POST['z']);
 $loop = $_POST['loop'];//this will equal an id, 'first' or 'second'. 'first' loads the first 23 and 'second' loads the rest. if it's an id it loads just that post
 $postPath = $_POST['postPath'];//this is posted when postPath is provided
+$showNumber = $_POST['showNumber'];//this is the number of posts show at a time
 
 include('../../../connect/members.php');
 
@@ -22,6 +23,11 @@ if($numrows==0){
 	return;
 }//if
 
+//set time zone
+$query = mysql_query("SELECT * FROM account_settings WHERE email='$email'");
+$get = mysql_fetch_assoc($query);
+$timezone = $get['timezone'];
+date_default_timezone_set($timezone);
 
 //this handles user viewing specific replies
 $query = mysql_query("SELECT * FROM posts WHERE group_id='$group' AND reply_id='0' ORDER BY time DESC, id DESC");
@@ -68,6 +74,11 @@ while($get_array = mysql_fetch_array($query)){
 	//determine link to profile
 	if($dbemail == $email) $profile_link = "../profile/profile.html";
 	else $profile_link = "../profile/profile-view.html?".$memberID;
+	//determine if there are replies to this post
+	$query2 = mysql_query("SELECT * FROM posts WHERE originalPostID='$id'");
+	$numrows2 = mysql_num_rows($query2);
+	if($numrows2!=0) $showReplies = "<div id='show-replies".$id."' class='show-replies functionLink' onclick='showReples(".$id.")'>Show replies</div>";
+	else $showReplies = "";
 	
 	//determine if user can delete post
 	$delete = '';
@@ -98,8 +109,8 @@ while($get_array = mysql_fetch_array($query)){
 	if($numrows2!=0){
 	$replyButton = "<table class='reply-table'>
 		<tr>
-		<td id='reply".$id."' onclick='replyBox(".$id.",".$time.")' class='functionLink buttonLink'>Reply</td>
-		<td id='cancel-reply".$id."' onclick='cancelReply(".$id.")' class='functionLink buttonLink hide'>Cancel Reply</td>
+		<td id='reply".$id."' onClick='replyBox(".$id.",".$time.")' class='functionLink buttonLink'>Reply</td>
+		<td id='cancel-reply".$id."' onClick='cancelReply(".$id.")' class='functionLink buttonLink hide'>Cancel Reply</td>
 		</tr>
 	</table>";
 	$reply = "<div id='text-box".$id."' class='reply-text-box hide'>
@@ -114,11 +125,11 @@ while($get_array = mysql_fetch_array($query)){
 	</div><!----text-box---->";	
 	}//if
 	
-	//hide the ones past 20
-	if($x>=20) $hide='hide';
+	//hide the ones past the limit
+	if($x>=$showNumber) $hide='hide';
 	
 	
-	if($loop=='first' || $loop == 'second' && $x>23 || $idLoop==true) $return['post'] .= "<div id='post".$id."' class='post-div time".$time." ".$hide." post-div".$x." ".$id." post-div-delete".$id." ".$notInvolved."'>
+	if($loop=='first' || $loop == 'second' && $x>$showNumber || $idLoop==true) $return['post'] .= "<div id='post".$id."' class='post-div time".$time." ".$hide." post-div".$x." ".$id." post-div-delete".$id." ".$notInvolved."'>
 	
 	<div class='post-time'>".date('M j',$time)."</div>
 	
@@ -152,6 +163,9 @@ while($get_array = mysql_fetch_array($query)){
 	
 	<!-------reply box-------->
 	".$reply."
+	
+	<!------show replies------->
+	".$showReplies."
 	</div><!-----post id----->";
 	
 	//remove email from group email
@@ -165,16 +179,17 @@ while($get_array = mysql_fetch_array($query)){
 	
 	//get replies for this post
 	$query3 = mysql_query("SELECT * FROM posts WHERE originalPostID='$id'");
-	if($loop=='first' || $loop=='second' && $x>23 || $idLoop==true) include('chat-wall-load-replies.php');
+	if($loop=='first' || $loop=='second' && $x>$showNumber || $idLoop==true) include('chat-wall-load-replies.php');
 	
 	//stop to load the first few posts. The second loop loads the rest
-	if($loop=='first' && $x==23) break;
-	
-	$return['limit'] = $x;	
+	if($loop=='first' && $x==$showNumber) break;
+		
 		
 	$x++;
 	
 }//while
+
+$return['limit'] = mysql_num_rows($query);
 
 //get last id. Important when deleting
 $query = mysql_query("SELECT * FROM posts WHERE group_id='$group' AND id = (SELECT MAX(id) FROM posts) LIMIT 1;");
