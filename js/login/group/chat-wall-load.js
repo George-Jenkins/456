@@ -23,15 +23,6 @@ url = document.location.href
 urlArray = url.split('&')
 id = urlArray[1];
 
-var platform = navigator.platform
-
-//set the number of posts show at a time
-if(mobileView==true || platform == 'android' || platform == 'Android' || 
-platform == "amazon-fireos" || platform == 'blackberry10' || 
-platform == 'BlackBerry' || platform === 'iPad' || platform === 'iPhone' || 
-platform === 'iPod') showNumber = 5;
-else showNumber = 20;
-
 if(id){
 	var loop = id;
 	$.when(
@@ -63,7 +54,7 @@ var group = getGroupID()
 if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
 else postPath = '';	
 
-$.post(postPath+'queries/chat-wall-load.php',{group:group, z:z, loop:loop, postPath:postPath, showNumber:showNumber},function(data){
+$.post(postPath+'queries/chat-wall-load.php',{group:group, z:z, loop:loop, postPath:postPath},function(data){
 
 $.when(
 
@@ -88,13 +79,15 @@ function loadPosts(){
 				
 	numberOfPosts = data.limit;			
 				
-	if(data.limit>=showNumber && loop=='first') $('#chat-wall').after("<div id='show-more' class='hide' onClick='show_more()'><a href='' onClick='return false'>Show earlier</a></div>")
+	if(data.limit>=20 && loop=='first') $('#chat-wall').after("<div id='show-more' class='hide' onClick='show_more()'><a href='' onClick='return false'>Show earlier</a></div>")
 	
 	if(loop=='second'){
 		$('#show-more').removeClass('hide')//show the show mow button on second posts. This is so the user can't click show more before the rest have loaded	
 		//hide loading gif
 		$('#wall-loading-img').hide()
 	}//if
+	//this function is defined in view-specific-replies.js
+	viewSpecificPost()
 				
 	}//if
 }//function loadPosts		
@@ -120,9 +113,7 @@ function loadReplies(){
 	}//if
 		
 	if(loop=='first' || loop=='second') $('#text-box').removeClass('hide')//if loop is an id keep it hidden
-		
-	//this function is defined in view-specific-replies.js
-	viewSpecificPost()		
+			
 	//this tell pulse script to start
 	startPulse(firstID,lastID)
 		
@@ -146,12 +137,14 @@ function loadReplies(){
 
 
 ///handle show more button (expan the post)
-var starting_show_next = showNumber + showNumber + 1;
+var starting_show_next = 40;
 
-var start = showNumber + 1;
+var start = 0;
 
 //load more posts
 function show_more(){
+	
+	var limit = sessionStorage.getItem('numberOfPosts');
 	
 	for(x=start; x<=starting_show_next; x++){
 		
@@ -172,6 +165,6 @@ function show_more(){
 	}//for
 	
 	//increase the limit
-		starting_show_next = ((starting_show_next)*1)+showNumber;
-		start = ((start)*1)+showNumber;
+		starting_show_next = ((starting_show_next)*1)+20;
+		start = ((start)*1)+20;
 }//function

@@ -150,7 +150,6 @@ Have an account? <a href='member-login.html?".$invite_code."'>Click here</a>" ?>
     <td class='text general-radio'>Gender <img class='no-gend hide' src='pics/red-x.png'/><input type='radio' name='gender' id='male-gender' value='male'/> <label for='male-gender'>Male</label> 
     <img class='no-gend hide' src='pics/red-x.png'/> <input type='radio' name='gender' id='female-gender' value='female'/><label for='female-gender'>Female</label></td>
     </tr>
-   <input type='hidden' id='time-zone' name='time-zone'/>
    <input type='hidden' name='trap'/>
    <input type='hidden' name='inviteCode' value='<?php echo $invite_code?>'/>
     <tr>
@@ -167,30 +166,24 @@ Have an account? <a href='member-login.html?".$invite_code."'>Click here</a>" ?>
 </div><!-----container------->
 
 
-<div id='bottom-menu' class='hide'>
-	<img src='pics/left-icon.png' id='back-button'/>
-    <img src='pics/right-icon.png' id='forward-button'/>
-</div><!--bottom-menu-->
 
-<!-- getclicky -->
-<script src="//static.getclicky.com/js" type="text/javascript"></script>
-<script type="text/javascript">try{ clicky.init(100810496); }catch(e){}</script>
+
+
+
 
 </body>
 <script src='js/jquery/jquery.js'></script>
 <script src='js/jquery/jquery-animate-enhanced.js'></script>
 <script src='js/jquery-ui/jquery-ui.js'></script>
-<script src='js/plugins/fastclick.js'></script>
-<script src='sjcl-master/sjcl.js'></script>
-<script src='js/functions.js'></script>
 <script src='js/menu/menu.js'></script>
 <script src='js/general/lightbox.js'></script>
+<script src='js/functions.js'></script>
 <script src='js/home-page/register.js'></script>
 <script src='js/home-page/login.js'></script>
+<script src='sjcl-master/sjcl.js'></script>
 <script src="phonegap.js"></script>
 <script src='js/root-folder-pulse.js'></script><!--This is really just for apps--->
 <!-- InstanceBeginEditable name="EditRegion4" -->
-<script src='js/jstz-timezone.js'></script>
 <script src='js/invitation.js'></script>
 <!-- InstanceEndEditable -->
 <!-- InstanceEnd --></html>

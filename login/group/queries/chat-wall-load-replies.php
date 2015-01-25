@@ -109,8 +109,7 @@ while($get_array2 = mysql_fetch_array($query3)){
 	else $possessive="'s";
 	if($dbemail==$person_being_replied_to_email) $possessive="";
 	
-	$return['reply'.$y] .= "<div id='post".$id."' class='reply-div ".$time." ".$originalPostID." post-div-delete".$id." ".$notInvolved." hide replyID".$originalPostID."' style='".$padding."'>
-	
+	$return['reply'.$y] .= "<div id='post".$id."' class='reply-div ".$time." ".$originalPostID." post-div-delete".$id."  ".$notInvolved."' style='".$padding."'>
 	<div class='post-time'>".date('M j',$time)."</div>
 	
 	

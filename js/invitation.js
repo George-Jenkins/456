@@ -1,11 +1,6 @@
-//add timezone
-var tz = jstz.determine(); 
-tz.name();
-$('#time-zone').val(tz.name())
-
 $('#form').submit(function(e){
 	
-e.preventDefault()
+	e.preventDefault()
 	
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/';

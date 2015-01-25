@@ -120,22 +120,22 @@
 <!------personal info------>
 <div id='profile-info' class='text profile-inline2'>
 
-
 <div id='change-background'>
 
-
-<div id='image-icon-div'><span class='functionLink buttonLink'>Change background</span> <span id='background-message'></span> <img src='../../pics/image-icon.png' id='image-icon'/><img src='../../pics/ajax-loader2.gif' id='load-icon1' class='hide'/>
+<table id='change-background-table'>
+<tr>
+<td id='image-icon-td'><span class='functionLink buttonLink'>Change background</span> <img src='../../pics/image-icon.png' id='image-icon' class='inline'/><img src='../../pics/ajax-loader2.gif' id='load-icon1' class='hide'/>
 
 <form name='background-img-form' id='background-img-form' target='background-img-iframe' method='POST' action='queries/upload-background-img.php' enctype='multipart/form-data'>
 <input type='file' name='background-uploader' id='background-uploader'/>
 <input type='hidden' name='z' id='background-img-z'/>
 </form>
 <iframe name='background-img-iframe' style='height:0px;width:0px;'></iframe>
-</div>
-
+</td><td id='background-message'></td>
+</tr>
+</table><!---change-background-table--->
 
 </div><!-----change-background----->
-
 
 <!-----handle cover photo------>
 <table id='cover-photo-table'>
@@ -238,27 +238,21 @@
 </div><!-----container------->
 
 
-<div id='bottom-menu' class='hide'>
-	<img src='../../pics/left-icon.png' id='back-button'/>
-    <img src='../../pics/right-icon.png' id='forward-button'/>
-</div><!--bottom-menu-->
 
 
-<!-- getclicky -->
-<script src="//static.getclicky.com/js" type="text/javascript"></script>
-<script type="text/javascript">try{ clicky.init(100810496); }catch(e){}</script>
+
+
 
 </body>
-
-<script src='../../js/jquery/jquery-1.11.2.min.js'></script>
+<script src='../../js/jquery/jquery.js'></script>
 <script src='../../js/jquery/jquery-animate-enhanced.js'></script>
 <script src='../../js/jquery-ui-1.11.2.custom/jquery-ui.js'></script>
-<script src='../../js/plugins/fastclick.js'></script>
-<script src='../../sjcl-master/sjcl.js'></script>
 <script src='../../js/functions.js'></script>
+<script src='../../js/menu/menu.js'></script>
 <script src='../../js/general/lightbox.js'></script>
 <script src='../../js/home-page/register.js'></script>
 <script src='../../js/home-page/login.js'></script>
+<script src='../../sjcl-master/sjcl.js'></script>
 <script src="../../phonegap.js"></script>
 <script src='../../js/login/handle.js'></script>
 <script src='../../js/login/pulse.js'></script>
@@ -273,5 +267,4 @@
 <script src='../../js/login/profile/check-for-unchecked-posts.js'></script>
 <script src='../../js/login/profile/profile-navigation.js'></script>
 <!-- InstanceEndEditable -->
-<script src='../../js/menu/menu.js'></script>
 <!-- InstanceEnd --></html>

@@ -14,12 +14,6 @@ $get = mysql_fetch_assoc($query);
 $email = $get['email'];
 $name = $get['name'];
 
-//set time zone
-$query = mysql_query("SELECT * FROM account_settings WHERE email='$email'");
-$get = mysql_fetch_assoc($query);
-$timezone = $get['timezone'];
-date_default_timezone_set($timezone);
-
 if(!$name || !$email) return;
 
 $query = mysql_query("SELECT * FROM posts WHERE group_id='$group' AND reply_id!='0' AND group_emails_for_pulse LIKE '%---$email---%' ORDER BY time ASC");

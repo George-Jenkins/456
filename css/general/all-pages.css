@@ -76,7 +76,6 @@ input[type=text]{/*break all ruined input field text*/
 	height:40px;
 	cursor:pointer;
 	z-index:51;
-	display:none;
 }	
 img.process-img1{
 	margin:0 0 0 0;
@@ -172,9 +171,6 @@ a:active, a:visited, a:link, a:hover{
 	font-size:1em;
 }
 .hide{
-	display:none;
-}
-.hide2{
 	display:none;
 }
 .underline{

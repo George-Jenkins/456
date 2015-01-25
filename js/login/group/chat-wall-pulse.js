@@ -178,9 +178,6 @@ else postPath = '';
 				post_id = 'postID'+x
 				postID = data[post_id];
 				
-				originalPostData = 'originalPostID'+x
-				originalPostID = data[originalPostData];
-				
 				//this function slides the post down to show it
 				function slidePostDown(){
 					//stop if deleting
@@ -189,11 +186,7 @@ else postPath = '';
 					if($('#post'+id).hasClass('deleted')) return;
 					//stop if hidden
 					if($('#post'+id).hasClass('hide')) return;
-					//stop if the user hasn't click show replies yet for this post only if user didn't type this reply
-					if($('.replyID'+originalPostID).hasClass('hide') && !$('#post'+id).hasClass('my-post')){
-					$('#post'+id).removeClass('slide').addClass('hide').addClass('replyID'+originalPostID)//remove slide but add originalPostID and hide so it's just like the replies loaded when wall loaded	
-					return
-					}//if
+					
 					$('#post'+id).slideDown(1000)//slideDown
 				
 				}//function

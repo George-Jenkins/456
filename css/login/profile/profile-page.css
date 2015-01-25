@@ -157,7 +157,7 @@ img#image-loading{
 	position:absolute;
 	margin:-12px 0 0 124px;
 }
-#image-icon-div{
+#image-icon-td{
 	position:relative;
 	color:#00F;
 }
@@ -165,12 +165,12 @@ img#image-loading{
 	width:30px;
 	height:auto;
 	position:absolute;
-	left:144px;
+	left:50%;
 	top:0;
-	margin:-1.55px 0 0 0;
+	margin:-1.55px 0 0 72px;
 }
 #change-background{
-	margin:3px;
+	margin:0 0 3px 0;
 }
 input#background-uploader{
 	padding: 0;
@@ -204,9 +204,9 @@ input#cover-photo-file{
 	width:25px;
 	height:auto;
 	position:absolute;
-	top:1px;
+	top:2px;
 	left:175px;
-	margin:0 0 0 3px;
+	margin:0 0 0 2px;
 }
 #cover-photo-table{
 	position:relative;

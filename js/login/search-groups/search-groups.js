@@ -56,8 +56,7 @@ else postPath = '';
 	$('#loader1 img').hide()
 		
 	//handle the show more
-	showNextNum = 10;
-	start = 0;
+	showNextNum = 20;
 	showMore(loop)
 	
 	//I put the function inside itself to get the second loop. When I did when/then it sometimes didn't load the second loop
@@ -72,8 +71,10 @@ else postPath = '';
 		
 //this function shows hidden results
 function showMore(loop){
+			
+	var start = showNextNum
 		
-	for(x=start;x<=showNextNum;x++){
+	for(x=0;x<=start;x++){
 			
 	$('#results-div'+x).show()
 		
@@ -85,7 +86,6 @@ function showMore(loop){
 			
 	}//for
 		
-	showNextNum = ((showNextNum*1)+10);//increase limit
-	start = ((start*1)+10);//increase start
+	showNextNum = ((showNextNum*1)+20);//increase limit
 		
 }//function 		

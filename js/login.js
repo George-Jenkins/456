@@ -59,9 +59,6 @@
 				window.location = lastPage;
 			}//if
 			else window.location = "login/profile/profile.html";
-			
-			$('#message').hide()
-			
 		}//if
 			
 	},'json')
