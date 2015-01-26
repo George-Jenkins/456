@@ -176,8 +176,8 @@ Sorry. There was an error. Please follow the link in your email again and if tha
 
 
 <div id='bottom-menu' class='hide'>
-	<img src='pics/left-icon.png' id='back-button'/>
-    <img src='pics/right-icon.png' id='forward-button'/>
+	<span id='back-button'><img src='pics/left-icon.png'/></span>
+    <span id='forward-button'><img src='pics/right-icon.png'/></span>
 </div><!--bottom-menu-->
 
 <!-- getclicky -->

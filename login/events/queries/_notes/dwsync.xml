@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="add-event.php" server="67.20.123.61/public_html/ritzkey/" local="130642383880910276" remote="130667030400000000" />
-<file name="attend-event.php" server="67.20.123.61/public_html/ritzkey/" local="130658467956688888" remote="130667030400000000" />
-<file name="cancel-event.php" server="67.20.123.61/public_html/ritzkey/" local="130639133918251118" remote="130667030400000000" />
-<file name="change-image.php" server="67.20.123.61/public_html/ritzkey/" local="130634396266437020" remote="130667030400000000" />
-<file name="get-current-contribution.php" server="67.20.123.61/public_html/ritzkey/" local="130635298437789030" remote="130667030400000000" />
-<file name="invite-groups.php" server="67.20.123.61/public_html/ritzkey/" local="130652194694636136" remote="130667030400000000" />
-<file name="leave-event.php" server="67.20.123.61/public_html/ritzkey/" local="130641573951891816" remote="130667030400000000" />
-<file name="load-event.php" server="67.20.123.61/public_html/ritzkey/" local="130663591109465893" remote="130667030400000000" />
-<file name="load-groups-for-invite.php" server="67.20.123.61/public_html/ritzkey/" local="130660267288564308" remote="130667030400000000" />
-<file name="publish-event.php" server="67.20.123.61/public_html/ritzkey/" local="130639114474230670" remote="130667030400000000" />
-<file name="submit-description.php" server="67.20.123.61/public_html/ritzkey/" local="130634425763242601" remote="130667030400000000" />
+<file name="add-event.php" server="67.20.123.61/public_html/ritzkey/" local="130642383880910276" remote="130667096400000000" />
+<file name="attend-event.php" server="67.20.123.61/public_html/ritzkey/" local="130658467956688888" remote="130667096400000000" />
+<file name="cancel-event.php" server="67.20.123.61/public_html/ritzkey/" local="130639133918251118" remote="130667096400000000" />
+<file name="change-image.php" server="67.20.123.61/public_html/ritzkey/" local="130634396266437020" remote="130667096400000000" />
+<file name="get-current-contribution.php" server="67.20.123.61/public_html/ritzkey/" local="130635298437789030" remote="130667096400000000" />
+<file name="invite-groups.php" server="67.20.123.61/public_html/ritzkey/" local="130652194694636136" remote="130667096400000000" />
+<file name="leave-event.php" server="67.20.123.61/public_html/ritzkey/" local="130641573951891816" remote="130667096400000000" />
+<file name="load-event.php" server="67.20.123.61/public_html/ritzkey/" local="130663591109465893" remote="130667096400000000" />
+<file name="load-groups-for-invite.php" server="67.20.123.61/public_html/ritzkey/" local="130660267288564308" remote="130667096400000000" />
+<file name="publish-event.php" server="67.20.123.61/public_html/ritzkey/" local="130639114474230670" remote="130667096400000000" />
+<file name="submit-description.php" server="67.20.123.61/public_html/ritzkey/" local="130634425763242601" remote="130667096400000000" />
 </dwsync>

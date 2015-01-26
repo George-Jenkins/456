@@ -77,16 +77,23 @@ $('#back-menu').click(function(){
 	
 })//click
 
-
 //back menu (on bottom of page)	
 if(mobileView){
 $('#container').css('margin-bottom',40)
 $('#bottom-menu').show()
 $('#back-button').click(function(){
+	
+	$('#back-button img').css('background-color','#666')
 	window.history.back()
+	setTimeout(function(){$('#back-button img').css('background-color','transparent')},100)
+	
 })//click
 $('#forward-button').click(function(){
+	
+	$('#forward-button img').css('background-color','#666')
 	window.history.forward()
+	setTimeout(function(){$('#forward-button img').css('background-color','transparent')},100)
+
 })//click
 }//if mobileView
 
