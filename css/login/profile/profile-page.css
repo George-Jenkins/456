@@ -14,6 +14,13 @@
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
+	/*border*/
+	border:thin solid #CCC;
+	-webkit-border:thin solid #CCC;
+	-moz-border:thin solid #CCC;
+	border-top:none;
+	-webkit-border-top:none;
+	-moz-border-top:none;
 }
 	@media screen and (max-width:400px){
 	#profile-container{
