@@ -4,9 +4,9 @@ $('#view-groups').click(function(){
 	$('#view-profile').show()//button
 	$('body').animate({scrollTop:$('#view-profile').offset().top-70},300)
 	
-	$('#profile-container').hide()
-	
 	$('#entourages-div').toggle('slide')
+	
+	$('#profile-container').hide()
 	
 })//click
 	
@@ -16,8 +16,9 @@ $('#view-profile').click(function(){
 	$('body').animate({scrollTop:$('#view-groups').offset().top-70},300)	
 	$('#view-profile').hide()//button
 	
-	$('#entourages-div').hide()
 	$('#profile-container').toggle("slide");
+	
+	$('#entourages-div').hide()
 			
 })//click
 	

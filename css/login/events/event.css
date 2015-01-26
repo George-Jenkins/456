@@ -1,6 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
 
+html{
+	position:relative;
+}
 body{
 	background-image:url(../../../pics/cityscape2.png);
 	background-size:cover;
@@ -123,15 +126,12 @@ img#change-image-loader{
 	max-width:100px;
 	margin:0 0 -3px 0;
 }
-body{
-	position:relative;
-}
 #dark-background-for-event{/*for this background to cover whole page body must be relative*/
 	width:100%;
-	min-height:100%;
+	height:100%;
 	background-color:rgba(0,0,0,0.7);
 	position:absolute;
-	top:0;
+	top:60px;
 	margin:0 0 0 0;
 	z-index:10;
 }

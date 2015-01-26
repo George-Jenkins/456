@@ -92,6 +92,7 @@
            <img src='pics/red-x.png' style='width:15px;height:15px' class='red-x'/> <input type='radio' id='female-gender' name='gender' value='female'/><label for='female-gender'>Female</label></td>
         </tr>
         <tr><td></td>
+        <input type='hidden' id='time-zone' name='time-zone'/>
         <input type='hidden' id='trap' name='trap' value=''/>
         <td class='signup-form-submit'>
         <input type='submit' name='submit' id='submit' value='Party Time!'/>
@@ -136,21 +137,33 @@
 
 </div><!-----container------->
 
+<div id='bottom-menu' class='hide'>
+	<img src='pics/left-icon.png' id='back-button'/>
+    <img src='pics/right-icon.png' id='forward-button'/>
+</div><!--bottom-menu-->
+
+
+<!-- getclicky -->
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100810496); }catch(e){}</script>
+
 </body>
 
 
 <script src='js/jquery/jquery.js'></script>
 <script src='js/jquery/jquery-animate-enhanced.js'></script>
 <script src='js/jquery-ui/jquery-ui.js'></script>
-<script src='js/menu/menu.js'></script>
 <script src='sjcl-master/sjcl.js'></script>
+<script src='js/plugins/fastclick.js'></script>
+<script src='js/functions.js'></script>
+<script src='js/menu/menu.js'></script>
 <script src='js/home-page/section1.js'></script>
 <script src='js/home-page/section2.js'></script>
 <script src='js/home-page/section3.js'></script>
 <script src='js/general/lightbox.js'></script>
-<script src='js/functions.js'></script>
+<script src='js/jstz-timezone.js'></script>
 <script src='js/home-page/register.js'></script>
 <script src='js/home-page/login.js'></script>
 <script src='phonegap.js'></script>
-<script src='http://ritzkey.com/js/root-folder-pulse.js'></script><!--This is really just for apps--->
+<script src='js/root-folder-pulse.js'></script><!--This is really just for apps--->
 </html>

@@ -4,6 +4,7 @@ $('#view-group-members').click(function(){
 	$('#view-chat-wall').show()//button
 	$('#chat-box-container').hide()
 	
+	
 	var screenWidth = window.innerWidth
 	//decide which slide effect to use depending on screen width
 	if(screenWidth<=965){
@@ -31,7 +32,14 @@ $('#view-chat-wall').click(function(){
 	
 	var screenWidth = window.innerWidth
 	//decide which slide effect to use depending on screen width
-	if(screenWidth<=965) $('#chat-box-container').toggle('slide')
+	if(screenWidth<=965){
+		$('#chat-wall').hide()//i'll hide chat wall so it doesn'slow down toggle on mobile devices. I'll show it after toggle
+		$('#show-more').addClass('hide2')//I'll also hide show earlier button because it was still there when wall was hidden
+		$('#chat-box-container').toggle('slide',function(){
+			$('#show-more').removeClass('hide2')
+			$('#chat-wall').show()	
+		})
+	}//if
 	else $('#chat-box-container').slideDown()
 	
 	$('#chat-box-container').css('display','inline-block')
@@ -66,7 +74,14 @@ var hideSmall = true; //this is confusing but this makes it so the function does
 //function hideSections()	
 var hideMedium = true; //this variable is essentially for the same purpose only it's for when the screen is medium size
 
+//show sections
 hideSections()
+
+//if view specific reply I want the wall to load showing the chat wall first
+url = document.location.href
+urlArray = url.split('&')
+id = urlArray[1];
+if(id) loadIfReply()
 
 //handle what to show according to screen width
 $(window).resize(function(){
@@ -78,15 +93,6 @@ hideSections()
 function hideSections(){
 	var screenWidth = window.innerWidth
 	
-	/*
-	if(screenWidth>965 && screenWidth<=1455){
-		
-		$('#member-list').hide()
-		$('#member-list').css('position','relative')
-		$('#view-group-members').show()//button
-	}//if
-	*/
-	
 	if(screenWidth>965) hideSmall = true
 	//handle chat box
 	if(screenWidth<=965){
@@ -96,6 +102,7 @@ function hideSections(){
 		
 		$('#view-group-members').show()//button
 		$('#member-list').hide()
+		$('#group-info-div').show()
 		}//if
 	}//if
 	
@@ -129,3 +136,24 @@ function hideSections(){
 	}//if
 	
 }//function
+
+
+function loadIfReply(){
+	
+	var screenWidth = window.innerWidth
+	if(screenWidth<=965){
+	$('#view-group-members').show()//button
+	$('#view-chat-wall').hide()//button
+	$('#member-list').hide()
+	
+	$('#chat-box-container').show()
+	$('#chat-wall').show()
+	
+	$('#chat-box-container').css('display','inline-block')
+	//if screen is too small hide group info div
+	
+		$('#view-group-info').show()//button
+		$('#group-info-div').hide()
+	}//if screenWidth<=965
+}//function
+

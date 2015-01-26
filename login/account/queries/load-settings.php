@@ -25,9 +25,13 @@ $postsEmailSetting = $get['email_posts'];
 //get emails for replies settings
 $replyEmailSetting = $get['email_replies'];
 
+//get timezone
+$timezone = $get['timezone'];
+
 $return['userEmail'] = $email;
 $return['posts_email_setting'] = $postsEmailSetting;
 $return['reply_email_setting'] = $replyEmailSetting;
+$return['timezone'] = $timezone;
 echo json_encode($return);	
 
 

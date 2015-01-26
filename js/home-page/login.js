@@ -1,3 +1,7 @@
+	
+	//redirect to profile if logged in when on app
+	if(mobileView && getZ()) window.location = 'login/profile/profile.html';
+	
 	var url = document.location.href
 	var urlArray = url.split('?')
 	var inviteCode = urlArray[1]

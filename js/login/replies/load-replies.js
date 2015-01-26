@@ -43,6 +43,7 @@ else postPath = '';
 
 
 showNextStart = 10//this is the limit for the showHidden loop
+start = 0
 function showHidden(loop){
 
 	if(loop=='second') $('#loader1').hide()
@@ -50,7 +51,7 @@ function showHidden(loop){
 	//handle showing next hidden comments
 	var limit = showNextStart
 	
-	for(x=0;x<=limit;x++){
+	for(x=start;x<=limit;x++){
 		$('#hiding-div'+x).removeClass('hide')
 		if($('#post-div'+x).length){
 		scrollHeight = $('#post-div'+x)[0].scrollHeight
@@ -65,8 +66,10 @@ function showHidden(loop){
 	if(!$('#hiding-div'+next).length) $('#show-earlier-div').hide()
 	else if(loop!='first') $('#show-earlier-div').show()//show only if it isn't the first loop.
 
-	if(loop!='first') showNextStart = ((showNextStart*1)+10)//increase limit only if it isn't the first loop.
-	
+	if(loop!='first'){
+		showNextStart = ((showNextStart*1)+10)//increase limit only if it isn't the first loop.
+		start = ((start*1)+10)//increase start too
+	}//if
 	
 }//function showHidden
 

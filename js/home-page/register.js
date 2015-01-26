@@ -1,3 +1,8 @@
+	//add timezone
+	var tz = jstz.determine(); 
+	tz.name();
+	$('#time-zone').val(tz.name())
+	
 	//remove any red once someone types in the field
 	$('#register-name').keyup(function(){
 		$('#td-name').removeClass('red').val('')

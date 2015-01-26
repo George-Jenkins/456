@@ -13,6 +13,12 @@ if($numrows==0) return;
 $get = mysql_fetch_assoc($query);
 $email = $get['email'];
 
+//set time zone
+$query = mysql_query("SELECT * FROM account_settings WHERE email='$email'");
+$get = mysql_fetch_assoc($query);
+$timezone = $get['timezone'];
+date_default_timezone_set($timezone);
+
 //get events user created
 $query = mysql_query("SELECT * FROM events WHERE email='$email'");
 

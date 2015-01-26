@@ -64,13 +64,25 @@ while($get_array = mysql_fetch_array($query)){
 	if(substr_count($replierName,'and')>0) $viewReply = "View replies";
 	else $viewReply = "View reply";
 	
+	//determine address to post
+	$address = "group.html?";//if creator
+	//if not creator
+	$query2 = mysql_query("SELECT * FROM groups WHERE group_id='$group'");
+	$get2 = mysql_fetch_assoc($query2);
+	$creatorEmail = $get2['created_by'];
+	if($email!=$creatorEmail) $address = "group-member.html?";
+	//if not member
+	$query2 = mysql_query("SELECT * FROM group_members WHERE group_id='$group' AND email='$email' AND approved!='no'");
+	$numrows2 = mysql_num_rows($query2);
+	if($numrows==0) $address = "group-view.html?";
+	
 	$alertIcon = '<img src="../../pics/new-message-icon.png"/>';
 	
 	//these posts have replies that haven't been checked
 	//I'll get all unchecked replies on first loop
 	if($loop=='first') $return['replies'] .= "<div id='hiding-div".$x."' class='hide'> 
 	<div id='reply-div".$x."' class='reply-div'>
-	<span class='inline'>".$alertIcon." ".$replierName." replied to your post.</span> <a href='../group/group.html?".$group."&".$postID."' class='inline buttonLink'>".$viewReply."</a>
+	<span class='inline'>".$alertIcon." ".$replierName." replied to your post.</span> <a href='../group/".$address.$group."&".$postID."' class='inline buttonLink'>".$viewReply."</a>
 	<div id='post-div".$x."' class='post'>".$post."</div>
 	
 	<div id='show-more".$x."' class='show-more hide functionLink buttonLink' onclick='showMore(".$x.")'>Show more</div>
@@ -128,11 +140,23 @@ while($get_array = mysql_fetch_array($query)){
 	if(substr_count($replierName,'and')>0) $viewReply = "View replies";
 	else $viewReply = "View reply";
 	
+	//determine address to post
+	$address = "group.html?";//if creator
+	//if not creator
+	$query2 = mysql_query("SELECT * FROM groups WHERE group_id='$group'");
+	$get2 = mysql_fetch_assoc($query2);
+	$creatorEmail = $get2['created_by'];
+	if($email!=$creatorEmail) $address = "group-member.html?";
+	//if not member
+	$query2 = mysql_query("SELECT * FROM group_members WHERE group_id='$group' AND email='$email' AND approved!='no'");
+	$numrows2 = mysql_num_rows($query2);
+	if($numrows==0) $address = "group-view.html?";
+	
 	//these posts have replies that haven't been checked
 		//on first loop I'll get the first six. On second I'll get the rest
 	if($loop=='first' && $y<=5 || $loop=='second' && $y>5) $return['replies'] .= "<div id='hiding-div".$x."' class='hide'>
 	<div id='reply-div".$x."' class='reply-div'>
-	<span class='inline'>".$replierName." replied to your post.</span> <a href='../group/group.html?".$group."&".$id."' class='inline buttonLink'>".$viewReply."</a>
+	<span class='inline'>".$replierName." replied to your post.</span> <a href='../group/".$address.$group."&".$id."' class='inline buttonLink'>".$viewReply."</a>
 	<div id='post-div".$x."' class='post'>".$post."</div>
 	
 	<div id='show-more".$x."' class='show-more hide functionLink buttonLink' onclick='showMore(".$x.")'>Show more</div>
@@ -146,6 +170,8 @@ $y++;
 	}//if numrows2
 	
 }//while
+
+if($haveReplies == true && !$return['replies']) $return['replies'] ='';//this can be the case on second loop. (something has to be returned)
 
 if($haveReplies == false) $return['replies'] = 'Currently no replies';
 

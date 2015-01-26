@@ -11,8 +11,12 @@ else postPath = '';
 	sessionStorage.setItem('specificReplies','true');
 	
 	if(id){
-		
+	
 		$('#chat-send').hide()
+		//show replies
+		
+		$('.replyID'+id).show()
+		$('#show-replies'+id).hide()
 		
 	var z = getZ()
 	//set checked to true
