@@ -98,7 +98,8 @@ while($get_array = mysql_fetch_array($query)){
 		<td id='no-delete".$id."' onclick='no_delete(".$id.",".$time.")' class='functionLink buttonLink noButton'>No</td>
 	</tr>
 	</table>
-	</span>";
+	</span>
+	";
 	}//if
 	
 	//determine if user can reply
@@ -122,7 +123,8 @@ while($get_array = mysql_fetch_array($query)){
 		<img id='replyLoader".$id."' src='../../pics/ajax-loader2.gif' class='hide small-processing-img'>
     </div><!---button-div----->
     </form>
-	</div><!----text-box---->";	
+	</div><!----text-box---->
+	";	
 	}//if
 	
 	//hide the ones past the limit
@@ -166,7 +168,8 @@ while($get_array = mysql_fetch_array($query)){
 	
 	<!------show replies------->
 	".$showReplies."
-	</div><!-----post id----->";
+	</div><!-----post id----->
+	";
 	
 	//remove email from group email
 	$query2 = mysql_query("SELECT * FROM posts WHERE id='$id'");

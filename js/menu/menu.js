@@ -81,7 +81,7 @@ $('#back-menu').click(function(){
 //back menu (on bottom of page)	
 if(mobileView){
 $('#container').css('margin-bottom',40)
-$('#bottom-menu').removeClass('hide')
+$('#bottom-menu').show()
 $('#back-button').click(function(){
 	window.history.back()
 })//click
