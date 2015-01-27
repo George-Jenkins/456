@@ -12,8 +12,9 @@ var path = pathToRoot()
 		
 		$('#hiddenZ').val(z)
 		
-		$('#loader1').show()
-		$('#done-msg').html('')
+		$('#done-msg').html('').hide()
+		$('#loader1').removeClass('hide')
+		
 		
 		var formData = $('form').serialize()
 		
@@ -25,6 +26,8 @@ var path = pathToRoot()
 			dataType:'json',
 			success: function(data){
 				
+				$('#loader1').addClass('hide')
+				
 				$('#hiddenZ').val('')
 				
 				if(data.error=='wrong z'){
@@ -32,10 +35,14 @@ var path = pathToRoot()
 					window.location = path+'member-login.html';
 				}//if
 				
+				if(data.error=='email taken'){
+					$('#done-msg').html('Email in use').show()
+				}
+				
 				if(data.done=='done'){
 					
-					$('#loader1').hide()
-					$('#done-msg').html('Saved')
+					
+					$('#done-msg').html('Saved').show()
 					
 					//set email localStorage
 					var email = $('#change-email').val()

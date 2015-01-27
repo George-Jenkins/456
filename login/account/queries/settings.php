@@ -2,6 +2,7 @@
 include('../../../connect/db-connect.php');
 
 $loginID = cleanInput($_POST['z']);
+$newName = cleanInput($_POST['change-name']);
 $newEmail = cleanInput($_POST['change-email']);
 $emailPost = cleanInput($_POST['posts-email']);
 $emailReply = cleanInput($_POST['reply-email']);
@@ -24,6 +25,10 @@ $get = mysql_fetch_assoc($query);
 $email = $get['email'];
 $name = $get['name'];
 
+//update name
+mysql_query("UPDATE login_id SET name='$newName' WHERE email='$email'");
+mysql_query("UPDATE members SET name='$newName' WHERE email='$email'");
+
 //update email_posts
 mysql_query("UPDATE account_settings SET email_posts='$emailPost' WHERE email='$email'");
 
@@ -35,6 +40,15 @@ mysql_query("UPDATE account_settings SET timezone='$timezone' WHERE email='$emai
 
 //change email
 if($email!=$newEmail){
+
+//make sure new email is taken 
+$query = mysql_query("SELECT * FROM members WHERE email='$newEmail'");
+$numrows = mysql_num_rows($query);
+if($numrows!=0){
+	$return['error'] = 'email taken';
+	echo json_encode($return);
+	return;
+}//if
 
 //get groups this user is in
 $query = mysql_query("SELECT * FROM group_members WHERE email='$email'");

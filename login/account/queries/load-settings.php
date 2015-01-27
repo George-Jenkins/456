@@ -28,6 +28,7 @@ $replyEmailSetting = $get['email_replies'];
 //get timezone
 $timezone = $get['timezone'];
 
+$return['userName'] = $name;
 $return['userEmail'] = $email;
 $return['posts_email_setting'] = $postsEmailSetting;
 $return['reply_email_setting'] = $replyEmailSetting;

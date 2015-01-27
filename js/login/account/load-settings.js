@@ -9,6 +9,8 @@ else postPath = '';
 		$('#loader2').hide()
 		
 		$('#settings-div').show(function(){
+		
+		$('#change-name').val(data.userName)
 			
 		$('#change-email').val(data.userEmail)
 		
