@@ -41,6 +41,7 @@
 			
 			//set email localStorage
 			localStorage.setItem('userEmail',email);
+			if(mobileView) localStorage.setItem('registerDevice','true');//register-notifications.js will use this
 			
 			localStorage.setItem('loginName',data.name)
 			

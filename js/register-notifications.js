@@ -1,8 +1,17 @@
-//This document isn't doing anything as for as I know
+(function(){
+
+document.addEventListener("deviceready", function(){
+
+if(!localStorage.getItem('registerDevice')) return;
+
+var z = getZ();	
+
+if(!z) return;
 
 var pushNotification;
 
-document.addEventListener("deviceready", function(){
+// call this to get a new token each time. don't call it to reuse existing token.
+pushNotification.unregister(successHandler, errorHandler)
 	
 	//get platform
      var platform = navigator.platform
@@ -49,9 +58,13 @@ function successHandler (result) {
 }
 
 function tokenHandler (result) {
+	alert(result)
+	var device = 'ios';
     // Your iOS push server needs to know the token before it can push to this device
     // here is where you might want to send it the token for later use.
-    //alert('device token = ' + result);
+    if(z) $.post('http://ritzkey.com/queries/register-notification-key.php',{z:z, token:result, device:device},function(data){
+		
+	},'json')
 }
 
 // result contains any error description text returned from the plugin call
@@ -156,3 +169,7 @@ function pushNotificationHandler(pushpayload) {
 };
 
 },true);//document.addEventListener
+
+localStorage.removeItem('registerDevice');
+
+})();

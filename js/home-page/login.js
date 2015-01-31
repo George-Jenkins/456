@@ -46,6 +46,7 @@
 			
 			//set email localStorage
 			localStorage.setItem('userEmail',email);
+			if(mobileView) localStorage.setItem('registerDevice','true');//register-notifications.js will use this
 			
 			//set localstorage
 			localStorage.setItem('loginName',data.name);
@@ -116,6 +117,7 @@
 			
 			//set email localStorage
 			localStorage.setItem('userEmail',email);
+			if(mobileView) localStorage.setItem('registerDevice','true');//register-notifications.js will use this
 			
 			//set localstorage
 			localStorage.setItem('loginName',data.name);

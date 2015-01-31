@@ -78,6 +78,7 @@ while($get_array = mysql_fetch_array($query)){
 
 //change email
 mysql_query("UPDATE account_settings SET email='$newEmail' WHERE email='$email'");
+mysql_query("UPDATE device_notifications SET email='$newEmail' WHERE email='$email'");
 mysql_query("UPDATE events SET email='$newEmail' WHERE email='$email'");
 mysql_query("UPDATE event_attendees SET email='$newEmail' WHERE email='$email'");
 mysql_query("UPDATE event_invited_groups SET email='$newEmail' WHERE email='$email'");

@@ -81,6 +81,7 @@ mysql_query("DELETE FROM group_members_invited WHERE group_id='$group'");
 
 //delete from other DBs
 mysql_query("DELETE FROM account_settings WHERE email='$email'");
+mysql_query("DELETE FROM device_notifications WHERE email='$email'");
 mysql_query("DELETE FROM events WHERE email='$email'");
 mysql_query("DELETE FROM event_attendees WHERE email='$email'");
 mysql_query("DELETE FROM event_invited_groups WHERE email='$email'");
