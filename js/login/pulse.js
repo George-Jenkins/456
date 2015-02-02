@@ -6,9 +6,7 @@ var z = getZ();
 goNotifications = true
 goCheckReplies = true
 goCheckLoggedIn = true
-//these variables are used when updating badge number
-var badgeNumber=0;
-var previousNumber=0;
+
 //start functions	
 checkForNotifications()
 checkForReplies()
@@ -18,16 +16,6 @@ setInterval(function(){
 
 checkForNotifications()
 checkForReplies()
-
-if(navigator.notification){//this is true if this is an app
-cordova.plugins.backgroundMode.enable();//enable js running in background
-//handle badge number
-previousNumber = badgeNumber//this number is badge number before it is updated
-badgeNumber = (numberOfNotifications*1) + (numberOfReplies*1) + (unreadPosts*1)//this is where badge number will be determined
-cordova.plugins.notification.badge.set(badgeNumber);//this is where badge number will be set
-//(for now I'll have no vibration) if(badgeNumber>previousNumber) navigator.notification.vibrate(1000);//vibrate if badge number increases
-}//if navigator.notification
-
 checkLoggedIn()	
 },1000)//setinterval	
 
@@ -48,14 +36,12 @@ else postPath = path;
 if(goNotifications == false) return
 goNotifications = false
 	
-	$.post(postPath+'login/check-for-notifications.php',{email:email},function(data){
+	$.post(postPath+'login/check-for-notifications.php',{z:z},function(data){
 		
 		if(data.notifications==true) $('.notifications-alert').html('<img src="'+path+'/pics/new-message-icon.png">')
 		else $('.notifications-alert').html('')
 		
 		goNotifications = true
-		
-		numberOfNotifications = data.numberOfNotifications//this is for mobile notifications
 		
 	},'json')//post
 	
@@ -75,15 +61,13 @@ else postPath = path;
 if(goCheckReplies == false) return
 goCheckReplies = false
 	
-	$.post(postPath+'login/check-for-replies.php',{email:email},function(data){
+	$.post(postPath+'login/check-for-replies.php',{z:z},function(data){
 		
 		if(data.replies==true) $('.replies-alert').html('<img src="'+path+'/pics/new-message-icon.png">')
 		else $('.replies-alert').html('')
 		
 		goCheckReplies = true
 		
-		numberOfReplies = data.numberOfReplies//this is for mobile notifications
-		unreadPosts = data.unreadPosts //this is for mobile notifications too
 	},'json')//post
 	
 }//function		

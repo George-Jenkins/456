@@ -11,7 +11,6 @@
 	background-image:url(../../pics/cityscape3.jpg);
 	background-repeat:no-repeat;
 	background-size:cover;
-	background-position:;
 	background-attachment:fixed;
 }
 	@media screen and (max-width:811px){/*change height*/
@@ -47,6 +46,7 @@
 	border-radius:30px;
 	-webkit-border-radius:30px;
 	-moz-border-radius:30px;
+	padding:1px;
 }
 
 	#fadeInPoint{/*this is needed so the container knows when to fade in. It follows the container*/
@@ -184,4 +184,13 @@
 }
 .red-x{
 	display:none;
+}
+
+#app-links{
+	margin:0 0 10px 0;
+}
+.app-store img{
+	width:200px;
+	height:auto;
+	margin:5px 0 0 0;
 }

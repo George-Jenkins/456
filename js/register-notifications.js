@@ -11,8 +11,8 @@ if(!z) return;
 var pushNotification;
 
 // call this to get a new token each time. don't call it to reuse existing token.
-pushNotification.unregister(successHandler, errorHandler)
-	
+//pushNotification.unregister(successHandler, errorHandler)
+
 	//get platform
      var platform = navigator.platform
 	 
@@ -168,8 +168,10 @@ function pushNotificationHandler(pushpayload) {
     }
 };
 
-},true);//document.addEventListener
 
 localStorage.removeItem('registerDevice');
+
+},true);//document.addEventListener
+
 
 })();
