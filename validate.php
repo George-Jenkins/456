@@ -196,7 +196,6 @@ Sorry. There was an error. Please follow the link in your email again and if tha
 <script src='js/home-page/register.js'></script>
 <script src='js/home-page/login.js'></script>
 <script src="phonegap.js"></script>
-<script src='js/root-folder-pulse.js'></script><!--This is really just for apps--->
 <!-- InstanceBeginEditable name="EditRegion4" -->
 
 <!-- InstanceEndEditable -->

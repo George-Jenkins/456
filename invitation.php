@@ -188,7 +188,6 @@ Have an account? <a href='member-login.html?".$invite_code."'>Click here</a>" ?>
 <script src='js/home-page/register.js'></script>
 <script src='js/home-page/login.js'></script>
 <script src="phonegap.js"></script>
-<script src='js/root-folder-pulse.js'></script><!--This is really just for apps--->
 <!-- InstanceBeginEditable name="EditRegion4" -->
 <script src='js/jstz-timezone.js'></script>
 <script src='js/invitation.js'></script>
