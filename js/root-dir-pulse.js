@@ -59,7 +59,7 @@ else postPath = path;
 if(goNotifications == false) return
 goNotifications = false
 	
-	$.post(postPath+'login/check-for-notifications.php',{z:z},function(data){
+	$.post(postPath+'login/check-for-notifications.php',{email:email},function(data){
 		
 		if(data.notifications==true) $('.notifications-alert').html('<img src="'+path+'/pics/new-message-icon.png">')
 		else $('.notifications-alert').html('')
@@ -79,6 +79,9 @@ return deferred.promise();
 function checkForReplies(){
 
 var path = pathToRoot()
+
+var email = localStorage.getItem('userEmail')//I'll use email instead of z just so the app can get notifications if user not logged in
+
 var deferred = new $.Deferred()
 
 //this is path to post for apps
@@ -89,7 +92,7 @@ else postPath = path;
 if(goCheckReplies == false) return
 goCheckReplies = false
 	
-	$.post(postPath+'login/check-for-replies.php',{z:z},function(data){
+	$.post(postPath+'login/check-for-replies.php',{email:email},function(data){
 		
 		if(data.replies==true) $('.replies-alert').html('<img src="'+path+'/pics/new-message-icon.png">')
 		else $('.replies-alert').html('')
