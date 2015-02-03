@@ -1,7 +1,7 @@
 //redirect to profile if logged in when on app
 if(mobileView && getZ()) window.location = 'login/profile/profile.html';
 
-//if(!mobileView) $('#app-links').show()//.css('display','inline-block')
+if(!mobileView) $('#app-links').show()//.css('display','inline-block')
 
 //on scroll
 $(window).scroll(function(){

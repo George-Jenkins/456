@@ -102,6 +102,7 @@ $code = $_GET['code'];
 <script src='js/plugins/fastclick.js'></script>
 <script src='sjcl-master/sjcl.js'></script>
 <script src='js/functions.js'></script>
+<script src='js/root-dir-pulse.js'></script>
 <script src='js/menu/menu.js'></script>
 <script src='js/general/lightbox.js'></script>
 <script src='js/home-page/register.js'></script>

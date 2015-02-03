@@ -2,13 +2,13 @@ var path = pathToRoot()
 
 var z = getZ();
 
+if(mobileView){
+
 //these variables allow functions to start
 platform = navigator.platform;
 badge = 0;
 goNotifications = true
 goCheckReplies = true
-goCheckLoggedIn = true
-
 
 //start functions	
 checkForNotifications().done(function(){
@@ -37,10 +37,6 @@ checkForNotifications().done(function(){
 	})//checkForReplies done
 	
 })//checkForNotifications done
-
-checkLoggedIn()	
-
-
 
 },1000)//setinterval	
 
@@ -110,34 +106,4 @@ return deferred.promise()
 
 }//function		
 
-function checkLoggedIn(){
-
-var path = pathToRoot()
-	
-//this is path to post for apps
-if(pathForPost) postPath = 'http://ritzkey.com/';
-else postPath = path;	
-
-//this stops function if post isn't done
-if(goCheckLoggedIn == false) return
-goCheckLoggedIn = false
-
-var k = getK();
-	
-	$.post(postPath+'connect/handle.php',{z:z,k:k},function(data){
-		
-		if(data.error=='wrong z'){
-		
-		var url = document.location.href
-		var page = url.split('login/')[1]
-		sessionStorage.setItem('toLastPage','login/'+page);
-		
-		$('#dim-background').removeClass().show()
-		$('#lightbox').removeClass().addClass('white-background').html("<p>Your aren't logged in. <a href='"+path+"member-login.html'>Click here.</a></p>");
-		} 
-		else goCheckLoggedIn = true
-		
-		
-	},'json')//post
-	
-}//function
+}//if mobileView
