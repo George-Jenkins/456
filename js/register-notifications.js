@@ -6,9 +6,10 @@ document.addEventListener("deviceready", function(){
 if(!localStorage.getItem('registerDevice')) return;
 
 var z = getZ();	
+alert('1')
 
 if(!z) return;
-
+alert('2')
 var pushNotification;
 
 // call this to get a new token each time. don't call it to reuse existing token.
@@ -30,7 +31,7 @@ var pushNotification;
         "ecb":"onNotificationAPN"
     });
 } else {
-   
+   alert('3')
 	pushNotification.register(
     successHandler,
     errorHandler,
