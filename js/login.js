@@ -55,11 +55,11 @@
 			alert('4')
 			var lastPage;
 			lastPage = sessionStorage.getItem('toLastPage')//get last page user was on before logout
-			sessionStorage.removeItem('toLastPage')
-			
+			alert('5')
 			if(lastPage){
 				
 				window.location = lastPage;
+				sessionStorage.removeItem('toLastPage')
 			}//if
 			else window.location = "login/profile/profile.html";
 			
