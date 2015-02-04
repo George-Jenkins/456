@@ -26,6 +26,8 @@ Make plans with your friends.
 <preference name="SplashScreen" value="screen"/>
 <preference name="SplashScreenDelay" value="10000"/>
 
+<feature name="http://api.phonegap.com/1.0/file"/>
+
 <!-- splash screens -->
 <gap:splash src="pics/splash.png" gap:platform="ios" width="320" height="480" />
 <gap:splash src="pics/splash.png" gap:platform="ios" width="640" height="960" />

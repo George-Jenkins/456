@@ -65,6 +65,8 @@ goNotifications = false
 	
 	$.post(postPath+'login/check-for-notifications.php',{email:email},function(data){
 		
+		var path = pathToRoot()
+		
 		//make sure there is nothing in .notifications-alert first
 		var notifContent = $('.notifications-alert').html()
 		
@@ -99,6 +101,8 @@ if(goCheckReplies == false) return
 goCheckReplies = false
 	
 	$.post(postPath+'login/check-for-replies.php',{email:email},function(data){
+		
+		var path = pathToRoot()
 		
 		//make sure nothing is in .replies-alert first
 		var replyContent = $('.replies-alert').html()
