@@ -71,7 +71,7 @@ else postPath = '';
 					if($('#post'+id).hasClass('hide')) return;	
 						
 					$('#post'+id).slideDown(1000, function(){
-					if(data.mine) $('#submit-loader').hide()//this is shown in chat-wall.js
+					if(data.mine) $('#submit-loader').addClass('hide')//this is shown in chat-wall.js
 					})
 					
 				}//function

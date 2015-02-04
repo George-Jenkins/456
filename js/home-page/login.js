@@ -41,7 +41,7 @@
 			return;
 		}//if	
 		
-		if(data.error='login'){
+		if(data.error=='login'){
 			$('#password-span').html("Password <a href='retrieve-login.html'>(Forgot?)</a>")
 			
 			//set email localStorage
@@ -58,11 +58,12 @@
 			var i = sjcl.encrypt(k,data.i);
 			localStorage.setItem('i',i);	
 			
-			var lastPage = sessionStorage.getItem('toLastPage')//get last page user was on before logout
-			sessionStorage.removeItem('toLastPage')
+			var lastPage;
+			lastPage = sessionStorage.getItem('toLastPage')//get last page user was on before logout
 			
 			if(lastPage){
 				window.location = lastPage;
+				sessionStorage.removeItem('toLastPage')
 			}//if
 			else window.location = "login/profile/profile.html";
 			
@@ -112,7 +113,7 @@
 			return;
 		}//if	
 		
-		if(data.error='login'){
+		if(data.error=='login'){
 			$('#password-span').html("Password <a href='retrieve-login.html'>(Forgot?)</a>")
 			
 			//set email localStorage
@@ -129,11 +130,12 @@
 			var i = sjcl.encrypt(k,data.i);
 			localStorage.setItem('i',i);
 			
-			var lastPage = sessionStorage.getItem('toLastPage')//get last page user was on before logout
-			sessionStorage.removeItem('toLastPage')
+			var lastPage;
+			lastPage = sessionStorage.getItem('toLastPage')//get last page user was on before logout
 			
 			if(lastPage){
 				window.location = lastPage;
+				sessionStorage.removeItem('toLastPage')
 			}//if
 			else window.location = "login/profile/profile.html";
 

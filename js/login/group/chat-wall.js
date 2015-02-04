@@ -111,7 +111,7 @@ x=0;
 		
 	$('#message').val('')
 
-	$('#submit-loader').show()	
+	$('#submit-loader').removeClass('hide')
 
 while(x<=8){
 		

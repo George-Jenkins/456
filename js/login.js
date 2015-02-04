@@ -38,26 +38,25 @@
 		}//if	
 		
 		if(data.error=='login'){
-			alert('1')
+			
 			//set email localStorage
 			localStorage.setItem('userEmail',email);
 			if(mobileView) localStorage.setItem('registerDevice','true');//register-notifications.js will use this
-			alert('2')
+			
 			localStorage.setItem('loginName',data.name)
 			
 			//start sessions
 			localStorage.setItem('k',data.k);
 			var k = localStorage.getItem('k')
-			alert('3')
+			
 			var i  = sjcl.encrypt(k,data.i);
 			localStorage.setItem('i',i);	
 			
-			alert('4')
+			
 			var lastPage;
 			lastPage = sessionStorage.getItem('toLastPage')//get last page user was on before logout
-			alert('5')
+			
 			if(lastPage){
-				
 				window.location = lastPage;
 				sessionStorage.removeItem('toLastPage')
 			}//if
