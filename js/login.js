@@ -53,7 +53,8 @@
 			localStorage.setItem('i',i);	
 			var z = getZ()
 			
-			var lastPage = sessionStorage.getItem('toLastPage')//get last page user was on before logout
+			var lastPage;
+			lastPage = sessionStorage.getItem('toLastPage')//get last page user was on before logout
 			sessionStorage.removeItem('toLastPage')
 			
 			if(lastPage){
