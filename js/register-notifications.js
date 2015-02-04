@@ -1,4 +1,6 @@
-alert()
+alert('j')
+ var platform = navigator.platform
+ alert(platform)
 (function(){
 
 document.addEventListener("deviceready", function(){
