@@ -2,19 +2,24 @@
 include('../connect/db-connect.php');
 
 $loginID = cleanInput($_POST['z']);
+$email = cleanInput($_POST['email']);
 
 include('../connect/members.php');
 
+/*
 //get email
 $query = mysql_query("SELECT * FROM login_id WHERE login_id='$loginID'");
 $get = mysql_fetch_assoc($query);
 $email = $get['email'];
+*/
 
 if(!$email) return;
 
 $notification;
 
 $numberOfNotifications=0;//this is used for mobile notifications
+
+$notification = false;
 
 //check for pending group members
 $query = mysql_query("SELECT * FROM groups WHERE created_by='$email'");

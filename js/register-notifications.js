@@ -1,7 +1,8 @@
+alert()
 (function(){
 
 document.addEventListener("deviceready", function(){
-
+//cordova.plugins.notification.badge.set(3);
 if(!localStorage.getItem('registerDevice')) return;
 
 var z = getZ();	
@@ -11,7 +12,7 @@ if(!z) return;
 var pushNotification;
 
 // call this to get a new token each time. don't call it to reuse existing token.
-//pushNotification.unregister(successHandler, errorHandler)
+//pushNotification.unregister(successHandler, errorHandler, options)
 
 	//get platform
      var platform = navigator.platform
@@ -58,12 +59,11 @@ function successHandler (result) {
 }
 
 function tokenHandler (result) {
-	alert(result)
+	
 	var device = 'ios';
     // Your iOS push server needs to know the token before it can push to this device
     // here is where you might want to send it the token for later use.
-    if(z) $.post('http://ritzkey.com/queries/register-notification-key.php',{z:z, token:result, device:device},function(data){
-		
+    if(z) $.post('http://ritzkey.com/queries/register-notification-key.php',{z:z, token:result, device:device},function(data){	
 	},'json')
 }
 
@@ -74,6 +74,7 @@ function errorHandler (error) {
 
 // iOS
 function onNotificationAPN (event) {
+	
     if ( event.alert )
     {
         navigator.notification.alert(event.alert);
@@ -87,6 +88,7 @@ function onNotificationAPN (event) {
 
     if ( event.badge )
     {
+		
         pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, event.badge);
     }
 }
@@ -100,10 +102,14 @@ function onNotification(e) {
     case 'registered':
         if ( e.regid.length > 0 )
         {
-            $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
+			alert(e.regid)
+           // $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
             // Your GCM push server needs to know the regID before it can push to this device
             // here is where you might want to send it the regID for later use.
-            console.log("regID = " + e.regid);
+            //console.log("regID = " + e.regid);
+			var device = 'android';
+			if(z) $.post('http://ritzkey.com/queries/register-notification-key.php',{z:z, token:e.regid, device:device},function(data){
+			},'json')
         }
     break;
 
@@ -112,32 +118,32 @@ function onNotification(e) {
         // you might want to play a sound to get the user's attention, throw up a dialog, etc.
         if ( e.foreground )
         {
-            $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
+            //$("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
 
             // on Android soundname is outside the payload.
             // On Amazon FireOS all custom attributes are contained within payload
-            var soundfile = e.soundname || e.payload.sound;
+            //var soundfile = e.soundname || e.payload.sound;
             // if the notification contains a soundname, play it.
-            var my_media = new Media("/android_asset/www/"+ soundfile);
-            my_media.play();
+            //var my_media = new Media("/android_asset/www/"+ soundfile);
+            //my_media.play();
         }
         else
         {  // otherwise we were launched because the user touched a notification in the notification tray.
             if ( e.coldstart )
             {
-                $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+                //$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
             }
             else
             {
-                $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
+                //$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
             }
         }
 
-       $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+       //$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
            //Only works for GCM
-       $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+       //$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
        //Only works on Amazon Fire OS
-       $status.append('<li>MESSAGE -> TIME: ' + e.payload.timeStamp + '</li>');
+       //$status.append('<li>MESSAGE -> TIME: ' + e.payload.timeStamp + '</li>');
     break;
 
     case 'error':
@@ -168,8 +174,8 @@ function pushNotificationHandler(pushpayload) {
     }
 };
 
+localStorage.removeItem('registerDevice')
 
-localStorage.removeItem('registerDevice');
 
 },true);//document.addEventListener
 
