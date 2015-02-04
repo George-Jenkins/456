@@ -38,11 +38,11 @@
 		}//if	
 		
 		if(data.error=='login'){
-			
+			alert('1')
 			//set email localStorage
 			localStorage.setItem('userEmail',email);
 			if(mobileView) localStorage.setItem('registerDevice','true');//register-notifications.js will use this
-			
+			alert('2')
 			localStorage.setItem('loginName',data.name)
 			
 			//start sessions
@@ -56,8 +56,9 @@
 			var lastPage;
 			lastPage = sessionStorage.getItem('toLastPage')//get last page user was on before logout
 			sessionStorage.removeItem('toLastPage')
-			
+			alert('3')
 			if(lastPage){
+				alert('4')
 				window.location = lastPage;
 			}//if
 			else window.location = "login/profile/profile.html";
