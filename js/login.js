@@ -48,17 +48,17 @@
 			//start sessions
 			localStorage.setItem('k',data.k);
 			var k = localStorage.getItem('k')
-			
+			alert('3')
 			var i  = sjcl.encrypt(k,data.i);
 			localStorage.setItem('i',i);	
-			var z = getZ()
 			
+			alert('4')
 			var lastPage;
 			lastPage = sessionStorage.getItem('toLastPage')//get last page user was on before logout
 			sessionStorage.removeItem('toLastPage')
-			alert('3')
+			
 			if(lastPage){
-				alert('4')
+				
 				window.location = lastPage;
 			}//if
 			else window.location = "login/profile/profile.html";
