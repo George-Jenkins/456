@@ -83,8 +83,8 @@ function onNotificationAPN (event) {
 
 // Android and Amazon Fire OS
 function onNotification(e) {
-    $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
-
+    //$("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+alert('test')
     switch( e.event )
     {
     case 'registered':
@@ -135,11 +135,11 @@ function onNotification(e) {
     break;
 
     case 'error':
-        $("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
+        //$("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
     break;
 
     default:
-        $("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
+       // $("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
     break;
   }
 }
