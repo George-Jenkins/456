@@ -55,10 +55,6 @@ else postPath = '';
 		$('#list-events-div').html(data.events)
 		$('#number-of-events').html(data.numberOfEvents)
 		
-		$('body').slideToggle(function(){
-			$('body').slideToggle()
-			})
-		
 		
 		if(data.pending_approval==true){
 			$('#awaiting-approval').show()

@@ -111,3 +111,9 @@ pathForPost = true;
 mobileView = true;
 
 //if(mobileView) new NoClickDelay('body')
+
+if(!mobileView && navigator.platform!='iPhone'){
+	$('body').slideToggle(function(){
+		$('body').slideToggle()
+	})
+}//if
