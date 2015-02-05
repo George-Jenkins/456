@@ -55,8 +55,10 @@ else postPath = '';
 		$('#list-events-div').html(data.events)
 		$('#number-of-events').html(data.numberOfEvents)
 		
-		$('*').css('height',400)
-		
+		$('#container').css('margin-top',10)
+		setTimeout(function(){
+		$('#container').css('margin-top',0)	
+		},100)
 		if(data.pending_approval==true){
 			$('#awaiting-approval').show()
 		}//if
