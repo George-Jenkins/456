@@ -117,7 +117,7 @@ if(mobileView && navigator.platform!='iPhone'){
 	
 	$('#container').slideToggle(function(){
 		
-		$('#container').slideToggle()
+		$('#container').slideToggle().css('margin-bottom',40)
 		
 	})
 }//if
