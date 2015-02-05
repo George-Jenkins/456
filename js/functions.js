@@ -121,3 +121,5 @@ $(window).scroll(function(){
 })
 	
 }//if
+
+$('body').css('overflow','scroll')
