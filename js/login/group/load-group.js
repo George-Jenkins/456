@@ -1,5 +1,3 @@
-$('body').css('height',7000)
-alert('d')
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
 else postPath = '';	
@@ -56,6 +54,8 @@ else postPath = '';
 		//this handles events
 		$('#list-events-div').html(data.events)
 		$('#number-of-events').html(data.numberOfEvents)
+		
+		$('*').css('height',400)
 		
 		if(data.pending_approval==true){
 			$('#awaiting-approval').show()
