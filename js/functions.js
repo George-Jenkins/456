@@ -115,7 +115,9 @@ mobileView = true;
 //for some reason on droid divs would disappear on scroll unless there was some animation first
 if(mobileView && navigator.platform!='iPhone'){
 	
+	$('#container').slideToggle(1,function(){
 		
-		$('#container').slideDown().css('margin-bottom',40)
+		$('#container').slideToggle(1).css('margin-bottom',40)
 		
+	})
 }//if
