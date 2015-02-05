@@ -70,7 +70,7 @@ goNotifications = false
 		//make sure there is nothing in .notifications-alert first
 		var notifContent = $('.notifications-alert').html()
 		
-		if(data.notifications==true && !notifContent) $('.notifications-alert').html('<img src="'+path+'/pics/new-message-icon.png">')
+		if(data.notifications==true && !notifContent) $('.notifications-alert').html('<img src="'+path+'pics/new-message-icon.png">')
 		if(data.notifications!=true) $('.notifications-alert').html('')
 		
 		badge += data.numberOfNotifications; //this for mobile
@@ -107,7 +107,7 @@ goCheckReplies = false
 		//make sure nothing is in .replies-alert first
 		var replyContent = $('.replies-alert').html()
 		
-		if(data.replies==true && !replyContent) $('.replies-alert').html('<img src="'+path+'/pics/new-message-icon.png">')
+		if(data.replies==true && !replyContent) $('.replies-alert').html('<img src="'+path+'pics/new-message-icon.png">')
 		if(data.replies!=true) $('.replies-alert').html('')
 		
 		badge += data.numberOfReplies + data.numberOfPosts;

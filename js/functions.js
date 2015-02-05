@@ -110,4 +110,4 @@ var mobileView;
 pathForPost = true;
 mobileView = true;
 
-if(mobileView) new NoClickDelay('body')
+//if(mobileView) new NoClickDelay('body')
