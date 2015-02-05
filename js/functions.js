@@ -116,11 +116,11 @@ mobileView = true;
 if(mobileView && navigator.platform!='iPhone'){
 	
 	$('#container').slideToggle(function(){
-		
+		setTimeout(function(){
 		$('#container').slideToggle(function(){
 			
 			$('body').css('overflow','scroll')
-			
+		},100)	
 		}).css('margin-bottom',40)
 		
 	})
