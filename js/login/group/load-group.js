@@ -1,4 +1,4 @@
-$('body').css('height',700)
+$('body').css('height',7000)
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
 else postPath = '';	
