@@ -118,7 +118,9 @@ if(mobileView && navigator.platform!='iPhone'){
 	$('#container').slideToggle(1,function(){
 		
 		$('#container').slideToggle(1,function(){
+			
 			$('body').css('overflow','scroll')
+			
 		}).css('margin-bottom',40)
 		
 	})
