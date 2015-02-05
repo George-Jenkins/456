@@ -23,7 +23,7 @@ else postPath = '';
 	
 	$('#message'+id).val('')
 	
-	$('#replyLoader'+id).show()
+	$('#replyLoader'+id).removeClass('hide')
 	
 	x=0;
 	while(x<=8){
@@ -36,7 +36,7 @@ else postPath = '';
 				return;
 			}//if
 		
-			$('#replyLoader'+id).hide()
+			$('#replyLoader'+id).addClass('hide')
 			$('#text-box'+id).hide()
 			$('#cancel-reply'+id).hide()
 			$('#reply'+id).show()

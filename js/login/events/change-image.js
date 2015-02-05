@@ -21,7 +21,43 @@ postPath = '';
 	$('#eventZ').val(z)
 	$('#imageEventID').val(eventID)
 	
+	//this will be used below. It's for apps
+	var imageName = $('#event-image').css('background-image').split('/');
+	imageName = imageName[imageName.length-1].split(')')[0];
+	
 	$('#change-image-form').submit()
+
+//if on app the db must be queried to see if image has been changed
+if(mobileView){
+var x = 0;
+var interval = setInterval(function(){
+	
+	var z = getZ()
+	var event_id = getEventID();
+	
+	$.post('http://ritzkey.com/login/events/queries/check-image-change-mobile.php',{z:z, imagePosition:'event', event_id:event_id},function(data){
+		
+		if(imageName != data.currentImage){
+			
+			$('#event-image').css('background-image','url(http://ritzkey.com/login/profile/pics/'+data.folderName+'/'+data.currentImage+')')
+	
+			$('#change-image-loader').hide()
+			
+			clearInterval(interval);
+			return;
+		}//if
+		
+	},'json')//post
+x++;
+//if 16 seconds have passed asstume there was an error
+if(x==15){	
+$('#change-image-loader').hide()
+$('#error-msg1').html('Error').show()
+clearInterval(interval);	
+return;
+}		
+},1000)//set interval
+}//if mobileView
 	
 })//change	
 	
@@ -37,7 +73,6 @@ else
 postPath = '';
 }
 
-	
 	$('#change-image-loader').hide()
 	
 	if(feedback == 'wrong z'){

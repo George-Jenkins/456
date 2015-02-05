@@ -5,7 +5,7 @@ var action = $('#background-img-form').attr('action')
 $('#background-img-form').attr('action',postPath+action)
 }//if
 	
-	$('#background-uploader').change(function(){
+$('#background-uploader').change(function(){
 		
 	//redirect if no z/i
 	if(!localStorage.getItem('i')) window.location = "../../member-login.html";
@@ -15,10 +15,50 @@ $('#background-img-form').attr('action',postPath+action)
 	var z = getZ();
 	$('#background-img-z').val(z)
 	
+	//this will be used below. It's for apps
+	var imageName = $('body').css('background-image').split('/');
+	imageName = imageName[imageName.length-1].split(')')[0];
+	
 	$('#background-img-form').submit()
 	$('#background-message').removeClass('red').html('').hide()
 	$('#background-img-z').val('')
-	})//change
+	
+	
+//if on app the db must be queried to see if image has been changed
+if(mobileView){
+var x = 0;
+var interval = setInterval(function(){
+	
+	var z = getZ()
+	
+	$.post('http://ritzkey.com/login/profile/queries/check-image-change-mobile.php',{z:z, imagePosition:'background'},function(data){
+		
+		if(imageName != data.currentImage){
+			
+			$('body').addClass('profile-background').css('background-image','url(http://ritzkey.com/login/profile/pics/'+data.folderName+'/'+data.currentImage+')')
+	
+			$('#load-icon1').hide()
+	
+			$('#background-img-z').val('')
+			
+			clearInterval(interval);
+			return;
+		}//if
+		
+	},'json')//post
+x++;
+//if 16 seconds have passed asstume there was an error
+if(x==15){
+	
+$('#load-icon1').hide()
+$('#background-message').addClass('red').html('Error').show()
+clearInterval(interval);	
+return;
+}		
+},1000)//set interval
+}//if mobileView
+	
+})//change
 
 
 
@@ -40,9 +80,12 @@ else postPath = '';
 		return;
 	}//if
 	
+	
 	$('body').addClass('profile-background').css('background-image','url('+postPath+feedback+')')
 	
 	$('#load-icon1').hide()
 	
 	$('#background-img-z').val('')
+	
 }//function
+

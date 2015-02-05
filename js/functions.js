@@ -104,10 +104,10 @@ NoClickDelay.prototype = {
 };
 
 //this is used to provide path to post requests
+//this is used to provide path to post requests
 var pathForPost;
 var mobileView;
 pathForPost = true;
 mobileView = true;
-
 
 if(mobileView) new NoClickDelay('body')

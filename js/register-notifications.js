@@ -1,15 +1,14 @@
 (function(){
-alert('1')
+
 document.addEventListener("deviceready", function(){
 //cordova.plugins.notification.badge.set(3);
-alert('r')
 if(!localStorage.getItem('registerDevice')) return;
 
 var z = getZ();	
 
 
 if(!z) return;
-alert('2')
+
 var pushNotification;
 
 // call this to get a new token each time. don't call it to reuse existing token.
