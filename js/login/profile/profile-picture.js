@@ -61,7 +61,7 @@ $('#profile-pic-upload').click(function(e){
 e.preventDefault()	
 	
 navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-    destinationType: Camera.DestinationType.FILE_URL,
+    destinationType: Camera.DestinationType.DATA_URL,
 	sourceType : Camera.PictureSourceType.PHOTOLIBRARY 
 });
 
