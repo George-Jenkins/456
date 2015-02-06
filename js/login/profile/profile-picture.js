@@ -75,7 +75,7 @@ function onFail(message) {
 
 <!--upload image-->
 function uploadImage(imageData){
-alert(imageData)
+//alert(imageData)
 var z = getZ()
 alert(2)
 var options = new FileUploadOptions();
