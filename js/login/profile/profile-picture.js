@@ -61,7 +61,7 @@ $('#profile-pic-upload').click(function(e){
 e.preventDefault()	
 	
 navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-    destinationType: Camera.DestinationType.DATA_URL,
+    destinationType: Camera.DestinationType.FILE_URI,
 	sourceType : Camera.PictureSourceType.PHOTOLIBRARY 
 });
 
@@ -75,7 +75,7 @@ function onFail(message) {
 
 <!--upload image-->
 function uploadImage(imageData){
-//alert(imageData)
+alert(imageData)
 var z = getZ()
 alert(2)
 var options = new FileUploadOptions();
