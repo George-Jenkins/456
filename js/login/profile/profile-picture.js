@@ -77,13 +77,13 @@ function onFail(message) {
 function uploadImage(imageData){
 alert(imageData)
 var z = getZ()
-alert(2)
+
 var options = new FileUploadOptions();
 options.fileKey = "profile-pic-upload";
 options.fileName = imageData.substr(imageData.lastIndexOf('/') + 1);
 options.mimeType = "image/jpeg";
 
-alert(options.fileName)
+
 var win = function (r) {//this is success callback for FileTranser
 alert('win')
 }
