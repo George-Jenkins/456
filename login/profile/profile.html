@@ -106,8 +106,6 @@ navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
 	});
 
 function onSuccess(imageData) {
-    var image = document.getElementById('myImage');
-    image.src = imageData;
 	uploadImage(imageData)
 }
 
