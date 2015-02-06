@@ -83,36 +83,9 @@ options.fileKey = "profile-pic-upload";
 options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
 options.mimeType = "image/jpeg";
 
-
+alert(3)
 var win = function (r) {//this is success callback for FileTranser
-var x = 0;
-var interval = setInterval(function(){
-	
-	var z = getZ()	
-	
-	$.post('http://ritzkey.com/login/profile/queries/check-image-change-mobile.php',{z:z, imagePosition:'profile'},function(data){
-		
-		if(imageName != data.currentImage){
-			
-			$('#profile-pic-div').css('background-image','url(http://ritzkey.com/login/profile/pics/'+data.folderName+'/'+data.currentImage+')').show()
-	
-			$('#image-loading').hide()
-			$('#profile-submit-feedback').removeClass('red').html('')
-			clearInterval(interval);
-			return;
-		}//if
-		
-	},'json')//post
-x++;
-//if 16 seconds have passed asstume there was an error
-if(x==15){
-	
-$('#profile-submit-feedback').addClass('red').html('Error')
-$('#image-loading').hide()
-clearInterval(interval);	
-return;
-}		
-},1000)//set interval
+alert('win')
 }
 
 var fail = function (error) {
