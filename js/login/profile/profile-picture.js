@@ -82,9 +82,7 @@ var options = new FileUploadOptions();
 options.fileKey = "profile-pic-upload";
 options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
 options.mimeType = "image/jpeg";
-var params = {};
-params.z = z;
-options.params = params;
+
 
 var win = function (r) {//this is success callback for FileTranser
 var x = 0;
@@ -122,7 +120,7 @@ var fail = function (error) {
 }
 	
 var ft = new FileTransfer();
-ft.upload(imageData, encodeURI('http://ritzkey.com/login/profile/queries/upload-profile-picture.php'), win, fail, options);
+ft.upload(imageData, encodeURI('http://ritzkey.com/login/profile/queries/test-upload.php'), win, fail, options);
 	
 }//uploadImage function
 		
