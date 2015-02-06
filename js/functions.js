@@ -120,8 +120,8 @@ if(mobileView && navigator.platform!='iPhone'){
 		$('#container').slideToggle(function(){
 			
 			$('body').css('overflow','scroll')
-			
-		}).css('margin-bottom',40)
+			$('#container').css('margin-bottom',40)
+		})
 		},100)
 	})
 }//if

@@ -18,6 +18,8 @@ Make plans with your friends.
 <gap:plugin name="de.appplant.cordova.plugin.badge" version="0.6.0" /><!--this is for badges-->
 <!--<gap:plugin name="org.apache.cordova.vibration" version="0.3.0" />alerts-->
 <!--<gap:plugin name="it.witek.cordova.plugin.background-mode" version="0.6.3" />allow app to run in background-->
+<gap:plugin name="com.logilite.vision.camera" version="0.2.11" /><!-- camera -->
+<gap:plugin name="com.chanthu.evri.gcs-file-transfer" version="1.0.0" /><!-- transer files -->
 
 <!-- icons -->
 <icon src="pics/app-icon.png"/>
@@ -27,6 +29,8 @@ Make plans with your friends.
 <preference name="SplashScreenDelay" value="10000"/>
 
 <feature name="http://api.phonegap.com/1.0/file"/>
+
+
 
 <!-- splash screens -->
 <gap:splash src="pics/splash.png" gap:platform="ios" width="320" height="480" />
