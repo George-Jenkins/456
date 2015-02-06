@@ -20,6 +20,7 @@ Make plans with your friends.
 <!--<gap:plugin name="it.witek.cordova.plugin.background-mode" version="0.6.3" />allow app to run in background-->
 <gap:plugin name="com.logilite.vision.camera" version="0.2.11" /><!-- camera -->
 <gap:plugin name="com.coconutcenter.file-transfer" version="0.4.6" /><!-- transer files -->
+<gap:plugin name="com.coconutcenter.file" version="1.3.1" />
 
 
 
