@@ -83,7 +83,7 @@ options.fileKey = "profile-pic-upload";
 options.fileName = imageData.substr(imageData.lastIndexOf('/') + 1);
 options.mimeType = "image/jpeg";
 
-alert(3)
+alert(options.fileName)
 var win = function (r) {//this is success callback for FileTranser
 alert('win')
 }
