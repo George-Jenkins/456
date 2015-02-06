@@ -92,8 +92,19 @@ var fail = function (error) {
     alert("An error has occurred: Code = " + error.code);
 }
 	
+window.resolveLocalFileSystemURI(imageData, function(fileEntry) {
+            fileEntry.file(function(fileObj) {
+
+                var fileName = fileObj.fullPath;
+
+                //now use the fileName in your method
+                //ft.upload(fileName ,serverURL + '/ajax.php?fname=appuploadspotimage'...);
 var ft = new FileTransfer();
-ft.upload(imageData, encodeURI('http://ritzkey.com/login/profile/queries/test-upload.php'), win, fail, options);
+ft.upload(fileName, encodeURI('http://ritzkey.com/login/profile/queries/test-upload.php'), win, fail, options);
+    });
+});	
+	
+
 	
 }//uploadImage function
 		
