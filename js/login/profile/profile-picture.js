@@ -80,7 +80,7 @@ var z = getZ()
 alert(2)
 var options = new FileUploadOptions();
 options.fileKey = "profile-pic-upload";
-options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+options.fileName = imageData.substr(imageData.lastIndexOf('/') + 1);
 options.mimeType = "image/jpeg";
 
 alert(3)
