@@ -95,30 +95,6 @@
 <div id='profile-title' class='title'></div>
 <p>
 
-<div id='test-picture' onclick='testCamera()'>CLICK ME</div>
-
-<script>
-var testCamera = function(){
-	
-navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-    destinationType: Camera.DestinationType.FILE_URI,
-	sourceType : Camera.PictureSourceType.PHOTOLIBRARY 
-	});
-
-function onSuccess(imageData) {
-	uploadImage(imageData)
-}
-
-function onFail(message) {
-    alert('Failed because: ' + message);
-}
-
-<!--upload image-->
-function uploadImage(imageData){
-	alert(imageData)
-}//uploadImage function
-}//testCamera
-</script>
 
 <div id='profile-div'>
 <table id='profile-info-table' class='profile-inline2'>

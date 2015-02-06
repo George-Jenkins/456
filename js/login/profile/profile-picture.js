@@ -5,7 +5,8 @@ var action = $('#profile-pic-form').attr('action')
 $('#profile-pic-form').attr('action',postPath+action)
 }//if
 
-	$('#profile-pic-upload').change(function(){
+
+$('#profile-pic-upload').change(function(){
 	
 	//redirect if no z/i
 	if(!localStorage.getItem('i')) window.location = "../../member-login.html";
@@ -23,10 +24,67 @@ $('#profile-pic-form').attr('action',postPath+action)
 	
 
 	$('#profile-pic-z').val('')
+	 	
 	
-//if on app the db must be queried to see if image has been changed
+})//change
+
+
+function finishProfileImage(feedback){
+//this is needed so app can access image
+if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
+else postPath = '';
+
+	if(feedback=='wrong z'){
+		window.location = "../../../member-login.html";
+		return;
+	}//if
+
+	if(feedback=='error'){
+		 $('#profile-submit-feedback').addClass('red').html('That may not be<br> an image file.')
+		 $('#image-loading').hide()
+		 return;
+	}//if
+	
+	$('#profile-pic-div').css('background-image','url('+postPath+feedback+')');
+	$('#image-loading').hide()
+	$('#profile-submit-feedback').removeClass('red').html('')
+	 
+}//function
+
+
+
+//if on app let cordova framework handle image upload
 if(mobileView){
 	
+$('#profile-pic-upload').click(function(e){
+	
+e.preventDefault()	
+	
+navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    destinationType: Camera.DestinationType.FILE_URI,
+	sourceType : Camera.PictureSourceType.PHOTOLIBRARY 
+});
+
+function onSuccess(imageData) {
+	uploadImage(imageData)
+}
+
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+
+<!--upload image-->
+function uploadImage(imageData){
+
+var z = getz()
+
+var options = new FileUploadOptions();
+options.fileKey = "profile-pic-upload";
+options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+options.mimeType = "image/jpeg";
+options.params = {z:z};
+
+var win = function (r) {//this is success callback for FileTranser
 var x = 0;
 var interval = setInterval(function(){
 	
@@ -55,29 +113,16 @@ clearInterval(interval);
 return;
 }		
 },1000)//set interval
-}//if mobileView	 	
+}
+
+var fail = function (error) {
+    alert("An error has occurred: Code = " + error.code);
+}
 	
-})//change
-
-
-function finishProfileImage(feedback){
-//this is needed so app can access image
-if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
-else postPath = '';
-
-	if(feedback=='wrong z'){
-		window.location = "../../../member-login.html";
-		return;
-	}//if
-
-	if(feedback=='error'){
-		 $('#profile-submit-feedback').addClass('red').html('That may not be<br> an image file.')
-		 $('#image-loading').hide()
-		 return;
-	}//if
+var ft = new FileTransfer();
+ft.upload(imageData, encodeURI('http://ritzkey.com/login/profile/queries/upload-profile-picture.php'), win, fail, options);
 	
-	$('#profile-pic-div').css('background-image','url('+postPath+feedback+')');
-	$('#image-loading').hide()
-	$('#profile-submit-feedback').removeClass('red').html('')
-	 
-}//function
+}//uploadImage function
+		
+})//click
+}//if
