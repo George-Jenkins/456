@@ -75,9 +75,9 @@ function onFail(message) {
 
 <!--upload image-->
 function uploadImage(imageData){
-
+alert(imageData)
 var z = getZ()
-
+alert(2)
 var options = new FileUploadOptions();
 options.fileKey = "profile-pic-upload";
 options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
