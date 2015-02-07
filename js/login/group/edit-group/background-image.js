@@ -90,13 +90,14 @@ function uploadImage(imageData){
 var imageName = $('body').css('background-image').split('/');
 imageName = imageName[imageName.length-1].split(')')[0];
 
+var group_id = getGroupID();
 var z = getZ();
 
 var options = new FileUploadOptions();
 options.fileKey = "upload-background";
 options.fileName = imageData.substr(imageData.lastIndexOf('/') + 1);
 options.mimeType = "image/jpeg";
-var params = {z:z};
+var params = {z:z, 'group-id':group_id};
 
 options.params = params;
 

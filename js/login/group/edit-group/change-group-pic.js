@@ -89,12 +89,13 @@ var imageName = $('#group-image-div').css('background-image').split('/');
 imageName = imageName[imageName.length-1].split(')')[0];
 
 var z = getZ();
+var group_id = getGroupID();
 
 var options = new FileUploadOptions();
 options.fileKey = "group-pic";
 options.fileName = imageData.substr(imageData.lastIndexOf('/') + 1);
 options.mimeType = "image/jpeg";
-var params = {z:z};
+var params = {z:z,'group-id':group_id};
 
 options.params = params;
 

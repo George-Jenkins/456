@@ -159,7 +159,7 @@ var interval = setInterval(function(){
 			$('#load-icon2').hide()
 			$('#cover-photo-file').val('')
 			$('#profile-title').html('Profile')
-			alert()
+			
 			clearInterval(interval);
 			return;
 		}//if
