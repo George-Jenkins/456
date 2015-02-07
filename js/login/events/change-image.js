@@ -21,43 +21,8 @@ postPath = '';
 	$('#eventZ').val(z)
 	$('#imageEventID').val(eventID)
 	
-	//this will be used below. It's for apps
-	var imageName = $('#event-image').css('background-image').split('/');
-	imageName = imageName[imageName.length-1].split(')')[0];
-	
 	$('#change-image-form').submit()
 
-//if on app the db must be queried to see if image has been changed
-if(mobileView){
-var x = 0;
-var interval = setInterval(function(){
-	
-	var z = getZ()
-	var event_id = getEventID();
-	
-	$.post('http://ritzkey.com/login/events/queries/check-image-change-mobile.php',{z:z, imagePosition:'event', event_id:event_id},function(data){
-		
-		if(imageName != data.currentImage){
-			
-			$('#event-image').css('background-image','url(http://ritzkey.com/login/profile/pics/'+data.folderName+'/'+data.currentImage+')')
-	
-			$('#change-image-loader').hide()
-			
-			clearInterval(interval);
-			return;
-		}//if
-		
-	},'json')//post
-x++;
-//if 16 seconds have passed asstume there was an error
-if(x==15){	
-$('#change-image-loader').hide()
-$('#error-msg1').html('Error').show()
-clearInterval(interval);	
-return;
-}		
-},1000)//set interval
-}//if mobileView
 	
 })//change	
 	
@@ -92,3 +57,88 @@ postPath = '';
 	$('#event-image').css('background-image','url('+postPath+feedback+')')
 	
 }//function
+
+
+//if on app let cordova framework handle image upload
+if(mobileView){
+	
+$('#change-image').click(function(e){
+	
+e.preventDefault()	
+	
+navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    destinationType: Camera.DestinationType.FILE_URI,
+	sourceType : Camera.PictureSourceType.PHOTOLIBRARY 
+});
+
+function onSuccess(imageData) {
+	$('#change-image-loader').show()
+	uploadImage(imageData)
+	
+}
+
+function onFail(message) {
+    //alert('Failed because: ' + message);
+}
+
+<!--upload image-->
+function uploadImage(imageData){
+
+//this will be used below. It's for apps
+var imageName = $('#event-image').css('background-image').split('/');
+imageName = imageName[imageName.length-1].split(')')[0];
+
+var z = getZ();
+
+var options = new FileUploadOptions();
+options.fileKey = "change-image";
+options.fileName = imageData.substr(imageData.lastIndexOf('/') + 1);
+options.mimeType = "image/jpeg";
+var params = {z:z};
+
+options.params = params;
+
+var win = function (r) {//this is success callback for FileTranser
+
+var x = 0;
+var interval = setInterval(function(){
+	
+	var z = getZ()
+	var event_id = getEventID();
+	
+	$.post('http://ritzkey.com/login/events/queries/check-image-change-mobile.php',{z:z, imagePosition:'event', event_id:event_id},function(data){
+		
+		if(imageName != data.currentImage){
+			
+			$('#event-image').css('background-image','url(http://ritzkey.com/login/profile/pics/'+data.folderName+'/'+data.currentImage+')')
+	
+			$('#change-image-loader').hide()
+			
+			clearInterval(interval);
+			return;
+		}//if
+		
+	},'json')//post
+x++;
+//if 16 seconds have passed asstume there was an error
+if(x==15){	
+$('#change-image-loader').hide()
+$('#error-msg1').html('Error').show()
+clearInterval(interval);	
+return;
+}		
+},1000)//set interval
+
+}
+
+var fail = function (error) {
+    alert("An error has occurred: Code = " + error.code);
+}
+	         
+var ft = new FileTransfer();
+ft.upload(imageData, encodeURI('http://ritzkey.com/login/events/queries/change-image.php'), win, fail, options);
+	
+}//uploadImage function
+		
+})//click
+}//if

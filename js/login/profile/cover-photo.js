@@ -36,63 +36,26 @@ $('#cover-photo-file').change(function(){
 	var z = getZ()
 	$('#cover-img-z').val(z)
 	
-	//this will be used below. It's for apps
-	var imageName = $('#cover-photo-div').css('background-image').split('/');
-	imageName = imageName[imageName.length-1].split(')')[0];
-	
 	$('#cover-photo-form').submit()
 	$('#load-icon2').show()
 	$('#add-cover-feedback').removeClass('red').html('').hide()
 	$('#cover-img-z').val('')
 	 
-//if on app the db must be queried to see if image has been changed
-if(mobileView){
-	
-var x = 0;
-var interval = setInterval(function(){
-	
-	var z = getZ()	
-	
-	$.post('http://ritzkey.com/login/profile/queries/check-image-change-mobile.php',{z:z, imagePosition:'cover'},function(data){
-		
-		if(imageName != data.currentImage){
-			
-			$('#cover-photo-div').css('background-image','url(http://ritzkey.com/login/profile/pics/'+data.folderName+'/'+data.currentImage+')').show()
-	
-			$('#add-cover-span').hide()
-			$('#delete-cover-span').show()
-			$('#load-icon2').hide()
-			$('#cover-photo-file').val('')
-			$('#profile-title').html('Profile')
-			alert()
-			clearInterval(interval);
-			return;
-		}//if
-		
-	},'json')//post
-x++;
-//if 16 seconds have passed asstume there was an error
-if(x==15){
-	
-('#load-icon2').hide()
-$('#add-cover-feedback').addClass('red').html('Error').show()
-clearInterval(interval);	
-return;
-}		
-},1000)//set interval
-}//if mobileView	 
 	 
 })//change
 
 
 //delete cover
 $('#delete-cover-span').click(function(){
+
+if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
+else postPath = '';
 	
 	var z = getZ();
 	
 	$('#load-icon2').show()
 	
-	$.post('queries/delete-cover-img.php',{z:z},function(data){
+	$.post(postPath+'queries/delete-cover-img.php',{z:z},function(data){
 	
 		if(data){
 		
@@ -137,3 +100,93 @@ else postPath = '';
 	$('#profile-title').html('Profile')
 	
 }//function
+
+
+//if on app let cordova framework handle image upload
+if(mobileView){
+	
+$('#cover-photo-file').click(function(e){
+	
+e.preventDefault()	
+	
+navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    destinationType: Camera.DestinationType.FILE_URI,
+	sourceType : Camera.PictureSourceType.PHOTOLIBRARY 
+});
+
+function onSuccess(imageData) {
+	$('#load-icon2').show()
+	uploadImage(imageData)
+	
+}
+
+function onFail(message) {
+    //alert('Failed because: ' + message);
+}
+
+<!--upload image-->
+function uploadImage(imageData){
+
+//this will be used below. It's for apps
+var imageName = $('#cover-photo-div').css('background-image').split('/');
+imageName = imageName[imageName.length-1].split(')')[0];
+
+var z = getZ();
+
+var options = new FileUploadOptions();
+options.fileKey = "cover-photo-file";
+options.fileName = imageData.substr(imageData.lastIndexOf('/') + 1);
+options.mimeType = "image/jpeg";
+var params = {z:z};
+
+options.params = params;
+
+var win = function (r) {//this is success callback for FileTranser
+
+var x = 0;
+var interval = setInterval(function(){
+	
+	var z = getZ()	
+	
+	$.post('http://ritzkey.com/login/profile/queries/check-image-change-mobile.php',{z:z, imagePosition:'cover'},function(data){
+		
+		if(imageName != data.currentImage){
+			
+			$('#cover-photo-div').css('background-image','url(http://ritzkey.com/login/profile/pics/'+data.folderName+'/'+data.currentImage+')').show()
+	
+			$('#add-cover-span').hide()
+			$('#delete-cover-span').show()
+			$('#load-icon2').hide()
+			$('#cover-photo-file').val('')
+			$('#profile-title').html('Profile')
+			alert()
+			clearInterval(interval);
+			return;
+		}//if
+		
+	},'json')//post
+x++;
+//if 16 seconds have passed asstume there was an error
+if(x==15){
+	
+('#load-icon2').hide()
+$('#add-cover-feedback').addClass('red').html('Error').show()
+clearInterval(interval);	
+return;
+}		
+},1000)//set interval
+
+}
+
+var fail = function (error) {
+    alert("An error has occurred: Code = " + error.code);
+}
+	         
+var ft = new FileTransfer();
+ft.upload(imageData, encodeURI('http://ritzkey.com/login/profile/queries/upload-cover-img.php'), win, fail, options);
+	
+}//uploadImage function
+		
+})//click
+}//if
+

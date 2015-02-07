@@ -16,10 +16,6 @@ $('#profile-pic-upload').change(function(){
 	var z = getZ();
 	$('#profile-pic-z').val(z)
 	
-	//this will be used below. It's for apps
-	var imageName = $('#profile-pic-div').css('background-image').split('/');
-	imageName = imageName[imageName.length-1].split(')')[0];
-	
 	$('#profile-pic-form').submit()
 	
 
@@ -66,45 +62,71 @@ navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
 });
 
 function onSuccess(imageData) {
+	$('#image-loading').show()
 	uploadImage(imageData)
+	
 }
 
 function onFail(message) {
-    alert('Failed because: ' + message);
+    //alert('Failed because: ' + message);
 }
 
 <!--upload image-->
 function uploadImage(imageData){
 
-var z = getZ()
+//this will be used below. It's for apps
+var imageName = $('#profile-pic-div').css('background-image').split('/');
+imageName = imageName[imageName.length-1].split(')')[0];
+
+var z = getZ();
 
 var options = new FileUploadOptions();
 options.fileKey = "profile-pic-upload";
 options.fileName = imageData.substr(imageData.lastIndexOf('/') + 1);
 options.mimeType = "image/jpeg";
+var params = {z:z};
 
+options.params = params;
 
 var win = function (r) {//this is success callback for FileTranser
-alert('win')
+
+	var x = 0;
+var interval = setInterval(function(){
+	
+	var z = getZ()	
+	
+	$.post('http://ritzkey.com/login/profile/queries/check-image-change-mobile.php',{z:z, imagePosition:'profile'},function(data){
+		
+		if(imageName != data.currentImage){
+			
+			$('#profile-pic-div').css('background-image','url(http://ritzkey.com/login/profile/pics/'+data.folderName+'/'+data.currentImage+')').show()
+	
+			$('#image-loading').hide()
+			$('#profile-submit-feedback').removeClass('red').html('')
+			clearInterval(interval);
+			return;
+		}//if
+		
+	},'json')//post
+x++;
+//if 16 seconds have passed asstume there was an error
+if(x==15){
+	
+$('#profile-submit-feedback').addClass('red').html('Error')
+$('#image-loading').hide()
+clearInterval(interval);	
+return;
+}		
+},1000)//set interval
+
 }
 
 var fail = function (error) {
     alert("An error has occurred: Code = " + error.code);
 }
-	
-window.resolveLocalFileSystemURI(imageData, function(fileEntry) {
-            fileEntry.file(function(fileObj) {
-
-                var fileName = fileObj.fullPath;
-
-                //now use the fileName in your method
-                //ft.upload(fileName ,serverURL + '/ajax.php?fname=appuploadspotimage'...);
+	         
 var ft = new FileTransfer();
-ft.upload(fileName, encodeURI('http://ritzkey.com/login/profile/queries/test-upload.php'), win, fail, options);
-    });
-});	
-	
-
+ft.upload(imageData, encodeURI('http://ritzkey.com/login/profile/queries/upload-profile-picture.php'), win, fail, options);
 	
 }//uploadImage function
 		

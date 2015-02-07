@@ -55,7 +55,6 @@ else postPath = '';
 		$('#list-events-div').html(data.events)
 		$('#number-of-events').html(data.numberOfEvents)
 		
-		
 		if(data.pending_approval==true){
 			$('#awaiting-approval').show()
 		}//if
