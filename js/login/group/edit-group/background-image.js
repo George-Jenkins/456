@@ -74,7 +74,7 @@ navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
 });
 
 function onSuccess(imageData) {
-	$('#ajax-loader1').show()
+	$('#load-icon1').show()
 	uploadImage(imageData)
 	
 }
@@ -115,7 +115,7 @@ var interval = setInterval(function(){
 			
 			$('body').addClass('group-background').css('background-image','url(http://ritzkey.com/login/group/pics/'+data.folderName+'/'+data.currentImage+')')
 	
-			$('#ajax-loader1').hide()
+			$('#load-icon1').hide()
 			$('#background-img-feedback').removeClass().html('').hide()
 			//clear z
 			$('#background-pic-z').val('')
@@ -143,7 +143,7 @@ var fail = function (error) {
 }
 	         
 var ft = new FileTransfer();
-ft.upload(imageData, encodeURI('http://ritzkey.com/login/group/queries/upload-background-image.php'), win, fail, options);
+ft.upload(imageData, encodeURI('http://ritzkey.com/login/group/queries/upload-background-pic.php'), win, fail, options);
 	
 }//uploadImage function
 		
