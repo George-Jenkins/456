@@ -119,7 +119,7 @@ if(mobileView && navigator.platform!='iPhone'){
 	
 	setTimeout(function(){
 		
-	$('body').css('padding-bottom',0)
+	$('body').animate({paddingBottom:0,paddingRight:0,paddingLeft:0},500)
 		
 	},600)	
 	
