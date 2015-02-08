@@ -119,6 +119,7 @@ if(mobileView && navigator.platform!='iPhone'){
 	
 	setTimeout(function(){
 		
+	$('body').css('overflow','scroll')	
 	$('#container').slideToggle()
 		
 	},400)	
@@ -126,5 +127,3 @@ if(mobileView && navigator.platform!='iPhone'){
 	})
 	
 }//if
-
-if(!mobileView) $('body').css('overflow','scroll')
