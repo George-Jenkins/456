@@ -30,12 +30,12 @@ var pushNotification;
         "ecb":"onNotificationAPN"
     });
 } else {
-   alert('3')
+  
 	pushNotification.register(
     successHandler,
     errorHandler,
     {
-        "senderID":"21900408987",
+        "senderID":"quick-sonar-849",
         "ecb":"onNotification"
     });
 } 

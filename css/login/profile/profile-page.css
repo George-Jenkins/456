@@ -127,6 +127,7 @@
 #entourages-div{
 	width:100%;
 	max-width:350px;
+	display:none;
 	background-color:#EBEBE0;
 	border-radius:0 0 10px 10px;
 	-webkit-border-radius:0 0 10px 10px;
@@ -223,7 +224,7 @@ input#cover-photo-file{
 	height:auto;
 	position:absolute;
 	top:2px;
-	left:224px;
+	left:228px;
 	display:none;
 }
 #background-message{
