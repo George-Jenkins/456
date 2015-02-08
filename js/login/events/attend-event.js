@@ -17,14 +17,14 @@ else postPath = '';
 			
 		}//if price
 		else{
-			$('#loader8').show()
+			$('#loader8').removeClass('hide')
 			
 			var z = getZ()
 			var eventID = getEventID()
 		
 			$.post(postPath+'queries/attend-event.php',{z:z, eventID:eventID},function(data){
 				
-			$('#loader8').hide()
+			$('#loader8').removeClass('hide')
 			$('#attend-button').attr('value','Attending!')
 			$('#leave-event-button-span').show()
 			
@@ -43,11 +43,11 @@ else postPath = '';
 		
 		if(!contribution) return;
 		
-		$('#loader3').show()
+		$('#loader3').removeClass('hide')
 		
 		if(contribution*0!=0){
 			$('#contribute-money').addClass('red').val('Numbers only')
-			$('#loader3').hide()
+			$('#loader3').addClass('hide')
 			return;
 		}//if
 		
@@ -58,7 +58,7 @@ else postPath = '';
 		
 		$.post(postPath+'queries/attend-event.php',{z:z, eventID:eventID, contribution:contribution},function(data){
 			
-			$('#loader3').hide()
+			$('#loader3').addClass('hide')
 			
 			var path = pathToRoot();
 			
@@ -103,7 +103,7 @@ else postPath = '';
 	
 	$('#cancel-contribute-price').click(function(){
 			
-			$('#loader3').hide()
+			$('#loader3').addClass('hide')
 			
 			 $('#contribute-money-span').hide()
 			 $('#contribute-money').val('')

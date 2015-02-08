@@ -20,7 +20,7 @@ else postPath = '';
 			}//if
 		})//
 		
-		$('#loader6').show()
+		$('#loader6').removeClass('hide')
 		
 		var z = getZ()
 		var eventID = getEventID()
@@ -34,7 +34,7 @@ else postPath = '';
 	})//click
 	
 function doneInviting(){
-	$('#loader6').hide()
+	$('#loader6').addClass('hide')
 	$('#dark-background-for-event').hide()
 	$('#select-groups-container').hide()
 }
