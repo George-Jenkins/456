@@ -117,14 +117,13 @@ if(mobileView && navigator.platform!='iPhone'){
 	
 	$('#container').fadeTo(1,0)
 	
-	$('#container').slideToggle(function(){
-	$('#container').fadeTo(1,1)	
+	$('#container').slideToggle(1,function(){
+		
 	setTimeout(function(){
 		
-	$('body').css('overflow','scroll')	
+	$('#container').fadeTo(1,1)	
 	
-	$('#container').slideToggle(function(){
-	
+	$('#container').slideToggle(1,function(){
 	
 	$('#container').css('margin-bottom',40)			
 	
