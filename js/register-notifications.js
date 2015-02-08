@@ -43,7 +43,7 @@ var pushNotification;
 
 // result contains any message sent from the plugin call
 function successHandler (result) {
-   // alert('result = ' + result);
+   alert('result = ' + result);
 }
 
 function tokenHandler (result) {
@@ -57,7 +57,7 @@ function tokenHandler (result) {
 
 // result contains any error description text returned from the plugin call
 function errorHandler (error) {
-  //  alert('error = ' + error);
+  alert('error = ' + error);
 }
 
 // iOS
@@ -84,7 +84,7 @@ function onNotificationAPN (event) {
 // Android and Amazon Fire OS
 function onNotification(e) {
     //$("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
-alert('test')
+
     switch( e.event )
     {
     case 'registered':
