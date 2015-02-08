@@ -115,7 +115,7 @@ mobileView = true;
 //for some reason on droid divs would disappear on scroll unless there was some animation first
 if(mobileView && navigator.platform!='iPhone'){
 	
-	$('body').animate({paddingBottom:100},500)
+	$('body').animate({paddingBottom:100,paddingRight:100,paddingLeft:100},500)
 	
 	setTimeout(function(){
 		
