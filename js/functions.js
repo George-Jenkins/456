@@ -125,7 +125,7 @@ if(mobileView && navigator.platform!='iPhone'){
 	
 	})
 		
-	},400)	
+	},20)	
 		
 	})
 	
