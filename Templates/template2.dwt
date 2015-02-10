@@ -38,12 +38,12 @@
     <td class='menu-link'><a href='../login/profile/profile.html'>Profile</a></td>
 	<td class='menu-link'><a href='../login/replies/replies.html'><span class='replies-alert'></span>Replies</a></td> 
     <td class='menu-link'><a href='../login/notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></td> 
-    <td class='menu-link'><a href='../login/search-groups/search-groups.html'>Entourage search</a></td> 
+    <td class='menu-link'><a href='../login/events/view-events.html'>Activities</a></td> 
     <td class='menu-link'>
     	<a href='' id='more-td'>More</a>
      <div id='more-dropdown-container'>
         	<div id='more-dropdown'>
-           <a href='../login/events/view-events.html'><div class='more-dropdown-item'>Activities</div></a>
+           <a href='../login/search-groups/search-groups.html'><div class='more-dropdown-item'>Entourage Search</div></a>
            <a href='../login/account/settings.html'><div class='more-dropdown-item'>Settings</div></a>
    			<a href='../login/contact/contact-form.html'><div>Contact</div></a>
             </div><!---more-dropdown---->
@@ -84,23 +84,43 @@
 </div><!-----container------->
 
 
+<div id='bottom-menu' class='hide'>
+	<span id='back-button'><img src='../pics/left-icon.png'/></span>
+    <span id='forward-button'><img src='../pics/right-icon.png'/></span>
+</div><!--bottom-menu-->
 
 
-
-
+<!-- getclicky -->
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100810496); }catch(e){}</script>
 
 </body>
-<script src='../js/jquery/jquery.js'></script>
+
+<script src='../js/jquery/jquery-1.11.2.min.js'></script>
+<script src='../js/jquery/jquery-animate-enhanced.js'></script>
 <script src='../js/jquery-ui-1.11.2.custom/jquery-ui.js'></script>
+<script src='../js/plugins/fastclick.js'></script>
 <script src='../js/functions.js'></script>
-<script src='../js/menu/menu.js'></script>
+<script src='../sjcl-master/sjcl.js'></script>
 <script src='../js/general/lightbox.js'></script>
 <script src='../js/home-page/register.js'></script>
-<script src='../js/home-page/login.js'></script>
-<script src='../sjcl-master/sjcl.js'></script>
+<script src="../phonegap.js"></script>
+<script src='../js/PushNotification.js'></script>
+<script>
+function onNotification(e){
+alert(e.regid);
+var z = getZ()
+var device = 'android';
+	if(z) $.post('http://ritzkey.com/queries/register-notification-key.php',{z:z, token:e.regid, device:device},function(data){
+},'json')
+    
+}
+</script>
+<script src='../js/register-notifications.js'></script>
 <script src='../js/login/handle.js'></script>
 <script src='../js/login/pulse.js'></script>
 <!-- TemplateBeginEditable name="EditRegion4" -->
 
 <!-- TemplateEndEditable -->
+<script src='../js/menu/menu.js'></script>
 </html>

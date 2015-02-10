@@ -31,7 +31,7 @@ var pushNotification;
     });
 } else {
   
-pushNotification.unregister(successHandler, errorHandler)    
+//pushNotification.unregister(successHandler, errorHandler)  
   
 	pushNotification.register(
     successHandler,
@@ -40,12 +40,12 @@ pushNotification.unregister(successHandler, errorHandler)
         "senderID":"429599383559",
         "ecb":"onNotification"
     });
-} 
+}
 
 
 // result contains any message sent from the plugin call
 function successHandler (result) {
-   alert('result = ' + result);
+   // alert('result = ' + result);
 }
 
 function tokenHandler (result) {
@@ -59,7 +59,7 @@ function tokenHandler (result) {
 
 // result contains any error description text returned from the plugin call
 function errorHandler (error) {
-  alert('error = ' + error);
+  //  alert('error = ' + error);
 }
 
 // iOS
@@ -82,18 +82,15 @@ function onNotificationAPN (event) {
         pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, event.badge);
     }
 }
-
+/*
 // Android and Amazon Fire OS
 function onNotification(e) {
-    //$("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
-
+    
     switch( e.event )
     {
     case 'registered':
         if ( e.regid.length > 0 )
         {
-			alert(e.regid)
-           // $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
             // Your GCM push server needs to know the regID before it can push to this device
             // here is where you might want to send it the regID for later use.
             //console.log("regID = " + e.regid);
@@ -145,8 +142,7 @@ function onNotification(e) {
     break;
   }
 }
-
-
+*/
 
 localStorage.removeItem('registerDevice')
 
