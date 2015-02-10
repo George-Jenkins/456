@@ -13,7 +13,7 @@ else postPath = '';
 		eventPriceChecked = ''
 		minAmountChecked = '';
 		whoCanInvite = '';
-		$('#loader').hide()
+		$('#loader').addClass('hide')
 		
 		errors = '';
 		
@@ -94,7 +94,7 @@ else postPath = '';
 			
 		}//if
 		else{
-			$('#loader').show()
+			$('#loader').removeClass('hide')
 			var z = getZ()
 			$('#z').val(z)
 			

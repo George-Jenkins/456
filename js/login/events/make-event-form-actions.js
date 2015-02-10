@@ -4,12 +4,16 @@
 	
 	$('#yes-raise-money').click(function(){
 		
-		$('#price-of-event').show()
+		$('#price-of-event').show(function(){
+		
 		$('#is-there-min').show()
 		$('#collection-method-tr').show()
 		
 		$('#combine-money-span').removeClass('red')
-		$('body, html').animate({scrollTop:$('#price-of-event').offset().top},300)
+		$('body').animate({scrollTop:$('#price-of-event').offset().top-65},300)	
+			
+		})//show
+		
 	})//click
 	
 	$('#no-raise-money').click(function(){
@@ -24,7 +28,7 @@
 		$('#collection-method').val('')
 		$('#yes-min').attr('checked',false)
 		$('#no-min').attr('checked',false)
-		$('#event-price-span').removeClass('red').html('Price of event')
+		$('#event-price-span').removeClass('red').html('Price of activity')
 		$('#min-contr-span').removeClass('red').html('Minimum contribution')
 		$('#combine-money-span').removeClass('red')
 		$('#min-amount-span').removeClass('red')
@@ -35,7 +39,7 @@
 		
 		$('#min-amount-td').show()
 		$('#min-amount-span').removeClass('red')
-		$('body, html').animate({scrollTop:$('#min-amount-td').offset().top},300)
+		$('body, html').animate({scrollTop:$('#min-amount-td').offset().top-65},300)
 	})//click
 	
 	$('#no-min').click(function(){

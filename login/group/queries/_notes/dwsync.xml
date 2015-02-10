@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="ask-to-join.php" server="67.20.123.61/public_html/ritzkey/" local="130628378247193551" remote="130675832400000000" />
-<file name="chat-wall-load-replies.php" server="67.20.123.61/public_html/ritzkey/" local="130665504329851824" remote="130675832400000000" />
-<file name="chat-wall-load.php" server="67.20.123.61/public_html/ritzkey/" local="130667100275413515" remote="130675832400000000" />
-<file name="chat-wall-pulse.php" server="67.20.123.61/public_html/ritzkey/" local="130663589096220742" remote="130675832400000000" />
-<file name="chat-wall-replies-pulse.php" server="67.20.123.61/public_html/ritzkey/" local="130665543491931713" remote="130675832400000000" />
-<file name="chat-wall-reply.php" server="67.20.123.61/public_html/ritzkey/" local="130651433050008590" remote="130675832400000000" />
-<file name="chat-wall.php" server="67.20.123.61/public_html/ritzkey/" local="130651432005621826" remote="130675832400000000" />
-<file name="check-for-deleted.php" server="67.20.123.61/public_html/ritzkey/" local="130632052994546162" remote="130675832400000000" />
-<file name="create-invite.php" server="67.20.123.61/public_html/ritzkey/" local="130629465840481267" remote="130675832400000000" />
-<file name="delete-post.php" server="67.20.123.61/public_html/ritzkey/" local="130632065564889093" remote="130675832400000000" />
-<file name="load-group.php" server="67.20.123.61/public_html/ritzkey/" local="130663593150302622" remote="130675832400000000" />
-<file name="submit-mission.php" server="67.20.123.61/public_html/ritzkey/" local="130627395807353731" remote="130675832400000000" />
-<file name="update-checked.php" server="67.20.123.61/public_html/ritzkey/" local="130627403089561301" remote="130675832400000000" />
-<file name="upload-background-pic.php" server="67.20.123.61/public_html/ritzkey/" local="130648847682017601" remote="130675832400000000" />
-<file name="upload-group-pic.php" server="67.20.123.61/public_html/ritzkey/" local="130634180860877547" remote="130675832400000000" />
-<file name="check-image-change-mobile.php" server="67.20.123.61/public_html/ritzkey/" local="130675868346836962" remote="130675832400000000" />
+<file name="ask-to-join.php" server="67.20.123.61/public_html/ritzkey/" local="130628378247193551" remote="130679964600000000" />
+<file name="chat-wall-load-replies.php" server="67.20.123.61/public_html/ritzkey/" local="130665504329851824" remote="130679964600000000" />
+<file name="chat-wall-load.php" server="67.20.123.61/public_html/ritzkey/" local="130667100275413515" remote="130679964600000000" />
+<file name="chat-wall-pulse.php" server="67.20.123.61/public_html/ritzkey/" local="130663589096220742" remote="130679964600000000" />
+<file name="chat-wall-replies-pulse.php" server="67.20.123.61/public_html/ritzkey/" local="130665543491931713" remote="130679964600000000" />
+<file name="chat-wall-reply.php" server="67.20.123.61/public_html/ritzkey/" local="130651433050008590" remote="130679964600000000" />
+<file name="chat-wall.php" server="67.20.123.61/public_html/ritzkey/" local="130651432005621826" remote="130679964600000000" />
+<file name="check-for-deleted.php" server="67.20.123.61/public_html/ritzkey/" local="130632052994546162" remote="130679964600000000" />
+<file name="create-invite.php" server="67.20.123.61/public_html/ritzkey/" local="130629465840481267" remote="130679964600000000" />
+<file name="delete-post.php" server="67.20.123.61/public_html/ritzkey/" local="130632065564889093" remote="130679964600000000" />
+<file name="load-group.php" server="67.20.123.61/public_html/ritzkey/" local="130663593150302622" remote="130679964600000000" />
+<file name="submit-mission.php" server="67.20.123.61/public_html/ritzkey/" local="130627395807353731" remote="130679964600000000" />
+<file name="update-checked.php" server="67.20.123.61/public_html/ritzkey/" local="130627403089561301" remote="130679964600000000" />
+<file name="upload-background-pic.php" server="67.20.123.61/public_html/ritzkey/" local="130648847682017601" remote="130679964600000000" />
+<file name="upload-group-pic.php" server="67.20.123.61/public_html/ritzkey/" local="130634180860877547" remote="130679964600000000" />
+<file name="check-image-change-mobile.php" server="67.20.123.61/public_html/ritzkey/" local="130675868346836962" remote="130679964600000000" />
 </dwsync>

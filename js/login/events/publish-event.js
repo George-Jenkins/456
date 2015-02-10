@@ -64,7 +64,7 @@ else postPath = '';
 			
 			if(data.done){
 				
-				window.location = "make-event.html";
+				window.location = "view-events.html";
 				
 			}//if
 			

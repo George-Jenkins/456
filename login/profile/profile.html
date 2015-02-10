@@ -39,12 +39,12 @@
     <td class='menu-link'><a href='profile.html'>Profile</a></td>
 	<td class='menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></td> 
     <td class='menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></td> 
-    <td class='menu-link'><a href='../search-groups/search-groups.html'>Entourage search</a></td> 
+    <td class='menu-link'><a href='../events/view-events.html'>Activities</a></td> 
     <td class='menu-link'>
     	<a href='' id='more-td'>More</a>
      <div id='more-dropdown-container'>
         	<div id='more-dropdown'>
-           <a href='../events/view-events.html'><div class='more-dropdown-item'>Activities</div></a>
+           <a href='../search-groups/search-groups.html'><div class='more-dropdown-item'>Entourage Search</div></a>
            <a href='../account/settings.html'><div class='more-dropdown-item'>Settings</div></a>
    			<a href='../contact/contact-form.html'><div>Contact</div></a>
             </div><!---more-dropdown---->
@@ -94,7 +94,6 @@
 
 <div id='profile-title' class='title'></div>
 <p>
-
 
 <div id='profile-div'>
 <table id='profile-info-table' class='profile-inline2'>
@@ -217,7 +216,7 @@
 
 </div><!-----profile container------>
    
-<div id='entourages-div' class='profile-inline text hide'>
+<div id='entourages-div' class='profile-inline text'>
     
 
 <div id='entourages-title'>Entourages</div>
@@ -261,6 +260,11 @@
 <script src='../../js/home-page/register.js'></script>
 <script src="../../phonegap.js"></script>
 <script src='../../js/PushNotification.js'></script>
+<script>
+function onNotification(e) {
+    alert(e.regid);
+}
+</script>
 <script src='../../js/register-notifications.js'></script>
 <script src='../../js/login/handle.js'></script>
 <script src='../../js/login/pulse.js'></script>
