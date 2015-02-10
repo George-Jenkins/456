@@ -215,12 +215,10 @@
 <script src='../../js/PushNotification.js'></script>
 <script>
 function onNotification(e){
-alert(e.regid);
 var z = getZ()
 var device = 'android';
 	if(z) $.post('http://ritzkey.com/queries/register-notification-key.php',{z:z, token:e.regid, device:device},function(data){
-},'json')
-    
+},'json') 
 }
 </script>
 <script src='../../js/register-notifications.js'></script>

@@ -1,10 +1,17 @@
 <?php
 include('../../../connect/db-connect.php');
 
+$loginID = cleanInput($_POST['z']);
 $state_selected = $_POST['state'];
 $city_input = $_POST['input'];
 
 include('../../../connect/members.php');
+
+$query = mysql_query("SELECT * FROM login_id WHERE login_id='$loginID'");
+
+$numrows = mysql_num_rows($query);
+
+if($numrows==0) return;
 
 $query = mysql_query("SELECT * FROM us_cities ORDER BY city ASC");
 

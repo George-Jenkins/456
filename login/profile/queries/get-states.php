@@ -1,7 +1,15 @@
 <?php
 include('../../../connect/db-connect.php');
 
+$loginID = cleanInput($_POST['z']);
+
 include('../../../connect/members.php');
+
+$query = mysql_query("SELECT * FROM login_id WHERE login_id='$loginID'");
+
+$numrows = mysql_num_rows($query);
+
+if($numrows==0) return;
 
 $query = mysql_query("SELECT DISTINCT(state) as state FROM us_cities ORDER BY state ASC");
 
@@ -19,6 +27,9 @@ while($get_array = mysql_fetch_array($query)){
 	
 }//while
 
-echo $stateOption;
+
+$return['states'] = $stateOption;
+
+echo json_encode($return);
 
 ?>

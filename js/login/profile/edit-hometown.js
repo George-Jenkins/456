@@ -17,20 +17,26 @@ $('#hometown-link').click(function(){
 		$('#type-city').val('')
 		$('#select-states').val('')
 	})//hometown cancel
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
+else postPath = '';	
+	
+	var z = getZ()
 	
 	//add states to dropdown
-	$.get('queries/get-states.php',function(data){
+	$.post(postPath+'queries/get-states.php',{z:z},function(data){
 		
 		if(data){
-		$('#select-states').append(data)
+		$('#select-states').append(data.states)
 		}
-	})//post
+	},'json')//post
 
 
 		//get cities for state
 		$('#select-states').change(function(){
 			
-			localStorage.setItem('currentNumber',0);
+			sessionStorage.setItem('currentNumber',0);
 			
 			$('#city-suggestion-box').html('').hide()
 			$('#type-city').val('')
@@ -48,11 +54,11 @@ if(pathForPost) postPath = 'http://ritzkey.com/login/profile/';
 else postPath = '';			
 		
 		//reset downNumber (this is need for later)
-		localStorage.setItem('downNumber',0);
-		localStorage.setItem('scrollDownNumber',4);
-		localStorage.removeItem('upNumber')
+		sessionStorage.setItem('downNumber',0);
+		sessionStorage.setItem('scrollDownNumber',4);
+		sessionStorage.removeItem('upNumber')
 		
-		 localStorage.setItem('currentNumber',0);//reset
+		 sessionStorage.setItem('currentNumber',0);//reset
 		
 		var input = $('#type-city').val()
 		
@@ -62,8 +68,9 @@ else postPath = '';
 		
 		var original = input;
 		
+		var z = getZ()
 		var state = $('#select-states').find('option:selected').val()
-		$.post(postPath+'queries/get-cities.php',{input:input,state:state},function(data){
+		$.post(postPath+'queries/get-cities.php',{z:z,input:input,state:state},function(data){
 			
 			var current_input = $('#type-city').val()
 			
@@ -83,7 +90,7 @@ else postPath = '';
 
 
 //handle what happens when user presses down
-localStorage.setItem('currentNumber',0);
+sessionStorage.setItem('currentNumber',0);
 
 $('body').keydown(function(e){
 	
@@ -93,24 +100,24 @@ $('body').keydown(function(e){
 	//if down key
 	if(input && div_content && e.keyCode == 40){
 	
-	var x = localStorage.getItem('currentNumber');
+	var x = sessionStorage.getItem('currentNumber');
 	
-	if(localStorage.getItem('goingDown')){
+	if(sessionStorage.getItem('goingDown')){
 		
-		localStorage.setItem('currentNumber',(x*1)+2)
+		sessionStorage.setItem('currentNumber',(x*1)+2)
 		
-		var x = localStorage.getItem('currentNumber');
+		var x = sessionStorage.getItem('currentNumber');
 		
-		localStorage.removeItem('goingDown')
+		sessionStorage.removeItem('goingDown')
 		
 	}//if
 
 //handle what happens when one was clicked
-	if(localStorage.getItem('currentClicked')){
+	if(sessionStorage.getItem('currentClicked')){
 			
-			localStorage.setItem('currentNumber',(x*1)+1)
-			var x = localStorage.getItem('currentNumber')
-			localStorage.removeItem('currentClicked')
+			sessionStorage.setItem('currentNumber',(x*1)+1)
+			var x = sessionStorage.getItem('currentNumber')
+			sessionStorage.removeItem('currentClicked')
 			}//if
 
 	var html = $('#city-num'+x).html()
@@ -125,12 +132,12 @@ $('body').keydown(function(e){
 		container.scrollTop = rowToScrollTo.offsetTop-40;
 		
 		//set wich item will be selected next 	
-		localStorage.setItem('currentNumber',(x*1)+1);
+		sessionStorage.setItem('currentNumber',(x*1)+1);
 	}//if down key
 	}//if html
 })//keydown	
 
-localStorage.removeItem('goingDown')
+sessionStorage.removeItem('goingDown')
 $('body').keydown(function(e){
 	
 	var input = $('#type-city').val()
@@ -139,13 +146,13 @@ $('body').keydown(function(e){
 	//if up key
 	if(input && div_content && e.keyCode == 38){
 		
-		if(!localStorage.getItem('goingDown')) var x = localStorage.getItem('currentNumber')-2;
-		else var x = localStorage.getItem('currentNumber')
+		if(!sessionStorage.getItem('goingDown')) var x = sessionStorage.getItem('currentNumber')-2;
+		else var x = sessionStorage.getItem('currentNumber')
 		
-		if(localStorage.getItem('currentClicked')){
+		if(sessionStorage.getItem('currentClicked')){
 			
-			var x = localStorage.getItem('currentNumber')-1
-			localStorage.removeItem('currentClicked')
+			var x = sessionStorage.getItem('currentNumber')-1
+			sessionStorage.removeItem('currentClicked')
 			}//if
 			
 		var html = $('#city-num'+x).html()
@@ -159,9 +166,9 @@ $('body').keydown(function(e){
 		var rowToScrollTo = document.getElementById('city-num'+x);
 		container.scrollTop = rowToScrollTo.offsetTop;
 		
-		localStorage.setItem('currentNumber',(x*1)-1)
+		sessionStorage.setItem('currentNumber',(x*1)-1)
 		
-		localStorage.setItem('goingDown','down')
+		sessionStorage.setItem('goingDown','down')
 		}//if html
 		
 	}//if up key
@@ -202,6 +209,6 @@ function getCity(city,x){
 	$('#type-city').val(city)
 	
 	//reset currentNumber
-	localStorage.setItem('currentNumber',x)
-	localStorage.setItem('currentClicked',x)
+	sessionStorage.setItem('currentNumber',x)
+	sessionStorage.setItem('currentClicked',x)
 }
