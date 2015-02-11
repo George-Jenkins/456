@@ -80,7 +80,7 @@ $('#back-menu').click(function(){
 //back menu (on bottom of page)	
 if(mobileView){
 $('#container').css('margin-bottom',40)
-$('#bottom-menu').show()
+$('#bottom-menu').css('display','block')
 $('#back-button').click(function(){
 	
 	$('#back-button img').css('background-color','#666')
@@ -105,7 +105,7 @@ $('textarea, input[type=password], input[type=text]').focus(function(){
 	if(system === 'iPad' || system === 'iPhone' || system === 'iPod'){
 		
 		$('#menu').css('position','absolute').css('top',0);
-		$('#bottom-menu').addClass('hide2')
+		$('#bottom-menu').css('display','none')
 		
 	}//if	
 })	
@@ -116,7 +116,7 @@ $('textarea, input[type=password], input[type=text]').blur(function(){
 	if(system === 'iPad' || system === 'iPhone' || system === 'iPod'){
 		
 	$('#menu').css('position','fixed').css('top',0);
-	$('#bottom-menu').removeClass('hide2')
+	$('#bottom-menu').css('display','block')
 	//scroll page alittle just to set it back. (Had to be done with iphone)
 	var offSet = $(window).scrollTop()
 	$('body').animate({scrollTop:offSet+1},1)
