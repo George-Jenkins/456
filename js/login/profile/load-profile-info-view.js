@@ -28,8 +28,8 @@ else postPath = '';
 		//load profile pic
 		$('#profile-pic-div').css('background-image','url('+postPath+data.profile_pic+')');
 	
-		//load profile pic
-		$('body').addClass('profile-background').css('background-image','url('+postPath+data.profile_background+')');
+		//load body image
+		$('#page-body').css('background-image','url('+postPath+data.profile_background+')');
 	
 		if(data.cover_path){
 			$('#cover-photo-div').css('background-image','url('+postPath+data.cover_path+')').show()
