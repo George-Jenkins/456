@@ -39,8 +39,8 @@ else postPath = '';
 		$('#created-by').html('Created by '+data.creatorName)
 		
 		$('body').css('background-image','url('+postPath+data.img2+')')
-		var platform = navigator.platform;
-		if(!mobileView || mobileView && platform=='iPhone') $('body').css('background-attachment','fixed')
+		
+		if(!mobileView) $('body').css('background-attachment','fixed')
 		
 		$('#group-name').html(data.groupName)
 		
