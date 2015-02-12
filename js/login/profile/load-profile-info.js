@@ -17,7 +17,8 @@ else postPath = '';
 		//load profile pic
 		$('#profile-pic-div').css('background-image','url('+postPath+data.profile_pic+')');
 	
-		
+		//load profile pic
+		$('body').css('background-image','url('+postPath+data.profile_background+')');
 	
 		if(data.cover_path){
 			$('#cover-photo-div').css('background-image','url('+postPath+data.cover_path+')').show()
