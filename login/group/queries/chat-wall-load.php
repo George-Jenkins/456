@@ -23,6 +23,11 @@ if($numrows==0){
 	return;
 }//if
 
+//make sure user is part of group
+$query = mysql_query("SELECT * FROM group_members WHERE group_id='$group' AND email='$email' AND approved!='no'");
+$numrows = mysql_num_rows($query);
+if($numrows==0) return;
+
 //set time zone
 $query = mysql_query("SELECT * FROM account_settings WHERE email='$email'");
 $get = mysql_fetch_assoc($query);

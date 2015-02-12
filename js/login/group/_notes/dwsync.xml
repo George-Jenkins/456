@@ -9,8 +9,8 @@
 <file name="group-navigation.js" server="67.20.123.61/public_html/ritzkey/" local="130666585790912790" remote="130675831200000000" />
 <file name="invite-friends.js" server="67.20.123.61/public_html/ritzkey/" local="130657764171529776" remote="130675831200000000" />
 <file name="leave-group.js" server="67.20.123.61/public_html/ritzkey/" local="130658823395844549" remote="130675831200000000" />
-<file name="load-group-member.js" server="67.20.123.61/public_html/ritzkey/" local="130658774075461503" remote="130675831200000000" />
-<file name="load-group-view.js" server="67.20.123.61/public_html/ritzkey/" local="130658774244471170" remote="130675831200000000" />
+<file name="load-group-member.js" server="67.20.123.61/public_html/ritzkey/" local="130681976945174420" remote="130681905000000000" />
+<file name="load-group-view.js" server="67.20.123.61/public_html/ritzkey/" local="130681973044447080" remote="130681900800000000" />
 <file name="load-group.js" server="67.20.123.61/public_html/ritzkey/" local="130658773355910347" remote="130675831200000000" />
 <file name="view-events.js" server="67.20.123.61/public_html/ritzkey/" local="130657765286423545" remote="130675831200000000" />
 <file name="view-specific-replies.js" server="67.20.123.61/public_html/ritzkey/" local="130666517173337242" remote="130675831200000000" />

@@ -35,7 +35,7 @@ $name = $get['name'];
 	mysql_query("DELETE FROM posts WHERE email='$email'");
 	mysql_query("DELETE FROM posts WHERE recipient_email='$email'");
 	//remove user's email from posts group emails and group emails for pulse
-	$query = mysql_query("SELECT * FROM posts");
+	$query = mysql_query("SELECT * FROM posts WHERE group_emails_for_pulse LIKE '%---$email---%'");
 	while($get_array = mysql_fetch_array($query)){
 	$group_emails = $get_array['group_emails'];
 	$group_emails_for_pulse = $get_array['group_emails_for_pulse'];

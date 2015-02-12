@@ -19,6 +19,11 @@ $get = mysql_fetch_assoc($query);
 $timezone = $get['timezone'];
 date_default_timezone_set($timezone);
 
+//make sure user is part of group
+$query = mysql_query("SELECT * FROM group_members WHERE group_id='$group' AND email='$email' AND approved!='no'");
+$numrows = mysql_num_rows($query);
+if($numrows==0) return;
+
 $update = '';
 
 $x = 0;

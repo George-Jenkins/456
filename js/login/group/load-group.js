@@ -38,7 +38,7 @@ else postPath = '';
 		
 		$('#created-by').html('Created by '+data.creatorName)
 		
-		$('body').addClass('group-background').css('background-image','url('+postPath+data.img2+')')
+		$('#page-body').css('background-image','url('+postPath+data.img2+')')
 		
 		$('#group-name').html(data.groupName)
 		

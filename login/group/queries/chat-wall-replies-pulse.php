@@ -22,6 +22,11 @@ date_default_timezone_set($timezone);
 
 if(!$name || !$email) return;
 
+//make sure user is part of group
+$query = mysql_query("SELECT * FROM group_members WHERE group_id='$group' AND email='$email' AND approved!='no'");
+$numrows = mysql_num_rows($query);
+if($numrows==0) return;
+
 $query = mysql_query("SELECT * FROM posts WHERE group_id='$group' AND reply_id!='0' AND group_emails_for_pulse LIKE '%---$email---%' ORDER BY time ASC");
 
 $reply_update = '';

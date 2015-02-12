@@ -21,6 +21,11 @@ if($numrows==0){
 $get = mysql_fetch_assoc($query);
 $email = $get['email'];
 
+//make sure user is part of group
+$query = mysql_query("SELECT * FROM group_members WHERE group_id='$group' AND email='$email' AND approved!='no'");
+$numrows = mysql_num_rows($query);
+if($numrows==0) return;
+
 mysql_query("DELETE FROM posts WHERE id='$id' AND email='$email' AND time='$time'");
 mysql_query("DELETE FROM posts WHERE originalPostID ='$id'");
 mysql_query("DELETE FROM posts WHERE reply_id ='$id'");
