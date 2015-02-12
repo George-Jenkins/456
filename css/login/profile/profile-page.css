@@ -121,9 +121,15 @@
 	-moz-border:thin solid #CCC;
 	margin:31px 0 0 0;
 }
+	@media screen and (max-width:735px){
+	#profile-info, #profile-info-view{/*this applies to just profile-view.html*/
+	margin:10px 0 0 0;
+	}	
+	}
 #profile-info-view{/*this applies to just profile-view.html*/
 	margin:0 0 0 0;
 }
+	
 #entourages-div{
 	width:100%;
 	max-width:350px;

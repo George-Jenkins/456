@@ -96,26 +96,7 @@
 <p>
 
 <div id='profile-div'>
-<table id='profile-info-table' class='profile-inline2'>
-<tr>
-<td id='profile-pic-form-container'>
-<span id='profile-submit-feedback' class='text'></span>
-<form id='profile-pic-form' name='profile-pic-form' method='POST' enctype='multipart/form-data' action='queries/upload-profile-picture.php' target='profile-pic-iframe'>
-<span class='upload-button'>
-<span>Change Image</span>
-<input type='file' id='profile-pic-upload' name='profile-pic-upload' class='upload'/> 
-<input type='hidden' name='z' id='profile-pic-z'/>
-</span>
-</form>
 
-</td>
-
-</tr>
-<tr>
-<td><div id='profile-pic-padding'><div id='profile-pic-div'><img src='../../pics/ajax-loader4.gif' id='image-loading' class='hide'/></div></div></td>
-</tr>
-
-</table><!----profile-info-table--->
 
 <!------personal info------>
 <div id='profile-info' class='text profile-inline2'>
@@ -130,7 +111,7 @@
 <input type='file' name='background-uploader' id='background-uploader'/>
 <input type='hidden' name='z' id='background-img-z'/>
 </form>
-
+<iframe name='background-img-iframe' style='height:0px;width:0px;'></iframe>
 </div>
 
 
@@ -228,12 +209,11 @@
 
 </div><!----entourages-div---->
 
-</center>
-
 </div><!----profile-page-container------>
 
 <p>
 
+</center>
 <!-- InstanceEndEditable -->
 </div><!-----container------->
 
