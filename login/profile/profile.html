@@ -81,103 +81,158 @@
 <!-- InstanceBeginEditable name="EditRegion3" -->
 <center>
 
+<div id='profile-page-container'>
+
+<div id='cover-photo-div' class='hide'>
+<div id='cover-photo-name'></div>
+</div><!-----cover-photo-div----->
+
+<div id='view-groups' class='view-section-button hide'>View Entourages <img src='../../pics/right-icon.png' class='view-section-arrow'/></div><!------view-groups------>
+<div id='view-profile' class='view-section-button hide'>View Profile <img src='../../pics/right-icon.png' class='view-section-arrow'/></div><!------view-groups------>
+
+	<div id='profile-container' class='profile-inline'>
+
+<div id='profile-title' class='title'></div>
+<p>
+
+<div id='profile-div'>
+<table id='profile-info-table' class='profile-inline2'>
+<tr>
+<td id='profile-pic-form-container'>
+<span id='profile-submit-feedback' class='text'></span>
+<form id='profile-pic-form' name='profile-pic-form' method='POST' enctype='multipart/form-data' action='queries/upload-profile-picture.php' target='profile-pic-iframe'>
+<span class='upload-button'>
+<span>Change Image</span>
+<input type='file' id='profile-pic-upload' name='profile-pic-upload' class='upload'/> 
+<input type='hidden' name='z' id='profile-pic-z'/>
+</span>
+</form>
+
+</td>
+<iframe name='profile-pic-iframe' style='height:0px;width:0px;'></iframe>
+</tr>
+<tr>
+<td><div id='profile-pic-padding'><div id='profile-pic-div'><img src='../../pics/ajax-loader4.gif' id='image-loading' class='hide'/></div></div></td>
+</tr>
+
+</table><!----profile-info-table--->
+
+<!------personal info------>
+<div id='profile-info' class='text profile-inline2'>
 
 
-
-        sffsfsaf <br>
-sffsfsaf <br><br>
-sffsfsaf <br><br>
-sffsfsaf <br><br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br><br>
-sffsfsaf <br><br>
-sffsfsaf <br><br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br><br>
-sffsfsaf <br><br>
-sffsfsaf <br><br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br><br>
-sffsfsaf <br><br>
-sffsfsaf <br><br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
-sffsfsaf <br>
+<div id='change-background'>
 
 
+<div id='image-icon-div'><span class='functionLink buttonLink'>Change background</span> <span id='background-message'></span> <img src='../../pics/image-icon.png' id='image-icon'/><img src='../../pics/ajax-loader2.gif' id='load-icon1' class='hide'/>
+
+<form name='background-img-form' id='background-img-form' target='background-img-iframe' method='POST' action='queries/upload-background-img.php' enctype='multipart/form-data'>
+<input type='file' name='background-uploader' id='background-uploader'/>
+<input type='hidden' name='z' id='background-img-z'/>
+</form>
+<iframe name='background-img-iframe' style='height:0px;width:0px;'></iframe>
+</div>
+
+
+</div><!-----change-background----->
+
+
+<!-----handle cover photo------>
+<table id='cover-photo-table'>
+<tr>
+<td>
+<span id='add-cover-span'>
+<span id='add-cover-link' class='functionLink buttonLink'>Add cover photo
+ <span id='what-is-cover' class='buttonLink' style='border:none;'> (What's this?)</span><span id='hide-example-cover' class='buttonLink hide' style='border:none;'> (Hide example)</span></span><span id='add-cover-feedback'></span>
+           
+<img src='../../pics/ajax-loader2.gif' id='load-icon2'/>
+            
+<form name='cover-photo-form' id='cover-photo-form' target='cover-photo-iframe' method='POST' action='queries/upload-cover-img.php' enctype='multipart/form-data'>
+<input type='file' name='cover-photo-file' id='cover-photo-file'/>
+<input type='hidden' name='z' id='cover-img-z'/>
+</form>
+</span>
+            
+<span id='delete-cover-span' class='hide'><span class='functionLink buttonLink'>Remove cover photo</span></span>
+<iframe name='cover-photo-iframe' style='width:0;height:0'></iframe>
+           
+</td>
+</tr>
+</table>        
+     <!-----end handle cover photo------>
+
+<div id='home-town-div' >
+<span id='edit-hometown'>
+	<span id='hometown-link' class='functionLink buttonLink'>Edit</span>
+    <span id='hometown-cancel' class='hide functionLink buttonLink'>Cancel</span>
+</span>
+
+<div id='home-town' class='text-bold'>Hometown</div><!----home-town---->
+
+<div id='home-town-info'></div>
+
+	<div id='select-state-div' class='hide general-select'>
+		<select id='select-states'>
+        
+        <option value=''>Select State</option>
+        
+        </select>
+	</div><!---select-state-div---->
+    
+    <div id='select-city-div' class='hide'>
+    
+    City<br />
+    
+	<span id='hometown-input' class='general-input'><input type='text' id='type-city'></span> 
+    <span class='general-submit'><input type='submit' id='submit-hometown' value='Done'/></span>
+  
+    	<div id='city-suggestion-box' class='hide'>
    
+    	</div><!---city-suggestion-box---->
+	</div><!---select-state-div---->
+</div><!----home-town-div---->
+
+	<div id='going-out-div'> 
+    	<span id='edit-going-out'>
+        <span id='edit-going-out-link' class='functionLink buttonLink'>Edit</span>
+        <span id='edit-going-out-cancel' class='hide functionLink buttonLink'>Cancel</span>
+        </span>
+    	<div class='text-bold'>What I like to do when I go out</div>  
+        <div id='going-out-answer'></div>
+        
+      <div id='going-out-text-area-div' class='hide'>
+      <textarea id='going-out-textarea' cols=30 rows=6 maxlength=2000></textarea><br />
+      <span class='general-submit'><input type='submit' id='submit-going-out' value='Done'/></span>
+      </div><!--going-out-text-area-div--->
+      
+    </div><!----going-out-div------>
+
+</div><!--profile-info----->
+
+<!----------end personal info-------------->
 
 
+</div><!-----profile-div----->
+
+</div><!-----profile container------>
+   
+<div id='entourages-div' class='profile-inline text'>
+    
+
+<div id='entourages-title'>Entourages</div>
+
+<a href='../group/make-group/make-group.html' class='buttonLink'>Create new</a>
+
+
+<div id='entourages-list'></div><!---entourages-list--->
+
+</div><!----entourages-div---->
+
+
+
+</div><!----profile-page-container------>
+
+<p>
 </center>
 <!-- InstanceEndEditable -->
 </div><!-----container------->
@@ -222,7 +277,7 @@ var device = 'android';
 <script src='../../js/login/profile/edit-hometown.js'></script>
 <script src='../../js/login/profile/submit-hometown.js'></script>
 <script src='../../js/login/profile/edit-going-out-info.js'></script>
-
+<script src='../../js/login/profile/load-profile-info.js'></script>
 <script src='../../js/login/profile/cover-photo.js'></script> 
 <script src='../../js/login/profile/check-for-unchecked-posts.js'></script>
 <script src='../../js/login/profile/profile-navigation.js'></script>
