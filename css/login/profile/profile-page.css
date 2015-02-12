@@ -265,8 +265,7 @@ input#cover-photo-file{
 	margin:0 3px;
 }
 .profile-background{
-	background-attachment:fixed;
-	background-size:cover;
+	
 }
 .profile-inline2, .profile-inline{
 	display:inline-block;
