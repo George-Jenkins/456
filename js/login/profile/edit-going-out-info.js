@@ -19,6 +19,7 @@ $('#edit-going-out-link').click(function(){
 		$('#edit-going-out-cancel').hide()
 		$('#going-out-textarea').val('')
 		$('#going-out-text-area-div').hide()
+		$('#going-out-answer').show()
 	})//click
 	
 	$('#submit-going-out').click(function(){

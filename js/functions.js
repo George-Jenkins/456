@@ -110,22 +110,4 @@ var mobileView;
 pathForPost = true;
 mobileView = true;
 
-//for some reason on droid divs would disappear on scroll unless there was some animation first
-if(mobileView && navigator.platform!='iPhone'){
-	/*
-	$('#container').slideToggle(1,function(){
-		
-	setTimeout(function(){
-		
-	$('#container').slideToggle(1,function(){
-	
-	$('#container').css('margin-bottom',40)			
-	
-	})
-		
-	},300)	
-		
-	})
-	*/
-}//if
 
