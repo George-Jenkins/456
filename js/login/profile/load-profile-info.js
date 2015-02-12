@@ -14,6 +14,9 @@ else postPath = '';
 		
 		if(data){
 		
+		//load profile pic
+		$('#profile-pic-div').css('background-image','url('+postPath+data.profile_pic+')');
+	
 		
 	
 		if(data.cover_path){
@@ -27,7 +30,8 @@ else postPath = '';
 		{
 			$('#profile-title').html(data.name)
 		}
-		
+		//load name in profile
+		$('#cover-photo-name').html(data.name)
 			
 		$('#home-town-info').html(data.hometown)
 		$('#going-out-answer').html(data.going_out)
