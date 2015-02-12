@@ -29,7 +29,9 @@ else postPath = '';
 		$('#profile-pic-div').css('background-image','url('+postPath+data.profile_pic+')');
 	
 		//load body image
-		$('#page-body').css('background-image','url('+postPath+data.profile_background+')');
+		$('body').css('background-image','url('+postPath+data.profile_background+')');
+		var platform = navigator.platform;
+		if(!mobileView || mobileView && platform=='iPhone') $('body').css('background-attachment','fixed')
 	
 		if(data.cover_path){
 			$('#cover-photo-div').css('background-image','url('+postPath+data.cover_path+')').show()

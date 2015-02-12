@@ -43,7 +43,7 @@ else postPath = '';
 	}//if
 	
 	
-	$('#page-body').css('background-image','url('+postPath+feedback+')')
+	$('body').css('background-image','url('+postPath+feedback+')')
 	
 	$('#load-icon1').hide()
 	
@@ -78,7 +78,7 @@ function onFail(message) {
 function uploadImage(imageData){
 
 //this will be used below. It's for apps
-var imageName = $('#page-body').css('background-image').split('/');
+var imageName = $('body').css('background-image').split('/');
 imageName = imageName[imageName.length-1].split(')')[0];
 
 var z = getZ();
@@ -102,7 +102,7 @@ var interval = setInterval(function(){
 		
 		if(imageName != data.currentImage){
 			
-			$('#page-body').css('background-image','url(http://ritzkey.com/login/profile/pics/'+data.folderName+'/'+data.currentImage+')')
+			$('body').css('background-image','url(http://ritzkey.com/login/profile/pics/'+data.folderName+'/'+data.currentImage+')')
 	
 			$('#load-icon1').hide()
 	

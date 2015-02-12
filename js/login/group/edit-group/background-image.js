@@ -51,7 +51,7 @@ else postPath = '';
 	}
 	
 	
-		$('#page-body').addClass('group-background').css('background-image','url('+postPath+feedback+')')
+		$('body').addClass('group-background').css('background-image','url('+postPath+feedback+')')
 		$('#ajax-loader1').hide()
 		$('#background-img-feedback').removeClass().html('').hide()
 	
@@ -87,7 +87,7 @@ function onFail(message) {
 function uploadImage(imageData){
 
 //this will be used below. It's for apps
-var imageName = $('#page-body').css('background-image').split('/');
+var imageName = $('body').css('background-image').split('/');
 imageName = imageName[imageName.length-1].split(')')[0];
 
 var group_id = getGroupID();
@@ -113,7 +113,7 @@ var interval = setInterval(function(){
 		
 		if(imageName != data.currentImage){
 			
-			$('#page-body').css('background-image','url(http://ritzkey.com/login/group/pics/'+data.folderName+'/'+data.currentImage+')')
+			$('body').css('background-image','url(http://ritzkey.com/login/group/pics/'+data.folderName+'/'+data.currentImage+')')
 	
 			$('#load-icon1').hide()
 			$('#background-img-feedback').removeClass().html('').hide()

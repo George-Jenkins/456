@@ -1,5 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
+
+body{
+	background-size:cover;
+}
+
 table tr td{
 	margin:10px 0;
 }

@@ -108,6 +108,6 @@ NoClickDelay.prototype = {
 var pathForPost;
 var mobileView;
 pathForPost = true;
-mobileView = true;
+//mobileView = true;
 
 

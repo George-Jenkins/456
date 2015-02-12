@@ -80,7 +80,6 @@ $('#back-menu').click(function(){
 //back menu (on bottom of page)	
 if(mobileView){
 $('#container').css('margin-bottom',40)
-if($('#page-body').length) $('#page-body').css('padding-bottom',40)//needed if page has #page-body (defined in all-pages.css)
 $('#bottom-menu').css('display','block')
 $('#back-button').click(function(){
 	
