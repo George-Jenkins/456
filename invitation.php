@@ -181,7 +181,6 @@ Have an account? <a href='member-login.html?".$invite_code."'>Click here</a>" ?>
 <script src='js/jquery/jquery-animate-enhanced.js'></script>
 <script src='js/jquery-ui/jquery-ui.js'></script>
 <script src='js/plugins/fastclick.js'></script>
-
 <script src='js/functions.js'></script>
 <script src='js/root-dir-pulse.js'></script>
 <script src='js/menu/menu.js'></script>

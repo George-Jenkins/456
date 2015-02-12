@@ -189,7 +189,6 @@ Sorry. There was an error. Please follow the link in your email again and if tha
 <script src='js/jquery/jquery-animate-enhanced.js'></script>
 <script src='js/jquery-ui/jquery-ui.js'></script>
 <script src='js/plugins/fastclick.js'></script>
-
 <script src='js/functions.js'></script>
 <script src='js/root-dir-pulse.js'></script>
 <script src='js/menu/menu.js'></script>

@@ -108,13 +108,11 @@ NoClickDelay.prototype = {
 var pathForPost;
 var mobileView;
 pathForPost = true;
-mobileView = true;
-
-//if(mobileView) new NoClickDelay('body')
+//mobileView = true;
 
 //for some reason on droid divs would disappear on scroll unless there was some animation first
 if(mobileView && navigator.platform!='iPhone'){
-	
+	/*
 	$('#container').slideToggle(1,function(){
 		
 	setTimeout(function(){
@@ -128,5 +126,6 @@ if(mobileView && navigator.platform!='iPhone'){
 	},300)	
 		
 	})
-	
+	*/
 }//if
+
