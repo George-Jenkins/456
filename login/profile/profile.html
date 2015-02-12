@@ -98,9 +98,22 @@
 <div id='profile-div'>
 
 <table id='profile-info-table' class='profile-inline2'>
-
 <tr>
-<td><div id='profile-pic-padding'><div id='profile-pic-div'><img src='../../pics/ajax-loader4.gif' id='image-loading' class='hide'/></div></div></td>
+<td id='profile-pic-form-container'>
+<span id='profile-submit-feedback' class='text'></span>
+<form id='profile-pic-form' name='profile-pic-form' method='POST' enctype='multipart/form-data' action='queries/upload-profile-picture.php' target='profile-pic-iframe'>
+<span class='upload-button'>
+<span>Change Image</span>
+<input type='file' id='profile-pic-upload' name='profile-pic-upload' class='upload'/> 
+<input type='hidden' name='z' id='profile-pic-z'/>
+</span>
+</form>
+
+</td>
+<iframe name='profile-pic-iframe' style='height:0px;width:0px;'></iframe>
+</tr>
+<tr>
+<td><div id='profile-pic-div'><img src='../../pics/ajax-loader4.gif' id='image-loading' class='hide'/></div></td>
 </tr>
 
 </table><!----profile-info-table--->
