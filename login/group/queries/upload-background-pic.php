@@ -1,5 +1,6 @@
 <?php
 include('../../../connect/db-connect.php');
+include('../../../connect/functions.php');
 
 $loginID = cleanInput($_POST['z']);
 $group = cleanInput($_POST['group-id']);
@@ -82,6 +83,9 @@ while(true){
 mysql_query("UPDATE groups SET background_img='$new_name' WHERE group_id='$group' AND created_by='$email'");
 
 move_uploaded_file($pic_tmp,"../pics/".$folder."/".$new_name);
+
+//resize image
+ak_img_resize("../pics/".$folder."/".$new_name, "../pics/".$folder."/".$new_name, 1000, 1000, $extension);
 
 echo "<script>
 parent.sendFeedbackBackground('pics/".$folder."/".$new_name."')

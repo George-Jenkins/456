@@ -1,5 +1,6 @@
 <?php
 include('../../../connect/db-connect.php');
+include('../../../connect/functions.php');
 
 $loginID = cleanInput($_POST['z']);
 
@@ -32,11 +33,13 @@ parent.uploadBackground('wrong z')
 $get = mysql_fetch_assoc($query);
 $email = $get['email'];
 
+$extension = end(explode('.',$img_name));
+
 //rename image
 while(true){
 	$rand1 = rand(1,1000);
 	$rand2 = rand(1,1000);
-	$extension = end(explode('.',$img_name));
+	
 	$new_name = $rand1.$rand2.'.'.$extension;
 	$nameTaken = false;
 	$images = scandir('../pics/'.$folder_name.'/');
@@ -72,6 +75,9 @@ else{
 	unlink('../pics/'.$folder_name.'/'.$oldImage);
 	
 	move_uploaded_file($img_tmp_name,'../pics/'.$folder_name.'/'.$new_name);
+	
+	//resize image
+	ak_img_resize('../pics/'.$folder_name.'/'.$new_name, '../pics/'.$folder_name.'/'.$new_name, 1000, 1000, $extension);
 
 	echo "<script>
 parent.uploadBackground('pics/".$folder_name."/".$new_name."')

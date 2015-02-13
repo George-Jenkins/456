@@ -26,7 +26,11 @@ if($numrows==0){
 //make sure user is part of group
 $query = mysql_query("SELECT * FROM group_members WHERE group_id='$group' AND email='$email' AND approved!='no'");
 $numrows = mysql_num_rows($query);
-if($numrows==0) return;
+if($numrows==0){
+$return['error'] = 'not member';
+echo json_encode($return);
+return;	
+}//if 
 
 //set time zone
 $query = mysql_query("SELECT * FROM account_settings WHERE email='$email'");

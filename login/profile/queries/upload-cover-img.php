@@ -1,5 +1,6 @@
 <?php
 include('../../../connect/db-connect.php');
+include('../../../connect/functions.php');
 
 $loginID = cleanInput($_POST['z']);
 
@@ -66,6 +67,9 @@ $folder = $get['folder_name'];
 
 //move file to folder
 move_uploaded_file($cover_tmp,'../pics/'.$folder.'/'.$new_name);
+
+//resize image
+ak_img_resize('../pics/'.$folder.'/'.$new_name, '../pics/'.$folder.'/'.$new_name, 1150, 1150, $extension);
 
 echo "<script>
 parent.coverPhoto('pics/".$folder."/".$new_name."')

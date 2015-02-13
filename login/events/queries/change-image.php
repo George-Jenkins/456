@@ -1,5 +1,6 @@
 <?php
 include('../../../connect/db-connect.php');
+include('../../../connect/functions.php');
 
 $loginID = cleanInput($_POST['z']);
 $eventID = cleanInput($_POST['eventID']);
@@ -80,6 +81,9 @@ while(true){//make scan dir to make sure the file doesn't exist already
 mysql_query("UPDATE events SET image='$new_name' WHERE event_id='$eventID' AND email='$email'");
 
 move_uploaded_file($imageTmpName,"../../profile/pics/".$folder."/".$new_name);
+
+//resize image
+ak_img_resize("../../profile/pics/".$folder."/".$new_name, "../../profile/pics/".$folder."/".$new_name, 400, 400, $extension);
 
 echo "<script>
 parent.sendFeedback('../profile/pics/".$folder."/".$new_name."')

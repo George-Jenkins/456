@@ -4,6 +4,7 @@ include('../../../connect/db-connect.php');
 $loginID = cleanInput($_POST['z']);
 $id = cleanInput($_POST['id']);
 $time = cleanInput($_POST['time']);
+$group = cleanInput($_POST['group_id']);
 
 include('../../../connect/members.php');
 

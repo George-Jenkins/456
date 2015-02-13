@@ -1,5 +1,6 @@
 <?php
 include('../../../connect/db-connect.php');
+include('../../../connect/functions.php');
 
 $profile_pic = $_FILES['profile-pic-upload']['name'];
 $profile_pic_tmp = $_FILES['profile-pic-upload']['tmp_name'];
@@ -82,6 +83,9 @@ else
 
 
 move_uploaded_file($profile_pic_tmp,'../pics/'.$folder_name.'/'.$new_name);
+
+//resize image
+ak_img_resize('../pics/'.$folder_name.'/'.$new_name, '../pics/'.$folder_name.'/'.$new_name, 350, 350, $extension);
 
 echo "<script>
 	parent.finishProfileImage('pics/".$folder_name."/".$new_name."');
