@@ -9,9 +9,9 @@ $('#view-group-members').click(function(){
 	//decide which slide effect to use depending on screen width
 	if(screenWidth<=965){
 		$('#member-list').toggle('slide', function(){
-		$('#member-list').css('width','100%')//I set it back to normal here when function is done
+		//$('#member-list').css('width','100%')//I set it back to normal here when function is done
 	})
-	$('#member-list').css('width',screenWidth)//had to do this because the slide effect caused pics to not be inline during slide
+	//$('#member-list').css('width',screenWidth)//had to do this because the slide effect caused pics to not be inline during slide
 	}//if 
 	else $('#member-list').slideDown()
 	
