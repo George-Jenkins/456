@@ -4,7 +4,8 @@ $('#view-groups').click(function(){
 	$('#view-profile').show()//button
 	$('body').animate({scrollTop:$('#view-profile').offset().top-70},300)
 	
-	$('#entourages-div').toggle('slide')
+	$('#entourages-div').toggle('slide', 'fast')
+	$('#entourages-div').css('display','inline-block').css('margin-top','0')//without this the div is a little lower than it should be after it slides
 	
 	$('#profile-container').hide()
 	
@@ -16,7 +17,7 @@ $('#view-profile').click(function(){
 	$('body').animate({scrollTop:$('#view-groups').offset().top-70},300)	
 	$('#view-profile').hide()//button
 	
-	$('#profile-container').toggle("slide");
+	$('#profile-container').toggle("slide", "fast");
 	
 	$('#entourages-div').hide()
 			
@@ -55,6 +56,7 @@ function hideSections(){
 	if(screenWidth>1206) hide = true //this is so if the screen goes from small to big the device has permission to hide elements again onces the screen gets smaller
 	
 	if(screenWidth<=1206){
+		
 		if(hide == true){
 		$('#view-groups').show()//button
 		$('#entourages-div').hide()

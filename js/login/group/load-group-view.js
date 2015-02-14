@@ -54,9 +54,6 @@ else postPath = '';
 		if(postPath) data.members = data.members.replace(/background-image:url\(/g,'background-image:url('+postPath)
 		$('#members').html(data.members)
 		
-		//this handles events
-		$('#list-events-div').html(data.events)
-		$('#number-of-events').html(data.numberOfEvents)
 		
 		if(data.pending_approval==true){
 			$('#awaiting-approval').show()

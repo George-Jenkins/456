@@ -51,7 +51,7 @@ else postPath = '';
 	}
 	
 	
-		$('body').addClass('group-background').css('background-image','url('+postPath+feedback+')')
+		$('body').css('background-image','url('+postPath+feedback+')')
 		$('#ajax-loader1').hide()
 		$('#background-img-feedback').removeClass().html('').hide()
 	

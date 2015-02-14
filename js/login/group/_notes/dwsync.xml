@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="ask-to-join.js" server="67.20.123.61/public_html/ritzkey/" local="130658820707140764" remote="130675831200000000" />
-<file name="chat-wall-load.js" server="67.20.123.61/public_html/ritzkey/" local="130666929277364432" remote="130675831200000000" />
-<file name="chat-wall-pulse.js" server="67.20.123.61/public_html/ritzkey/" local="130674973499812276" remote="130675831200000000" />
+<file name="chat-wall-load.js" server="67.20.123.61/public_html/ritzkey/" local="130682525205904106" remote="130682452800000000" />
+<file name="chat-wall-pulse.js" server="67.20.123.61/public_html/ritzkey/" local="130682877382193693" remote="130682805000000000" />
 <file name="chat-wall-reply.js" server="67.20.123.61/public_html/ritzkey/" local="130675676524353584" remote="130675831200000000" />
 <file name="chat-wall.js" server="67.20.123.61/public_html/ritzkey/" local="130674973050705165" remote="130675831200000000" />
-<file name="delete-post.js" server="67.20.123.61/public_html/ritzkey/" local="130662821713494697" remote="130675831200000000" />
-<file name="group-navigation.js" server="67.20.123.61/public_html/ritzkey/" local="130666585790912790" remote="130675831200000000" />
+<file name="delete-post.js" server="67.20.123.61/public_html/ritzkey/" local="130682888937674628" remote="130682816400000000" />
+<file name="group-navigation.js" server="67.20.123.61/public_html/ritzkey/" local="130683539273944013" remote="130683466800000000" />
 <file name="invite-friends.js" server="67.20.123.61/public_html/ritzkey/" local="130657764171529776" remote="130675831200000000" />
 <file name="leave-group.js" server="67.20.123.61/public_html/ritzkey/" local="130658823395844549" remote="130675831200000000" />
 <file name="load-group-member.js" server="67.20.123.61/public_html/ritzkey/" local="130682055921199851" remote="130681983600000000" />
-<file name="load-group-view.js" server="67.20.123.61/public_html/ritzkey/" local="130682056098690003" remote="130681983600000000" />
+<file name="load-group-view.js" server="67.20.123.61/public_html/ritzkey/" local="130682734674198590" remote="130682662200000000" />
 <file name="load-group.js" server="67.20.123.61/public_html/ritzkey/" local="130682055690116634" remote="130681983600000000" />
 <file name="view-events.js" server="67.20.123.61/public_html/ritzkey/" local="130657765286423545" remote="130675831200000000" />
 <file name="view-specific-replies.js" server="67.20.123.61/public_html/ritzkey/" local="130666517173337242" remote="130675831200000000" />

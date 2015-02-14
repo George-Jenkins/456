@@ -4,7 +4,7 @@ $('#view-attendees').click(function(){
 	$('#view-event').show()//button
 	
 	$('#event-info-container').hide()
-	$('#list-attendees-div').toggle('slide')
+	$('#list-attendees-div').toggle('slide', 'fast')
 	
 })//click
 
@@ -14,7 +14,7 @@ $('#view-event').click(function(){
 	$('#view-event').addClass('focus').hide()//button
 	
 	$('#list-attendees-div').hide()
-	$('#event-info-container').toggle('slide')
+	$('#event-info-container').toggle('slide', 'fast')
 	
 })//click	
 	

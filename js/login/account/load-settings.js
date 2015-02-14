@@ -20,6 +20,9 @@ else postPath = '';
 		if(data.reply_email_setting=='true') $('#reply-email-yes').attr('checked',true)
 		else $('#reply-email-no').attr('checked',true)
 		
+		if(data.notification_email_setting=='true') $('#notification-email-yes').attr('checked',true)
+		else $('#notification-email-no').attr('checked',true)
+		
 		$('#select-timezone').val(data.timezone)
 			
 		})//show

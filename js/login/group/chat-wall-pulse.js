@@ -9,11 +9,7 @@ else postPath = '';
 	
 	var stopPostPulse;
 	
-	setInterval(function(){
-	
-//this is path to post for apps
-if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
-else postPath = '';		
+	setInterval(function(){	
 		
 	//stop if posts hasn't finished
 	if(stopPostPulse==true) return;
@@ -31,6 +27,10 @@ else postPath = '';
 		if(Go === 'false') return;
 		
 		var z = getZ();
+
+//this is path to post for apps
+if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
+else postPath = '';	
 		
 		$.post(postPath+'queries/chat-wall-pulse.php',{z:z, group:group, postPath:postPath}, function(data){	
 			

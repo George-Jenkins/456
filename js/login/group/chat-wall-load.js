@@ -82,6 +82,8 @@ function loadPosts(){
 		return;
 	}
 	
+	if(data.error == 'not member') $('#wall-loading-img').hide()
+	
 	//it's prepended on first and appended on second. This is basically so that the loading gif can stay at the bottom
 	if(loop=='first') $('#chat-wall').prepend(data.post)			
 	else $('#chat-wall').append(data.post)

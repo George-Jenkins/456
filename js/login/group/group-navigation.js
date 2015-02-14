@@ -8,10 +8,10 @@ $('#view-group-members').click(function(){
 	var screenWidth = window.innerWidth
 	//decide which slide effect to use depending on screen width
 	if(screenWidth<=965){
-		$('#member-list').toggle('slide', function(){
-		//$('#member-list').css('width','100%')//I set it back to normal here when function is done
+		$('#member-list').toggle('slide','fast', function(){
+		$('#member-list').css('width','100%')//I set it back to normal here when function is done
 	})
-	//$('#member-list').css('width',screenWidth)//had to do this because the slide effect caused pics to not be inline during slide
+	$('#member-list').css('width',screenWidth)//had to do this because the slide effect caused pics to not be inline during slide
 	}//if 
 	else $('#member-list').slideDown()
 	
@@ -35,7 +35,7 @@ $('#view-chat-wall').click(function(){
 	if(screenWidth<=965){
 		$('#chat-wall').hide()//i'll hide chat wall so it doesn'slow down toggle on mobile devices. I'll show it after toggle
 		$('#show-more').addClass('hide2')//I'll also hide show earlier button because it was still there when wall was hidden
-		$('#chat-box-container').toggle('slide',function(){
+		$('#chat-box-container').toggle('slide', 'fast', function(){
 			$('#show-more').removeClass('hide2')
 			$('#chat-wall').show()	
 		})
@@ -58,7 +58,7 @@ $('#view-group-info').click(function(){
 	
 	var screenWidth = window.innerWidth
 	//decide which slide effect to use depending on screen width
-	if(screenWidth<=965) $('#group-info-div').toggle('slide')
+	if(screenWidth<=965) $('#group-info-div').toggle('slide','fast')
 	else $('#group-info-div').slideDown()
 	
 	if(screenWidth<=965){

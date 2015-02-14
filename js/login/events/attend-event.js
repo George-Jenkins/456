@@ -68,7 +68,7 @@ else postPath = '';
 			
 			if(data.expired){
 				$('#dim-background').removeClass().show()
-				$('#lightbox').removeClass().addClass('white-background').html("This event has expired.");
+				$('#lightbox').removeClass().addClass('white-background').html("<p>This event has expired.</p>");
 				$('.close').show()
 			}
 			
@@ -87,7 +87,7 @@ else postPath = '';
 			 
 			 //tell them that they have to give money to person
 			$('#dim-background').removeClass().show()
-			$('#lightbox').removeClass().addClass('white-background').html("You are now attending but just so you know RitzKey.com currently isn't collecting money online so you'll physically have to make sure your money gets to the activity organizer");
+			$('#lightbox').removeClass().addClass('white-background').html("<p>You are now attending but just so you know RitzKey.com currently isn't collecting money online so you'll physically have to make sure your money gets to the activity organizer</p>");
 			$('.close').show()
 			
 			}//if

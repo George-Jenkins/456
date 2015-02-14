@@ -10,14 +10,15 @@ else postPath = '';
 	//redirect if no z/i
 	if(!localStorage.getItem('i')) window.location = "../../member-login.html";
 	
-		var z = getZ();
+	var z = getZ();
+	var group_id = getGroupID();
 	
 	$('#post'+id).slideUp(function(){
 	$('#post'+id).remove()	
 	})/*the class deleted tells the slide down function no to slide it down again*/
 	
 	
-	$.post(postPath+'queries/delete-post.php',{z:z,id:id,time:time},function(data){
+	$.post(postPath+'queries/delete-post.php',{z:z,id:id,time:time,group_id:group_id},function(data){
 		
 		//redirect if wrong z
 			if(data.error=='wrong z'){
@@ -25,10 +26,9 @@ else postPath = '';
 				return;
 			}//if
 		
-		if(data.done=='done'){
 			
 			$('#chat-wall').removeClass('deleting')
-		}//if	
+			
 	},'json')//post
 	
 }//yes_delete function

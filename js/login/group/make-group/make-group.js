@@ -9,14 +9,14 @@ else postPath = '';
 	//redirect if no z/i
 	if(!localStorage.getItem('i')) window.location = "../../../member-login.html";
 	
-	$('#feedback').html("<div class='small-processing' style='left:50%;margin-top:-15px;margin-left:-15px'></div>").show() 
-	
 	var group_name = $('#group-name').val()
 	var group_mission = $('#group-mission').val()
 	
 	var z = getZ();
 
 	if(!group_name) return;
+
+	$('#feedback').html("<div class='small-processing' style='left:50%;margin-top:-15px;margin-left:-15px'></div>").show() 
 
 		$.post(postPath+'queries/submit-group.php',{z:z, group_name:group_name, group_mission:group_mission},function(data){
 			
