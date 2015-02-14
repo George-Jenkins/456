@@ -16,7 +16,7 @@ checkForNotifications().done(function(){
 	checkForReplies().done(function(){
 
 		//set badge
-		if(mobileView && platform=='iPhone') //cordova.plugins.notification.badge.set(badge);
+		if(mobileView && platform=='iPhone') cordova.plugins.notification.badge.set(badge);
 		badge = 0;//reset badge
 		
 	})//checkForReplies done
@@ -31,7 +31,7 @@ checkForNotifications().done(function(){
 	checkForReplies().done(function(){
 
 		//set badge
-		if(mobileView && platform=='iPhone') //cordova.plugins.notification.badge.set(badge);
+		if(mobileView && platform=='iPhone') cordova.plugins.notification.badge.set(badge);
 		badge = 0;//reset badge
 		
 	})//checkForReplies done
