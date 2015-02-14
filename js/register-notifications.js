@@ -144,7 +144,7 @@ function onNotification(e) {
 }
 */
 
-localStorage.removeItem('registerDevice')
+//localStorage.removeItem('registerDevice')
 
 
 },true);//document.addEventListener
