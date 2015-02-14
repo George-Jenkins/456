@@ -15,7 +15,7 @@ Make plans with your friends.
 <access origin="http://ritzkey.com"/>
 
 <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
-<gap:plugin name="de.appplant.cordova.plugin.badge" version="0.6.0" /><!--this is for badges-->
+<!--<gap:plugin name="de.appplant.cordova.plugin.badge" version="0.6.0" />this is for badges-->
 <!--<gap:plugin name="org.apache.cordova.vibration" version="0.3.0" />alerts-->
 <!--<gap:plugin name="it.witek.cordova.plugin.background-mode" version="0.6.3" />allow app to run in background-->
 <gap:plugin name="org.apache.cordova.camera" version="0.3.2" /><!-- camera -->
