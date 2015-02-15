@@ -57,7 +57,7 @@ while($get_array = mysql_fetch_array($query)){
 	<div id='results-div".$x."' class='results-div hide'>
 	<a href='".$link."' title='".$groupName."'><div class='results-title functionLink buttonLink'>".$presentableName."</div></a>
 	<div class='created-by-div'>Created by ".$creatorName."</div>
-	<a href='".$link."' title='".$groupName."'><div style='background-image:url(".$path.")' class='results-profile-pics'></div></a>
+	<div style='background-image:url(".$path.")' class='results-profile-pics'></div>
 	</div>
 	";
 	

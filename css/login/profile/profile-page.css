@@ -188,7 +188,7 @@ img#image-loading{
 	margin:-1.55px 0 0 0;
 }
 #change-background{
-	margin:3px;
+	margin:3px 3px 10px 3px;
 }
 input#background-uploader{
 	padding: 0;
@@ -228,6 +228,7 @@ input#cover-photo-file{
 }
 #cover-photo-table{
 	position:relative;
+	margin:0 0 10px 0;
 }
 #load-icon2{
 	width:25px;
@@ -259,6 +260,7 @@ input#cover-photo-file{
 .city-div-select{
 	background-color:#0FC;
 }
+
 #home-town-div{
 	margin:7px 3px;
 }

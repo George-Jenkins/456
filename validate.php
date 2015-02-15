@@ -118,7 +118,7 @@ Sorry. There was an error. Please follow the link in your email again and if tha
 		mysql_query("DELETE FROM pre_members WHERE email='$email'");
 		
 		//account setting
-		mysql_query("INSERT INTO account_settings VALUES ('','$email','true','true','$timezone')");
+		mysql_query("INSERT INTO account_settings VALUES ('','$email','true','true','true','$timezone')");
 		
 		//add login id
 		while(true){

@@ -6,6 +6,7 @@ $newName = cleanInput($_POST['change-name']);
 $newEmail = cleanInput($_POST['change-email']);
 $emailPost = cleanInput($_POST['posts-email']);
 $emailReply = cleanInput($_POST['reply-email']);
+$emailNotification = cleanInput($_POST['notification-email']);
 $timezone = cleanInput($_POST['select-timezone']);
 
 include('../../../connect/members.php');
@@ -34,6 +35,9 @@ mysql_query("UPDATE account_settings SET email_posts='$emailPost' WHERE email='$
 
 //update email_reply
 mysql_query("UPDATE account_settings SET email_replies='$emailReply' WHERE email='$email'");
+
+//update email_notifications
+mysql_query("UPDATE account_settings SET email_notifications='$emailNotification' WHERE email='$email'");
 
 //update timezone
 mysql_query("UPDATE account_settings SET timezone='$timezone' WHERE email='$email'");

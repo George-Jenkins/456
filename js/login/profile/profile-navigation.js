@@ -1,10 +1,23 @@
+(function(){
+
+if(!mobileView) var slideDuration = 200;
+else var slideDuration = 100;
+
 $('#view-groups').click(function(){
 		
 	$('#view-groups').hide()//button
 	$('#view-profile').show()//button
+	
+	waitScroll = true;//defined below. Prevents scroll when app
+	
 	$('body').animate({scrollTop:$('#view-profile').offset().top-70},300)
 	
-	$('#entourages-div').toggle('slide', 'fast')
+	$('#entourages-div').toggle('slide', slideDuration, function(){
+		
+		enableScroll()
+		
+	})//toggle
+	
 	$('#entourages-div').css('display','inline-block').css('margin-top','0')//without this the div is a little lower than it should be after it slides
 	
 	$('#profile-container').hide()
@@ -17,7 +30,11 @@ $('#view-profile').click(function(){
 	$('body').animate({scrollTop:$('#view-groups').offset().top-70},300)	
 	$('#view-profile').hide()//button
 	
-	$('#profile-container').toggle("slide", "fast");
+	waitScroll = true;//defined below. Prevents scroll when app
+	
+	$('#profile-container').toggle("slide", slideDuration, function(){
+		enableScroll()
+	});//toggle
 	
 	$('#entourages-div').hide()
 			
@@ -65,3 +82,19 @@ function hideSections(){
 	
 	if(screenWidth<=1206) hide = false  //this is so device knows it has already hidden elements
 }//function
+
+//this prevents scroll while a div slides into window on app because scroll before div slides out hides the div. (Glitch)
+var waitScroll = false;
+$('body').on('touchstart touchmove',function(e){ 
+
+if(waitScroll === true) e.preventDefault()
+
+})//on	
+//this enables scroll while a div slides into window on app
+function enableScroll(){
+	setTimeout(function(){
+		waitScroll = false;
+	},0.5)
+}//function
+
+})();

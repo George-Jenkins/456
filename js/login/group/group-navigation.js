@@ -1,17 +1,30 @@
+(function(){
+
+if(!mobileView) var slideDuration = 200;
+else var slideDuration = 100;
+	
 $('#view-group-members').click(function(){
 	
 	$('#view-group-members').hide()//button
 	$('#view-chat-wall').show()//button
 	$('#chat-box-container').hide()
 	
-	
+	waitScroll = true;//defined below. Prevents scroll when app
 	var screenWidth = window.innerWidth
+	
 	//decide which slide effect to use depending on screen width
 	if(screenWidth<=965){
-		$('#member-list').toggle('slide','fast', function(){
-		$('#member-list').css('width','100%')//I set it back to normal here when function is done
+		
+	$('#member-list').toggle('slide', slideDuration, function(){
+		
+	$('#member-list').css('width','100%').css('height','100%')//I set it back to normal here when function is done
+		
+		enableScroll()//defined below. Enables scroll when app
+		
 	})
+	
 	$('#member-list').css('width',screenWidth)//had to do this because the slide effect caused pics to not be inline during slide
+	
 	}//if 
 	else $('#member-list').slideDown()
 	
@@ -30,14 +43,16 @@ $('#view-chat-wall').click(function(){
 	$('#view-chat-wall').hide()//button
 	$('#member-list').hide()
 	
+	waitScroll = true;//defined below. Prevents scroll when app
 	var screenWidth = window.innerWidth
 	//decide which slide effect to use depending on screen width
 	if(screenWidth<=965){
 		$('#chat-wall').hide()//i'll hide chat wall so it doesn'slow down toggle on mobile devices. I'll show it after toggle
 		$('#show-more').addClass('hide2')//I'll also hide show earlier button because it was still there when wall was hidden
-		$('#chat-box-container').toggle('slide', 'fast', function(){
+		$('#chat-box-container').toggle('slide', slideDuration, function(){
 			$('#show-more').removeClass('hide2')
-			$('#chat-wall').show()	
+			$('#chat-wall').show()
+			enableScroll()//defined below. Enables scroll when app	
 		})
 	}//if
 	else $('#chat-box-container').slideDown()
@@ -56,9 +71,12 @@ $('#view-group-info').click(function(){
 
 	$('#view-group-info').hide()//button
 	
+	waitScroll = true;//defined below. Prevents scroll when app
 	var screenWidth = window.innerWidth
 	//decide which slide effect to use depending on screen width
-	if(screenWidth<=965) $('#group-info-div').toggle('slide','fast')
+	if(screenWidth<=965) $('#group-info-div').toggle('slide',slideDuration,function(){
+		enableScroll()//defined below. Enables scroll when app	
+	})//slide
 	else $('#group-info-div').slideDown()
 	
 	if(screenWidth<=965){
@@ -157,3 +175,18 @@ function loadIfReply(){
 	}//if screenWidth<=965
 }//function
 
+//this prevents scroll while a div slides into window on app because scroll before div slides out hides the div. (Glitch)
+var waitScroll = false;
+$('body').on('touchstart touchmove',function(e){ 
+
+if(waitScroll === true) e.preventDefault()
+
+})//on	
+//this enables scroll while a div slides into window on app
+function enableScroll(){
+	setTimeout(function(){
+		waitScroll = false;
+	},0.5)
+}//function
+
+})();

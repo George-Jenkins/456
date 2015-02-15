@@ -1,10 +1,22 @@
+(function(){
+
+if(!mobileView) var slideDuration = 200;
+else var slideDuration = 100;
+
 $('#view-attendees').click(function(){
 	
 	$('#view-attendees').addClass('focus').hide()//button
 	$('#view-event').show()//button
 	
 	$('#event-info-container').hide()
-	$('#list-attendees-div').toggle('slide', 'fast')
+	
+	waitScroll = true;//defined below. Prevents scroll when app
+	
+	$('#list-attendees-div').toggle('slide', slideDuration, function(){
+		
+		enableScroll()
+		
+	})//toggle
 	
 })//click
 
@@ -14,7 +26,14 @@ $('#view-event').click(function(){
 	$('#view-event').addClass('focus').hide()//button
 	
 	$('#list-attendees-div').hide()
-	$('#event-info-container').toggle('slide', 'fast')
+	
+	waitScroll = true;//defined below. Prevents scroll when app
+	
+	$('#event-info-container').toggle('slide', slideDuration, function(){
+		
+		enableScroll()
+		
+	})//toggle
 	
 })//click	
 	
@@ -53,3 +72,19 @@ function hideElements(){
 	}
 	if(screenWidth<=1120) hide = false //this is so device knows it has already hidden elements
 }//function
+
+//this prevents scroll while a div slides into window on app because scroll before div slides out hides the div. (Glitch)
+var waitScroll = false;
+$('body').on('touchstart touchmove',function(e){ 
+
+if(waitScroll === true) e.preventDefault()
+
+})//on	
+//this enables scroll while a div slides into window on app
+function enableScroll(){
+	setTimeout(function(){
+		waitScroll = false;
+	},0.5)
+}//function
+
+})();

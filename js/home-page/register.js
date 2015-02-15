@@ -1,5 +1,6 @@
 	//add timezone
-	var tz = jstz.determine(); 
+	var tz;
+	tz = jstz.determine(); 
 	tz.name();
 	$('#time-zone').val(tz.name())
 	

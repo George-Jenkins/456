@@ -6,7 +6,7 @@
 <file name="chat-wall-reply.js" server="67.20.123.61/public_html/ritzkey/" local="130675676524353584" remote="130675831200000000" />
 <file name="chat-wall.js" server="67.20.123.61/public_html/ritzkey/" local="130674973050705165" remote="130675831200000000" />
 <file name="delete-post.js" server="67.20.123.61/public_html/ritzkey/" local="130682888937674628" remote="130682816400000000" />
-<file name="group-navigation.js" server="67.20.123.61/public_html/ritzkey/" local="130683539273944013" remote="130683466800000000" />
+<file name="group-navigation.js" server="67.20.123.61/public_html/ritzkey/" local="130684334410000000" remote="130684264200000000" />
 <file name="invite-friends.js" server="67.20.123.61/public_html/ritzkey/" local="130657764171529776" remote="130675831200000000" />
 <file name="leave-group.js" server="67.20.123.61/public_html/ritzkey/" local="130658823395844549" remote="130675831200000000" />
 <file name="load-group-member.js" server="67.20.123.61/public_html/ritzkey/" local="130682055921199851" remote="130681983600000000" />

@@ -8,6 +8,7 @@
 }
 #form-container input[type=text], #form-container textarea{
 	width:300px;
+	max-width:none;
 }
 #feedback{
 	position:relative;
