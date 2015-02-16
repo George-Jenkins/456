@@ -25,6 +25,8 @@ Make plans with your friends.
 
 <!-- icons -->
 <icon src="pics/app-icon.png"/>
+<icon src="pics/iPhone-icons/icon-57.png" gap:platform="ios" width="57" height="57" />
+<icon src="pics/iPhone-icons/icon-72.png" gap:platform="ios" width="72" height="72" />
 
 <preference name="SplashScreen" value="screen"/>
 <preference name="SplashScreenDelay" value="10000"/>
