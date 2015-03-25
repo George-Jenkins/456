@@ -87,6 +87,7 @@ mysql_query("UPDATE events SET email='$newEmail' WHERE email='$email'");
 mysql_query("UPDATE event_attendees SET email='$newEmail' WHERE email='$email'");
 mysql_query("UPDATE event_invited_groups SET email='$newEmail' WHERE email='$email'");
 mysql_query("UPDATE groups SET created_by='$newEmail' WHERE created_by='$email'");
+mysql_query("UPDATE group_album SET email='$newEmail' WHERE email='$email'");
 mysql_query("UPDATE group_invitations SET email='$newEmail' WHERE email='$email'");
 mysql_query("UPDATE group_members SET email='$newEmail' WHERE email='$email'");
 mysql_query("UPDATE group_members_invited SET email='$newEmail' WHERE email='$email'");

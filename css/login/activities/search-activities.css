@@ -1,0 +1,276 @@
+@charset "utf-8";
+/* CSS Document */
+
+.result-spacing{
+	margin:0 0 10px 0;
+}
+
+#twitter-results-container{
+	background-color:#99FFFF;
+	padding:10px 0;
+}
+
+#twitter-results{
+	max-width:500px;
+	background-color:#fff;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	border-radius:9px;
+	-webkit-border-radius:9px;
+	-moz-border-radius:9px;	
+}
+.venue-name-div{
+	background-color:#F5F5F0;
+	padding:3px;
+	margin:10px 0;
+}
+.venue-name{
+	font-size:2em;
+}
+.username{
+	font-weight:bold;
+}
+.venue-website-div{
+	margin:5px 0;
+}
+.share-button-post{
+	float:right;
+	border:thin solid #000;
+	display:inline-block;
+	padding:2px;
+	margin:0 4px 0 0;
+	background-color:#CCC;
+	cursor:pointer;
+}
+.more-tweets{
+	background-color:#F5F5F0;
+	cursor:pointer;
+	padding:3px;
+}
+.show-more-arrow{
+	width:25px;
+	height:auto;
+}
+.twitter-images{
+	width:100%;
+	height:auto;
+	max-width:340px;
+	cursor:pointer;
+}
+.twitter-profile-pic{
+	margin:0 5px 0 0;
+}
+.twitter-profile-pic img{
+	border-radius:9px;
+	-moz-border-radius:9px;
+	-webkit-border-radius:9px;
+}
+.tweet-message{
+	max-width:340px;
+}
+
+#instagram-results-container{
+	background-color:#CCC;
+	padding:10px 0;
+}
+
+#instagram-results{
+	max-width:500px;
+	background-color:#fff;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	border-radius:9px;
+	-webkit-border-radius:9px;
+	-moz-border-radius:9px;	
+}
+.instagram-images{
+	width:100%;
+	height:auto;
+	max-width:340px;
+	cursor:pointer;
+}
+.instagram-profile-pic{
+	margin:0 5px 0 0;	
+}
+.instagram-profile-pic img{
+	width:48px;
+	height:auto;
+}
+.instagram-profile-pic img{
+	border-radius:9px;
+	-moz-border-radius:9px;
+	-webkit-border-radius:9px;
+}
+.instagram-message{
+	max-width:340px;
+}
+.more-instagram{
+	background-color:#F5F5F0;
+	cursor:pointer;
+	padding:3px;
+}
+
+#facebook-results-container{
+	background-color:#96F;
+	padding:10px 0;
+}
+
+#facebook-results{
+	max-width:500px;
+	background-color:#fff;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	border-radius:9px;
+	-webkit-border-radius:9px;
+	-moz-border-radius:9px;	
+}
+.facebook-images{
+	width:100%;
+	height:auto;
+	max-width:340px;
+	cursor:pointer;
+}
+.facebook-profile-pic{
+	margin:0 5px 0 0;	
+}
+.facebook-profile-pic img{
+	width:48px;
+	height:auto;
+}
+.facebook-profile-pic img{
+	border-radius:9px;
+	-moz-border-radius:9px;
+	-webkit-border-radius:9px;
+}
+.facebook-images{
+	width:100%;
+	height:auto;
+	max-width:340px;	
+}
+.facebook-message{
+	max-width:340px;
+}
+.more-facebook{
+	background-color:#F5F5F0;
+	cursor:pointer;
+	padding:3px;
+}
+
+#activities-dark-background{
+	width:100%;
+	height:100%;
+	position:fixed;
+	background-color:rgba(0,0,0,0.7);
+}
+#close-canvas{
+	width:30px;
+	height:auto;
+	position:absolute;
+	right:0;
+	cursor:pointer;
+	margin:-10px -10px 0 0;
+}
+	@media screen and (max-width:700px){
+	#close-canvas{
+	margin:-9px -4px 0 0;
+	}
+	}
+
+#activities-pic-canvas{
+	width:100%;
+	max-width:700px;
+	position:absolute;
+	left:50%;
+	margin:10px 0 0 -350px;
+	background-color:#FFFFFF;
+	padding:4px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+	@media screen and (max-width:700px){
+	#activities-pic-canvas{
+	left:0;
+	margin:10px 0 0 0;
+	}
+	}
+#load-activity-image img{
+	width:100%;
+	height:auto;
+	max-width:700px;
+}
+#search-area-div{
+	width:200px;
+	margin:0 0 4px 0;
+}
+#looking-for-div{
+	margin:0 0 0 0;
+}
+	@media screen and (max-width:424px){
+	#looking-for-div{
+	margin:0 0 15px 0;
+	}
+	}
+#city-suggestions-div{
+	width:100%;
+	max-width:400px;
+	height:120px;
+	margin:0 0 0 0;
+	overflow-y:scroll;
+	border:thin solid #000;
+	-webkit-border:thin solid #000;
+	-moz-border:thin solid #000;
+}
+.each-suggestion{
+	padding:5px 0;
+	cursor:pointer;
+}
+#select-distance select, #time-limit-div select{
+	height:38px;
+}
+.group-list-title{
+	margin:5px 0;
+}
+.group-img-div{
+	width:300px;
+	height:200px;
+	background-size:cover;
+	cursor:pointer;
+}
+.group-inline{
+	height:245px;
+	max-width:300px;
+	display:inline-block;
+	vertical-align:top;
+	text-align:center;
+}
+.group-list-title{
+
+}
+.check-group{
+	margin:-15px 0 -5px -45px;
+}
+#done-button{
+	background-color: #0FF;
+	width: 100px;
+	padding: 5px;
+	margin:5px 0;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+#done-button:hover{
+	cursor:pointer;
+	background-color:#0FC;
+}
+#share-loader{
+	margin:;
+}
+#share-feedback-message{
+	position:absolute;
+	margin:0 0 0 3px;
+	padding:8px 0 0 0;
+}

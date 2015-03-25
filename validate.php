@@ -113,7 +113,7 @@ Sorry. There was an error. Please follow the link in your email again and if tha
 			//invited member
 		}//if 
 		
-		mysql_query("INSERT INTO members VALUES('','$name','$password','$email','$gender','$code','$date','$time')");
+		mysql_query("INSERT INTO members VALUES('','$name','$password','$email','$gender','','$code','$date','$time')");
 		mysql_query("INSERT INTO s VALUES('','$email','$salt')");
 		mysql_query("DELETE FROM pre_members WHERE email='$email'");
 		
@@ -127,7 +127,8 @@ Sorry. There was an error. Please follow the link in your email again and if tha
 			$query = mysql_query("SELECT * FROM login_id WHERE login_id='$rand1' AND key='$rand2'");
 			$numrows = mysql_num_rows($query);
 			if($numrows==0){
-			mysql_query("INSERT INTO login_id VALUES('','$email','$name','$rand1','$rand2')");
+			mysql_query("INSERT INTO login_id VALUES('','$email','$name','$rand1','$rand2','')");
+			mysql_query("INSERT INTO login_id VALUES('','$email','$name','$rand1','$rand2','mobile')");
 			break;
 			}//if
 		}//while

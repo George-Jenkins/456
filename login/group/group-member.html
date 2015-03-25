@@ -79,6 +79,13 @@
 </div><!-----menu-------->
 <div id='container'>
 <!-- InstanceBeginEditable name="EditRegion3" -->
+<div id='activities-dark-background' class='hide'></div>
+<div id='activities-pic-canvas' class='hide'>
+<div style='position:relative;'>
+<img id='close-view-canvas' src='../../pics/red-x.png'/></div>
+<div id='load-activity-image' class='hide'></div>
+</div><!--activities-pic-canvas-->
+
 <center>
 
 <div id='view-group-members' class='view-section-button hide'>View Entourage Members <img src='../../pics/right-icon.png' class='view-section-arrow'/></div><!------view-group-members------>
@@ -119,6 +126,15 @@
    <p>
    
    <div id='list-events-div' class='hide'></div><!-----list-events-div------>
+   
+	<p>   
+   
+   <div id='photo-for-album-div'>
+	<img id='group-photo-icon' src='../../pics/group-photo-icon.png' />
+	<a href='' id='upload-photo-for-album' class='buttonLink'>Entourage photos</a>		
+	</div><!---photo-for-album-div--->
+	
+	<p>
    
    <span id='group-info-span'>
  
@@ -163,7 +179,10 @@
 </table>
 
 <div id='chat-wall'>
+<div id='chat-wall-load'>
 <img src='../../pics/ajax-loader2.gif' id='wall-loading-img' style='height:40px;width:auto'/>
+</div><!---chat-wall-load--->
+<div id='show-more' class='hide' onClick='show_more()'><a href='' onClick='return false'>Show earlier</a></div>
 </div><!----chat wall----->
 
 </div><!----chat box container---->
@@ -201,6 +220,7 @@
 <div id='bottom-menu' class='hide'>
 	<span id='back-button'><img src='../../pics/left-icon.png'/></span>
     <span id='forward-button'><img src='../../pics/right-icon.png'/></span>
+    <a href='../profile/profile.html'><img src='../../pics/profile-icon.png'/></a>
 </div><!--bottom-menu-->
 
 
@@ -249,6 +269,7 @@ var device = 'android';
 <script src='../../js/login/group/leave-group.js'></script>
 <script src='../../js/login/group/view-events.js'></script>
 <script src='../../js/login/group/group-navigation.js'></script>
+<script src='../../js/login/group/share-venue-post.js'></script>
 <!-- InstanceEndEditable -->
 <script src='../../js/menu/menu.js'></script>
 <!-- InstanceEnd --></html>

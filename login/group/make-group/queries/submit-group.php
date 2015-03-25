@@ -52,7 +52,8 @@ while(true){
 	if($numrows==0) break;
 }//while
 
-mysql_query("INSERT INTO groups VALUES('','$group_name','$groupID','$email','$group_mission','$folder_name','','','$date','$time')");
+
+mysql_query("INSERT INTO groups VALUES('','$group_name','$groupID','$email','$group_mission','$folder_name','','','','','$date','$time')");
 
 mysql_query("INSERT INTO group_members VALUES ('','$groupID','$email','')");
 

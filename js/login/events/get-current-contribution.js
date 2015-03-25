@@ -1,7 +1,9 @@
 var z = getZ()
 var eventID = getEventID()
+
+getContributionsFunction = function(){
 	
-	setInterval(function(){
+getContributionsInterval = setInterval(function(){
 	
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/events/';
@@ -23,5 +25,8 @@ else postPath = '';
 		
 	},'json')//post
 	
-	},1000)
+},1000)
 
+}//getContributionFunction
+
+getContributionsFunction()

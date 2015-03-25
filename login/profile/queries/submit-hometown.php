@@ -33,6 +33,8 @@ else
 	mysql_query("UPDATE profile_hometown SET state='$state', city='$city' WHERE email='$email'");
 }//else
 
-$return['input'] = $city.', '.$state;
+if($city) $city = $city.', ';
+
+$return['input'] = $city.$state;
 echo json_encode($return);
 ?>

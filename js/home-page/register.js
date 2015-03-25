@@ -40,8 +40,8 @@
 	
 	var name = $('#register-name').val()
 	var password = $('#register-password').val()
-	var email = $('#register-email').val()
-	var rep_email = $('#rep-email').val()
+	var email = $('#register-email').val().trim()//make sure all emails are trimmed bc spaces mess things up
+	var rep_email = $('#rep-email').val().trim()
 	if($('#male-gender').is(':checked')) gender = 'male';
 	if($('#female-gender').is(':checked')) gender = 'female';
 
@@ -81,7 +81,7 @@
 		errors = true;
 	}
 	
-	if(email && rep_email && email!=rep_email && email.match(/^[_a-z0-9-]+(\.[_a-z0-9+-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
+	if(email && rep_email && email.toLowerCase!=rep_email.toLowerCase && email.match(/^[_a-z0-9-]+(\.[_a-z0-9+-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
 		$('#td-rep-email').addClass('red')
 		$('#rep-email-message').html("Email addresses don't match").fadeIn()
 		errors = true;

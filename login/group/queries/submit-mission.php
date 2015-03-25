@@ -32,7 +32,7 @@ if($numrows==0){
 }//if
 
 //make sure user is creator of group
-$query = mysql_query("SELECT * FROM groups WHERE group_id='$group' and created_by='$email'");
+$query = mysql_query("SELECT * FROM groups WHERE group_id='$group' AND created_by='$email'");
 $numrows = mysql_num_rows($query);
 if($numrows==0){
 	$return['error'] = 'not creator';

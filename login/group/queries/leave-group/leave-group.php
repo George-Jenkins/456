@@ -34,6 +34,28 @@ if($numrows==0) return;
 mysql_query("DELETE FROM group_members WHERE email='$email' AND group_id='$group'");
 mysql_query("DELETE FROM group_invitations WHERE email='$email' AND group_code='$group'");
 
+//delete group photos uploaded by user
+$query = mysql_query("SELECT * FROM group_members WHERE email='$email'");
+while($get_array = mysql_fetch_array($query)){
+	
+	$group = $get_array['group_id'];
+	//get group's image folder
+	$query2 = mysql_query("SELECT * FROM groups WHERE group_id='$group'");
+	$get2 = mysql_fetch_assoc($query2);
+	$folder = $get2['image_folder'];
+	//get images user uploaded
+	$query2 = mysql_query("SELECT * FROM group_album WHERE email='$email' AND group_id='$group'");
+	while($get_array2 = mysql_fetch_array($query2)){
+		
+		$image = $get_array2['image'];
+		unlink("../../pics/".$folder."/".$image);
+		unlink("../../pics/".$folder."/small-".$image);
+		mysql_query("DELETE FROM group_album WHERE group_id='$group' AND email='$email'");
+		
+	}//while
+	
+}//while
+
 //handle deleting user from posts
 	//delete posts that were a reply to a reply to the user
 	$query = mysql_query("SELECT * FROM posts WHERE recipient_email='$email' AND group_id='$group'");

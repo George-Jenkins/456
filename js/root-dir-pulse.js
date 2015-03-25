@@ -24,7 +24,8 @@ checkForNotifications().done(function(){
 })//checkForNotifications done
 
 //repeat functions
-setInterval(function(){
+notificationsAndRepliesFunction = function(){
+notificationsAndRepliesInterval = setInterval(function(){
 
 checkForNotifications().done(function(){
 
@@ -39,10 +40,13 @@ checkForNotifications().done(function(){
 })//checkForNotifications done
 
 },1000)//setinterval	
-
+}//notificationsAndRepliesFunction
+notificationsAndRepliesFunction()
+//pause if user is inactivity
+detectInactivity(notificationsAndRepliesInterval,notificationsAndRepliesFunction)
 //end repeat functions
 
-//creat functions
+//create functions
 function checkForNotifications(){
 
 var path = pathToRoot()
@@ -110,3 +114,6 @@ return deferred.promise()
 }//function		
 
 }//if mobileView
+
+//detect user inactivity
+if(mobileView) detectInactivity()

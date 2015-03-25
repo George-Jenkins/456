@@ -267,6 +267,12 @@ input#cover-photo-file{
 #hometown-input input[type=text]{
 	width:200px;
 }
+#birthday-div{
+	margin:0 0 10px 3px;
+}
+#birthday-div-view{
+	margin:0 0 10px 0px;
+}
 #going-out-div{
 	margin:0 3px;
 }

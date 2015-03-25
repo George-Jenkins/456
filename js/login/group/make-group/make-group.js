@@ -38,7 +38,7 @@ else postPath = '';
 				$('#group-name').val('')
 				$('#group-mission').val('')
 				
-				window.location = '../../group/group?'+data.groupID;
+				window.location = '../../group/group.html?'+data.groupID;
 				
 			}//if
 		

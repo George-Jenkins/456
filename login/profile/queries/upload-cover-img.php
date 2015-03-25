@@ -28,7 +28,7 @@ $email = $get['email'];
 if($cover_error>0 || getimagesize($cover_tmp)===FALSE){
 	
 echo "<script>
-parent.coverPhoto('".$cover_error."')
+parent.coverPhoto('error')
 </script>";
 
 return;

@@ -24,7 +24,8 @@ checkForNotifications().done(function(){
 })//checkForNotifications done
 
 //repeat functions
-setInterval(function(){
+notificationsAndRepliesFunction = function(){
+notificationsAndRepliesInterval = setInterval(function(){
 
 checkForNotifications().done(function(){
 
@@ -41,12 +42,12 @@ checkForNotifications().done(function(){
 checkLoggedIn()	
 
 
-
 },1000)//setinterval	
-
+}//notificationsAndRepliesFunction
+notificationsAndRepliesFunction()
 //end repeat functions
 
-//creat functions
+//create functions
 function checkForNotifications(){
 
 var path = pathToRoot()
@@ -83,7 +84,8 @@ deferred.resolve()
 	
 return deferred.promise();
 	
-}//function	
+}//function
+
 	
 function checkForReplies(){
 
@@ -153,3 +155,6 @@ var k = getK();
 	},'json')//post
 	
 }//function
+
+//detect user inactivity
+if(mobileView) detectInactivity()

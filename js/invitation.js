@@ -12,8 +12,8 @@ if(pathForPost) postPath = 'http://ritzkey.com/';
 else postPath = '';	
 	
 	var name = $('#name').val()
-	var email = $('#email').val()
-	var rep_email = $('#rep-email').val()
+	var email = $('#email').val().trim()
+	var rep_email = $('#rep-email').val().trim()
 	var password = $('#password').val()
 	if($('#male-gender').is(':checked')) var gender='male';
 	if($('#female-gender').is(':checked')) var gender='female';
@@ -51,7 +51,7 @@ else postPath = '';
 		removeRed('rep-email')
 		errors = true
 	}//if
-	if(rep_email && rep_email!=email){
+	if(rep_email && rep_email.toLowerCase!=email.toLowerCase){
 		$('#rep-email-error').addClass('red').html("Emails don't match")
 		errors = true
 	}//if

@@ -11,9 +11,10 @@ var z = getZ()
 	
 $.post(postPath+'connect/handle.php', {z:z,k:k}, function(data){
 	
+var path = pathToRoot()	
 if(pathForPost) postPath = 'http://ritzkey.com/';
 else postPath = path;	
-		
+
 if(data.error=='wrong z'){
 	
 	var url = window.location.href

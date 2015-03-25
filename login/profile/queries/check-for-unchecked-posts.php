@@ -24,7 +24,7 @@ while($get_array = mysql_fetch_array($query)){
 	$return['group_id'.$x] = $group_id;
 	
 	//get group emails
-	$query2 = mysql_query("SELECT * FROM posts WHERE group_id='$group_id'");
+	$query2 = mysql_query("SELECT * FROM posts WHERE group_id='$group_id' AND email!='$email'");
 	while($get_array2 = mysql_fetch_assoc($query2)){
 		
 	$group_emails = $get_array2['group_emails'];

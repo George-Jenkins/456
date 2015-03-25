@@ -1,0 +1,273 @@
+html{
+	position:relative;
+	height:100%;
+}
+body{
+	background-image:url(../../../pics/miami-city2.jpg);
+	background-size:cover;
+}
+#group-photo-container{
+	background-color:rgba(0,0,0, 0.4);
+	left:50%;
+	display:block;
+	margin:-69px 0 0 -400px;
+	padding:79px 10px 0 10px;
+	position:absolute;
+	height:100%;
+	width:100%;
+	max-width:800px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+	@media screen and (max-width:800px){
+	#group-photo-container{
+	left:0;
+	margin:-69px 0 0 0;
+	padding:69px 0 0 0;
+	}
+	}
+#relative-div{/*this is used in load-group-photos.js. It is used to set the height of #load-photos-container*/ 
+	position:relative;
+	width:100%;
+	height:100%;
+}
+#chat-wall{
+	display:block;
+}
+#page-header{
+	padding:10px;
+	background-color:rgba(0,0,0,0.6);
+	color:#fff;
+	
+}
+#load-photos-container{
+	background-color:#fff;
+	box-sizing:border-box;
+	padding:15px;
+	display:table;
+	height:100%;
+	width:100%;
+}
+#add-photos-button-div{
+	margin:0 0 15px 0;
+}
+#add-photos-button{
+	padding:5px;
+	width:100px;
+	background-color:#CACABC;
+	cursor:pointer;
+	position:relative;
+	overflow:hidden;
+}
+
+#upload-album{
+	position:absolute;
+	left:0;
+	margin:-25px 0 0 -90px;
+	height:35px;
+	cursor:pointer;
+	opacity:0;
+}
+#group-photo-loader{
+	position:absolute;
+	top:3px;
+	left:50%;
+	margin:0 0 0 60px;
+}
+
+#upload-feedback{
+	position:absolute;
+	top:5px;
+	left:50%;
+	width:100px;
+	text-align:left;
+	margin:0 0 0 60px;
+}
+#group-photo{
+	border:thin solid #fff;
+}
+#group-name-title{
+	font-size:2em;
+	margin:0 0 0 10px;
+}
+
+.group-photo-inline{
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.group-photos-inline{	
+	display:inline-block;
+	background-size:cover;
+	margin:0 5px 10px 5px;
+	width:200px;
+	height:150px;
+	cursor:pointer;
+	border:medium inset #666;
+}
+
+#group-photo{
+	width:100px;
+	height:70px;
+	background-size:cover;
+}
+#display-photo-background-div{
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.8);
+	position:fixed;
+	top:0;
+}
+#group-photo-canvas-container{
+	margin:20px 0 0 0;
+	width:100%;
+	height:auto;
+	max-width:800px;
+	max-height:800px;
+	padding:0 20px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	position:relative;
+}
+#group-photo-canvas{
+	background-color:#fff;
+	padding:0px 10px 10px 10px;
+}
+#group-photo-load img{
+	width:100%;
+	height:auto;
+	max-width:800px;
+	max-height:800px;
+}
+#close-canvas{
+	width:30px;
+	height:auto;
+	cursor:pointer;
+	margin:-20px -20px 0 0;
+	
+}
+#left-gallery-arrow{
+	width:70px;
+	height:auto;
+	position:absolute;
+	left:0;
+	top:100px;
+	margin:0 0 0 -20px;
+	cursor:pointer;
+}
+#right-gallery-arrow{
+	width:70px;
+	height:auto;
+	position:absolute;
+	right:0;
+	top:100px;
+	margin:0 -20px 0 0;
+	cursor:pointer;
+}
+#area-below-image{
+	width:100%;
+	position:relative;
+}
+#delete-area{
+	margin:10px 0;
+	float:left;
+}
+#add-caption-area{
+	margin:10px 0;
+	float:right;
+}
+	@media screen and (max-width:400px){
+	#delete-area{
+	margin:10px 0;
+	float:none;
+	text-align:right;
+	}
+	#add-caption-area{
+	margin:10px 0;
+	float:none;
+	text-align:right;
+	}
+	}/*@media screen and (max-width:400px)*/
+	
+#delete-button-div{
+	width:98px;
+	display:inline-block;
+	margin:0 0 0 3px;
+}
+#add-caption-div{
+	width:98px;
+	display:inline-block;
+	margin:0 0 0 3px;
+}
+#add-caption-div-cancel{
+	width:98px;
+	display:inline-block;
+	margin:0 0 0 3px;
+}
+	@media screen and (max-width:590px){
+	#add-caption-div, #add-caption-div-cancel{
+	float:none;
+	}
+	}
+
+#submit-button-div{
+	margin:2px 0 0 0;
+}
+#clearing-div{
+	clear:both;
+}
+input[type=submit]#submit-caption{
+	height:29px;
+	margin:0 2px 0 0;
+}
+input[type=text]#caption-input{
+	height:29px;
+	max-width:400px;
+}
+	
+.delete-margin{
+	margin:0 10px 0 0;
+}
+#delete-img-loader{
+	margin:-2px 0 0 0;
+}
+.buttonLink{
+	text-align:center;
+	padding:3px;
+	border:thin solid #999;
+	background-color:#CCCCCC;
+}
+.noButtonLink{
+	text-align:center;
+	padding:3px 6px;
+	border:thin solid #999;
+	background-color:#CCCCCC;
+}
+#edit-caption-area{
+	margin:0 0 10px 0;
+}
+#submit-caption-loader{
+	margin:0 0 0 -40px;
+}
+#caption-container{
+	
+}
+#caption{
+	
+}
+.uploaded-by{
+	margin:0 0 5px 0;
+}
+#message-area{
+	max-width:640px;
+	margin:0 0 45px 0;/*for bottom menu*/
+}
+#show-more-photos{
+	background-color:#CACABC;
+	font-size: 1.5em;
+	font-family: 'PTSansRegular';
+	cursor: pointer;
+	padding: 5px 0;
+}

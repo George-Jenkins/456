@@ -1,4 +1,4 @@
-function startPulse(firstID,lastID){/*I need the firstID and lastID when posts load so that I know how many times to loop to see what's been deleted*/
+function startPulse(firstID,lastID,groupIDPhoto){/*I need the firstID and lastID when posts load so that I know how many times to loop to see what's been deleted*/
 
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
@@ -7,12 +7,17 @@ else postPath = '';
 	//put lastID in a session so it can be changed later
 	sessionStorage.setItem('lastID',lastID);
 	
+	//clear intervals from pulse being started from loop=='first'
+	if(typeof chatWallInterval!=='undefined') clearInterval(chatWallInterval)
+		
 	var stopPostPulse;
 	
-	setInterval(function(){	
+	chatWallIntervalFunction = function(){
+			
+	chatWallInterval = setInterval(function(){	
 		
-	//stop if posts hasn't finished
-	if(stopPostPulse==true) return;
+		//stop if posts hasn't finished
+	if(stopPostPulse!=true){
 	stopPostPulse = true;//this gets set to false only when post is done	
 		
 	//get group from url
@@ -24,7 +29,7 @@ else postPath = '';
 	var group = firstItem[0];
 		
 		var Go = sessionStorage.getItem('go')
-		if(Go === 'false') return;
+		//if(Go === 'false') return;
 		
 		var z = getZ();
 
@@ -32,7 +37,7 @@ else postPath = '';
 if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
 else postPath = '';	
 		
-		$.post(postPath+'queries/chat-wall-pulse.php',{z:z, group:group, postPath:postPath}, function(data){	
+		$.post(postPath+'queries/chat-wall-pulse.php',{z:z, group:group, groupIDPhoto:groupIDPhoto, postPath:postPath}, function(data){	
 			
 			stopPostPulse = false;
 			
@@ -50,7 +55,7 @@ else postPath = '';
 				var oldPostID = sessionStorage.getItem('post'+id);
 				
 				if(!$('#post'+id).length && !oldPostID){
-					 $('#chat-wall').prepend(content)
+					 $('#chat-wall-load').prepend(content)
 					
 					//update lastID in a session. This is important for checking for deleted posts. 
 					var lastIDSession = sessionStorage.getItem('lastID');
@@ -98,24 +103,20 @@ else postPath = '';
 			
 			}//for
 			
-			
-	
-	
 			},'json')//post
-	
-	},1500)
+			
+}//if stopPostPulse!=true
 
 var stopReplyPulse;
 
 //handle replies
-setInterval(function(){
 	
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
 else postPath = '';	
 
 	//stop if posts hasn't finished
-	if(stopReplyPulse==true) return;
+	if(stopReplyPulse!=true){
 	stopReplyPulse = true;//this gets set to false only when post is done	
 	
 	//get group from url
@@ -127,7 +128,7 @@ else postPath = '';
 	var group = firstItem[0];
 	
 	var Go = sessionStorage.getItem('go')
-	if(Go === 'false') return;
+	//if(Go === 'false') return;
 	
 	var i = localStorage.getItem('i');
 	var k = localStorage.getItem('k');
@@ -239,19 +240,19 @@ else postPath = '';
 			}//if data
 	
 		},'json')//post
-		},1500)	
-	
+		
+	}//if stopReplyPulse!=true
 	
 var stopDeletePulse;
 //check for deleted posts
-setInterval(function(){
+
 
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
 else postPath = '';	
 	
 	//stop if posts hasn't finished
-	if(stopDeletePulse==true) return;
+	if(stopDeletePulse!=true){
 	stopDeletePulse = true;//this gets set to false only when post is done	
 	
 	var group = getGroupID()
@@ -274,7 +275,13 @@ else postPath = '';
 		
 	},'json')//post
 	
-},1000)//setInterval
+	}//if stopDeletePulse==true
+	
+},1000)//chatWallInterval
+}//chatWallIntervalFunction
+
+chatWallIntervalFunction()
+
 		
 }//start pulse function
 

@@ -63,6 +63,9 @@ $return['profile_pic'] = 'pics/'.$folder.$profile_pic;
 $query = mysql_query("SELECT * FROM members WHERE email='$email'");
 $get = mysql_fetch_assoc($query);
 $return['name'] = $get['name'];
+$birthday = $get['birthday'];
+if($birthday!='0000-00-00') $return['birthday'] = date('M j, Y',strtotime($birthday));
+else $return['birthday'] = '';
 
 //get folder
 $query = mysql_query("SELECT * FROM profile_images WHERE email='$email'");
@@ -107,11 +110,11 @@ $query = mysql_query("SELECT * FROM profile_hometown WHERE email='$email'");
 $get = mysql_fetch_assoc($query);
 
 $state = $get['state'];
-if($state) $state = ','.$state;
 
 $city = $get['city'];
+if($city) $city = $city.', ';
 
-$return['hometown'] = $city.' '.$state;
+$return['hometown'] = $city.$state;
 
 //get going out info
 $query = mysql_query("SELECT * FROM profile_going_out WHERE email='$email'");

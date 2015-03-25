@@ -81,7 +81,20 @@ $('#back-menu').click(function(){
 if(mobileView){
 $('#container').css('margin-bottom',40)
 $('#bottom-menu').css('display','block')
+
+//hide back button if it goes to login page
+var lastPageURL = document.referrer
+var lastPageArray = lastPageURL.split('/')
+var lastPage = lastPageArray[lastPageArray.length-1]
+if(lastPage.indexOf('member-login.html')>=0) $('#back-button').hide()
+
 $('#back-button').click(function(){
+	
+	//prevent navigating back if it goes to login page
+	var lastPageURL = document.referrer
+	var lastPageArray = lastPageURL.split('/')
+	var lastPage = lastPageArray[lastPageArray.length-1]
+	if(lastPage.indexOf('member-login.html')>=0) return;
 	
 	$('#back-button img').css('background-color','#666')
 	window.history.back()

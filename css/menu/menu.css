@@ -151,7 +151,8 @@
 	bottom:0;
 	width:100%;
 	height:40px;
-	background-color:#CCC;
+	background-color:#6FF;
+	text-align:center;
 }
 	@media screen and (max-width:400px){
 	#bottom-menu{

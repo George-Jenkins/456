@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template2.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title></title>
+<!-- InstanceEndEditable -->
+<meta name="description" content="FriendPlan helps you and your friends access the fun and exclusive activities you've always wanted to do without you having to spend too much money."/>
+<meta name="viewport" content="device-width=width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+
+<link rel="icon" type="image/png" href="../../pics/favicon.png"/>
+<link rel="apple-touch-icon" href="../../pics/favicon.png"/>
+
+<!------css------->
+<link href="../../css/general/all-pages.css" type="text/css" rel="stylesheet"/>
+<link href="../../css/body/body.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/menu/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/templates/template2/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../js/jquery-ui-1.11.2.custom/jquery-ui.css" rel="stylesheet" type='text/css'/>
+
+<link href="../../css/templates/container.css" rel="stylesheet" type="text/css"/>
+<link href="../../fonts/ptsans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/general/forms.css" rel="stylesheet" type="text/css"/>
+<!-- InstanceBeginEditable name="head" -->
+<link href="../../css/login/group/group.css" rel="stylesheet" type="text/css"/><!--need this for chat wall--->
+<link href="../../css/login/group/group-photos.css" rel="stylesheet" type="text/css"/>
+
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div id='menu'>
+	<a href='../../index.html' class='inline1'>
+	<img src='../../pics/ritzkey-logo5.png' id='logo'/>
+	</a>
+    <a href='' class='inline1' id='menu-dropdown-icon'>
+    <img src='../../pics/menu-dropdown.png'/>
+    </a>
+	<table id='menu-links' class='inline1'>
+	<tr>
+    <td class='menu-link'><a href='../profile/profile.html'>Profile</a></td>
+	<td class='menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></td> 
+    <td class='menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></td> 
+    <td class='menu-link'><a href='../events/view-events.html'>Activities</a></td> 
+    <td class='menu-link'>
+    	<a href='' id='more-td'>More</a>
+     <div id='more-dropdown-container'>
+        	<div id='more-dropdown'>
+           <a href='../search-groups/search-groups.html'><div class='more-dropdown-item'>Entourage Search</div></a>
+           <a href='../account/settings.html'><div class='more-dropdown-item'>Settings</div></a>
+   			<a href='../contact/contact-form.html'><div>Contact</div></a>
+            </div><!---more-dropdown---->
+        </div><!---dropdown1-container---->
+    </td>
+	</tr>
+	</table>
+
+	<table id='logout-table' class='inline1'>
+	<tr>
+	<td class='menu-input'><a href='../../member-login.html'>Log Out</a></td>
+	</tr>
+	</table>
+	<div id='mobile-menu'>
+    	<div id='initial-dropdown'>
+    	<div class='mobile-menu-link'><a href='../../member-login.html'>Log Out</a></div>
+        <div class='mobile-menu-link'><a href='../profile/profile.html'>Profile</a></div> 
+        <div class='mobile-menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></div>
+        <div class='mobile-menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></div>
+        <div class='mobile-menu-link' id='more-menu'>More <b>></b></div>
+        </div><!---------->
+        <div id='hidden-items' class='hide'>
+        <div class='mobile-menu-link'><a href='../events/view-events.html'>Activities</a></div>
+        <div class='mobile-menu-link'><a href='../search-groups/search-groups.html'>Entourage search</a></div>
+        <div class='mobile-menu-link'><a href='../account/settings.html'>Settings</a></div>
+    	<div class='mobile-menu-link'><a href='../contact/contact-form.html'>Contact</a></div>
+        <div class='mobile-menu-link' id='back-menu'><b><</b> Back</div>
+        </div>
+        
+    </div>
+	
+</div><!-----menu-------->
+<div id='container'>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<center>
+
+<div id='group-photo-container'>
+
+<div id='relative-div'>
+
+<div id='page-header'>
+
+<a href='' id='link-to-group'><div id='group-photo' class='group-photo-inline'></div></a>
+
+<div id='group-name-title' class='text group-photo-inline'></div>
+
+</div><!----page-header----->
+
+
+<div id='load-photos-container'>
+
+<div style='position:relative'>
+
+<div id='add-photos-button-div' class='hide'>
+<div id='add-photos-button' class='text-bold'>+Add
+	
+	<form id='upload-album-form' method='POST' action='queries/album/upload-photo-for-album.php' enctype='multipart/form-data' target='group-album-iframe'>
+	<input type='file' name='upload-album' id='upload-album'/>
+	<input type='hidden' name='z' id='upload-album-z'/>
+	<input type='hidden' name='group-id' id='group-album-id'/>
+	</form>
+	
+	
+	<iframe name='group-album-iframe' style='width:0;height:0;'></iframe>
+	
+</div><!--add-photos-button-->
+
+</div><!--add-photos-button-div-->
+
+<img src='../../pics/ajax-loader2.gif' id='group-photo-loader' class='small-processing-img2 hide'>
+<div id='upload-feedback' class='text'></div>
+
+</div><!--style=position:relative--->
+
+<div id='load-photo-div'></div>
+
+<img src='../../pics/ajax-loader2.gif' id='photos-loading-img' style='height:40px;width:auto'/>
+<div id='show-more-photos' class='hide'><a href='' onclick='return false'>Show more</a></div>
+</div><!--load-photos-container---->
+
+</div><!--relative-div-->
+
+</div><!----group-photo-container---->
+
+
+<div id='display-photo-background-div' class='hide'></div><!----display-photo-background-div----->
+
+	<div id='group-photo-canvas-container' class='hide'>
+	<img src='../../pics/left-icon2.png' id='left-gallery-arrow'>
+	<img src='../../pics/right-icon2.png' id='right-gallery-arrow'>
+		<div id='group-photo-canvas'>
+
+		<div class='align-right'><img src='../../pics/red-x.png' id='close-canvas'/></div>
+		
+		<div id='group-photo-load'></div>
+		
+		<div id='area-below-image'>
+		
+		<div id='add-caption-area' class='hide'>
+			
+			<div id='add-caption-div' class='buttonLink functionLink'>Caption</div>
+			<div id='add-caption-div-cancel' class='buttonLink functionLink'>Cancel</div>
+			
+		</div><!---add-caption-area---->
+		
+		
+			<div id='delete-area' class='hide'>
+				
+				<div id='delete-button-div' class='functionLink buttonLink'>Delete photo</div>
+				
+				<span id='you-sure-span' class='hide'>
+				<div class='inline text'>You sure? </div>
+				<div id='no-delete' class='inline delete-margin functionLink noButtonLink'> No</div>
+				<div id='yes-delete' class='inline delete-margin functionLink buttonLink'>Yes</div> 
+				<img src='../../pics/ajax-loader2.gif' id='delete-img-loader' class='inline small-processing-img2 hide'>
+				</span>
+			</div><!--delete-area-->
+			
+			<div id='clearing-div'></div>
+		
+
+		<div id='edit-caption-area' class='align-right hide'>
+		<span class='general-input'><input type='text' id='caption-input' value='Caption' class='no-content'/></span>
+			<div id='submit-button-div'>
+				<img src='../../pics/ajax-loader2.gif' id='submit-caption-loader' class='small-processing-img hide'/>
+				<span class='general-submit'><input type='submit' value='Done' id='submit-caption'/></span>
+			</div><!--submit-button-div--->
+		</div><!---edit-caption-area--->	
+		
+		<div id='uploaded-by-container' class='text align-left'></div>
+		<div id='caption-container' class='text'></div>
+		
+			
+			</div><!---area-below-image--->
+			
+			<hr id='message-area-hr'>
+			
+			<div id='message-area'>
+			<div id='text-box' class='hide'><!---the hide class gets removed in view-specific-replies.js-------->
+	<form id='chat-form'>
+    <textarea id='message' class='message-textarea no-comment'>Comment</textarea>
+    <div id='button-div'>
+    	<span class='general-submit'><input type='submit' id='chat-send' value='Post'/></span> <img src='../../pics/ajax-loader2.gif' class='small-processing-img hide' id='submit-loader'/>
+    </div><!---button-div----->
+    </form>
+</div><!----text-box---->
+<table class='text-bold align-center' style='margin:5px 0 0 0'>
+<tr>
+<td id='all-posts' class='underline functionLink buttonLink'>All conversations</td>
+<td></td>
+<td id='my-posts' class='functionLink buttonLink'> My conversations </td>
+</tr>
+</table>
+
+<div id='chat-wall'>
+<div id='chat-wall-load'>
+<img src='../../pics/ajax-loader2.gif' id='wall-loading-img' style='height:40px;width:auto'/>
+</div><!---chat-wall-load--->
+<div id='show-more' class='hide' onClick='show_more()'><a href='' onClick='return false'>Show earlier</a></div>
+</div><!----chat wall----->
+
+			</div><!---message area---->
+			
+		</div><!--group-photo-canvas-->
+	
+	</div><!---group-photo-canvas-container--->
+
+
+
+</center>
+
+<!-- InstanceEndEditable -->
+</div><!-----container------->
+
+
+<div id='bottom-menu' class='hide'>
+	<span id='back-button'><img src='../../pics/left-icon.png'/></span>
+    <span id='forward-button'><img src='../../pics/right-icon.png'/></span>
+    <a href='../profile/profile.html'><img src='../../pics/profile-icon.png'/></a>
+</div><!--bottom-menu-->
+
+
+<!-- getclicky -->
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100810496); }catch(e){}</script>
+
+</body>
+
+<script src='../../js/jquery/jquery-1.11.2.min.js'></script>
+<script src='../../js/jquery/jquery-animate-enhanced.js'></script>
+<script src='../../js/jquery-ui-1.11.2.custom/jquery-ui.js'></script>
+<script src='../../js/plugins/fastclick.js'></script>
+<script src='../../js/functions.js'></script>
+<script src='../../sjcl-master/sjcl.js'></script>
+<script src='../../js/general/lightbox.js'></script>
+<script src='../../js/home-page/register.js'></script>
+<script src="../../phonegap.js"></script>
+<script src='../../js/PushNotification.js'></script>
+<script>
+function onNotification(e){
+var z = getZ()
+var device = 'android';
+	if(z) $.post('http://ritzkey.com/queries/register-notification-key.php',{z:z, token:e.regid, device:device},function(data){
+},'json') 
+}
+</script>
+<script src='../../js/register-notifications.js'></script>
+<script src='../../js/login/handle.js'></script>
+<script src='../../js/login/pulse.js'></script>
+<!-- InstanceBeginEditable name="EditRegion4" -->
+<script src='../../js/login/group/view-specific-replies.js'></script>
+<script src='../../js/login/group/chat-wall-pulse.js'></script>
+<script src='../../js/login/group/chat-wall-load.js'></script>
+<script src='../../js/login/group/chat-wall.js'></script>
+<script src='../../js/login/group/chat-wall-reply.js'></script>
+<script src='../../js/login/group/delete-post.js'></script>
+<script src='../../js/login/group/album/load-group-photos.js'></script>
+<script src='../../js/login/group/album/upload-group-album-photo.js'></script>
+<script src='../../js/login/group/album/post-comment.js'></script>
+<script src='../../js/login/group/album/load-comments.js'></script>
+<script src='../../js/login/group/album/update-photos.js'></script>
+<!-- InstanceEndEditable -->
+<script src='../../js/menu/menu.js'></script>
+<!-- InstanceEnd --></html>

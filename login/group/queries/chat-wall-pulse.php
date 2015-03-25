@@ -4,6 +4,7 @@ include('../../../connect/db-connect.php');
 $name = cleanInput($_POST['name']);
 $loginID = cleanInput($_POST['z']);
 $group = cleanInput($_POST['group']);
+$groupIDPhoto = cleanInput($_POST['groupIDPhoto']);
 $postPath = $_POST['postPath'];//this is if postPath is given
 
 include('../../../connect/members.php');
@@ -29,15 +30,68 @@ $update = '';
 $x = 0;
 
 $query = mysql_query("SELECT * FROM posts WHERE group_id='$group' AND group_emails_for_pulse LIKE '%$email%' AND reply_id='0' ORDER BY time DESC");
+if($groupIDPhoto) $query = mysql_query("SELECT * FROM posts WHERE group_id='$group' AND group_id_photo='$groupIDPhoto' AND group_emails_for_pulse LIKE '%$email%' AND reply_id='0' ORDER BY time DESC");
 
 while($get_array = mysql_fetch_array($query)){
 	
 	$post = $get_array['post'];
+	$postShare = $get_array['post_share'];
 	$time = $get_array['time'];
 	$id = $get_array['id'];
 	
 	$dbemail = $get_array['email'];
 	
+	//format postShare correctly
+	if($postShare){
+	$postShare = str_replace("\'","'",$postShare);
+	$postShare = json_decode($postShare,true);
+	$postShareNetwork = $postShare['venuePost']['network'];
+	$postSharePostingName = $postShare['venuePost']['postingName'];
+	$postShareUserName = $postShare['venuePost']['userName'];
+	$postShareTime = $postShare['venuePost']['time_created'];
+	$postSharePost = $postShare['venuePost']['post'];
+	$postShareImage = $postShare['venuePost']['image'];
+	if($postShareImage) $postShareImage = "<img src='".$postShareImage."' class='share-image' onClick=\"highLightImage('".$postShareImage."')\" onLoad=\"expandPost()\" />";
+	
+	$secondsAgo = time()-$postShareTime;//get seconds ago time was
+	if($secondsAgo>60*60*20) $timeFormat = date('D M j g:i a',$postShareTime);//if over 20 hours ago
+	else $timeFormat = round($secondsAgo/60/60).' h ago';//hours ago
+	if(date('Y')!=date('Y',$postShareTime)) $timeFormat = date('D M j Y g:i a',$postShareTime);//if previous year
+	
+	//get venue info
+	if($postShareNetwork=='twitter') $query2 = mysql_query("SELECT * FROM venue WHERE twitter='$postShareUserName'");
+	if($postShareNetwork=='instagram') $query2 = mysql_query("SELECT * FROM venue WHERE instagram='$postShareUserName'");
+	if($postShareNetwork=='facebook') $query2 = mysql_query("SELECT * FROM venue WHERE facebook='$postShareUserName'");
+	$get2 = mysql_fetch_assoc($query2);
+	$venueName = $get2['name'];
+	
+	if($postShareNetwork=='twitter') $venue = $venueName;
+	if($postShareNetwork=='instagram') $venue = $venueName;
+	if($postShareNetwork=='facebook') $venue = $venueName;
+	
+	$venueLocation = $get2['house']." ".$get2['street']." ".$get2['city'].", ".$get2['state'];
+	$website = $get2['website'];
+	if($website) $website = "<a href='".$website."' target='_blank'>".$venueName."</a> - ";
+	$venueInfo = "<div>".$website."<b>".$venueLocation."</b></div>";
+	$linkToPage = "http://".$postShareNetwork.".com/".$postShareUserName;
+	
+	$postShare = "<div style='line-height:24px;'>
+	<div class='username'>
+	<a href='".$linkToPage."' target='_blank'><img src='../../pics/".$postShareNetwork."-icon-small.png' style='margin-bottom:-5px;'/></a>
+	".$venue.' - Announced '.$timeFormat."</div>
+	<div>".$postSharePost."</div>
+	".$venueInfo."
+	<div>".$postShareImage."</div>
+	</div>";
+	
+	}//if $postShare
+	
+	//format postShare correctly
+	$postShare = str_ireplace('[div]','<div>',$postShare);
+	$postShare = str_ireplace("[div class='username']","<div class='username'>",$postShare);
+	$postShare = str_ireplace('[/div]','</div>',$postShare);
+	$postShare = str_ireplace('[img]','<img',$postShare);
+	$postShare = str_ireplace('[/img]',' class="share-image" onLoad="expandPost()" />',$postShare);	
 	//get poster's name
 	$query2 = mysql_query("SELECT * FROM members WHERE email='$dbemail'");
 	$get2 = mysql_fetch_assoc($query2);
@@ -117,17 +171,22 @@ while($get_array = mysql_fetch_array($query)){
 	$get2 = mysql_fetch_assoc($query2); 
 	$group_emails = $get2['group_emails'];
 	$group_emails_for_pulse = $get2['group_emails_for_pulse'];
-
+	
+	$profileLinkPic = "<a href='".$profile_link."'>
+		<div class='profile-pic' style='background-image:url(".$postPath."../profile/pics/".$profile_img_path.")'></div>
+	</a>";
+	
+	//if this post is from RitzKey
+	if($postShare) $profileLinkPic = "<div class='profile-pic' style='background-image:url(".$postPath."../../pics/logo-fade-wide-small.png)'></div>";
+	
 	if(substr_count($group_emails_for_pulse,'---'.$email.'---')>0) $return['update'.$x] = "<div id='post".$id."' class='post-div slide ".$time." ".$id." post-div-delete".$id." ".$notInvolved."'>
 	<div class='post-time'>".date('M j',$time)."</div>
 	
 	<div class='poster-name'><a href='".$profile_link."'>".$posters_name."</a></div>
 	
-	<a href='".$profile_link."'>
-		<div class='profile-pic' style='background-image:url(".$postPath."../profile/pics/".$profile_img_path.")'></div>
-	</a>
+	".$profileLinkPic."
 	
-	<span id='message-span".$id."' class='message-span'>".$post."</span>
+	<span id='message-span".$id."' class='message-span'>".$post.$postShare."</span>
 	
 	<div id='etc-div".$id."' class='etc-div hide'>
 		<span id='show-more-link".$id."' onClick='showMoreLink(".$id.")'><a href='' onclick='return false' class='buttonLink'>Show more ...</a></span>

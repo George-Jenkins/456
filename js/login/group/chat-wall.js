@@ -102,7 +102,14 @@ x=0;
 	//clean item
 	var firstItem = firstItem.split('&')
 	var group = firstItem[0];
-		
+	
+	var groupIDPhoto = '';
+	if($('#group-photo-load img').length){
+	var image = $('#group-photo-load img').attr('src')
+	var imageID2 = $('[id="'+image+'"]').attr('id2')
+	var groupIDPhoto = group+':imageID-'+imageID2//combine groupID and postID for group_id 
+	}//if
+	
 	var message = $('#message').val()
 		
 	var z = getZ();
@@ -115,7 +122,7 @@ x=0;
 
 while(x<=8){
 		
-	$.post(postPath+'queries/chat-wall.php', {message:message, z:z, group:group}, function(data){
+	$.post(postPath+'queries/chat-wall.php', {message:message, z:z, group:group, groupIDPhoto:groupIDPhoto}, function(data){
 		
 		//redirect if wrong z
 		if(data.error=='wrong z'){

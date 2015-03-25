@@ -167,7 +167,7 @@
     <span id='hometown-cancel' class='hide functionLink buttonLink'>Cancel</span>
 </span>
 
-<div id='home-town' class='text-bold'>Hometown</div><!----home-town---->
+<div id='home-town' class='text-bold'>Living in</div><!----home-town---->
 
 <div id='home-town-info'></div>
 
@@ -191,6 +191,22 @@
     	</div><!---city-suggestion-box---->
 	</div><!---select-state-div---->
 </div><!----home-town-div---->
+
+<div id='birthday-div'>
+
+<span id='edit-birthday' class='functionLink buttonLink'>Edit</span>
+<span id='cancel-edit-birthday' class='functionLink buttonLink hide'>Cancel</span>
+
+<div id='birthday-title' class='text-bold'>Birthday</div>
+<span id='select-birthday-span' class='general-select hide'>
+<select id='birthday-month'><option value=''>Month</option></select>
+<select id='birthday-day'><option value=''>Day</option></select>
+<select id='birthday-year'><option value=''>Year</option></select>
+<span class='general-submit'><input type='submit' id='submit-birthday' value='Done'/></span><img id='load-icon3' src='../../pics/ajax-loader2.gif' class='hide small-processing-img'/>
+</span><!----select-birthday-span----->
+<div id='birthday-display'></div><!--birthday-display-->
+</div><!---birthday-div--->
+
 
 	<div id='going-out-div'> 
     	<span id='edit-going-out'>
@@ -241,6 +257,7 @@
 <div id='bottom-menu' class='hide'>
 	<span id='back-button'><img src='../../pics/left-icon.png'/></span>
     <span id='forward-button'><img src='../../pics/right-icon.png'/></span>
+    <a href='profile.html'><img src='../../pics/profile-icon.png'/></a>
 </div><!--bottom-menu-->
 
 
@@ -276,6 +293,7 @@ var device = 'android';
 <script src='../../js/login/profile/background-image.js'></script>
 <script src='../../js/login/profile/edit-hometown.js'></script>
 <script src='../../js/login/profile/submit-hometown.js'></script>
+<script src='../../js/login/profile/edit-birthday.js'></script>
 <script src='../../js/login/profile/edit-going-out-info.js'></script>
 <script src='../../js/login/profile/load-profile-info.js'></script>
 <script src='../../js/login/profile/cover-photo.js'></script> 

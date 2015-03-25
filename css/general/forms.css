@@ -132,11 +132,11 @@
 }
 
 /*handles radio buttons*/
-.general-radio input[type=radio] {
+.general-radio input[type=radio], .general-checkbox input[type=checkbox] {
     display:none;
 }
  
-.general-radio input[type=radio] + label {
+.general-radio input[type=radio] + label, .general-checkbox input[type=checkbox] + label {
     display:inline-block;
     margin:;
 	min-width:70px;
@@ -165,7 +165,7 @@
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
 }
  
-.general-radio input[type=radio]:checked + label {
+.general-radio input[type=radio]:checked + label, .general-checkbox input[type=checkbox]:checked + label {
     background-image: none;
     outline: 0;
     -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);

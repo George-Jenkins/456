@@ -103,11 +103,59 @@ NoClickDelay.prototype = {
 	}
 };
 
+function getPostPath(path){
+	if(pathForPost) postPath = path;
+	else postPath = '';
+	return postPath;
+} 
+
+function getDocumentHeight(){
+	return Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight,
+        document.body.offsetHeight, document.documentElement.offsetHeight,
+        document.body.clientHeight, document.documentElement.clientHeight
+	)
+}
+
+function detectInactivity(){//for now this is called in pulse.js
+	var inactive = false
+	detectInactivityTimout = setTimeout(function(){
+	clearTimeout(detectInactivityTimout)//clear this timeOut
+	inactive = true
+	//clear all intervals
+	if(typeof notificationsAndRepliesInterval!=='undefined') clearTimeout(notificationsAndRepliesInterval)
+	if(typeof chatWallInterval!=='undefined') clearTimeout(chatWallInterval)
+	if(typeof getContributionsInterval!=='undefined') clearTimeout(getContributionsInterval)
+	//show still their message
+	var content = $('#lightbox').html()
+	if(content!="<p>Still there? <span onClick='startIntervals()' class='functionLink buttonLink'>Yes</span></p>"){
+	$('#dim-background').removeClass().show()
+	$('#lightbox').removeClass().addClass('white-background').html("<p>Still there? <span onClick='startIntervals()' class='functionLink buttonLink'>Yes</span></p>");
+	$('.close').hide()
+	}//if
+	},600000)	
+}//function
+$(document).on('touchstart touchmove keyup click',function(e){//clear timeout if user is active
+	clearTimeout(detectInactivityTimout)//clear this timeOut
+	detectInactivity()//start timeout again
+})//on	
+
+function startIntervals(){//starts detectInactivity() again
+	$('#dim-background').hide()
+	$('#lightbox').removeClass().addClass('white-background').html('')
+	if(typeof notificationsAndRepliesFunction!=='undefined') notificationsAndRepliesFunction()
+	if(typeof chatWallIntervalFunction!=='undefined') chatWallIntervalFunction()
+	if(typeof getContributionsFunction!=='undefined') getContributionsFunction()
+	clearTimeout(detectInactivityTimout)//clear timeOut
+	detectInactivity()//start timeout again
+}//function
+
+
 //this is used to provide path to post requests
 //this is used to provide path to post requests
 var pathForPost;
 var mobileView;
-pathForPost = true;
+//pathForPost = true;
 mobileView = true;
 
 

@@ -48,6 +48,7 @@ else postPath = '';
 		$('title').html(data.name)
 			
 		$('#home-town-info').html(data.hometown)
+		$('#birthday-display').html(data.birthday)
 		$('#going-out-answer').html(data.going_out)
 		
 		if(data.list){	

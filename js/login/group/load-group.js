@@ -53,6 +53,10 @@ else postPath = '';
 		if(postPath) data.members = data.members.replace(/background-image:url\(/g,'background-image:url('+postPath)
 		$('#members').html(data.members)
 		
+		$('#select-state').append(data.states)
+		$('#group-location-display').html(data.groupLocation)
+		$('#upload-photo-for-album').attr('href','group-photos.html?'+group)
+		
 		//this handles events
 		$('#list-events-div').html(data.events)
 		$('#number-of-events').html(data.numberOfEvents)

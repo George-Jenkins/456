@@ -27,7 +27,7 @@ $get = mysql_fetch_assoc($query);
 $email = $get['email'];
 
 //make sure user is creator of group
-$query = mysql_query("SELECT * FROM groups WHERE group_id='$group' and created_by='$email'");
+$query = mysql_query("SELECT * FROM groups WHERE group_id='$group' AND created_by='$email'");
 $numrows = mysql_num_rows($query);
 if($numrows==0){
 echo "<script>

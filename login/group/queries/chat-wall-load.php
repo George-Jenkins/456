@@ -2,6 +2,7 @@
 include('../../../connect/db-connect.php');
 
 $group = cleanInput($_POST['group']);
+$groupIDPhoto = cleanInput($_POST['groupIDPhoto']);
 $loginID = cleanInput($_POST['z']);
 $loop = $_POST['loop'];//this will equal an id, 'first' or 'second'. 'first' loads the first 23 and 'second' loads the rest. if it's an id it loads just that post
 $postPath = $_POST['postPath'];//this is posted when postPath is provided
@@ -40,9 +41,11 @@ date_default_timezone_set($timezone);
 
 //this handles user viewing specific replies
 $query = mysql_query("SELECT * FROM posts WHERE group_id='$group' AND reply_id='0' ORDER BY time DESC, id DESC");
+
+if($groupIDPhoto) $query = mysql_query("SELECT * FROM posts WHERE group_id='$group' AND reply_id='0' AND group_id_photo='$groupIDPhoto' ORDER BY time DESC, id DESC");
 //if $loop is an id just get that id
 if($loop!='first' && $loop!='second'){
-	 $query = mysql_query("SELECT * FROM posts WHERE id='$loop' AND group_id='$group' AND reply_id='0' ORDER BY time DESC, id DESC");
+	 $query = mysql_query("SELECT * FROM posts WHERE id='$loop' AND group_id='$group' AND reply_id='0' AND group_id_photo='$groupIDPhoto' ORDER BY time DESC, id DESC");
 	 $idLoop = true;
 }//if
 
@@ -52,9 +55,57 @@ $y = 0;
 while($get_array = mysql_fetch_array($query)){
 	
 	$post = $get_array['post'];
+	$postShare = $get_array['post_share'];
 	$time = $get_array['time'];
 	$id = $get_array['id'];
 	$dbemail = $get_array['email'];
+	
+	//format postShare correctly
+	if($postShare){
+	$postShare = str_replace("\'","'",$postShare);
+	$postShare = json_decode($postShare,true);
+	$postShareNetwork = $postShare['venuePost']['network'];
+	$postSharePostingName = $postShare['venuePost']['postingName'];
+	$postShareUserName = $postShare['venuePost']['userName'];
+	$postShareTime = $postShare['venuePost']['time_created'];
+	$postSharePost = $postShare['venuePost']['post'];
+	$postShareImage = $postShare['venuePost']['image'];
+	if($postShareImage) $postShareImage = "<img src='".$postShareImage."' class='share-image' onClick=\"highLightImage('".$postShareImage."')\" onLoad=\"expandPost()\" />";
+	
+	$secondsAgo = time()-$postShareTime;//get seconds ago time was
+	if($secondsAgo>60*60*20) $timeFormat = date('D M j g:i a',$postShareTime);//if over 20 hours ago
+	else $timeFormat = round($secondsAgo/60/60).' h ago';//hours ago
+	if(date('Y')!=date('Y',$postShareTime)) $timeFormat = date('D M j Y g:i a',$postShareTime);//if previous year
+	
+	//get venue info
+	if($postShareNetwork=='twitter') $query2 = mysql_query("SELECT * FROM venue WHERE twitter='$postShareUserName'");
+	if($postShareNetwork=='instagram') $query2 = mysql_query("SELECT * FROM venue WHERE instagram='$postShareUserName'");
+	if($postShareNetwork=='facebook') $query2 = mysql_query("SELECT * FROM venue WHERE facebook='$postShareUserName'");
+	$get2 = mysql_fetch_assoc($query2);
+	$venueName = $get2['name'];
+	
+	if($postShareNetwork=='twitter') $venue = $venueName;//at first I made the name vary depending on the network
+	if($postShareNetwork=='instagram') $venue = $venueName;
+	if($postShareNetwork=='facebook') $venue = $venueName;
+	
+	$venueLocation = $get2['house']." ".$get2['street']." ".$get2['city'].", ".$get2['state'];
+	$website = $get2['website'];
+	if($website) $website = "<a href='".$website."' target='_blank'>Website</a> - ";
+	$venueInfo = "<div>".$website."<b>".$venueLocation."</b></div>";
+	$linkToPage = "http://".$postShareNetwork.".com/".$postShareUserName;
+	
+	$postShare = "<div style='line-height:24px;'>
+	<div class='username'>
+	<a href='".$linkToPage."' target='_blank'><img src='../../pics/".$postShareNetwork."-icon-small.png' style='margin-bottom:-5px;'/></a>
+	".$venue.' - Announced '.$timeFormat."</div>
+	<div>".$postSharePost."</div>
+	".$venueInfo."
+	<div>".$postShareImage."</div>
+	</div>";
+	
+	}//if $postShare
+	
+	
 	
 	//get poster's name
 	$query2 = mysql_query("SELECT * FROM members WHERE email='$dbemail'");
@@ -139,18 +190,23 @@ while($get_array = mysql_fetch_array($query)){
 	//hide the ones past the limit
 	if($x>=$showNumber) $hide='hide';
 	
+	//create profile image and link to profile
+	$profileLinkPic = "<a href='".$profile_link."'>
+		<div class='profile-pic' style='background-image:url(".$postPath."../profile/pics/".$profile_img_path.")'></div>
+	</a>";
 	
+	//if this post is from RitzKey
+	if($postShare) $profileLinkPic = "<div class='profile-pic' style='background-image:url(".$postPath."../../pics/logo-fade-wide-small.png)'></div>";
+		
 	if($loop=='first' || $loop == 'second' && $x>$showNumber || $idLoop==true) $return['post'] .= "<div id='post".$id."' class='post-div time".$time." ".$hide." post-div".$x." ".$id." post-div-delete".$id." ".$notInvolved."'>
 	
 	<div class='post-time'>".date('M j',$time)."</div>
 	
 	<div class='poster-name'><a href='".$profile_link."'>".$posters_name."</a></div>
 	
-	<a href='".$profile_link."'>
-		<div class='profile-pic' style='background-image:url(".$postPath."../profile/pics/".$profile_img_path.")'></div>
-	</a>
+	".$profileLinkPic."
 	
-	<span id='message-span".$id."' class='message-span getPostScrollHeight".$x."'>".$post."</span>
+	<span id='message-span".$id."' class='message-span getPostScrollHeight".$x."'>".$post.$postShare."</span>
 	
 	<!---decide if to show the show more button---->
 	<script>

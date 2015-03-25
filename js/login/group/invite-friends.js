@@ -1,3 +1,4 @@
+(function(){
 //this is path to post for apps
 if(pathForPost) postPath = 'http://ritzkey.com/login/group/';
 else postPath = '';	
@@ -36,3 +37,4 @@ else postPath = '';
 	$('#invite-code').click(function(){
 		$(this).select(); 
 	})
+})();

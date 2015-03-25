@@ -4,6 +4,7 @@ include('../../../connect/db-connect.php');
 $reply = cleanInput($_POST['reply']);
 
 $group = cleanInput($_POST['group']);
+$groupIDPhoto = cleanInput($_POST['groupIDPhoto']);
 
 $replyID = cleanInput($_POST['id']);
 $replyTime = cleanInput($_POST['time']);//I may not use this
@@ -55,7 +56,7 @@ $time = time();
 
 $reply = nl2br(trim($reply));
 
-mysql_query("INSERT INTO posts VALUES('','$name','$posterEmail','$email','$group_emails','$group_emails','$reply','$replyID','$originalPostID','$group','$date','$time','false')");
+mysql_query("INSERT INTO posts VALUES('','$name','$posterEmail','$email','$group_emails','$group_emails','$reply','','$replyID','$originalPostID','$group','$groupIDPhoto','$date','$time','false')");
 
 //verify email was submitted succesfully
 $query = mysql_query("SELECT * FROM posts WHERE email='$email' AND time='$time' AND post='$reply'");

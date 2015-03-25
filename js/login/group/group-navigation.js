@@ -17,7 +17,7 @@ $('#view-group-members').click(function(){
 		
 	$('#member-list').toggle('slide', slideDuration, function(){
 		
-	$('#member-list').css('width','100%').css('height','100%')//I set it back to normal here when function is done
+	$('#member-list').css('width','100%')//I set it back to normal here when function is done
 		
 		enableScroll()//defined below. Enables scroll when app
 		
@@ -48,11 +48,10 @@ $('#view-chat-wall').click(function(){
 	//decide which slide effect to use depending on screen width
 	if(screenWidth<=965){
 		$('#chat-wall').hide()//i'll hide chat wall so it doesn'slow down toggle on mobile devices. I'll show it after toggle
-		$('#show-more').addClass('hide2')//I'll also hide show earlier button because it was still there when wall was hidden
 		$('#chat-box-container').toggle('slide', slideDuration, function(){
-			$('#show-more').removeClass('hide2')
 			$('#chat-wall').show()
 			enableScroll()//defined below. Enables scroll when app	
+			if(typeof expandPost!=='undefined') expandPost()//expand post (show show more). Defined in chat-wall-load.js 
 		})
 	}//if
 	else $('#chat-box-container').slideDown()

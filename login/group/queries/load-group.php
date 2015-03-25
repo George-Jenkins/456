@@ -27,14 +27,19 @@ $get = mysql_fetch_assoc($query);
 $timezone = $get['timezone'];
 date_default_timezone_set($timezone);
 
-//get image folder name and creators name
+//get image folder name, group's location and creators name
 $query = mysql_query("SELECT * FROM groups WHERE group_id='$group'");
 $get = mysql_fetch_assoc($query);
 $creatorEmail = $get['created_by'];
+$groupState = $get['state'];
+$groupCity = $get['city'];
+if($groupCity) $groupCity .= ', ';
+$groupLocation = $groupCity.$groupState;
 $query = mysql_query("SELECT * FROM members WHERE email='$creatorEmail'");
 $get = mysql_fetch_assoc($query);
 $creatorName = $get['name'];
 $query = mysql_query("SELECT * FROM groups WHERE group_id='$group' AND created_by='$creatorEmail'");
+
 
 //if user didn't create group or group doesn't exist stop
 $numrows = mysql_num_rows($query);
@@ -178,12 +183,27 @@ $query = mysql_query("SELECT * FROM group_members WHERE group_id='$group' AND em
 $numrows = mysql_num_rows($query);
 if($numrows!=0) $return['pending_approval'] = true;
 
+//get states so creator can change group location
+$query = mysql_query("SELECT DISTINCT(state) as state FROM us_cities ORDER BY state ASC");
+
+$stateOption;
+
+while($get_array = mysql_fetch_array($query)){
+	$state = $get_array['state'];
+	if(strpos($state,')')==FALSE && strpos($state,'(')==FALSE){
+		$stateOption .= '<option value="'.$state.'">'.$state.'</option>';
+	}//if
+}//while
+
+
 $return['creatorName'] = $creatorName;
 $return['groupName'] = $group_name;
 $return['img1'] = $path1;
 $return['img2'] = $path2;
 $return['mission'] = $mission;
 $return['members'] = $members;
+$return['states'] = $stateOption;
+$return['groupLocation'] = $groupLocation;
 echo json_encode($return);
 
 ?>

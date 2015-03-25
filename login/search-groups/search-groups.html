@@ -88,8 +88,40 @@
 <div class='title'>Search Entourages</div>
 
 <p>
+<!--
+<div id='filter-buttons'>
+<span id='by-demographic-button' class='functionLink buttonLink'>By demographic</span>
+<span id='by-name-button' class='functionLink buttonLink hide'>By name</span>
+</div>
+-->
+<span id='name-search-span' class='general-input'><input type='text' id='search-groups' name='search-groups' placeholder='Search'/></span>
 
-<span class='general-input'><input type='text' id='search-groups' name='search-groups' placeholder='Search'/></span>
+<div id='filters-div' class='text hide'>
+<table>
+<tr>
+<td>Sex </td>
+<td>
+<span id='all-male-span' class='general-checkbox'><input type='checkbox' id='female-filter' name='gender-filter1' value='female' /><label for='female-filter'>All female</label></span>
+<span id='all-male-span' class='general-checkbox'><input type='checkbox' id='male-filter' name='gender-filter2' value='male' /><label for='male-filter'>All male</label></span>
+</td>
+</tr>
+
+<tr>
+<td>Age range</td>
+<td id='age-range-td' class='general-input'><input type='text' id='min-age-filter' value='Min'/> <input type='text' id='max-age-filter' value='Max'/></td>
+</tr>
+
+<tr>
+<td>Location</td>
+<td><span id='city-filter-span' class='general-input inline'><input type='text' id='city-filter' value='City'/></span> <span class='general-select inline'><select id='filter-states'><option value=''>State</option></select></span></td>
+</tr>
+</table>
+
+<span class='general-submit'><input type='submit' id='filter-search-button' value='Search'></span>
+
+</div><!--filters-div--->
+
+<p>
 
 <div id='loader1'>
 <img src='../../pics/ajax-loader2.gif' class='hide'/>
@@ -113,6 +145,7 @@
 <div id='bottom-menu' class='hide'>
 	<span id='back-button'><img src='../../pics/left-icon.png'/></span>
     <span id='forward-button'><img src='../../pics/right-icon.png'/></span>
+    <a href='../profile/profile.html'><img src='../../pics/profile-icon.png'/></a>
 </div><!--bottom-menu-->
 
 
@@ -145,6 +178,7 @@ var device = 'android';
 <script src='../../js/login/pulse.js'></script>
 <!-- InstanceBeginEditable name="EditRegion4" -->
 <script src='../../js/login/search-groups/search-groups.js'></script>
+<script src='../../js/login/search-groups/search-filter.js'></script>
 <!-- InstanceEndEditable -->
 <script src='../../js/menu/menu.js'></script>
 <!-- InstanceEnd --></html>

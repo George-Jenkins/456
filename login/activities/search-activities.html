@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template2.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Search Activities</title>
+<!-- InstanceEndEditable -->
+<meta name="description" content="FriendPlan helps you and your friends access the fun and exclusive activities you've always wanted to do without you having to spend too much money."/>
+<meta name="viewport" content="device-width=width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+
+<link rel="icon" type="image/png" href="../../pics/favicon.png"/>
+<link rel="apple-touch-icon" href="../../pics/favicon.png"/>
+
+<!------css------->
+<link href="../../css/general/all-pages.css" type="text/css" rel="stylesheet"/>
+<link href="../../css/body/body.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/menu/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/templates/template2/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../../js/jquery-ui-1.11.2.custom/jquery-ui.css" rel="stylesheet" type='text/css'/>
+
+<link href="../../css/templates/container.css" rel="stylesheet" type="text/css"/>
+<link href="../../fonts/ptsans/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/general/forms.css" rel="stylesheet" type="text/css"/>
+<!-- InstanceBeginEditable name="head" -->
+<link href="../../css/login/activities/search-activities.css" rel="stylesheet" type="text/css"/>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div id='menu'>
+	<a href='../../index.html' class='inline1'>
+	<img src='../../pics/ritzkey-logo5.png' id='logo'/>
+	</a>
+    <a href='' class='inline1' id='menu-dropdown-icon'>
+    <img src='../../pics/menu-dropdown.png'/>
+    </a>
+	<table id='menu-links' class='inline1'>
+	<tr>
+    <td class='menu-link'><a href='../profile/profile.html'>Profile</a></td>
+	<td class='menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></td> 
+    <td class='menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></td> 
+    <td class='menu-link'><a href='../events/view-events.html'>Activities</a></td> 
+    <td class='menu-link'>
+    	<a href='' id='more-td'>More</a>
+     <div id='more-dropdown-container'>
+        	<div id='more-dropdown'>
+           <a href='../search-groups/search-groups.html'><div class='more-dropdown-item'>Entourage Search</div></a>
+           <a href='../account/settings.html'><div class='more-dropdown-item'>Settings</div></a>
+   			<a href='../contact/contact-form.html'><div>Contact</div></a>
+            </div><!---more-dropdown---->
+        </div><!---dropdown1-container---->
+    </td>
+	</tr>
+	</table>
+
+	<table id='logout-table' class='inline1'>
+	<tr>
+	<td class='menu-input'><a href='../../member-login.html'>Log Out</a></td>
+	</tr>
+	</table>
+	<div id='mobile-menu'>
+    	<div id='initial-dropdown'>
+    	<div class='mobile-menu-link'><a href='../../member-login.html'>Log Out</a></div>
+        <div class='mobile-menu-link'><a href='../profile/profile.html'>Profile</a></div> 
+        <div class='mobile-menu-link'><a href='../replies/replies.html'><span class='replies-alert'></span>Replies</a></div>
+        <div class='mobile-menu-link'><a href='../notifications/notifications.html'><span class='notifications-alert'></span>Notifications</a></div>
+        <div class='mobile-menu-link' id='more-menu'>More <b>></b></div>
+        </div><!---------->
+        <div id='hidden-items' class='hide'>
+        <div class='mobile-menu-link'><a href='../events/view-events.html'>Activities</a></div>
+        <div class='mobile-menu-link'><a href='../search-groups/search-groups.html'>Entourage search</a></div>
+        <div class='mobile-menu-link'><a href='../account/settings.html'>Settings</a></div>
+    	<div class='mobile-menu-link'><a href='../contact/contact-form.html'>Contact</a></div>
+        <div class='mobile-menu-link' id='back-menu'><b><</b> Back</div>
+        </div>
+        
+    </div>
+	
+</div><!-----menu-------->
+<div id='container'>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+
+<div id='activities-dark-background' class='hide'></div>
+<div id='activities-pic-canvas' class='hide'>
+<div style='position:relative;'>
+<img id='close-canvas' src='../../pics/red-x.png'/></div>
+<div id='load-activity-image' class='hide'></div>
+
+<div id='share-post-div' class='hide align-center'>
+<p>
+<div class='text'>Click the entourages to share with then click "done"</div>
+
+<center>
+<div id='done-button' class='inline text'>Done</div> <div id='share-feedback-message' class='hide inline text'></div> <img src='../../pics/ajax-loader2.gif' id='share-loader' class='hide inline small-processing-img' />
+</center>
+
+<div id='group-display-list'></div>
+</div>
+
+</div><!--activities-pic-canvas-->
+
+<center>
+<p>
+
+<div class='title'>Find The Fun</div>
+
+<p>
+
+<div id='search-activities-div'>
+
+<div id='' class='text'>What are you looking for?</div>
+
+<p>
+
+<div id='looking-for-div' class='general-radio text inline-middle'>
+
+<input type='radio' id='deals-radio' name='looking-for' checked='checked'><label for='deals-radio'>Deals</label>
+<input type='radio' id='events-radio' name='looking-for'><label for='events-radio'>Events</label>
+
+</div><!--general-radio-->
+
+<div id='time-limit-div' class='general-select text inline-middle'> Posted in the past <select id='post-time-limit'>
+<option value='1'>Day</option>
+<option value='7' selected='selected'>Week</option>
+<option value='31'>Month</option>
+<option value=''>(No limit)</option>
+</select></div>
+
+<p>
+
+<div id='search-area'>
+
+<p>
+
+
+
+<div id='search-area-div' class='general-input inline-middle'> <input type='text' id='search-area-input' /> </div>
+
+<div id='select-distance' class='general-select inline-middle text'> within <select id='max-distance'>
+<option value='10'>10 miles</option>
+<option value='20'>20 miles</option>
+<option value='30'>30 miles</option>
+<option value='40'>40 miles</option>
+<option value='50'>50 miles</option>
+</select></div>
+
+<div class='general-submit inline-middle'><input type='submit' id='search-activities' value='Search'/></div>
+
+<div id='city-suggestions-div' class='text hide'></div>
+
+
+<p>
+
+<div id='searching-social-media' class='hide'>
+
+<div id='searching-social-media' class='text'>Searching social media...</div>
+
+<p>
+
+<img id='twitter-icon-search' src='../../pics/twitter-icon.png' class='inline-middle'/> <img src='../../pics/ajax-loader2.gif' id='twitter-loader' class='inline-middle small-processing-img2' />
+<img id='instagram-icon-search' src='../../pics/instagram-icon.png' class='inline-middle'/> <img src='../../pics/ajax-loader2.gif' id='instagram-loader' class='inline-middle small-processing-img2' />
+<img id='facebook-icon-search' src='../../pics/facebook-icon.png' class='inline-middle'/> <img src='../../pics/ajax-loader2.gif' id='facebook-loader' class='inline-middle small-processing-img2' />
+
+</div><!--searching-social-media-->
+
+<div id='show-results-div'>
+
+<span id='show-options' class='general-radio text hide'>
+<span id='show-twitter-span' class=''>
+<input type='radio' id='show-twitter-box' name='select-show-box' value='twitter'/><label for='show-twitter-box'>Twitter</label>
+</span>
+<span id='show-instagram-span' class=''>
+<input type='radio' id='show-instagram-box' name='select-show-box' value='instagram'/><label for='show-instagram-box'>Instagram</label>
+</span>
+<span id='show-facebook-span' class=''>
+<input type='radio' id='show-facebook-box' name='select-show-box' value='facebook'/><label for='show-facebook-box'>Facebook</label>
+</span>
+<p>
+</span>
+
+</div><!--show-results-div-->
+
+</div><!--search-activities-div-->
+
+<div id='feedback-message' class='text'></div>
+
+<div id='twitter-results-container' class='hide'>
+
+<div id='twitter-results' class='text'></div>
+
+</div><!---instagram-results-container-->
+
+<div id='instagram-results-container' class='hide'>
+
+<div id='instagram-results' class='text'></div>
+
+</div><!---instagram-results-container-->
+
+<div id='facebook-results-container' class='hide'>
+
+<div id='facebook-results' class='text'></div>
+
+</div><!---facebook-results-container-->
+
+</div><!--search-area-->
+
+<p>
+
+</center>
+<!-- InstanceEndEditable -->
+</div><!-----container------->
+
+
+<div id='bottom-menu' class='hide'>
+	<span id='back-button'><img src='../../pics/left-icon.png'/></span>
+    <span id='forward-button'><img src='../../pics/right-icon.png'/></span>
+    <a href='../profile/profile.html'><img src='../../pics/profile-icon.png'/></a>
+</div><!--bottom-menu-->
+
+
+<!-- getclicky -->
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100810496); }catch(e){}</script>
+
+</body>
+
+<script src='../../js/jquery/jquery-1.11.2.min.js'></script>
+<script src='../../js/jquery/jquery-animate-enhanced.js'></script>
+<script src='../../js/jquery-ui-1.11.2.custom/jquery-ui.js'></script>
+<script src='../../js/plugins/fastclick.js'></script>
+<script src='../../js/functions.js'></script>
+<script src='../../sjcl-master/sjcl.js'></script>
+<script src='../../js/general/lightbox.js'></script>
+<script src='../../js/home-page/register.js'></script>
+<script src="../../phonegap.js"></script>
+<script src='../../js/PushNotification.js'></script>
+<script>
+function onNotification(e){
+var z = getZ()
+var device = 'android';
+	if(z) $.post('http://ritzkey.com/queries/register-notification-key.php',{z:z, token:e.regid, device:device},function(data){
+},'json') 
+}
+</script>
+<script src='../../js/register-notifications.js'></script>
+<script src='../../js/login/handle.js'></script>
+<script src='../../js/login/pulse.js'></script>
+<!-- InstanceBeginEditable name="EditRegion4" -->
+<script src='../../js/login/activities/search-activities.js'></script>
+<script src='../../js/login/activities/city-suggestion.js'></script>
+<script src='../../js/login/activities/share-post.js'></script>
+<!-- InstanceEndEditable -->
+<script src='../../js/menu/menu.js'></script>
+<!-- InstanceEnd --></html>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

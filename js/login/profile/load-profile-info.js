@@ -37,6 +37,28 @@ else postPath = '';
 		$('#cover-photo-name').html(data.name)
 			
 		$('#home-town-info').html(data.hometown)
+		
+		//load dates in birthday field
+		for(x=1; x<=31; x++){//day
+		if(x<10) var zero = 0;
+		else zero = '';	
+			$('#birthday-day').append("<option value="+zero+x+">"+x+"</option>")
+		}//for
+		
+		for(x=1; x<=12; x++){//month
+		if(x<10) var zero = 0;
+		else zero = '';
+			$('#birthday-month').append("<option value="+zero+x+">"+x+"</option>")
+		}//for
+		var date = new Date()
+		var year = date.getFullYear()
+		
+		for(x=year; x>=1920; x--){//year
+			$('#birthday-year').append("<option value="+x+">"+x+"</option>")
+		}//for
+		
+		$('#birthday-display').html(data.birthday)
+		
 		$('#going-out-answer').html(data.going_out)
 		
 		if(data.list){	

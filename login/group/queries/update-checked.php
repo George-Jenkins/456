@@ -28,7 +28,7 @@ $dbemail = $get['email'];
 if($email!=$dbemail) return;
 
 //update database
-mysql_query("UPDATE posts SET checked='true' WHERE reply_id='$postID'");
+mysql_query("UPDATE posts SET checked='true' WHERE originalPostID='$postID'");
 
 $return['done'] = 'done';
 echo json_encode($return);

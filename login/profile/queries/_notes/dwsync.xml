@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="check-for-unchecked-posts.php" server="67.20.123.61/public_html/ritzkey/" local="130623822089912087" remote="130679965200000000" />
-<file name="delete-cover-img.php" server="67.20.123.61/public_html/ritzkey/" local="130651438442152350" remote="130679965200000000" />
-<file name="get-cities.php" server="67.20.123.61/public_html/ritzkey/" local="130680220594305396" remote="130680148200000000" />
-<file name="get-states.php" server="67.20.123.61/public_html/ritzkey/" local="130680218348238097" remote="130680145800000000" />
-<file name="submit-going-out-info.php" server="67.20.123.61/public_html/ritzkey/" local="130611786927274158" remote="130679965200000000" />
-<file name="submit-hometown.php" server="67.20.123.61/public_html/ritzkey/" local="130611792979580114" remote="130679965200000000" />
-<file name="upload-background-img.php" server="67.20.123.61/public_html/ritzkey/" local="130682593810000000" remote="130682521800000000" />
-<file name="upload-cover-img.php" server="67.20.123.61/public_html/ritzkey/" local="130682552275908217" remote="130682479800000000" />
-<file name="upload-profile-picture.php" server="67.20.123.61/public_html/ritzkey/" local="130682549860220048" remote="130682477400000000" />
-<file name="check-image-change-mobile.php" server="67.20.123.61/public_html/ritzkey/" local="130675849674578970" remote="130679965200000000" />
-<file name="test-upload.php" server="67.20.123.61/public_html/ritzkey/" local="130677372658535450" remote="130679965200000000" />
+<file name="check-for-unchecked-posts.php" server="67.20.123.61/public_html/ritzkey/" local="130711170291043111" remote="130717024200000000" />
+<file name="delete-cover-img.php" server="67.20.123.61/public_html/ritzkey/" local="130651438442152350" remote="130717024200000000" />
+<file name="get-cities.php" server="67.20.123.61/public_html/ritzkey/" local="130687217089831347" remote="130717024200000000" />
+<file name="get-states.php" server="67.20.123.61/public_html/ritzkey/" local="130687216742017553" remote="130717024200000000" />
+<file name="submit-going-out-info.php" server="67.20.123.61/public_html/ritzkey/" local="130611786927274158" remote="130717024800000000" />
+<file name="submit-hometown.php" server="67.20.123.61/public_html/ritzkey/" local="130688121025157560" remote="130717024800000000" />
+<file name="upload-background-img.php" server="67.20.123.61/public_html/ritzkey/" local="130682593810000000" remote="130717024800000000" />
+<file name="upload-cover-img.php" server="67.20.123.61/public_html/ritzkey/" local="130689974582737499" remote="130717024800000000" />
+<file name="upload-profile-picture.php" server="67.20.123.61/public_html/ritzkey/" local="130682549860220048" remote="130717024800000000" />
+<file name="check-image-change-mobile.php" server="67.20.123.61/public_html/ritzkey/" local="130675849674578970" remote="130717024200000000" />
+<file name="test-upload.php" server="67.20.123.61/public_html/ritzkey/" local="130677372658535450" remote="130717024800000000" />
+<file name="submit-birthday.php" server="67.20.123.61/public_html/ritzkey/" local="130689068497618553" remote="130717024800000000" />
 </dwsync>

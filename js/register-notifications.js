@@ -2,7 +2,6 @@
 
 document.addEventListener("deviceready", function(){
 //cordova.plugins.notification.badge.set(3);
-if(!localStorage.getItem('registerDevice')) return;
 
 var z = getZ();	
 
@@ -144,7 +143,6 @@ function onNotification(e) {
 }
 */
 
-localStorage.removeItem('registerDevice')
 
 
 },true);//document.addEventListener

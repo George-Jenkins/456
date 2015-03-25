@@ -20,12 +20,14 @@
 	var email = $('#email').val()	
 	var password = $('#password').val()
 	var inviteCode = $('#inviteCode').val()
+	var platform = '';
+	if(mobileView) platform = 'mobile';
 	
 	if(!email || !password) return;
 	
 	$('#message').html("<div class='small-processing' style='margin-top:0'></div>").show()
 	
-	$.post(postPath+'queries/login.php',{email:email, password:password, inviteCode:inviteCode}, function(data){
+	$.post(postPath+'queries/login.php',{email:email, password:password, inviteCode:inviteCode, platform:platform}, function(data){
 		
 		if(data.error=='email'){
 			$('#message').addClass('red').html("Wrong email address").show()
@@ -40,8 +42,8 @@
 		if(data.error=='login'){
 			
 			//set email localStorage
+			localStorage.removeItem('userEmail');
 			localStorage.setItem('userEmail',email);
-			if(mobileView) localStorage.setItem('registerDevice','true');//register-notifications.js will use this
 			
 			localStorage.setItem('loginName',data.name)
 			

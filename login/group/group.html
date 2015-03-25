@@ -79,6 +79,14 @@
 </div><!-----menu-------->
 <div id='container'>
 <!-- InstanceBeginEditable name="EditRegion3" -->
+<div id='activities-dark-background' class='hide'></div>
+<div id='activities-pic-canvas' class='hide'>
+<div style='position:relative;'>
+<img id='close-view-canvas' src='../../pics/red-x.png'/></div>
+<div id='load-activity-image' class='hide'></div>
+</div><!--activities-pic-canvas-->
+
+
 <center>
 
 <div id='view-group-members' class='view-section-button hide'>View Entourage Members <img src='../../pics/right-icon.png' class='view-section-arrow'/></div><!------view-group-members------>
@@ -127,10 +135,40 @@
    
    <span id='group-info-span'>
    
-     <div><a id='group-options-link' class='buttonLink'>Group options</a></div>
-    
+     <div><a href='' id='group-options-link' class='buttonLink'>Group options</a></div>
+    <!-- hide hides location info
     <p>
     
+    <div id='group-location-div'>
+    <div id='edit-group-location-buttons'>
+    <span id='edit-group-location' class='functionLink buttonLink'>Edit</span>
+    <span id='cancel-edit-group-location' class='functionLink buttonLink hide'>Cancel</span>
+    </div>
+    <div id='group-location-title' class='text-bold'>Home base</div>
+	<div id='select-state-div' class='general-select inline hide'>
+		<select id='select-state'><option value=''>State</option></select> 
+	</div><!--select-state-div--->
+    
+    <!-- hide hides location info
+    
+	<div id='provide-city-div' class='general-input inline hide'>
+		<input type='text' id='provide-city' value='City'/> 
+	</div><!--select-state-div--->
+    
+    <!-- hide hides location info
+	<div id='submit-group-location-div' class='inline general-submit hide'><input id='submit-group-location' type='submit' value='Done'/></div> <img src='../../pics/ajax-loader2.gif' id='location-loader' class='small-processing-img2 hide'>
+	<div id='group-location-display'></div>
+    </div><!----group-location-div---->
+   
+    <p>
+    
+	<div id='photo-for-album-div'>
+	<img id='group-photo-icon' src='../../pics/group-photo-icon.png' />
+	<a href='' id='upload-photo-for-album' class='buttonLink'>Entourage photos</a>		
+	</div><!---photo-for-album-div--->
+	
+	<p>
+	
     	<div id='change-background-div'>
             <form id='upload-background-form' name='upload-background-form' action='queries/upload-background-pic.php' target='background-iframe' method='POST' enctype='multipart/form-data'>
             <span id='upload-background-span'>
@@ -198,7 +236,10 @@
 </table>
 
 <div id='chat-wall'>
+<div id='chat-wall-load'>
 <img src='../../pics/ajax-loader2.gif' id='wall-loading-img' style='height:40px;width:auto'/>
+</div><!---chat-wall-load--->
+<div id='show-more' class='hide' onClick='show_more()'><a href='' onClick='return false'>Show earlier</a></div>
 </div><!----chat wall----->
 
 </div><!----chat box container---->
@@ -236,6 +277,7 @@
 <div id='bottom-menu' class='hide'>
 	<span id='back-button'><img src='../../pics/left-icon.png'/></span>
     <span id='forward-button'><img src='../../pics/right-icon.png'/></span>
+    <a href='../profile/profile.html'><img src='../../pics/profile-icon.png'/></a>
 </div><!--bottom-menu-->
 
 
@@ -279,11 +321,13 @@ var device = 'android';
 <script src='../../js/login/group/edit-group/change-group-pic.js'></script>
 <script src='../../js/login/group/edit-group/background-image.js'></script>
 <script src='../../js/login/group/edit-group/edit-mission.js'></script>
+<script src='../../js/login/group/edit-group/edit-location.js'></script>
 <script src='../../js/login/group/invite-friends.js'></script>
 <script src='../../js/login/group/ask-to-join.js'></script>
 <script src='../../js/login/group/leave-group.js'></script>
 <script src='../../js/login/group/view-events.js'></script>
 <script src='../../js/login/group/group-navigation.js'></script>
+<script src='../../js/login/group/share-venue-post.js'></script>
 <!-- InstanceEndEditable -->
 <script src='../../js/menu/menu.js'></script>
 <!-- InstanceEnd --></html>

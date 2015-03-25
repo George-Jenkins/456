@@ -15,12 +15,12 @@ $get = mysql_fetch_assoc($query);
 $email = $get['email'];
 
 //make sure this user belongs to this group
-$query = mysql_query("SELECT * FROM group_members WHERE group_id='$groupID'");
+$query = mysql_query("SELECT * FROM group_members WHERE group_id='$groupID' AND approved!='no'");
 $numrows = mysql_num_rows($query);
 if($numrows==0) return;
 
 //create invite if user doesn't already have invite code
-$query = mysql_query("SELECT * FROM group_invitations WHERE email='$email'");
+$query = mysql_query("SELECT * FROM group_invitations WHERE email='$email' AND group_code='$groupID'");
 $numrows = mysql_num_rows($query);
 if($numrows!=0){
 	$get = mysql_fetch_assoc($query);
