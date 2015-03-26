@@ -179,11 +179,11 @@ show_more = function(){
 			//show the "show more" link if necessary
 			if($('.getPostScrollHeight'+x).length){
 			var scrollHeight = $('.getPostScrollHeight'+x)[0].scrollHeight
-			if(scrollHeight>105) $('.gotPostScrollHeight'+x).show()
+			if(scrollHeight>105 && !$('.gotPostScrollHeight'+x).hasClass('clicked')) $('.gotPostScrollHeight'+x).show()//clicked is added in chat-wall.js
 			}//if
 			if($('.getReplyScrollHeight'+x).length){
 				var scrollHeight = $('.getReplyScrollHeight'+x)[0].scrollHeight
-				if(scrollHeight>105) $('.gotReplyScrollHeight'+x).show()	
+				if(scrollHeight>105 && !$('.gotReplyScrollHeight'+x).hasClass('clicked')) $('.gotReplyScrollHeight'+x).show()//clicked is added in chat-wall.js
 			}//if
 					
 	}//for

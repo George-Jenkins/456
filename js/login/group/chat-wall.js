@@ -12,6 +12,7 @@ $(messageBox).click(function(){
 function showMoreLink(x){
 	$('#message-span'+x).css('max-height','none').show()
 	$('#etc-div'+x).addClass('clicked').hide()
+	
 }
 
 //this is path to post for apps
