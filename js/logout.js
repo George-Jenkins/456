@@ -1,2 +1,2 @@
 localStorage.removeItem('k');
-localStorage.removeItem('i');	
+localStorage.removeItem('i');

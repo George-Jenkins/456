@@ -155,7 +155,7 @@ function startIntervals(){//starts detectInactivity() again
 //this is used to provide path to post requests
 var pathForPost;
 var mobileView;
-pathForPost = true;
+//pathForPost = true;
 mobileView = true;
 
 
