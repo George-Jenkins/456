@@ -268,7 +268,7 @@ $('#display-photo-background-div').removeClass('hide')
 $('#group-photo-load').html('<img src="'+postPath+image+'" />')
 
 //Hide canvas until image loads
-$('[src="'+image+'"]').on('load',function(){
+$('[src="'+postPath+image+'"]').on('load',function(){
 $('#group-photo-canvas-container').removeClass('hide')	
 })
 
