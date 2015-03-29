@@ -3,7 +3,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id="com.ritzkey.ritzkey" 
-		version="0.1">
+		version="0.2">
 
 <name>RitzKey</name>
 
@@ -12,7 +12,7 @@ Make plans with your friends.
 </description>
   
 <!-- whitelist domains -->
-<access origin="http://ritzkey.com"/>
+<!--<access origin="http://ritzkey.com"/>-->
 
 <gap:plugin name="com.magziiim.phonegap.plugins.pushplugin" version="2.4.0" />
 <gap:plugin name="de.appplant.cordova.plugin.badge" version="0.6.0" /><!--this is for badges-->
